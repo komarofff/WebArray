@@ -1,5 +1,5 @@
-document.querySelector('.send-message-box').addEventListener('click',(e)=>{
-    console.log('send-message - ',e.target)
+document.querySelector('.send-message-box').addEventListener('click', (e) => {
+    console.log('send-message - ', e.target)
 })
 let xCoordinate = null
 let yCoordinate = null
@@ -28,39 +28,57 @@ document.querySelector('.center-zone').addEventListener('contextmenu', (e) => {
         closeMainMenus()
         document.querySelector('.folder-section').classList.remove('hidden')
         document.querySelector('.folder-section').style.cssText = `position:fixed; left: ${xCoordinate}px; top: ${yCoordinate}px`
+        mainMenu('folder-section')
     } else if (e.target.classList.contains('project')) {
         e.preventDefault()
         closeMainMenus()
         document.querySelector('.project-section').classList.remove('hidden')
         document.querySelector('.project-section').style.cssText = `position:fixed; left: ${xCoordinate}px; top: ${yCoordinate}px`
+        mainMenu('project-section')
     } else {
         e.preventDefault()
         closeMainMenus()
         document.querySelector('.main').classList.remove('hidden')
         document.querySelector('.main').style.cssText = `position:fixed; left: ${xCoordinate}px; top: ${yCoordinate}px`
+        mainMenu('main')
     }
+
+    //
 
 
 })
+
+function mainMenu(section) {
+    setTimeout(() => {
+        let menuBox = document.querySelector(`.${section}`)
+        console.log(menuBox)
+        let menuBoxHeight = menuBox.getBoundingClientRect().height
+        const clientHeight = document.documentElement.clientHeight
+        let yCoordinateNew = yCoordinate
+        if((yCoordinate + menuBoxHeight) >= clientHeight){
+            yCoordinateNew = clientHeight - menuBoxHeight - 50
+        }
+        console.log('yCoordinate + menuBoxHeight=',yCoordinate + menuBoxHeight)
+        console.log('xCoordinate=', xCoordinate)
+        console.log('yCoordinate=', yCoordinate)
+        console.log('clientHeight=', clientHeight)
+        console.log('menuBoxHeight=', menuBoxHeight)
+        document.querySelector(`.${section}`).style.cssText = `position:fixed; left: ${xCoordinate}px; top: ${yCoordinateNew}px`
+    }, 100)
+}
 
 ////
 
 const popupsZone = document.querySelector('.popups-zone')
 popupsZone.addEventListener('click', (e) => {
     if (e.target.classList.contains('show-more')) {
-        console.log(e.target)
-        if (e.target.parentElement.parentElement.nextElementSibling) {
-            e.target.parentElement.parentElement.nextElementSibling.classList.toggle('hidden')
+        if (e.target.parentNode.parentNode.parentNode.classList.contains('info-box')) {
+            e.target.parentNode.parentNode.parentNode.querySelector('.popup-box__inner-section').classList.toggle('hidden')
         }
-        if (e.target.parentElement.parentElement.parentElement.nextElementSibling) {
-            // .document.querySelector('.add-new-task')
-            console.log(e.target.parentElement.parentElement.parentElement.parentElement.classList)
-            e.target.parentElement.parentElement.parentElement.nextElementSibling.classList.toggle('hidden')
+        if (e.target.parentNode.parentNode.parentNode.parentNode.classList.contains('info-box')) {
+            e.target.parentNode.parentNode.parentNode.parentNode.querySelector('.popup-box__inner-section').classList.toggle('hidden')
+            e.target.parentNode.parentNode.parentNode.parentNode.querySelector('.add-new-task').classList.toggle('hidden')
         }
-        if(e.target.parentElement.parentElement.parentElement.parentElement.classList.contains('task-zone')){
-            //e.target.parentElement.parentElement.parentElement.parentElement.querySelector('.add-new-task').classList.toggle('hidden')
-        }
-
     }
 })
 
@@ -128,18 +146,6 @@ function stopSearchAnimation() {
 
 }
 
-////
-// document.querySelector('.search-zone').addEventListener('focus',(e)=>{
-//     if (startTimer.classList.contains('button-red')) {
-//         stopSearchAnimation()
-//     }
-// })
-// document.querySelector('.search-icon-section').addEventListener('click',(e)=>{
-//     if (startTimer.classList.contains('button-red')) {
-//         stopSearchAnimation()
-//     }
-// })
-///
 startTimer.addEventListener('mouseover', () => {
     if (startTimer.classList.contains('button-red')) {
         document.querySelector('.show-time').classList.remove('hidden')
@@ -193,7 +199,8 @@ leftZone.addEventListener('click', (e) => {
         alert('edit bookmark')
     }
 
-},true)
+}, true)
+
 
 
 

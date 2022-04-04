@@ -40,11 +40,16 @@ getData(todoUrl).then(data => {
                 todosList[arrId].completed = !todosList[arrId].completed
                 resTasks()
             }
+
+        })
+        task.addEventListener('contextmenu', (e) => {
+            e.preventDefault()
             if(e.target.classList.contains('can-be-changed')){
                 let arrIdNew = todosList.findIndex(val => val.id === parseFloat(e.target.dataset.id))
                 alert(`Change task : id=${todosList[arrIdNew].id} / ${todosList[arrIdNew].title}`)
             }
         })
+
     } else{
         div = document.createElement('div')
         div.innerHTML = `<p>No data available</p>`
