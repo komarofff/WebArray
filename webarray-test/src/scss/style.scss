@@ -436,24 +436,49 @@ main {
 }
 .send-message-box{
   position: relative;
+  width:100%;
+  &::before{
+    z-index: 2;
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+    left:20px;
+    width:24px;
+    height:24px;
+    content: url('../images/chat-2.svg');
+  }
+
+  .send-message-button{
+    cursor: pointer;
+    z-index: 2;
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+    right:20px;
+    &:hover{
+
+    }
+  }
+}
+.before-message{
+  position: absolute;
 }
 .send-message-input{
   position: relative;
   z-index: 1;
   width:100%;
-  padding:10px 10px 10px 30px;
+  padding:10px 40px;
   border: 1px dashed $border-color;
   border-radius: 6px;
   outline: none;
-  background: #fafafa;
+  background: transparent;
   &::placeholder{
     color: $menu-light-color;
   }
 
 }
-div {
-  //border:1px solid red;
-}
+
+
 
 .w-full {
   width: 100%;

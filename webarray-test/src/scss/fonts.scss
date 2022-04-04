@@ -86,6 +86,9 @@
 .font-extra-small{
   font-size: .5rem;
 }
+.font-2x-small{
+  font-size: .35rem;
+}
 
 $primary: #4361ee;
 $info: #2196f3;
@@ -133,4 +136,7 @@ $menu-light-color: #888ea8;
 }
 .color-bad{
   color: $danger !important;
+}
+.color-date{
+  color: $svg-color;
 }

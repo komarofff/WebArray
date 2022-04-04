@@ -80,6 +80,10 @@
   font-size: 0.5rem;
 }
 
+.font-2x-small {
+  font-size: 0.35rem;
+}
+
 .weight-100 {
   font-weight: 100 !important;
 }
@@ -130,6 +134,10 @@
 
 .color-bad {
   color: #e7515a !important;
+}
+
+.color-date {
+  color: #b3b4b6;
 }
 
 html {
@@ -604,17 +612,43 @@ main {
 
 .send-message-box {
   position: relative;
+  width: 100%;
+}
+.send-message-box::before {
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: 20px;
+  width: 24px;
+  height: 24px;
+  content: url("../images/chat-2.svg");
+}
+.send-message-box .send-message-button {
+  cursor: pointer;
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  right: 20px;
+}
+.before-message {
+  position: absolute;
 }
 
 .send-message-input {
   position: relative;
   z-index: 1;
   width: 100%;
-  padding: 10px 10px 10px 30px;
+  padding: 10px 40px;
   border: 1px dashed #d6d8db;
   border-radius: 6px;
   outline: none;
-  background: #fafafa;
+  background: transparent;
 }
 .send-message-input::-webkit-input-placeholder {
   color: #888ea8;
