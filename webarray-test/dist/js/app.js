@@ -1,5 +1,5 @@
 document.querySelector('.send-message-box').addEventListener('click',(e)=>{
-    console.log(e.target)
+    console.log('send-message - ',e.target)
 })
 let xCoordinate = null
 let yCoordinate = null
@@ -48,10 +48,19 @@ document.querySelector('.center-zone').addEventListener('contextmenu', (e) => {
 const popupsZone = document.querySelector('.popups-zone')
 popupsZone.addEventListener('click', (e) => {
     if (e.target.classList.contains('show-more')) {
-
+        console.log(e.target)
         if (e.target.parentElement.parentElement.nextElementSibling) {
             e.target.parentElement.parentElement.nextElementSibling.classList.toggle('hidden')
         }
+        if (e.target.parentElement.parentElement.parentElement.nextElementSibling) {
+            // .document.querySelector('.add-new-task')
+            console.log(e.target.parentElement.parentElement.parentElement.parentElement.classList)
+            e.target.parentElement.parentElement.parentElement.nextElementSibling.classList.toggle('hidden')
+        }
+        if(e.target.parentElement.parentElement.parentElement.parentElement.classList.contains('task-zone')){
+            //e.target.parentElement.parentElement.parentElement.parentElement.querySelector('.add-new-task').classList.toggle('hidden')
+        }
+
     }
 })
 

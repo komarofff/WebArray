@@ -193,9 +193,9 @@
             <div class="flex flex-between  p-17">
                 <p class="flex  align-center">
                     <img class="mr-11" src="@img/eye.svg" alt="">
-                    <span class="">File informations</span>
+                    <span class="weight-500">File informations</span>
                 </p>
-                <p class="show-more pointer">
+                <div class="">
                     <svg class="show-more pointer" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                          stroke-linejoin="round">
@@ -203,7 +203,7 @@
                         <circle cx="19" cy="12" r="1"></circle>
                         <circle cx="5" cy="12" r="1"></circle>
                     </svg>
-                </p>
+                </div>
             </div>
             <div class="popup-box__inner-section animation-popup p-17 hidden">
                 <div class="flex flex-start mb-20">
@@ -230,22 +230,36 @@
 
             </div>
         </div>
-        <div class="info-box mb-25">
+        <div class="info-box mb-25 task-box">
             <div class="flex flex-between p-17">
                 <p class="flex  align-center">
                     <img class="mr-11" src="@img/check-square.svg" alt="">
-                    <span>Tasks</span>
+                    <span class="weight-500">Tasks</span>
                 </p>
-                <span class="not-resolved-tasks"></span> <span class="resolved-tasks"></span>
-                <p class="show-more pointer">
-                    <svg class="show-more pointer" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                         viewBox="0 0 24 24" fill="none"
-                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="1"></circle>
-                        <circle cx="19" cy="12" r="1"></circle>
-                        <circle cx="5" cy="12" r="1"></circle>
-                    </svg>
-                </p>
+                <!--                <span class="not-resolved-tasks"></span> <span class="resolved-tasks"> </span>-->
+
+                <div class="flex justify-end align-center ">
+                    <p class="add-new-task mb-0 flex justify-end align-center mr-20 hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                             class="">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="8" x2="12" y2="16"></line>
+                            <line x1="8" y1="12" x2="16" y2="12"></line>
+                        </svg>
+                        <span class="ml-7">Add New</span>
+                    </p>
+                    <span class="all-tasks mr-15"></span>
+                    <div class="">
+                        <svg class="show-more pointer" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                             viewBox="0 0 24 24" fill="none"
+                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="1"></circle>
+                            <circle cx="19" cy="12" r="1"></circle>
+                            <circle cx="5" cy="12" r="1"></circle>
+                        </svg>
+                    </div>
+                </div>
             </div>
             <div class="popup-box__inner-section animation-popup  hidden">
                 <div class="chat-section  pt-17 pl-17 pr-17 pb-60 task-data text-small">
@@ -257,9 +271,9 @@
             <div class="flex flex-between p-17">
                 <p class="flex  align-center">
                     <img class="mr-11" src="@img/message-circle.svg" alt="">
-                    <span>Chat</span>
+                    <span class="weight-500">Chat</span>
                 </p>
-                <p class="show-more pointer">
+                <div class="">
                     <svg class="show-more pointer" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                          viewBox="0 0 24 24" fill="none"
                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -267,7 +281,7 @@
                         <circle cx="19" cy="12" r="1"></circle>
                         <circle cx="5" cy="12" r="1"></circle>
                     </svg>
-                </p>
+                </div>
             </div>
             <div class="popup-box__inner-section animation-popup relative hidden ">
                 <div class="chat-section p-17  chat-data">

@@ -666,6 +666,35 @@ main {
   color: #888ea8;
 }
 
+.all-tasks {
+  width: 30px;
+  height: 30px;
+  /* padding: 10px; */
+  background: red;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.add-new-task {
+  color: #888ea8;
+  font-size: 0.65rem;
+}
+.add-new-task svg {
+  width: 20px;
+  height: 20px;
+  stroke: #888ea8;
+}
+
 .w-full {
   width: 100%;
 }
@@ -697,6 +726,12 @@ main {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: start;
+}
+
+.flex-end {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
 }
 
 .flex {

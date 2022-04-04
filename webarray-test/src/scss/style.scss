@@ -477,8 +477,27 @@ main {
   }
 
 }
-
-
+.all-tasks{
+  width: 30px;
+  height: 30px;
+  /* padding: 10px; */
+  background: red;
+  color: #fff;
+  border-radius: 50%;
+  font-size: .5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.add-new-task{
+  color: #888ea8;
+  font-size: 0.65rem;
+  svg{
+    width:20px;
+    height:20px;
+    stroke:#888ea8;
+  }
+}
 
 .w-full {
   width: 100%;
@@ -502,6 +521,9 @@ main {
 
 .flex-start {
   justify-content: start;
+}
+.flex-end{
+  justify-content: end;
 }
 
 
