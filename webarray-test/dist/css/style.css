@@ -3206,3 +3206,58 @@ main {
 .p-70 {
   padding: 70px;
 }
+
+/* BREADCRUMBS  */
+.breadcrumb-box {
+  background-color: transparent;
+}
+.breadcrumb-box .breadcrumb {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 0.75rem 0;
+  margin-bottom: 1rem;
+  list-style: none;
+  border-radius: 0.25rem;
+}
+.breadcrumb-box .breadcrumb li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  font-size: 14px;
+  background: #fff;
+  margin-right: 20px;
+  margin-bottom: 6px;
+  padding: 7px 10px;
+  border-radius: 10px;
+  border: 1px solid #e0e6ed;
+  -webkit-box-shadow: 0px 1px 8px 0px rgba(31, 45, 61, 0.1);
+          box-shadow: 0px 1px 8px 0px rgba(31, 45, 61, 0.1);
+}
+.breadcrumb-box .breadcrumb li:not(:first-child):before {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  height: 4px;
+  width: 4px;
+  background: #4361ee;
+  left: -13px;
+  top: 50%;
+}
+.breadcrumb-box .breadcrumb a {
+  text-decoration: none;
+  color: #888ea8;
+}
+.breadcrumb-box .breadcrumb .active a {
+  color: #2196f3;
+  font-weight: 500;
+}
