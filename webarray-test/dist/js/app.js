@@ -58,11 +58,11 @@ function mainMenu(section) {
         if((yCoordinate + menuBoxHeight) >= clientHeight){
             yCoordinateNew = clientHeight - menuBoxHeight - 50
         }
-        console.log('yCoordinate + menuBoxHeight=',yCoordinate + menuBoxHeight)
-        console.log('xCoordinate=', xCoordinate)
-        console.log('yCoordinate=', yCoordinate)
-        console.log('clientHeight=', clientHeight)
-        console.log('menuBoxHeight=', menuBoxHeight)
+        // console.log('yCoordinate + menuBoxHeight=',yCoordinate + menuBoxHeight)
+        // console.log('xCoordinate=', xCoordinate)
+        // console.log('yCoordinate=', yCoordinate)
+        // console.log('clientHeight=', clientHeight)
+        // console.log('menuBoxHeight=', menuBoxHeight)
         document.querySelector(`.${section}`).style.cssText = `position:fixed; left: ${xCoordinate}px; top: ${yCoordinateNew}px`
     }, 100)
 }
