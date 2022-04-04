@@ -1,0 +1,89 @@
+/* IMPORT FONTS */
+
+@font-face {
+  font-family: 'SansSerif';
+  //src:  url('../fonts/EncodeSansSemiExpanded-Regular.ttf');
+  //src: local('sans-serif'), local('sans-serif'), url('../fonts/EncodeSansSemiExpanded-Regular.woff2') format('woff2'), url('../fonts/EncodeSansSemiExpanded-Regular.woff') format('woff'), url('../fonts/EncodeSansSemiExpanded-Regular.ttf') format('truetype');
+  src: url('../fonts/EncodeSansSemiExpanded-Regular.woff2') format('woff2'), url('../fonts/EncodeSansSemiExpanded-Regular.woff') format('woff'), url('../fonts/EncodeSansSemiExpanded-Regular.ttf') format('truetype');
+
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SansSerif';
+  //src:  url('../fonts/EncodeSansSemiExpanded-Bold.ttf');
+  src: url('../fonts/EncodeSansSemiExpanded-Bold.woff2') format('woff2'), url('../fonts/EncodeSansSemiExpanded-Bold.woff') format('woff'), url('../fonts/EncodeSansSemiExpanded-Bold.ttf') format('truetype');
+
+  font-style: normal;
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'SansSerif';
+  //src:  url('../fonts/EncodeSansSemiExpanded-Semibold.ttf');
+  src: url('../fonts/EncodeSansSemiExpanded-Semibold.woff2') format('woff2'), url('../fonts/EncodeSansSemiExpanded-Semibold.woff') format('woff'), url('../fonts/EncodeSansSemiExpanded-Semibold.ttf') format('truetype');
+
+  font-style: normal;
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'SansSerif';
+  //src:  url('../fonts/EncodeSansSemiExpanded-Semibold.ttf');
+  src: url('../fonts/EncodeSansSemiExpanded-Regular.woff2') format('woff2'), url('../fonts/EncodeSansSemiExpanded-Regular.woff') format('woff'), url('../fonts/EncodeSansSemiExpanded-Regular.ttf') format('truetype');
+
+  font-style: normal;
+  font-weight: 400;
+}
+
+.text-line {
+  text-decoration: line-through;
+}
+
+.h1, h1 {
+  font-size: 2.5rem;
+}
+
+.h2, h2 {
+  font-size: 2rem;
+}
+
+.h3, h3 {
+  font-size: 1.75rem;
+}
+
+.h4, h4 {
+  font-size: 1.5rem;
+}
+
+.h5, h5 {
+  font-size: 1.25rem;
+}
+
+.h6, h6 {
+  font-size: 1rem;
+}
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+$primary: #4361ee;
+$info: #2196f3;
+$success: #1abc9c;
+$warning: #e2a03f;
+$danger: #e7515a;
+$secondary: #805dca;
+
+$info-dark: #0e1726;
+$dark: #3b3f5c;
+$white: #fff;
+$top-blue: #445ede;
+$dark-top-blue: #304aca;
+$main-color: #fafafa;
+$border-color: #e0e6ed;
+$shadow-color: rgba(31, 45, 61, .1);
+$shadow-size: 0 10px 30px 0;
+$menu-color: #030305;
+$menu-light-color: #888ea8;
+
