@@ -60,12 +60,31 @@
 }
 
 .h6, h6 {
-  font-size: 1rem;
+  font-size: 0.75rem;
 }
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0.5rem;
   font-weight: 500;
   line-height: 1.2;
+}
+.font-lg{
+  font-size: 1.25rem;
+}
+.font-xl{
+  font-size: 1.5rem;
+}
+.font-xxl{
+  font-size: 1.75rem;
+}
+
+.font-base{
+  font-size: 1rem;
+}
+.font-small{
+  font-size: .75rem;
+}
+.font-extra-small{
+  font-size: .5rem;
 }
 
 $primary: #4361ee;
@@ -87,3 +106,8 @@ $shadow-size: 0 10px 30px 0;
 $menu-color: #030305;
 $menu-light-color: #888ea8;
 
+@for $i from 1 through 6{
+.weight-#{$i*100}{
+  font-weight: #{$i*100};
+}
+}

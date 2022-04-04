@@ -168,7 +168,7 @@ function timerStart() {
 const leftZone = document.querySelector('.left-zone')
 leftZone.addEventListener('click', (e) => {
     // start stop left section full width
-    if (!e.target.classList.contains('add-bookmark')) {
+    if (e.target.classList.contains('left-zone') || e.target.classList.contains('open-left-section')) {
         leftZone.classList.toggle('left-zone-full')
     }
 
@@ -176,8 +176,12 @@ leftZone.addEventListener('click', (e) => {
     if (e.target.classList.contains('add-bookmark')) {
         alert('add bookmark')
     }
+    // edit bookmark
+    if (e.target.classList.contains('edit-bookmark')) {
+        alert('edit bookmark')
+    }
 
-})
+},true)
 
 // get todo list
 let todoUrl = 'https://jsonplaceholder.typicode.com/todos/'
