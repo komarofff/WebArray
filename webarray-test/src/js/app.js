@@ -19,8 +19,9 @@ function closeMainMenus() {
 
 //right mouse button
 document.querySelector('.center-zone').addEventListener('click', (e) => {
-    e.preventDefault()
+   // e.preventDefault()
     closeMainMenus()
+
 })
 document.querySelector('.center-zone').addEventListener('contextmenu', (e) => {
     if (e.target.parentElement.classList.contains('folder')) {
