@@ -23,18 +23,18 @@ document.querySelector('.center-zone').addEventListener('contextmenu', (e) => {
     if (e.target.parentElement.classList.contains('folder')) {
         e.preventDefault()
         closeMainMenus()
-        e.target.parentElement.querySelector('.main-menu-box').classList.remove('hidden')
-        e.target.parentElement.querySelector('.main-menu-box').style.cssText = `position:fixed; left: ${xCoordinate}px; top: ${yCoordinate}px`
-    } else if (e.target.classList.contains('center-zone__project-box')) {
+        document.querySelector('.folder-section').classList.remove('hidden')
+        document.querySelector('.folder-section').style.cssText = `position:fixed; left: ${xCoordinate}px; top: ${yCoordinate}px`
+    } else if (e.target.classList.contains('project')) {
         e.preventDefault()
         closeMainMenus()
-        e.target.querySelector('.main-menu-box').classList.remove('hidden')
-        e.target.querySelector('.main-menu-box').style.cssText = `position:fixed; left: ${xCoordinate}px; top: ${yCoordinate}px`
+        document.querySelector('.project-section').classList.remove('hidden')
+        document.querySelector('.project-section').style.cssText = `position:fixed; left: ${xCoordinate}px; top: ${yCoordinate}px`
     } else {
         e.preventDefault()
         closeMainMenus()
-        document.querySelector('.main-section-menu').querySelector('.main-menu-box').classList.remove('hidden')
-        document.querySelector('.main-section-menu').querySelector('.main-menu-box').style.cssText = `position:fixed; left: ${xCoordinate}px; top: ${yCoordinate}px`
+        document.querySelector('.main').classList.remove('hidden')
+        document.querySelector('.main').style.cssText = `position:fixed; left: ${xCoordinate}px; top: ${yCoordinate}px`
     }
 
 
