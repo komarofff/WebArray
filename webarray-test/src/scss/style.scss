@@ -422,8 +422,35 @@ main {
   bottom: 0;
   width: 100%;
   background: #fafafa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    svg {
+    color: #b3b4b6;
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    fill: rgba(0,23,55,.08);
+    margin-right: 15px;
+  }
 }
+.send-message-box{
+  position: relative;
+}
+.send-message-input{
+  position: relative;
+  z-index: 1;
+  width:100%;
+  padding:10px 10px 10px 30px;
+  border: 1px dashed $border-color;
+  border-radius: 6px;
+  outline: none;
+  background: #fafafa;
+  &::placeholder{
+    color: $menu-light-color;
+  }
 
+}
 div {
   //border:1px solid red;
 }
