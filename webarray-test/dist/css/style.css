@@ -104,6 +104,34 @@
   font-weight: 600;
 }
 
+.color-base {
+  color: #030305 !important;
+}
+
+.color-important {
+  color: #e2a03f !important;
+}
+
+.color-approved {
+  color: #2196f3 !important;
+}
+
+.color-final {
+  color: #805dca !important;
+}
+
+.color-good {
+  color: #1abc9c !important;
+}
+
+.color-old {
+  color: #d6d8db !important;
+}
+
+.color-bad {
+  color: #e7515a !important;
+}
+
 html {
   font-family: "SansSerif", Sans-Serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 23px;
@@ -186,9 +214,10 @@ html {
   margin-right: 15px;
 }
 .main-menu-box ul {
-  padding: 0 20px;
+  padding: 0;
 }
-.main-menu-box li {
+.main-menu-box ul li {
+  padding: 0 20px;
   cursor: pointer;
   list-style: none;
   margin: 20px 0;
@@ -202,8 +231,78 @@ html {
       -ms-flex-align: center;
           align-items: center;
 }
-.main-menu-box li:hover {
+.main-menu-box ul li:hover {
   color: #2196f3;
+}
+
+.flag-menu-box {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  top: -20px;
+  left: 108%;
+  background: #fff;
+  border-radius: 6px;
+  border: 1px solid #d6d8db;
+  -webkit-box-shadow: 0 10px 30px 0 rgba(31, 45, 61, 0.1);
+          box-shadow: 0 10px 30px 0 rgba(31, 45, 61, 0.1);
+  padding: 0;
+  font-size: 0.68rem;
+  white-space: nowrap;
+}
+.flag-menu-box svg {
+  color: #b3b4b6;
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+  fill: rgba(0, 23, 55, 0.08);
+  margin-right: 15px;
+}
+.flag-menu-box ul {
+  padding: 0;
+}
+.flag-menu-box li {
+  padding: 0 20px;
+  cursor: pointer;
+  list-style: none;
+  margin: 20px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.flag-menu-box li:hover {
+  text-decoration: underline;
+  color: currentColor;
+}
+
+.flag {
+  position: relative;
+}
+.flag:hover .flag-menu-box {
+  display: block;
+}
+.flag:hover::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  right: -12px;
+  width: 0;
+  height: 0;
+  border-bottom: 8px solid transparent;
+  border-left: 12px solid #fff;
+  border-right: 0;
+  border-top: 8px solid transparent;
+  -webkit-filter: drop-shadow(2px 2px 2px #d6d8db);
+          filter: drop-shadow(2px 2px 2px #d6d8db);
 }
 
 .popup-box {

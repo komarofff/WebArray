@@ -112,3 +112,25 @@ $menu-light-color: #888ea8;
   font-weight: #{$i*100};
 }
 }
+
+.color-base{
+  color: $menu-color !important;
+}
+.color-important{
+  color: $warning !important;
+}
+.color-approved{
+  color: $info !important;
+}
+.color-final{
+  color: $secondary !important;
+}
+.color-good{
+  color: $success !important;
+}
+.color-old{
+  color: $border-color !important;
+}
+.color-bad{
+  color: $danger !important;
+}
