@@ -688,9 +688,9 @@
 <!-- add edit bookmarks-->
 <div class="black-background modal add-bookmark-window hidden">
     <div class="modal-window">
-        <div class="top-modal flex flex-between aling-center w-full">
+        <div class="top-modal flex flex-between align-center w-full">
             <p>Add New Bookmark</p>
-            <p class="close-modal pointer">X</p>
+            <img class="close-modal pointer drop-shadow" src="@img/x.svg">
         </div>
         <form>
             <div class="center-modal">
@@ -721,9 +721,9 @@
 <!-- edit edit bookmarks-->
 <div class="black-background modal edit-bookmark-window hidden">
     <div class="modal-window">
-        <div class="top-modal flex flex-between aling-center w-full">
-            <p>Edit Bookmark</p>
-            <p class="close-modal pointer">X</p>
+        <div class="top-modal flex flex-between align-center w-full">
+            <p class="mb-1">Edit Bookmark</p>
+            <img class="close-modal pointer drop-shadow" src="@img/x.svg">
         </div>
         <form>
             <div class="center-modal flex-modal">
@@ -756,6 +756,39 @@
             <div class="flex flex-end align-center my-40">
                 <button class="button-blue-outline close-modal">Discard</button>
                 <button type="submit" class="button-blue edit-new-bookmark">Save</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- add new file-->
+<div class="black-background modal add-file-window ">
+    <div class="modal-window">
+        <div class="top-modal flex flex-between align-center w-full">
+            <p class="mb-1">Add New File</p>
+            <img class="close-modal pointer drop-shadow" src="@img/x.svg">
+        </div>
+        <form>
+            <div class="center-modal">
+
+                    <div class="mb-20">
+                        <label class="form-label">File Name</label>
+                        <input class="form-control" type="text" value="file name ...">
+                    </div>
+                    <div class="mb-20">
+
+                        <textarea class="form-control">Additional notes...</textarea>
+                    </div>
+
+            </div>
+        </form>
+        <div class="bottom-modal">
+            <div class="stripe-gray my-30"></div>
+            <div class="flex flex-end align-center my-40">
+                <button class="button-blue-outline close-modal">Discard</button>
+                <button type="submit" class="button-blue add-new-file">Save</button>
             </div>
         </div>
     </div>

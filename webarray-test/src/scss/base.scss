@@ -231,3 +231,6 @@ html {
     flex-basis: 60% !important;
   }
 }
+.drop-shadow{
+  filter: drop-shadow(2px 4px 6px $border-color);
+}
