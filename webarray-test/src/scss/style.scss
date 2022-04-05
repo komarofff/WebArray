@@ -242,12 +242,12 @@ header {
     border-radius: 6px;
     border: 1px solid $border-color;
     box-shadow: $shadow-size $shadow-color;
-    min-width: 155px;
+    min-width: fit-content;
     position: absolute;
     top: 40px;
     z-index: 5;
     right: 1px;
-
+    white-space: nowrap;
     &::before {
       content: '';
       position: absolute;
@@ -260,11 +260,42 @@ header {
       border-right: 8px solid transparent;
       border-top: 0;
     }
+    svg {
+      color: $svg-color;
+      vertical-align: middle;
+      width: 20px;
+      height: 20px;
+      fill: rgba(0, 23, 55, 0.08);
+      margin-right: 15px;
+    }
+    ul {
+      padding: 0;
+    }
 
     li {
+      padding: 0 20px;
+      cursor: pointer;
       list-style: none;
-      padding: 6px 0;
+      margin: 20px 0;
+      display: flex;
+      justify-content: start;
+      align-items: center;
+
+      &:hover {
+        color: $info !important;
+      }
     }
+    .check-time{
+      color: $info !important;
+      position: relative;
+      &::before{
+        content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="rgba(0, 23, 55, 0.08)" stroke="rgba(179, 180, 182, 1)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check"><polyline points="20 6 9 17 4 12"></polyline></svg>');
+        position: absolute;
+        left: -6px;
+        top: 0px;
+      }
+    }
+
   }
 }
 
@@ -733,31 +764,47 @@ main {
 
 @for $i from 1 through 70 {
   .mr-#{$i} {
-    margin-right: #{$i}px;
+    margin-right: #{$i}px !important;
   }
   .ml-#{$i} {
-    margin-left: #{$i}px;
+    margin-left: #{$i}px !important;
   }
   .mb-#{$i} {
-    margin-bottom: #{$i}px;
+    margin-bottom: #{$i}px !important;
   }
   .mt-#{$i} {
-    margin-top: #{$i}px;
+    margin-top: #{$i}px !important;
   }
   .pr-#{$i} {
-    padding-right: #{$i}px;
+    padding-right: #{$i}px !important;
   }
   .pl-#{$i} {
-    padding-left: #{$i}px;
+    padding-left: #{$i}px !important;
   }
   .pb-#{$i} {
-    padding-bottom: #{$i}px;
+    padding-bottom: #{$i}px !important;
   }
   .pt-#{$i} {
-    padding-top: #{$i}px;
+    padding-top: #{$i}px !important;
   }
   .p-#{$i} {
-    padding: #{$i}px;
+    padding: #{$i}px !important;
+  }
+.px-#{$i} {
+    padding-left: #{$i}px !important;
+    padding-right: #{$i}px !important;
+  }
+.py-#{$i} {
+    padding-top: #{$i}px !important;
+    padding-bottom: #{$i}px !important;
+  }
+.mx-#{$i} {
+    margin-left: #{$i}px !important;
+    margin-right: #{$i}px !important;
+  }
+.my-#{$i} {
+    margin-top: #{$i}px !important;
+    margin-bottom: #{$i}px !important;
   }
 
 }
