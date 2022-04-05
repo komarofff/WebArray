@@ -598,7 +598,8 @@ main {
   overflow: hidden;
   border-radius: 6px;
   border: 1px solid #d6d8db;
-  background: #fafafa;
+  background: #fafafa url('data:image/svg+xml; utf8,<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="rgba(179, 180, 182, 1)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>') no-repeat;
+  background-position: center center;
 }
 
 .bookmark-image {
