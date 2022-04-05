@@ -239,6 +239,14 @@ html {
       -ms-flex-align: center;
           align-items: center;
 }
+.main-menu-box ul li .active {
+  color: #2196f3 !important;
+}
+.main-menu-box ul li .active svg {
+  color: #2196f3 !important;
+  stroke: #2196f3 !important;
+  fill: rgba(0, 23, 55, 0.08);
+}
 .main-menu-box ul li:hover {
   color: #2196f3;
 }
@@ -432,8 +440,19 @@ header {
   fill: rgba(0, 23, 55, 0.08);
   margin-right: 15px;
 }
+.open-menu-box .menu-box .active {
+  color: #2196f3 !important;
+}
+.open-menu-box .menu-box .active svg {
+  color: #2196f3 !important;
+  stroke: #2196f3 !important;
+  fill: rgba(0, 23, 55, 0.08);
+}
 .open-menu-box .menu-box ul {
   padding: 0;
+}
+.open-menu-box .menu-box ul .active {
+  color: #2196f3 !important;
 }
 .open-menu-box .menu-box li {
   padding: 0 20px;
@@ -453,11 +472,11 @@ header {
 .open-menu-box .menu-box li:hover {
   color: #2196f3 !important;
 }
-.open-menu-box .menu-box .check-time {
+.open-menu-box .menu-box .checked {
   color: #2196f3 !important;
   position: relative;
 }
-.open-menu-box .menu-box .check-time::before {
+.open-menu-box .menu-box .checked::before {
   content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="rgba(0, 23, 55, 0.08)" stroke="rgba(179, 180, 182, 1)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check"><polyline points="20 6 9 17 4 12"></polyline></svg>');
   position: absolute;
   left: -6px;

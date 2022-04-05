@@ -34,111 +34,103 @@
             <div class="flex flex-between align-center">
                 <div class="relative open-menu-box">
                     <img class="mr-17" src="@img/menu-info.png" alt="1">
-                    <div class="menu-box p-17 animation-popup">
-                        <ul>
-                            <li>sfdsvgvds</li>
-                            <li>sfdsvgvds</li>
-                            <li>sfdsvgvds</li>
-                            <li>sfdsvgvds</li>
-                            <li>sfdsvgvds</li>
+                    <div class="menu-box  animation-popup">
+                        <ul class="ml-20 mt-20">
+                            <p>PIN TO TOP</p>
+                            <li class="color-old font-extra-small">(empty)</li>
+                        </ul>
+                        <p class="stripe-gray mb-15"></p>
+                        <ul class="ml-20">
+                            <p>SORT ORDER</p>
+                            <li class="font-extra-small">Unflagged</li>
+                        </ul>
+                        <p class="stripe-gray"></p>
+
+                        <ul class="ml-20 mt-20">
+                            <p>AVAILABLE</p>
+                            <li class="color-important">Important</li>
+                            <li class="color-approved">Approved</li>
+                            <li class="color-final">Final</li>
+                            <li class="color-good">Good</li>
+                            <li class="color-old">Old</li>
+                            <li class="color-bad">Bad</li>
+                        </ul>
+                        <p class="stripe-gray"></p>
+                        <ul class="">
+                            <li><label><input type="checkbox" name="ignore-folders" checked> Ignore Folders</label></li>
+
                         </ul>
                     </div>
 
                 </div>
                 <div class="relative open-menu-box">
                     <img class="mr-17" src="@img/menu-info-2.png" alt="1">
-                    <div class="menu-box p-17 animation-popup">
-                        <ul>
-                            <li>sfdsvgvds</li>
-                            <li>sfdsvgvds</li>
-                            <li>sfdsvgvds</li>
-                            <li>sfdsvgvds</li>
-                            <li>sfdsvgvds</li>
+                    <div class="menu-box animation-popup">
+                        <ul class="px-10">
+                            <li>Date Created</li>
+                            <li>Date Modified</li>
+                            <li class="checked">File Name</li>
+                            <li>File Size</li>
+                        </ul>
+                        <p class="stripe-gray"></p>
+                        <ul class="px-10">
+                            <li class="checked">Ascending</li>
+                            <li>Descending</li>
+                        </ul>
+                        <p class="stripe-gray"></p>
+                        <ul class="">
+                            <li><label><input type="checkbox" name="folders-first" checked> Folders First</label></li>
+
                         </ul>
                     </div>
 
                 </div>
                 <div class="relative open-menu-box">
                     <img class="mr-17" src="@img/menu-info-3.png" alt="1">
-                    <div class="menu-box p-17 animation-popup ">
+                    <div class="menu-box  animation-popup ">
                         <ul>
-                            <li class="logout">
+                            <li class="list">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                      fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                     stroke-linejoin="round" class="feather feather-log-out">
-                                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
-                                    <polyline points="16 17 21 12 16 7"></polyline>
-                                    <line x1="21" y1="12" x2="9" y2="12"></line>
+                                     stroke-linejoin="round" class="feather feather-list">
+                                    <line x1="8" y1="6" x2="21" y2="6"></line>
+                                    <line x1="8" y1="12" x2="21" y2="12"></line>
+                                    <line x1="8" y1="18" x2="21" y2="18"></line>
+                                    <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                                    <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                                    <line x1="3" y1="18" x2="3.01" y2="18"></line>
                                 </svg>
-                                <span>Logout</span></li>
-
-                        </ul>
-                        <p class="stripe-gray"></p>
-                        <ul>
-                            <li class="show-completed-task">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                     stroke-linejoin="round" class="feather feather-eye">
-                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                                    <circle cx="12" cy="12" r="3"></circle>
-                                </svg>
-                                <span>Show completed tasks</span>
-                                <ul class="completed-tasks-time">
-                                    <li class="color-base check-time"> No flag</li>
-                                    <li class="color-important">Important</li>
-                                    <li class="color-approved">Approved</li>
-                                    <li class="color-final">Final</li>
-                                    <li class="color-good">Good</li>
-                                    <li class="color-old">Old</li>
-                                    <li class="color-bad">Bad</li>
-                                </ul>
-
+                                <span>List</span>
                             </li>
+                            <li class="small">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px"
+                                     stroke="currentColor"
+                                     fill="none">
+                                    <path d="M0 0h24v24H0V0z" fill="none"/>
+                                    <path d="M4 8h4V4H4v4zm6 12h4v-4h-4v4zm-6 0h4v-4H4v4zm0-6h4v-4H4v4zm6 0h4v-4h-4v4zm6-10v4h4V4h-4zm-6 4h4V4h-4v4zm6 6h4v-4h-4v4zm0 6h4v-4h-4v4z"/>
+                                </svg>
+                                <span>Small</span>
+                            </li>
+                            <li class="medium">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="feather feather-grid">
+                                    <rect x="3" y="3" width="7" height="7"></rect>
+                                    <rect x="14" y="3" width="7" height="7"></rect>
+                                    <rect x="14" y="14" width="7" height="7"></rect>
+                                    <rect x="3" y="14" width="7" height="7"></rect>
+                                </svg>
+                                <span>Medium</span></li>
+                            <li class="gallery active">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" class="feather feather-square">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                </svg>
+                                <span>Gallery</span>
+                            </li>
+                        </ul>
 
-
-                        </ul>
-                        <p class="stripe-gray"></p>
-                        <ul>
-                            <li class="share">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                     fill="none"
-                                     stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                     stroke-linejoin="round"
-                                     class="feather feather-link">
-                                    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-                                    <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-                                </svg>
-                                <span>Share</span></li>
-                        </ul>
-                        <p class="stripe-gray"></p>
-                        <ul>
-                            <li class="rename">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                     stroke-linejoin="round" class="feather feather-edit-3">
-                                    <path d="M12 20h9"></path>
-                                    <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
-                                </svg>
-                                <span>Rename</span></li>
-                            <li class="copy">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                     stroke-linejoin="round" class="feather feather-copy">
-                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                                </svg>
-                                <span>Copy</span></li>
-                            <li class="delete">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                     stroke-linejoin="round" class="feather feather-trash-2">
-                                    <polyline points="3 6 5 6 21 6"></polyline>
-                                    <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
-                                    <line x1="10" y1="11" x2="10" y2="17"></line>
-                                    <line x1="14" y1="11" x2="14" y2="17"></line>
-                                </svg>
-                                <span>Delete</span></li>
-                        </ul>
                     </div>
 
                 </div>
@@ -170,7 +162,7 @@
                         <span class="pl-1 pr-20">Show completed tasks</span>
                     </p>
                     <ul class="ml-50">
-                        <li class="color-old check-time ">Always Hide</li>
+                        <li class="color-old checked ">Always Hide</li>
                         <li class="color-old">1 Hour</li>
                         <li class="color-old">6 Hours</li>
                         <li class="color-old">1 Day</li>
