@@ -215,4 +215,3 @@ leftZone.addEventListener('click', (e) => {
 
 
 
-
