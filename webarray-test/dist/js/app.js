@@ -204,7 +204,13 @@ closeModals.forEach((val) => {
         }
     })
 })
-
+const selects =  document.querySelectorAll('.select')
+selects.forEach((el)=>{
+    el.addEventListener('click',()=>{
+        el.classList.toggle('rotate-after')
+        el.querySelector('.select-popup').classList.toggle('hidden')
+    })
+})
 
 
 class OpenModals {
