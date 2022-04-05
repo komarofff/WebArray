@@ -33,7 +33,7 @@ newFile.click()
 
 
 // bookmarks
-const addBookmark = new Modals({  
+const addBookmark = new Modals({
     selector: '.add-bookmark'
 })
 addBookmark.click()
