@@ -19,7 +19,7 @@ function closeMainMenus() {
 
 //right mouse button
 document.querySelector('.center-zone').addEventListener('click', (e) => {
-   // e.preventDefault()
+    // e.preventDefault()
     closeMainMenus()
 
 })
@@ -56,7 +56,7 @@ function mainMenu(section) {
         let menuBoxHeight = menuBox.getBoundingClientRect().height
         const clientHeight = document.documentElement.clientHeight
         let yCoordinateNew = yCoordinate
-        if((yCoordinate + menuBoxHeight) >= clientHeight){
+        if ((yCoordinate + menuBoxHeight) >= clientHeight) {
             yCoordinateNew = clientHeight - menuBoxHeight - 50
         }
         // console.log('yCoordinate + menuBoxHeight=',yCoordinate + menuBoxHeight)
@@ -190,26 +190,56 @@ leftZone.addEventListener('click', (e) => {
     if (e.target.classList.contains('left-zone') || e.target.classList.contains('open-left-section')) {
         leftZone.classList.toggle('left-zone-full')
     }
-
-    // add bookmark
-    if (e.target.classList.contains('add-bookmark')) {
-        alert('add bookmark')
-    }
-    // edit bookmark
-    if (e.target.classList.contains('edit-bookmark')) {
-        alert('edit bookmark')
-    }
-
 }, true)
 
 
+// close-modals
+
+const closeModals = document.querySelectorAll('.close-modal')
+const modalsWindows = document.querySelectorAll('.modal')
+closeModals.forEach((val) => {
+    val.addEventListener('click', () => {
+        for (let i = 0; i < modalsWindows.length; i++) {
+            modalsWindows[i].classList.add('hidden')
+        }
+    })
+})
 
 
 
+class OpenModals {
+    constructor(selector) {
+        this.$el = document.querySelector(selector)
+        this.$elem = document.querySelector(selector + '-window')
+    }
 
+    open() {
+        this.$elem.classList.remove('hidden')
+    }
 
+    close() {
+        this.$elem.classList.add('hidden')
+    }
+}
+class Modals extends OpenModals{
+    constructor(options) {
+        super(options.selector);
+    }
+}
 
+const addBookmark= new Modals({
+    selector: '.add-bookmark'
+})
 
+document.querySelector('.add-bookmark').addEventListener('click',()=>{
+addBookmark.open()
+})
+const editBookmark = new Modals({
+    selector: '.edit-bookmark'
+})
+document.querySelector('.edit-bookmark').addEventListener('click',()=>{
+    editBookmark.open()
+})
 
 
 

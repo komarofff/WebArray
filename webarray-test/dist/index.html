@@ -686,13 +686,13 @@
 </div>
 
 <!-- add edit bookmarks-->
-<div class="black-background">
+<div class="black-background modal add-bookmark-window hidden">
     <div class="modal-window">
-        <div class="top-modal">
+        <div class="top-modal flex flex-between aling-center w-full">
             <p>Add New Bookmark</p>
+            <p class="close-modal pointer">X</p>
         </div>
-
-        <form id="add-bookmark">
+        <form>
             <div class="center-modal">
                 <div class="mb-20">
                     <label class="form-label">Title</label>
@@ -707,18 +707,61 @@
                     <textarea class="form-control" placeholder="Additional notes..."></textarea>
                 </div>
             </div>
-            <div class="bottom-modal">
-                <div class="stripe-gray my-30"></div>
-                <div class="flex flex-end align-center my-40">
-                    <button class="button-blue-outline close-modal">Discard</button>
-                    <button class="button-blue">Save</button>
-                </div>
-            </div>
-
         </form>
+        <div class="bottom-modal">
+            <div class="stripe-gray my-30"></div>
+            <div class="flex flex-end align-center my-40">
+                <button class="button-blue-outline close-modal">Discard</button>
+                <button type="submit" class="button-blue add-new-bookmark">Save</button>
+            </div>
+        </div>
     </div>
 
 </div>
+<!-- edit edit bookmarks-->
+<div class="black-background modal edit-bookmark-window hidden">
+    <div class="modal-window">
+        <div class="top-modal flex flex-between aling-center w-full">
+            <p>Edit Bookmark</p>
+            <p class="close-modal pointer">X</p>
+        </div>
+        <form>
+            <div class="center-modal flex-modal">
+                <div>
+                    <div class="mb-20">
+                        <label class="form-label">Preview</label>
+                        <p class="preview-box">
+                            <img src="images/test-image-bookmark-preview.jpg" alt="test image">
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <div class="mb-20">
+                        <label class="form-label">Title</label>
+                        <input class="form-control" type="text" value="Bookmark title...">
+                    </div>
+                    <div class="mb-20">
+                        <label class="form-label">Link</label>
+                        <input class="form-control" type="text" value="https://www.webarray.ca">
+                    </div>
+                    <div class="mb-20">
+                        <label class="form-label">Notes</label>
+                        <textarea class="form-control">Additional notes...</textarea>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="bottom-modal">
+            <div class="stripe-gray my-30"></div>
+            <div class="flex flex-end align-center my-40">
+                <button class="button-blue-outline close-modal">Discard</button>
+                <button type="submit" class="button-blue edit-new-bookmark">Save</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
 </div>
 
 <!--scripts section-->
