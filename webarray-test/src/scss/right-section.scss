@@ -1,0 +1,203 @@
+
+.animation-popup {
+  animation: growDown 300ms ease-in-out forwards;
+  transform-origin: top center;
+}
+
+
+.popup-box {
+  width: 100%;
+  background: #fff;
+  border-radius: 6px;
+  border: 1px solid $border-color;
+  box-shadow: $shadow-size $shadow-color;
+}
+
+.info-box {
+  width: 100%;
+  background: #fff;
+  border-radius: 6px;
+  border: 1px solid $border-color;
+  font-size: 0.74rem;
+  display: block;
+  color: $info-dark;
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
+.popups-zone {
+  width: 400px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: start;
+  height: 82vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  &::-webkit-scrollbar {
+    width: 2px;
+  }
+
+  &::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #fafafa;
+  }
+}
+
+.popup-box__inner-section {
+  border-top: 1px dashed $border-color;
+  //font-size: 14px;
+  letter-spacing: 0;
+  font-weight: 400;
+  margin-bottom: 0;
+
+  .time {
+    margin-bottom: 0;
+    font-size: 12px;
+    font-weight: 600;
+    color: $menu-light-color;
+  }
+}
+
+.line-vertical {
+  z-index: 1;
+  position: relative;
+  align-self: stretch;
+  //margin-bottom: 35px;
+}
+
+.line-vertical::after {
+  z-index: 2;
+  content: '';
+  position: absolute;
+  border-width: 1px;
+  border-style: solid;
+  left: 7.8px;
+  transform: translateX(-50%);
+  border-color: $border-color;
+  width: 0;
+  height: auto;
+  top: 22px;
+  bottom: 4px;
+  border-right-width: 0;
+  border-top-width: 0;
+  border-bottom-width: 0;
+  border-radius: 0;
+}
+
+.chat-section {
+  height: 360px;
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #fafafa;
+  }
+}
+
+.send-message {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: #fafafa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  svg {
+    color: #b3b4b6;
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    fill: rgba(0, 23, 55, .08);
+    margin-right: 15px;
+  }
+}
+
+.send-message-box {
+  position: relative;
+  width: 100%;
+
+  &::before {
+    z-index: 2;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 20px;
+    width: 24px;
+    height: 24px;
+    content: url('../images/chat-2.svg');
+  }
+
+  .send-message-button {
+    cursor: pointer;
+    z-index: 2;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+
+    &:hover {
+
+    }
+  }
+}
+
+.before-message {
+  position: absolute;
+}
+
+.send-message-input {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: 10px 40px;
+  border: 1px dashed $border-color;
+  border-radius: 6px;
+  outline: none;
+  background: transparent;
+
+  &::placeholder {
+    color: $menu-light-color;
+  }
+
+}
+
+.all-tasks {
+  width: 30px;
+  height: 30px;
+  /* padding: 10px; */
+  background: red;
+  color: #fff;
+  border-radius: 50%;
+  font-size: .5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-new-task {
+  color: #888ea8;
+  font-size: 0.65rem;
+  cursor: pointer;
+
+  svg {
+    width: 20px;
+    height: 20px;
+    stroke: #888ea8;
+  }
+}

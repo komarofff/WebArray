@@ -1,0 +1,77 @@
+
+.left-zone {
+  z-index: 8;
+  overflow-x: hidden;
+  background: $white;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100px;
+  height: 89vh;
+  overflow-y: auto;
+  padding: 25px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  transition: .2s ease-in-out;
+
+  border-right: 1px solid $border-color;
+
+  &::-webkit-scrollbar {
+    width: 0px;
+  }
+
+  &::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #fafafa;
+  }
+}
+
+.left-zone-full {
+  width: 425px;
+}
+
+.left-zone__inner-section {
+  width: 400px;
+  font-size: 0.7rem;
+  cursor: unset !important;
+}
+
+.add-bookmark {
+  transition: .3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.bookmark-title {
+  font-size: 1rem;
+  border-bottom: 1px solid #e5eaf0;
+}
+
+.w-85 {
+  width: 83%;
+}
+
+.bookmark-image-box {
+  width: 84px;
+  height: 80px;
+  overflow: hidden;
+  border-radius: 6px;
+  border: 1px solid $border-color;
+  //background: #fafafa;
+  background: #fafafa url('data:image/svg+xml; utf8,<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="rgba(179, 180, 182, 1)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>') no-repeat;
+  background-position: center center;
+
+}
+
+.bookmark-image {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+}
