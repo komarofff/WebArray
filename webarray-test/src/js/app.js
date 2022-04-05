@@ -21,9 +21,9 @@ function closeMainMenus() {
 document.querySelector('.center-zone').addEventListener('click', (e) => {
     // e.preventDefault()
     closeMainMenus()
-
 })
 document.querySelector('.center-zone').addEventListener('contextmenu', (e) => {
+    closeMainMenus()
     if (e.target.parentElement.classList.contains('folder')) {
         e.preventDefault()
         closeMainMenus()
@@ -204,48 +204,14 @@ closeModals.forEach((val) => {
         }
     })
 })
-const selects =  document.querySelectorAll('.select')
-selects.forEach((el)=>{
-    el.addEventListener('click',()=>{
+const selects = document.querySelectorAll('.select')
+selects.forEach((el) => {
+    el.addEventListener('click', () => {
         el.classList.toggle('rotate-after')
         el.querySelector('.select-popup').classList.toggle('hidden')
     })
 })
 
-
-class OpenModals {
-    constructor(selector) {
-        this.$el = document.querySelector(selector)
-        this.$elem = document.querySelector(selector + '-window')
-    }
-
-    open() {
-        this.$elem.classList.remove('hidden')
-    }
-
-    close() {
-        this.$elem.classList.add('hidden')
-    }
-}
-class Modals extends OpenModals{
-    constructor(options) {
-        super(options.selector);
-    }
-}
-
-const addBookmark= new Modals({
-    selector: '.add-bookmark'
-})
-
-document.querySelector('.add-bookmark').addEventListener('click',()=>{
-addBookmark.open()
-})
-const editBookmark = new Modals({
-    selector: '.edit-bookmark'
-})
-document.querySelector('.edit-bookmark').addEventListener('click',()=>{
-    editBookmark.open()
-})
 
 
 
