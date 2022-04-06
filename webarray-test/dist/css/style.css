@@ -5361,12 +5361,12 @@ main {
           align-items: center;
 }
 
-.add-new-task {
+.new-task {
   color: #888ea8;
   font-size: 0.65rem;
   cursor: pointer;
 }
-.add-new-task svg {
+.new-task svg {
   width: 20px;
   height: 20px;
   stroke: #888ea8;

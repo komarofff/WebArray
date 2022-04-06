@@ -76,7 +76,7 @@ popupsZone.addEventListener('click', (e) => {
         }
         if (e.target.parentNode.parentNode.parentNode.parentNode.classList.contains('info-box')) {
             e.target.parentNode.parentNode.parentNode.parentNode.querySelector('.popup-box__inner-section').classList.toggle('hidden')
-            e.target.parentNode.parentNode.parentNode.parentNode.querySelector('.add-new-task').classList.toggle('hidden')
+            e.target.parentNode.parentNode.parentNode.parentNode.querySelector('.new-task').classList.toggle('hidden')
         }
     }
 })

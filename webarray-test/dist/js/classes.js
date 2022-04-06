@@ -1,5 +1,6 @@
 class OpenModals {
-    constructor(selector) {
+    constructor(selector,data) {
+        this.data = data
         this.$el = document.querySelector(selector)
         this.$elem = document.querySelector(selector + '-window')
     }
@@ -7,11 +8,17 @@ class OpenModals {
     click() {
         this.$el.addEventListener('click', () => {
             this.$elem.classList.remove('hidden')
+            if(this.data){
+                this.$elem.dataset.data = this.data
+            }
         })
     }
 
     open() {
         this.$elem.classList.remove('hidden')
+        if(this.data){
+            this.$elem.dataset.data = this.data
+        }
     }
 
     close() {
@@ -21,7 +28,7 @@ class OpenModals {
 
 class Modals extends OpenModals {
     constructor(options) {
-        super(options.selector);
+        super(options.selector,options.data);
     }
 }
 
