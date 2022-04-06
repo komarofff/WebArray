@@ -32,7 +32,14 @@ const addBookmark = new Modals({
 addBookmark.click()
 
 const editBookmark = new Modals({
-    selector: '.edit-bookmark'
+    selector: '.edit-bookmark',
+    // data: JSON.stringify({
+    //     id: 1,
+    //     title: 'title',
+    //     link: 'https://webarray.ca',
+    //     notes: 'some notes here',
+    //     image: 'https://webarray.ca/images/test.jpg'
+    // })
 })
-editBookmark.click()
+editBookmark.clickAll()
 

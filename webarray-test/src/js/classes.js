@@ -1,16 +1,30 @@
 class OpenModals {
     constructor(selector, data) {
         this.data = data
+        this.$elems = document.querySelectorAll(selector)
         this.$el = document.querySelector(selector)
         this.$elem = document.querySelector(selector + '-window')
+    }
+    clickAll() {
+        this.$elems.forEach((el)=>{
+            el.addEventListener('click', () => {
+                this.$elem.classList.remove('hidden')
+                if(el.dataset.data){this.$elem.dataset.data = el.dataset.data}
+                if (this.data) {
+                    this.$elem.dataset.data = this.data
+                }
+            })
+        })
+
     }
 
     click() {
         this.$el.addEventListener('click', () => {
             this.$elem.classList.remove('hidden')
+            if(this.$el.dataset.data){this.$elem.dataset.data = this.$el.dataset.data}
             if (this.data) {
-                this.$elem.dataset.data = this.data
-            }
+                 this.$elem.dataset.data = this.data
+             }
         })
     }
 
