@@ -1,5 +1,5 @@
 class OpenModals {
-    constructor(selector,data) {
+    constructor(selector, data) {
         this.data = data
         this.$el = document.querySelector(selector)
         this.$elem = document.querySelector(selector + '-window')
@@ -8,7 +8,7 @@ class OpenModals {
     click() {
         this.$el.addEventListener('click', () => {
             this.$elem.classList.remove('hidden')
-            if(this.data){
+            if (this.data) {
                 this.$elem.dataset.data = this.data
             }
         })
@@ -16,7 +16,7 @@ class OpenModals {
 
     open() {
         this.$elem.classList.remove('hidden')
-        if(this.data){
+        if (this.data) {
             this.$elem.dataset.data = this.data
         }
     }
@@ -24,11 +24,18 @@ class OpenModals {
     close() {
         this.$elem.classList.add('hidden')
     }
+
+    save() {
+        this.$elem.classList.add('hidden')
+        if (this.data) {
+            this.$elem.dataset.data = this.data
+        }
+    }
 }
 
 class Modals extends OpenModals {
     constructor(options) {
-        super(options.selector,options.data);
+        super(options.selector, options.data);
     }
 }
 
@@ -77,6 +84,7 @@ class GetDataFromServer {
             return jsonAnswerPut;
         }
     }
+
     async delete() {
         const response = await fetch(this.url, {
             method: 'DELETE',
