@@ -26,7 +26,7 @@ document.querySelector('.center-zone').addEventListener('contextmenu', (e) => {
     if (e.target.parentElement.classList.contains('folder')) {
         e.preventDefault()
         closeMainMenus()
-        
+
         let folderMenu = `<div class="folder-section main-menu-box  animation-popup " 
          style="position:fixed; left: ${xCoordinate}px; top: ${yCoordinate}px"  data-data='${e.target.parentElement.dataset.data}'>
     <ul>
