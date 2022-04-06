@@ -26,11 +26,7 @@ document.querySelector('.center-zone').addEventListener('contextmenu', (e) => {
     if (e.target.parentElement.classList.contains('folder')) {
         e.preventDefault()
         closeMainMenus()
-        // document.querySelector('.folder-section').classList.remove('hidden')
-        // if (e.target.dataset.data) {
-        //     document.querySelector('.folder-section').dataset.data = e.target.dataset.data
-        // }
-        // document.querySelector('.folder-section').style.cssText = `position:fixed; left: ${xCoordinate}px; top: ${yCoordinate}px`
+        
         let folderMenu = `<div class="folder-section main-menu-box  animation-popup " 
          style="position:fixed; left: ${xCoordinate}px; top: ${yCoordinate}px"  data-data='${e.target.parentElement.dataset.data}'>
     <ul>
@@ -122,6 +118,7 @@ document.querySelector('.center-zone').addEventListener('contextmenu', (e) => {
         document.body.append(newFolderFile)
         setTimeout(()=>{
             mainMenu('folder-section')
+            console.log(JSON.parse(e.target.parentElement.dataset.data))
         },50)
 
 
@@ -252,15 +249,13 @@ document.querySelector('.center-zone').addEventListener('contextmenu', (e) => {
                 selector: '.edit-file',
                 data: e.target.dataset.data
             })
-            console.log(e.target.dataset.data)
+                console.log(JSON.parse(e.target.dataset.data))
             editFile.click()
         },50)
 
     } else {
         e.preventDefault()
         closeMainMenus()
-        // document.querySelector('.main').classList.remove('hidden')
-        // document.querySelector('.main').style.cssText = `position:fixed; left: ${xCoordinate}px; top: ${yCoordinate}px`
         let mainPopup = `<div class="main main-menu-box animation-popup " style="position:fixed; left: ${xCoordinate}px; top: ${yCoordinate}px">
     <ul>
         <li class="new-folder">
