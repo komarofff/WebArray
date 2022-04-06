@@ -79,38 +79,16 @@ class GetDataFromServer {
             },
         })
         if (response.ok) {
-            const jsonAnswerPut = await response.json();
-            return jsonAnswerPut;
+            const jsonAnswerDelete = await response.json();
+            return jsonAnswerDelete;
         }
     }
 
 }
 
-// if (response.ok) {
-//     let result = await response.json();
-//     return result;
-// }
 class DataS extends GetDataFromServer {
     constructor(options) {
         super(options.url, options.method, options.data);
     }
 }
-
-//new file
-const newFile = new Modals({
-    selector: ".new-file"
-})
-newFile.click()
-
-
-// bookmarks
-const addBookmark = new Modals({
-    selector: '.add-bookmark'
-})
-addBookmark.click()
-
-const editBookmark = new Modals({
-    selector: '.edit-bookmark'
-})
-editBookmark.click()
 
