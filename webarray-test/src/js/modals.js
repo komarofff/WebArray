@@ -43,3 +43,15 @@ const editBookmark = new Modals({
 })
 editBookmark.clickAll()
 
+const editFile = new Modals({
+    selector: '.edit-file',
+    // data: JSON.stringify({
+    //     id: 1,
+    //     title: 'title',
+    //     link: 'https://webarray.ca',
+    //     notes: 'some notes here',
+    //     image: 'https://webarray.ca/images/test.jpg'
+    // })
+})
+editFile.click()
+

@@ -1,4 +1,3 @@
-
 let xCoordinate = null
 let yCoordinate = null
 document.addEventListener('mousemove', (e) => {
@@ -26,12 +25,19 @@ document.querySelector('.center-zone').addEventListener('contextmenu', (e) => {
         e.preventDefault()
         closeMainMenus()
         document.querySelector('.folder-section').classList.remove('hidden')
+        if (e.target.dataset.data) {
+            document.querySelector('.folder-section').dataset.data = e.target.dataset.data
+        }
         document.querySelector('.folder-section').style.cssText = `position:fixed; left: ${xCoordinate}px; top: ${yCoordinate}px`
         mainMenu('folder-section')
     } else if (e.target.classList.contains('project')) {
         e.preventDefault()
         closeMainMenus()
+        //console.log(e.target.dataset.data)
         document.querySelector('.project-section').classList.remove('hidden')
+        if (e.target.dataset.data) {
+            document.querySelector('.project-section').dataset.data = e.target.dataset.data
+        }
         document.querySelector('.project-section').style.cssText = `position:fixed; left: ${xCoordinate}px; top: ${yCoordinate}px`
         mainMenu('project-section')
     } else {
@@ -50,7 +56,7 @@ document.querySelector('.center-zone').addEventListener('contextmenu', (e) => {
 function mainMenu(section) {
     setTimeout(() => {
         let menuBox = document.querySelector(`.${section}`)
-        console.log(menuBox)
+        //console.log(menuBox)
         let menuBoxHeight = menuBox.getBoundingClientRect().height
         const clientHeight = document.documentElement.clientHeight
         let yCoordinateNew = yCoordinate

@@ -1,5 +1,6 @@
 class OpenModals {
     constructor(selector, data) {
+        this.selector = selector
         this.data = data
         this.$elems = document.querySelectorAll(selector)
         this.$el = document.querySelector(selector)
@@ -25,6 +26,12 @@ class OpenModals {
             if (this.data) {
                  this.$elem.dataset.data = this.data
              }
+            if(this.selector === '.edit-file'){
+                this.$elem.dataset.data = document.querySelector('.project-section').dataset.data
+            }
+            if(this.selector === '.edit-folder'){
+                this.$elem.dataset.data = document.querySelector('.folder-section').dataset.data
+            }
         })
     }
 
@@ -41,6 +48,7 @@ class OpenModals {
 
     save() {
         this.$elem.classList.add('hidden')
+        //if(this.$el.dataset.data){this.$elem.dataset.data = this.$el.dataset.data}
         if (this.data) {
             this.$elem.dataset.data = this.data
         }

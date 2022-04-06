@@ -277,7 +277,7 @@
             </div>
         </div>
         <div class="center-zone__inner-section">
-            <div class="relative folder">
+            <div class="relative folder" data-data='{"id":1,"foldername":"Folder 1","link":"https://webarray.ca","author":"Konrad","createdAt":"22.03.2022"}'>
                 <img src="@img/folder.png" alt="folder">
             </div>
             <div class="relative folder">
@@ -290,12 +290,12 @@
                 <img src="@img/folder.png" alt="folder">
             </div>
 
-            <div class="center-zone__project-box project"></div>
-            <div class="center-zone__project-box project"></div>
-            <div class="center-zone__project-box project"></div>
-            <div class="center-zone__project-box project"></div>
-            <div class="center-zone__project-box project"></div>
-            <div class="center-zone__project-box project"></div>
+            <div class="center-zone__project-box project" data-data='{"id":1,"filename":" File name 1","link":"https://webarray.ca","author":"Konrad","createdAt":"22.03.2022"}'></div>
+            <div class="center-zone__project-box project"  data-data='{"id":2,"filename":" File name 2","link":"https://webarray.ca","author":"Konrad","createdAt":"22.03.2022"}'></div>
+            <div class="center-zone__project-box project"  data-data='{"id":3,"filename":" File name 3","link":"https://webarray.ca","author":"Konrad","createdAt":"22.03.2022"}'></div>
+            <div class="center-zone__project-box project"  data-data='{"id":4,"filename":" File name 4","link":"https://webarray.ca","author":"Konrad","createdAt":"22.03.2022"}'></div>
+            <div class="center-zone__project-box project"  data-data='{"id":5,"filename":" File name 5","link":"https://webarray.ca","author":"Konrad","createdAt":"22.03.2022"}'></div>
+            <div class="center-zone__project-box project"  data-data='{"id":6,"filename":" File name 6","link":"https://webarray.ca","author":"Konrad","createdAt":"22.03.2022"}'></div>
 
         </div>
 
@@ -629,7 +629,7 @@
                 <polyline points="2 12 12 17 22 12"></polyline>
             </svg>
             <span>Branch</span></li>
-        <li class="edit">
+        <li class="edit-file">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                  stroke-linejoin="round" class="feather feather-edit">
@@ -795,6 +795,46 @@
                 <div class="flex">
                     <button class="button-blue-outline close-modal mr-10">Discard</button>
                     <button type="submit" class="button-blue new-file-save">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- edit file-->
+<div class="black-background modal edit-file-window hidden">
+    <div class="modal-window">
+        <div class="top-modal flex flex-between align-center w-full">
+            <p class="mb-1">File name here</p>
+            <img class="close-modal pointer drop-shadow" src="@img/x.svg">
+        </div>
+        <form>
+            <div class="center-modal">
+
+                <div class="mb-20">
+                    <label class="form-label">File Name</label>
+                    <input class="form-control" type="text" placeholder="File.txt">
+                </div>
+                <div class="mb-20">
+                    <textarea class="form-control" placeholder="Additional notes..."> need code editor</textarea>
+                </div>
+
+            </div>
+        </form>
+        <div class="bottom-modal">
+            <div class="stripe-gray my-30"></div>
+            <div class="flex flex-between align-center my-40">
+                <div class="select">
+                    <p class="mb-1">General</p>
+                    <ul class="select-popup hidden">
+                        <li>Text</li>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                    </ul>
+                </div>
+                <div class="flex">
+                    <button class="button-blue-outline close-modal mr-10">Discard</button>
+                    <button type="submit" class="button-blue edit-file-save">Save</button>
                 </div>
             </div>
         </div>
