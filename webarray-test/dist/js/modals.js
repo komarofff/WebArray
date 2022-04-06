@@ -15,7 +15,8 @@ function closeModals() {
 function closeEventModals() {
     const modalsWindows = document.querySelectorAll('.modal')
     modalsWindows.forEach((val) => {
-        val.remove()
+        val.classList.add('hidden')
+        //val.remove()
     })
 
 }

@@ -1,11 +1,10 @@
-// document.querySelector('.add-new-task').addEventListener('click',()=>{
-//     alert('add new task')
-// })
+
 //new task
 const newTask = new Modals({
     selector: ".new-task"
 })
 newTask.click()
+
 /// GET
 const taskGet = new DataS({
     url: 'https://jsonplaceholder.typicode.com/todos/',
@@ -45,13 +44,49 @@ if(taskGet) {
                 e.preventDefault()
                 if (e.target.classList.contains('edit-task')) {
                     let arrIdNew = todosList.findIndex(val => val.id === parseFloat(e.target.dataset.id))
-                    //new task
-                    const editTask = new Modals({
-                        selector: ".edit-task",
-                        data: JSON.stringify(todosList[arrIdNew])
-                    })
-                    editTask.open()
-                    //alert(`Change task : id=${todosList[arrIdNew].id} / ${todosList[arrIdNew].title}`)
+                    newData = todosList[arrIdNew]
+                    let editWindow = `<div class="black-background modal edit-task-window ">
+    <div class="modal-window">
+        <div class="top-modal flex flex-between align-center w-full">
+            <p class="mb-1">Edit Task id ${newData.id}</p>
+            <svg onclick="closeEventModals()" class="close-modal pointer drop-shadow" xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </div>
+        <form>
+            <div class="center-modal">
+
+                <div class="mb-20">
+                    <label class="form-label">Task</label>
+                    <input class="form-control" type="text" value="${newData.title}">
+                </div>
+                
+            </div>
+        </form>
+        <div class="bottom-modal">
+            <div class="stripe-gray my-30"></div>
+            <div class="flex flex-between align-center my-40">
+                <div class="select"  onclick="selectEvents()">
+                    <p class="mb-1">General</p>
+                    <ul class="select-popup hidden">
+                        <li>Text</li>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                    </ul>
+                </div>
+                <div class="flex">
+                    <button class="button-blue-outline close-modal mr-10" onclick="closeEventModals()">Discard</button>
+                    <button type="submit" class="button-blue edit-task-save">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>`
+                    let box = document.createElement('div')
+                    setTimeout(() => {
+                        box.innerHTML = editWindow
+                        document.body.appendChild(box)
+                    }, 100)
+
                 }
             })
 
