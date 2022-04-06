@@ -117,5 +117,5 @@ const taskDelete = new DataS({
 taskPut.delete().then(data=>{
     console.log('data',data)
 }).catch((error) => {
-    console.log('error put',error)
+    console.log('error delete',error)
 })
