@@ -2,18 +2,7 @@ document.querySelector('.add-new-task').addEventListener('click',()=>{
     alert('add new task')
 })
 
-// get todo list
-// let todoUrl = 'https://jsonplaceholder.typicode.com/todos/'
-// let todosList = []
-// const getData = async (url) => {
-//     let response = await fetch(url)
-//     if (response.ok) {
-//         let result = await response.json();
-//         return result;
-//     }
-// }
-// getData(todoUrl).then(data => {
-//
+/// GET
 const taskGet = new DataS({
     url: 'https://jsonplaceholder.typicode.com/todos/',
 })
@@ -63,6 +52,8 @@ if(taskGet) {
         }
 
 
+    }).catch((error) => {
+        console.log('error get',error)
     })
 
     function resTasks() {
@@ -75,7 +66,7 @@ if(taskGet) {
     }
 }
 
-
+/// POST
 const taskPost = new DataS({
     url: 'https://jsonplaceholder.typicode.com/posts',
     data: JSON.stringify({
@@ -86,4 +77,35 @@ const taskPost = new DataS({
 })
 taskPost.post().then(data=>{
     console.log('data',data)
+}).catch((error) => {
+    console.log('error post',error)
+})
+
+/// PUT
+const taskPut = new DataS({
+    url: 'https://jsonplaceholder.typicode.com/posts/1',
+    data: JSON.stringify({
+        id: 13,
+        title: 'foo56',
+        body: 'bar789',
+        userId: 1,
+    })
+})
+taskPut.put().then(data=>{
+    console.log('data',data)
+}).catch((error) => {
+    console.log('error put',error)
+})
+
+/// DELETE
+const taskDelete = new DataS({
+    url: 'https://jsonplaceholder.typicode.com/posts/1',
+    data: JSON.stringify({
+        id: 13
+    })
+})
+taskPut.delete().then(data=>{
+    console.log('data',data)
+}).catch((error) => {
+    console.log('error put',error)
 })

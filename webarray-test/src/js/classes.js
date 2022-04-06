@@ -24,37 +24,68 @@ class Modals extends OpenModals {
         super(options.selector);
     }
 }
+
 //////////////////////
-class GetDataFromServer{
+class GetDataFromServer {
     constructor(url, method, data) {
         this.url = url
         this.method = method
         this.data = data
     }
-      async get() {
-             const response = await fetch(this.url);
-          if (response.ok) {
-              const json = await response.json();
-              return json;
-          } else{
-              return 'error'
-          }
+
+    async get() {
+        const response = await fetch(this.url);
+        if (response.ok) {
+            const json = await response.json();
+            return json;
+        } else {
+            return 'error'
         }
-        async post(){
-            const response= await   fetch(this.url, {
-                method: 'POST',
-                body: this.data,
-                headers: {
-                    'Content-type': 'application/json; charset=UTF-8',
-                },
-            })
-            if (response.ok) {
-                const jsonAnswer = await response.json();
-                return jsonAnswer;
-            }
+    }
+
+    async post() {
+        const response = await fetch(this.url, {
+            method: 'POST',
+            body: this.data,
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            },
+        })
+        if (response.ok) {
+            const jsonAnswer = await response.json();
+            return jsonAnswer;
         }
+    }
+
+    async put() {
+        const response = await fetch(this.url, {
+            method: 'PUT',
+            body: this.data,
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            },
+        })
+        if (response.ok) {
+            const jsonAnswerPut = await response.json();
+            return jsonAnswerPut;
+        }
+    }
+    async delete() {
+        const response = await fetch(this.url, {
+            method: 'DELETE',
+            body: this.data,
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            },
+        })
+        if (response.ok) {
+            const jsonAnswerPut = await response.json();
+            return jsonAnswerPut;
+        }
+    }
 
 }
+
 // if (response.ok) {
 //     let result = await response.json();
 //     return result;

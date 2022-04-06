@@ -70,19 +70,6 @@ class GetDataFromServer {
             return jsonAnswerPut;
         }
     }
-    async delete() {
-        const response = await fetch(this.url, {
-            method: 'DELETE',
-            body: this.data,
-            headers: {
-                'Content-type': 'application/json; charset=UTF-8',
-            },
-        })
-        if (response.ok) {
-            const jsonAnswerPut = await response.json();
-            return jsonAnswerPut;
-        }
-    }
 
 }
 
