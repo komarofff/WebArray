@@ -86,7 +86,7 @@ const taskPost = new DataS({
     })
 })
 taskPost.post().then(data=>{
-    console.log('data',data)
+    //console.log('data',data)
 }).catch((error) => {
     console.log('error post',error)
 })
@@ -102,7 +102,7 @@ const taskPut = new DataS({
     })
 })
 taskPut.put().then(data=>{
-    console.log('data',data)
+    //console.log('data',data)
 }).catch((error) => {
     console.log('error put',error)
 })
@@ -115,7 +115,7 @@ const taskDelete = new DataS({
     })
 })
 taskPut.delete().then(data=>{
-    console.log('data',data)
+    //console.log('data',data)
 }).catch((error) => {
     console.log('error delete',error)
 })

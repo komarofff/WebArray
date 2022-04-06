@@ -20,18 +20,14 @@ class OpenModals {
     }
 
     click() {
+
         this.$el.addEventListener('click', () => {
             this.$elem.classList.remove('hidden')
             if(this.$el.dataset.data){this.$elem.dataset.data = this.$el.dataset.data}
             if (this.data) {
                  this.$elem.dataset.data = this.data
              }
-            if(this.selector === '.edit-file'){
-                this.$elem.dataset.data = document.querySelector('.project-section').dataset.data
-            }
-            if(this.selector === '.edit-folder'){
-                this.$elem.dataset.data = document.querySelector('.folder-section').dataset.data
-            }
+
         })
     }
 
