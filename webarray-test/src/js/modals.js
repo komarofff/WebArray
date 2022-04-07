@@ -37,6 +37,11 @@ function selectEvents() {
     selects.forEach((el) => {
             el.classList.toggle('rotate-after')
             el.querySelector('.select-popup').classList.toggle('hidden')
+                el.addEventListener('click',(e)=>{
+                    console.log(e.target.textContent)
+                    console.log(e.target.parentNode.parentNode)
+                    console.log(e.target.parentNode.parentNode.childNodes[1].textContent)
+                })
     })
 }
 
