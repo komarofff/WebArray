@@ -166,7 +166,7 @@ function showEditTaskWindow(e){
 
                 <div class="flex">
                     <button class="button-blue-outline close-modal mr-10" onclick="closeEventModals()">Discard</button>
-                    <button type="submit" class="button-blue edit-task-save" onclick="editTask(${taskId})">Save</button>
+                    <button type="submit" class="button-blue edit-task-save" onclick="saveTaskChanges(${taskId})">Save</button>
                 </div>
             </div>
         </div>
@@ -185,8 +185,8 @@ function showEditTaskWindow(e){
         }
 
 }
-function editTask(){
-    alert('edit task id='+ taskId)
+function saveTaskChanges(){
+    alert('save changes for  task id='+ taskId)
 }
 
 /// POST
