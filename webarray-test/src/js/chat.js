@@ -1,31 +1,26 @@
 document.querySelector('.send-message-button').addEventListener('click', (e) => {
     let newMessage = document.querySelector('.send-message-input').value
     let now = getTimeNow()
-    alert('message='+ newMessage+' date='+now)
+    alert('message=' + newMessage + ' date=' + now)
     document.querySelector('.send-message-input').value = null
 
 })
-function getTimeNow(){
-    // let options = {
-    //     era: 'long',
-    //     year: 'numeric',
-    //     month: 'long',
-    //     day: 'numeric',
-    //     weekday: 'long',
-    //     timezone: 'UTC',
-    //     hour: 'numeric',
-    //     minute: 'numeric',
-    //     second: 'numeric'
-    // };
-    var options = {  year: 'numeric', month: 'long', day: 'numeric',hour: 'numeric', minute: 'numeric', second: 'numeric' }
 
+function getTimeNow() {
+    let options = {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: 'numeric',
+        minute: 'numeric',
+        second: 'numeric'
+    }
     let date = new Date()
-    let dateNow = new Date(date.getFullYear(),date.getMonth() ,date.getDate(), date.getHours(),date.getMinutes(),date.getSeconds())
-
-   return  dateNow.toLocaleString("en-US", options)
-
+    let dateNow = new Date(date.getFullYear(), date.getMonth(), date.getDate(), date.getHours(), date.getMinutes(), date.getSeconds())
+    return dateNow.toLocaleString("en-US", options)
 }
-let chat  = document.querySelector('.chat-data')
+
+let chat = document.querySelector('.chat-data')
 let divChat = null
 let chatId = null
 
@@ -34,9 +29,9 @@ let chatId = null
 const chatGet = new DataS({
     url: 'https://jsonplaceholder.typicode.com/todos/',
 })
-if(chatGet) {
+if (chatGet) {
     chatGet.get().then(data => {
-       // console.log(data)
+        // console.log(data)
         chatList = data
         // let chat = document.querySelector('.chat-data')
 
@@ -49,11 +44,11 @@ if(chatGet) {
             chat.insertAdjacentElement('beforeend', divChat)
         }
     }).catch((error) => {
-        console.log('error get',error)
+        console.log('error get', error)
     })
 }
 
-function showchatsInDiv(){
+function showchatsInDiv() {
     chat.innerHTML = ``
     amounOfchats()
     chatList.forEach((el) => {
@@ -68,8 +63,8 @@ function showchatsInDiv(){
     })
 
 
-
 }
+
 function amounOfchats() {
     let allchats = chatList.length
     let resolvedchats = chatList.filter((val) => val.completed === true).length
@@ -89,10 +84,10 @@ const chatPost = new DataS({
         userId: 11,
     })
 })
-chatPost.post().then(data=>{
+chatPost.post().then(data => {
     //console.log('data',data)
 }).catch((error) => {
-    console.log('error post',error)
+    console.log('error post', error)
 })
 
 /// PUT
@@ -105,10 +100,10 @@ const chatPut = new DataS({
         userId: 1,
     })
 })
-chatPut.put().then(data=>{
+chatPut.put().then(data => {
     //console.log('data',data)
 }).catch((error) => {
-    console.log('error put',error)
+    console.log('error put', error)
 })
 
 /// DELETE
@@ -118,8 +113,8 @@ const chatDelete = new DataS({
         id: 13
     })
 })
-chatPut.delete().then(data=>{
+chatPut.delete().then(data => {
     //console.log('data',data)
 }).catch((error) => {
-    console.log('error delete',error)
+    console.log('error delete', error)
 })
