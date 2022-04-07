@@ -7,7 +7,7 @@ function mainSection(e){
         closeMainMenus()
         let mainPopup = `<div class="main main-menu-box animation-popup " style="position:fixed; left: ${xCoordinate}px; top: ${yCoordinate}px">
     <ul>
-        <li class="new-folder">
+        <li class="new-folder" onclick="createNewFolder()">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                  class="feather feather-folder-plus">
@@ -16,7 +16,7 @@ function mainSection(e){
                 <line x1="9" y1="14" x2="15" y2="14"></line>
             </svg>
             <span>New folder</span></li>
-        <li class="new-file">
+        <li class="new-file" onclick="createNewFile()">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                  class="feather feather-file-plus">
@@ -78,10 +78,10 @@ function mainSection(e){
 
         setTimeout(()=>{
             //new file
-            const newFile = new Modals({
-                selector: ".new-file"
-            })
-            newFile.click()
+            // const newFile = new Modals({
+            //     selector: ".new-file"
+            // })
+            // newFile.click()
 
             mainMenu('main')
 
@@ -89,4 +89,91 @@ function mainSection(e){
 
     }
 
+}
+function createNewFile(){
+    let modal = `<div class="black-background modal new-file-window ">
+    <div class="modal-window">
+        <div class="top-modal flex flex-between align-center w-full">
+            <p class="mb-1">Add New File</p>
+            <svg onclick="closeEventModals()" class="close-modal pointer drop-shadow" xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        
+        </div>
+        <form>
+            <div class="center-modal">
+
+                <div class="mb-20">
+                    <label class="form-label">File Name</label>
+                    <input class="form-control" type="text" placeholder="File.txt">
+                </div>
+                <div class="mb-20">
+                    <textarea class="form-control" placeholder="Additional notes..."> need code editor</textarea>
+                </div>
+
+            </div>
+        </form>
+        <div class="bottom-modal">
+            <div class="stripe-gray my-30"></div>
+            <div class="flex flex-between align-center my-40">
+                <div class="select"  onclick="selectEvents()">
+                    <p class="mb-1">General</p>
+                    <ul class="select-popup hidden">
+                        <li>Text</li>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                    </ul>
+                </div>
+                <div class="flex">
+                    <button class="button-blue-outline close-modal mr-10" onclick="closeEventModals()">Discard</button>
+                    <button type="submit" class="button-blue new-file-save">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+`
+    let box = document.createElement('div')
+    setTimeout(() => {
+        box.innerHTML = modal
+        document.body.appendChild(box)
+    }, 100)
+}
+function createNewFolder(){
+    let modal = `<div class="black-background modal new-file-window ">
+    <div class="modal-window">
+        <div class="top-modal flex flex-between align-center w-full">
+            <p class="mb-1">Create New Folder</p>
+            <svg onclick="closeEventModals()" class="close-modal pointer drop-shadow" xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        
+        </div>
+        <form>
+            <div class="center-modal">
+
+                <div class="mb-20">
+                    <label class="form-label">Folder Name</label>
+                    <input class="form-control" type="text" placeholder="File.txt">
+                </div>
+               
+
+            </div>
+        </form>
+        <div class="bottom-modal">
+            <div class="stripe-gray my-30"></div>
+            <div class="flex flex-between align-center my-40">
+                
+                <div class="flex">
+                    <button class="button-blue-outline close-modal mr-10" onclick="closeEventModals()">Discard</button>
+                    <button type="submit" class="button-blue new-file-save">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+`
+    let box = document.createElement('div')
+    setTimeout(() => {
+        box.innerHTML = modal
+        document.body.appendChild(box)
+    }, 100)
 }
