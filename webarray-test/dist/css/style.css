@@ -5019,6 +5019,7 @@ main {
   border-radius: 6px;
   background: #fff;
   border: 1px solid #e5eaf0;
+  padding: 5px;
 }
 
 .main-menu-box {
@@ -5198,6 +5199,40 @@ main {
 .breadcrumb-box .breadcrumb .active a {
   color: #2196f3;
   font-weight: 500;
+}
+
+.folder {
+  position: relative;
+}
+.folder .folder-name {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 10px;
+  font-size: 0.7rem;
+}
+
+.project {
+  position: relative;
+}
+.project .project-name {
+  position: absolute;
+  bottom: 15px;
+  left: 20px;
+  right: 10px;
+  font-size: 0.7rem;
+}
+.project .project-box {
+  min-width: 100%;
+  height: 80%;
+  overflow: hidden;
+  border-radius: 6px;
+}
+.project .project-box img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .animation-popup {
