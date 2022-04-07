@@ -157,10 +157,10 @@ function editFile() {
 
 <!--                <div class="mb-20">-->
 <!--                    <label class="form-label">File Name</label>-->
-<!--                    <input class="form-control" type="text" placeholder="File.txt">-->
+<!--                    <input class="form-control w-full" type="text" placeholder="File.txt">-->
 <!--                </div>-->
                 <div class="mb-20">
-                    <textarea class="form-control" placeholder="Additional notes..."> need code editor</textarea>
+                    <textarea class="form-control w-full" placeholder="Additional notes..."> need code editor</textarea>
                 </div>
 
             </div>

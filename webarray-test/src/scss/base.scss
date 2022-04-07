@@ -38,9 +38,12 @@ html {
 }
 
 .w-full {
-  width: 100%;
+  width: 100%!important;
 }
-
+.min-w-full{
+  min-width: 100%;
+  max-width: 100%;
+}
 .max-w-full {
   max-width: 100%;
 }

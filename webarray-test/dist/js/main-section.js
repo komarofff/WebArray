@@ -1,8 +1,7 @@
-
-function mainSection(e){
+function mainSection(e) {
     closeMainMenus()
 
-    if (!e.target.parentElement.classList.contains('folder') && !e.target.classList.contains('project')){
+    if (!e.target.parentElement.classList.contains('folder') && !e.target.classList.contains('project')) {
         e.preventDefault()
         closeMainMenus()
         let mainPopup = `<div class="main main-menu-box animation-popup " style="position:fixed; left: ${xCoordinate}px; top: ${yCoordinate}px">
@@ -71,12 +70,12 @@ function mainSection(e){
 </div>`
         let newMain = document.createElement('div')
 
-        setTimeout(()=>{
+        setTimeout(() => {
             newMain.innerHTML = mainPopup
             document.body.append(newMain)
-        },100)
+        }, 100)
 
-        setTimeout(()=>{
+        setTimeout(() => {
             //new file
             // const newFile = new Modals({
             //     selector: ".new-file"
@@ -85,12 +84,13 @@ function mainSection(e){
 
             mainMenu('main')
 
-        },200)
+        }, 200)
 
     }
 
 }
-function createNewFile(){
+
+function createNewFile() {
     let modal = `<div class="black-background modal new-file-window ">
     <div class="modal-window">
         <div class="top-modal flex flex-between align-center w-full">
@@ -103,25 +103,34 @@ function createNewFile(){
 
                 <div class="mb-20">
                     <label class="form-label">File Name</label>
-                    <input class="form-control" type="text" placeholder="File.txt">
+                    <input class="form-control w-full" type="text" placeholder="File.txt">
                 </div>
                 <div class="mb-20">
-                    <textarea class="form-control" placeholder="Additional notes..."> need code editor</textarea>
+                    <textarea class="form-control w-full" placeholder="Additional notes..."> need code editor</textarea>
                 </div>
 
             </div>
         </form>
         <div class="bottom-modal">
             <div class="stripe-gray my-30"></div>
-            <div class="flex flex-between align-center my-40">
-                <div class="select"  onclick="selectEvents()">
-                    <p class="mb-1">General</p>
-                    <ul class="select-popup hidden">
-                        <li>Text</li>
-                        <li>HTML</li>
-                        <li>CSS</li>
-                    </ul>
-                </div>
+            <div class="flex flex-between align-center my-40">  
+            
+            <div class="form-select-div">            
+              <select name="select" class="form-select">
+              <option selected>General</option>
+                 <option>Text</option>
+                 <option>HTML</option>
+                 <option>CSS</option>
+              </select>            
+            </div>
+<!--                <div class="select"  onclick="selectEvents()">-->
+<!--                    <p class="mb-1 selectTitle">General</p>-->
+<!--                    <ul class="select-popup hidden">-->
+<!--                        <li>Text</li>-->
+<!--                        <li>HTML</li>-->
+<!--                        <li>CSS</li>-->
+<!--                    </ul>-->
+<!--                </div>-->
                 <div class="flex">
                     <button class="button-blue-outline close-modal mr-10" onclick="closeEventModals()">Discard</button>
                     <button type="submit" class="button-blue new-file-save">Save</button>
@@ -138,7 +147,8 @@ function createNewFile(){
         document.body.appendChild(box)
     }, 100)
 }
-function createNewFolder(){
+
+function createNewFolder() {
     let modal = `<div class="black-background modal new-file-window ">
     <div class="modal-window">
         <div class="top-modal flex flex-between align-center w-full">
@@ -151,7 +161,7 @@ function createNewFolder(){
 
                 <div class="mb-20">
                     <label class="form-label">Folder Name</label>
-                    <input class="form-control" type="text" placeholder="File.txt">
+                    <input class="form-control w-full" type="text" placeholder="File.txt">
                 </div>
                
 
@@ -177,12 +187,14 @@ function createNewFolder(){
         document.body.appendChild(box)
     }, 100)
 }
-function uploadFile(){
+
+function uploadFile() {
     let input = document.createElement('input');
     input.type = 'file';
     input.click();
 }
-function share(){
+
+function share() {
     let modal = `<div class="black-background modal new-file-window ">
     <div class="modal-window">
         <div class="top-modal flex flex-between align-center w-full">
@@ -192,32 +204,35 @@ function share(){
         </div>
         <form>
             <div class="center-modal">
-                <div class="select big-select mb-20"  onclick="selectEvents()">
-                    <p class="mb-1">View+Edit</p>
-                    <ul class="select-popup big-select hidden">
-                        <li>Only View</li>
-                        <li>View+Edit+Delete</li>
-                        
-                    </ul>
-                </div>
+            <label class="form-label">Permission</label>   
+            <div class="form-select-div  mb-20">                 
+              <select name="select" class="form-select big-select">
+              <option selected>View+Edit</option>
+                 <option>Only View</option>
+                 <option>View+Edit+Delete</option>
+              </select>            
+            </div>
                 <div class="mb-20">
                     <label class="form-label">Link</label>
-                    <input class="form-control" type="text" placeholder="File.txt">
-                </div>
-               
+                    <div class="flex align-center">
+                    <input class="form-control w-full mr-20 " type="text" placeholder="https://webarray/test/project-23/">
+                    <p class="form-control w-full">share</p>
+                    </div>
+                </div>              
 
             </div>
-        </form>
-        <div class="bottom-modal">
+            <div class="bottom-modal">
             <div class="stripe-gray my-30"></div>
-            <div class="flex flex-between align-center my-40">
+            <div class="flex flex-end align-center my-40">
                 
                 <div class="flex">
-                    <button class="button-blue-outline close-modal mr-10" onclick="closeEventModals()">Discard</button>
-                    <button type="submit" class="button-blue new-file-save">Save</button>
+                    <button class="button-blue-outline close-modal mr-10" onclick="closeEventModals()">Cancel</button>
+                    <button type="submit" class="button-blue new-file-save">Copy</button>
                 </div>
             </div>
         </div>
+        </form>
+        
     </div>
 
 </div>

@@ -38,15 +38,15 @@ function addBookmark() {
             <div class="center-modal">
                 <div class="mb-20">
                     <label class="form-label">Title</label>
-                    <input class="form-control" type="text" placeholder="Bookmark title..." required>
+                    <input class="form-control w-full" type="text" placeholder="Bookmark title..." required>
                 </div>
                 <div class="mb-20">
                     <label class="form-label">Link</label>
-                    <input class="form-control" type="text" placeholder="Link to page you want to bookmark..." required>
+                    <input class="form-control w-full" type="text" placeholder="Link to page you want to bookmark..." required>
                 </div>
                 <div class="mb-20">
                     <label class="form-label">Notes</label>
-                    <textarea class="form-control" placeholder="Additional notes..." required></textarea>
+                    <textarea class="form-control w-full" placeholder="Additional notes..." required></textarea>
                 </div>
             </div>
             <div class="bottom-modal">
@@ -99,15 +99,15 @@ function editBookmark(id) {
                 <div>
                     <div class="mb-20">
                         <label class="form-label">Title</label>
-                        <input class="form-control" type="text" value="${editData.title}">
+                        <input class="form-control w-full" type="text" value="${editData.title}">
                     </div>
                     <div class="mb-20">
                         <label class="form-label">Link</label>
-                        <input class="form-control" type="text" value="${editData.link}">
+                        <input class="form-control w-full" type="text" value="${editData.link}">
                     </div>
                     <div class="mb-20">
                         <label class="form-label">Notes</label>
-                        <textarea class="form-control">${editData.notes}</textarea>
+                        <textarea class="form-control w-full">${editData.notes}</textarea>
                     </div>
                 </div>
             </div>

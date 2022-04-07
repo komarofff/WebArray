@@ -16,7 +16,7 @@ document.querySelector('.new-task').addEventListener('click',()=>{
 
                 <div class="mb-20">
                     <label class="form-label">Task</label>
-                    <input class="form-control" type="text" placeholder="new task">
+                    <input class="form-control w-full" type="text" placeholder="new task">
                 </div>
                 
             </div>
@@ -100,7 +100,7 @@ if(taskGet) {
 
                 <div class="mb-20">
                     <label class="form-label">Task</label>
-                    <input class="form-control" type="text" value="${newData.title}">
+                    <input class="form-control w-full" type="text" value="${newData.title}">
                 </div>
                 
             </div>
