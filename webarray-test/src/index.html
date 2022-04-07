@@ -278,33 +278,29 @@
         </div>
         <div class="center-zone__inner-section">
 
-            <div class="relative folder" data-data='{"id":1,"foldername":"Folder 1","link":"https://webarray.ca","author":"Konrad","createdAt":"22.03.2022"}'>
-                <img src="@img/folder.png" alt="folder">
+            <div class="relative folder" data-data='{"id":1,"foldername":"Folder 1","link":"https://webarray.ca","author":"Konrad","createdAt":"22.03.2022"}' oncontextmenu="folderMenu(event)">
                 <div class="folder-name">
                     <p>Folder 1</p>
                 </div>
             </div>
-            <div class="relative folder" data-data='{"id":2,"foldername":"Folder 2","link":"https://webarray.ca","author":"Konrad","createdAt":"22.03.2022"}'>
-                <img src="@img/folder.png" alt="folder">
+            <div class="relative folder" data-data='{"id":2,"foldername":"Folder 2","link":"https://webarray.ca","author":"Konrad","createdAt":"22.03.2022"}'  oncontextmenu="folderMenu(event)">
                 <div class="folder-name">
                     <p>Folder 2</p>
                 </div>
             </div>
-            <div class="relative folder" data-data='{"id":3,"foldername":"Folder 3","link":"https://webarray.ca","author":"Konrad","createdAt":"22.03.2022"}'>
-                <img src="@img/folder.png" alt="folder">
+            <div class="relative folder" data-data='{"id":3,"foldername":"Folder 3","link":"https://webarray.ca","author":"Konrad","createdAt":"22.03.2022"}'  oncontextmenu="folderMenu(event)">
                 <div class="folder-name">
                     <p>Folder 3</p>
                 </div>
             </div>
-            <div class="relative folder" data-data='{"id":4,"foldername":"Folder 4","link":"https://webarray.ca","author":"Konrad","createdAt":"22.03.2022"}'>
-                <img src="@img/folder.png" alt="folder">
+            <div class="relative folder" data-data='{"id":4,"foldername":"Folder 4","link":"https://webarray.ca","author":"Konrad","createdAt":"22.03.2022"}'  oncontextmenu="folderMenu(event)">
                 <div class="folder-name">
                     <p>Folder 4</p>
                 </div>
             </div>
 
 
-            <div class="center-zone__project-box project" data-data='{"id":1,"filename":" File name 1","link":"https://webarray.ca","author":"Konrad","createdAt":"22.03.2022"}'>
+            <div class="center-zone__project-box project" data-data='{"id":1,"filename":" File name 1","link":"https://webarray.ca","author":"Konrad","createdAt":"22.03.2022"}' oncontextmenu="showFileMenu(event)">
                 <div class="project-box">
                     <img src="@img/test-image-bookmark-preview.jpg" alt="image">
                 </div>
@@ -312,11 +308,46 @@
                     <p>File name 1</p>
                 </div>
             </div>
-            <div class="center-zone__project-box project"  data-data='{"id":2,"filename":" File name 2","link":"https://webarray.ca","author":"Konrad","createdAt":"22.03.2022"}'></div>
-            <div class="center-zone__project-box project"  data-data='{"id":3,"filename":" File name 3","link":"https://webarray.ca","author":"Konrad","createdAt":"22.03.2022"}'></div>
-            <div class="center-zone__project-box project"  data-data='{"id":4,"filename":" File name 4","link":"https://webarray.ca","author":"Konrad","createdAt":"22.03.2022"}'></div>
-            <div class="center-zone__project-box project"  data-data='{"id":5,"filename":" File name 5","link":"https://webarray.ca","author":"Konrad","createdAt":"22.03.2022"}'></div>
-            <div class="center-zone__project-box project"  data-data='{"id":6,"filename":" File name 6","link":"https://webarray.ca","author":"Konrad","createdAt":"22.03.2022"}'></div>
+            <div class="center-zone__project-box project"  data-data='{"id":2,"filename":" File name 2","link":"https://webarray.ca","author":"Konrad","createdAt":"22.03.2022"}' oncontextmenu="showFileMenu(event)">
+                 <div class="project-box">
+                    <img src="@img/test-image-bookmark-preview.jpg" alt="image">
+                </div>
+                <div class="project-name">
+                    <p>File name 2</p>
+                </div>
+            </div>
+            <div class="center-zone__project-box project"  data-data='{"id":3,"filename":" File name 3","link":"https://webarray.ca","author":"Konrad","createdAt":"22.03.2022"}' oncontextmenu="showFileMenu(event)">
+                 <div class="project-box">
+                    <img src="@img/test-image-bookmark-preview.jpg" alt="image">
+                </div>
+                <div class="project-name">
+                    <p>File name 3</p>
+                </div>
+            </div>
+            <div class="center-zone__project-box project"  data-data='{"id":4,"filename":" File name 4","link":"https://webarray.ca","author":"Konrad","createdAt":"22.03.2022"}' oncontextmenu="showFileMenu(event)">
+                 <div class="project-box">
+                    <img src="@img/test-image-bookmark-preview.jpg" alt="image">
+                </div>
+                <div class="project-name">
+                    <p>File name 4</p>
+                </div>
+            </div>
+            <div class="center-zone__project-box project"  data-data='{"id":5,"filename":" File name 5","link":"https://webarray.ca","author":"Konrad","createdAt":"22.03.2022"}' oncontextmenu="showFileMenu(event)">
+                 <div class="project-box project">
+                    <img src="@img/test-image-bookmark-preview.jpg" alt="image">
+                </div>
+                <div class="project-name">
+                    <p>File name 5</p>
+                </div>
+            </div>
+            <div class="center-zone__project-box project"  data-data='{"id":6,"filename":" File name 6","link":"https://webarray.ca","author":"Konrad","createdAt":"22.03.2022"}' oncontextmenu="showFileMenu(event)">
+                 <div class="project-box">
+                    <img src="@img/test-image-bookmark-preview.jpg" alt="image">
+                </div>
+                <div class="project-name">
+                    <p>File name 6</p>
+                </div>
+            </div>
 
         </div>
 

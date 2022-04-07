@@ -15,9 +15,11 @@ function closeMainMenus() {
 
 }
 let centerZone = document.querySelector('.center-zone')
-centerZone.addEventListener('contextmenu', folderSection)
-centerZone.addEventListener('contextmenu', fileSection)
-centerZone.addEventListener('contextmenu', mainSection)
+centerZone.addEventListener('contextmenu', (e)=>{
+    if(e.target.classList.contains('center-zone__inner-section') || e.target.classList.contains('breadcrumb')){
+        showCommonMenu(e)
+    }
+})
 
 
 //right mouse button

@@ -224,6 +224,8 @@ main {
 
 .folder{
   position: relative;
+  background: url('../images/folder.png') no-repeat;
+
   .folder-name{
     position: absolute;
     bottom: 20px;
@@ -235,10 +237,8 @@ main {
 .project{
   position: relative;
   .project-name{
-    position: absolute;
-    bottom: 15px;
-    left:20px;
-    right:10px;
+    //position: absolute;
+    margin-top:10px;
     font-size: .7rem;
   }
   .project-box{
