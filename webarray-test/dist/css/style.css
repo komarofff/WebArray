@@ -5239,7 +5239,7 @@ main {
   position: relative;
 }
 .project .project-name {
-  margin-top: 10px;
+  margin: 10px;
   font-size: 0.7rem;
 }
 .project .project-box {

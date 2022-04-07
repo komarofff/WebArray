@@ -25,7 +25,7 @@ let bookmarksData = [
 
 ]
 
-
+let bookmarkId = null
 function addBookmark() {
     let addBookmarks = `<div class="black-background modal add-bookmark-window ">
     <div class="modal-window">
@@ -74,13 +74,14 @@ function saveNewBookmark() {
 
 function editBookmark(id) {
     // document.querySelector('.edit-bookmark').addEventListener('click', () => {
-    let bookId = bookmarksData.findIndex(el => el.id === parseFloat(id))
+   let bookId = bookmarksData.findIndex(el => el.id === parseFloat(id))
     let editData = bookmarksData[bookId]
+    bookmarkId = editData.id
     console.log('bookmarksData=', bookmarksData[bookId])
     let editBookmarks = `<div class="black-background modal edit-bookmark-window ">
     <div class="modal-window">
         <div class="top-modal flex flex-between align-center w-full">
-            <p class="mb-1">Edit Bookmark</p>
+            <p class="mb-1">Edit Bookmark id = ${bookmarkId}</p>
             <svg onclick="closeEventModals()" class="close-modal pointer drop-shadow" xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
                </div>
         <form id="changes-in-bookmark">
@@ -130,7 +131,7 @@ function editBookmark(id) {
 }
 
 function saveChangeInBookmark() {
-    alert('save changes ')
+    alert('save changes id='+ bookmarkId)
     //closeEventModals()
 }
 
