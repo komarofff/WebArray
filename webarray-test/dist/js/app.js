@@ -163,12 +163,21 @@ function timerStart() {
 }
 
 // left section
+// const leftZone = document.querySelector('.left-zone')
+// leftZone.addEventListener('click', (e) => {
+//     // start stop left section full width
+//     if (e.target.classList.contains('left-zone') || e.target.classList.contains('open-left-section')) {
+//         leftZone.classList.toggle('left-zone-full')
+//     }
+// }, true)
 const leftZone = document.querySelector('.left-zone')
-leftZone.addEventListener('click', (e) => {
+const bookZone =  document.querySelector('.bookmark-image')
+bookZone.addEventListener('mouseover', (e) => {
     // start stop left section full width
-    if (e.target.classList.contains('left-zone') || e.target.classList.contains('open-left-section')) {
-        leftZone.classList.toggle('left-zone-full')
-    }
+    // if (e.target.classList.contains('left-zone') || e.target.classList.contains('open-left-section')) {
+    //     leftZone.classList.toggle('left-zone-full')
+    // }
+    leftZone.classList.toggle('left-zone-full')
 }, true)
 
 
