@@ -179,8 +179,8 @@
 </header>
 <main class="flex flex-between ">
     <aside class="left-zone ">
-        <div class="flex flex-start ml-17 mb-17  w-full open-left-section pointer" title="Open left section">
-            <img class="add-bookmark" src="@img/add-bookmark.svg" alt="add bookmark" title="Add bookmark">
+        <div class="flex flex-start ml-20 mb-17  w-full open-left-section pointer" title="Open left section">
+            <img class="add-bookmark" src="@img/add-bookmark.svg" alt="add bookmark" title="Add bookmark" onclick="addBookmark()">
         </div>
         <div class="left-zone__inner-section">
             <div class="mb-10 flex flex-start bookmark-section">
@@ -190,7 +190,7 @@
                 <div class="ml-10 flex flex-col flex-start align-start w-85">
                     <div class="bookmark-title w-full flex flex-between align-center pb-5 mb-10">
                         <p class="font-small weight-500">Bookmark title</p>
-                        <p class="edit-bookmark material-icons show-more pointer" data-data='{"id":1,"title":"title 1","link":"https://webarray.ca","notes":"some notes here","image":"https://webarray.ca/images/test.jpg"}'>more_horiz</p>
+                        <p class="edit-bookmark material-icons show-more pointer" onclick='editBookmark(1)'>more_horiz</p>
                     </div>
                     <div class="w-full flex flex-between align-center pb-5">
                         <p class="flex flex-start align-center">
@@ -212,7 +212,7 @@
                 <div class="ml-10 flex flex-col flex-start align-start w-85">
                     <div class="bookmark-title w-full flex flex-between align-center pb-5 mb-10">
                         <p class="font-small weight-500">Bookmark title</p>
-                        <p class="edit-bookmark material-icons show-more pointer">more_horiz</p>
+                        <p class="edit-bookmark material-icons show-more pointer" onclick='editBookmark(2)'>more_horiz</p>
                     </div>
                     <div class="w-full flex flex-between align-center pb-5">
                         <p class="flex flex-start align-center">
@@ -234,7 +234,7 @@
                 <div class="ml-10 flex flex-col flex-start align-start w-85">
                     <div class="bookmark-title w-full flex flex-between align-center pb-5 mb-10">
                         <p class="font-small weight-500">Bookmark title</p>
-                        <p class="edit-bookmark material-icons show-more pointer">more_horiz</p>
+                        <p class="edit-bookmark material-icons show-more pointer" onclick='editBookmark(3)'>more_horiz</p>
                     </div>
                     <div class="w-full flex flex-between align-center pb-5">
                         <p class="flex flex-start align-center">
@@ -421,84 +421,84 @@
     <div id="todo"></div>
 </main>
 
-<div class="modals5"></div>
+
 
 <!-- add  bookmarks-->
-<div class="black-background modal add-bookmark-window hidden">
-    <div class="modal-window">
-        <div class="top-modal flex flex-between align-center w-full">
-            <p>Add New Bookmark</p>
-            <img class="close-modal pointer drop-shadow" src="@img/x.svg">
-        </div>
-        <form>
-            <div class="center-modal">
-                <div class="mb-20">
-                    <label class="form-label">Title</label>
-                    <input class="form-control" type="text" placeholder="Bookmark title...">
-                </div>
-                <div class="mb-20">
-                    <label class="form-label">Link</label>
-                    <input class="form-control" type="text" placeholder="Link to page you want to bookmark...">
-                </div>
-                <div class="mb-20">
-                    <label class="form-label">Notes</label>
-                    <textarea class="form-control" placeholder="Additional notes..."></textarea>
-                </div>
-            </div>
-        </form>
-        <div class="bottom-modal">
-            <div class="stripe-gray my-30"></div>
-            <div class="flex flex-end align-center my-40">
-                <button class="button-blue-outline close-modal">Discard</button>
-                <button type="submit" class="button-blue add-new-bookmark">Save</button>
-            </div>
-        </div>
-    </div>
+<!--<div class="black-background modal add-bookmark-window hidden">-->
+<!--    <div class="modal-window">-->
+<!--        <div class="top-modal flex flex-between align-center w-full">-->
+<!--            <p>Add New Bookmark</p>-->
+<!--            <img class="close-modal pointer drop-shadow" src="@img/x.svg">-->
+<!--        </div>-->
+<!--        <form>-->
+<!--            <div class="center-modal">-->
+<!--                <div class="mb-20">-->
+<!--                    <label class="form-label">Title</label>-->
+<!--                    <input class="form-control" type="text" placeholder="Bookmark title...">-->
+<!--                </div>-->
+<!--                <div class="mb-20">-->
+<!--                    <label class="form-label">Link</label>-->
+<!--                    <input class="form-control" type="text" placeholder="Link to page you want to bookmark...">-->
+<!--                </div>-->
+<!--                <div class="mb-20">-->
+<!--                    <label class="form-label">Notes</label>-->
+<!--                    <textarea class="form-control" placeholder="Additional notes..."></textarea>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </form>-->
+<!--        <div class="bottom-modal">-->
+<!--            <div class="stripe-gray my-30"></div>-->
+<!--            <div class="flex flex-end align-center my-40">-->
+<!--                <button class="button-blue-outline close-modal">Discard</button>-->
+<!--                <button type="submit" class="button-blue add-new-bookmark">Save</button>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
 
-</div>
+<!--</div>-->
 <!-- edit edit bookmarks-->
-<div class="black-background modal edit-bookmark-window hidden">
-    <div class="modal-window">
-        <div class="top-modal flex flex-between align-center w-full">
-            <p class="mb-1">Edit Bookmark</p>
-            <img class="close-modal pointer drop-shadow" src="@img/x.svg">
-        </div>
-        <form>
-            <div class="center-modal flex-modal">
-                <div>
-                    <div class="mb-20">
-                        <label class="form-label">Preview</label>
-                        <p class="preview-box">
-                            <img src="@img/test-image-bookmark-preview.jpg" alt="test image">
-                        </p>
-                    </div>
-                </div>
-                <div>
-                    <div class="mb-20">
-                        <label class="form-label">Title</label>
-                        <input class="form-control" type="text" value="Bookmark title...">
-                    </div>
-                    <div class="mb-20">
-                        <label class="form-label">Link</label>
-                        <input class="form-control" type="text" value="https://www.webarray.ca">
-                    </div>
-                    <div class="mb-20">
-                        <label class="form-label">Notes</label>
-                        <textarea class="form-control">Additional notes...</textarea>
-                    </div>
-                </div>
-            </div>
-        </form>
-        <div class="bottom-modal">
-            <div class="stripe-gray my-30"></div>
-            <div class="flex flex-end align-center my-40">
-                <button class="button-blue-outline close-modal">Discard</button>
-                <button type="submit" class="button-blue edit-new-bookmark">Save</button>
-            </div>
-        </div>
-    </div>
+<!--<div class="black-background modal edit-bookmark-window hidden">-->
+<!--    <div class="modal-window">-->
+<!--        <div class="top-modal flex flex-between align-center w-full">-->
+<!--            <p class="mb-1">Edit Bookmark</p>-->
+<!--            <img class="close-modal pointer drop-shadow" src="@img/x.svg">-->
+<!--        </div>-->
+<!--        <form>-->
+<!--            <div class="center-modal flex-modal">-->
+<!--                <div>-->
+<!--                    <div class="mb-20">-->
+<!--                        <label class="form-label">Preview</label>-->
+<!--                        <p class="preview-box">-->
+<!--                            <img src="@img/test-image-bookmark-preview.jpg" alt="test image">-->
+<!--                        </p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div>-->
+<!--                    <div class="mb-20">-->
+<!--                        <label class="form-label">Title</label>-->
+<!--                        <input class="form-control" type="text" value="Bookmark title...">-->
+<!--                    </div>-->
+<!--                    <div class="mb-20">-->
+<!--                        <label class="form-label">Link</label>-->
+<!--                        <input class="form-control" type="text" value="https://www.webarray.ca">-->
+<!--                    </div>-->
+<!--                    <div class="mb-20">-->
+<!--                        <label class="form-label">Notes</label>-->
+<!--                        <textarea class="form-control">Additional notes...</textarea>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </form>-->
+<!--        <div class="bottom-modal">-->
+<!--            <div class="stripe-gray my-30"></div>-->
+<!--            <div class="flex flex-end align-center my-40">-->
+<!--                <button class="button-blue-outline close-modal">Discard</button>-->
+<!--                <button type="submit" class="button-blue edit-new-bookmark">Save</button>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
 
-</div>
+<!--</div>-->
 
 
 <!-- add new file-->
@@ -543,88 +543,6 @@
 </div>
 
 
-<!-- add new task-->
-<div class="black-background modal new-task-window hidden">
-    <div class="modal-window">
-        <div class="top-modal flex flex-between align-center w-full">
-            <p class="mb-1">Add New Task</p>
-            <img class="close-modal pointer drop-shadow" src="@img/x.svg">
-        </div>
-        <form>
-            <div class="center-modal">
-
-                <div class="mb-20">
-                    <label class="form-label">File Name</label>
-                    <input class="form-control" type="text" placeholder="File.txt">
-                </div>
-                <div class="mb-20">
-                    <textarea class="form-control" placeholder="Additional notes..."> need code editor</textarea>
-                </div>
-
-            </div>
-        </form>
-        <div class="bottom-modal">
-            <div class="stripe-gray my-30"></div>
-            <div class="flex flex-between align-center my-40">
-                <div class="select">
-                    <p class="mb-1">General</p>
-                    <ul class="select-popup hidden">
-                        <li>Text</li>
-                        <li>HTML</li>
-                        <li>CSS</li>
-                    </ul>
-                </div>
-                <div class="flex">
-                    <button class="button-blue-outline close-modal mr-10">Discard</button>
-                    <button type="submit" class="button-blue new-task-save">Save</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-</div>
-<!-- edit task-->
-<!--<div class="black-background modal edit-task-window hidden">-->
-<!--    <div class="modal-window">-->
-<!--        <div class="top-modal flex flex-between align-center w-full">-->
-<!--            <p class="mb-1">Edit Task</p>-->
-<!--            <img class="close-modal pointer drop-shadow" src="@img/x.svg">-->
-<!--        </div>-->
-<!--        <form>-->
-<!--            <div class="center-modal">-->
-
-<!--                <div class="mb-20">-->
-<!--                    <label class="form-label">File Name</label>-->
-<!--                    <input class="form-control" type="text" placeholder="File.txt">-->
-<!--                </div>-->
-<!--                <div class="mb-20">-->
-<!--                    <textarea class="form-control" placeholder="Additional notes..."> need code editor</textarea>-->
-<!--                </div>-->
-
-<!--            </div>-->
-<!--        </form>-->
-<!--        <div class="bottom-modal">-->
-<!--            <div class="stripe-gray my-30"></div>-->
-<!--            <div class="flex flex-between align-center my-40">-->
-<!--                <div class="select">-->
-<!--                    <p class="mb-1">General</p>-->
-<!--                    <ul class="select-popup hidden">-->
-<!--                        <li>Text</li>-->
-<!--                        <li>HTML</li>-->
-<!--                        <li>CSS</li>-->
-<!--                    </ul>-->
-<!--                </div>-->
-<!--                <div class="flex">-->
-<!--                    <button class="button-blue-outline close-modal mr-10">Discard</button>-->
-<!--                    <button type="submit" class="button-blue edit-task-save">Save</button>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-
-<!--</div>-->
-
-</div>
 
 <!--scripts section-->
 <script src="js/classes.js" defer></script>
@@ -639,6 +557,7 @@
 
 <script src="js/task.js" defer></script>
 <script src="js/chat.js" defer></script>
+<script src="js/bookmarks.js" defer></script>
 </body>
 </html>
 
