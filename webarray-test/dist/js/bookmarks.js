@@ -27,7 +27,6 @@ let bookmarksData = [
 
 
 function addBookmark() {
-    // document.querySelector('.add-bookmark').addEventListener('click', () => {
     let addBookmarks = `<div class="black-background modal add-bookmark-window ">
     <div class="modal-window">
         <div class="top-modal flex flex-between align-center w-full">
@@ -66,8 +65,6 @@ function addBookmark() {
         box.innerHTML = addBookmarks
         document.body.appendChild(box)
     }, 100)
-
-    // })
 }
 
 function saveNewBookmark() {
@@ -99,26 +96,27 @@ function editBookmark(id) {
                 <div>
                     <div class="mb-20">
                         <label class="form-label">Title</label>
-                        <input class="form-control w-full" type="text" value="${editData.title}">
+                        <input class="form-control w-full" type="text" value="${editData.title}" required>
                     </div>
                     <div class="mb-20">
                         <label class="form-label">Link</label>
-                        <input class="form-control w-full" type="text" value="${editData.link}">
+                        <input class="form-control w-full" type="text" value="${editData.link}" required>
                     </div>
                     <div class="mb-20">
                         <label class="form-label">Notes</label>
-                        <textarea class="form-control w-full">${editData.notes}</textarea>
+                        <textarea class="form-control w-full" required>${editData.notes}</textarea>
                     </div>
                 </div>
             </div>
-        </form>
-        <div class="bottom-modal">
+            <div class="bottom-modal">
             <div class="stripe-gray my-30"></div>
             <div class="flex flex-end align-center my-40">
                 <button class="button-blue-outline close-modal" onclick="closeEventModals()">Discard</button>
                 <button type="submit" class="button-blue edit-new-bookmark" onclick="saveChangeInBookmark()">Save</button>
             </div>
         </div>
+        </form>
+        
     </div>
 
 </div>`
@@ -128,11 +126,11 @@ function editBookmark(id) {
         document.body.appendChild(box)
     }, 100)
 
-    // })
+
 }
 
 function saveChangeInBookmark() {
     alert('save changes ')
-    closeEventModals()
+    //closeEventModals()
 }
 

@@ -1,9 +1,4 @@
 
-//new task
-// const newTask = new Modals({
-//     selector: ".new-task"
-// })
-// newTask.click()
 document.querySelector('.new-task').addEventListener('click',()=>{
     let addTaskWindow = `<div class="black-background modal edit-task-window ">
     <div class="modal-window">
@@ -11,16 +6,16 @@ document.querySelector('.new-task').addEventListener('click',()=>{
             <p class="mb-1">Add New Task</p>
             <svg onclick="closeEventModals()" class="close-modal pointer drop-shadow" xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
         </div>
-        <form onsubmit="addNewTask()">
+        <form>
             <div class="center-modal">
 
                 <div class="mb-20">
                     <label class="form-label">Title</label>
-                    <input class="form-control w-full" type="text" name="title" placeholder="Title of your task...">
+                    <input class="form-control w-full" type="text" name="title" placeholder="Title of your task..." required>
                 </div>
                  <div class="mb-20">
                     <label class="form-label">Task</label>
-                    <textarea class="form-control w-full"  name="task" placeholder="Type here..."></textarea>
+                    <textarea class="form-control w-full"  name="task" placeholder="Type here..." required></textarea>
                 </div>
                 <label class="form-label">For</label>
                 <div class="form-select-div">            
@@ -38,14 +33,12 @@ document.querySelector('.new-task').addEventListener('click',()=>{
             <div class="flex flex-end align-center my-40">     
                 <div class="flex">
                     <button class="button-blue-outline close-modal mr-10" onclick="closeEventModals()">Discard</button>
-                    <button type="submit" class="button-blue edit-task-save">Save</button>
+                    <button type="submit" class="button-blue edit-task-save" onclick="addNewTask()">Save</button>
                 </div>
             </div>
         </div>
-        </form>
-        
+        </form>        
     </div>
-
 </div>`
     let box = document.createElement('div')
     setTimeout(() => {
@@ -101,16 +94,16 @@ if(taskGet) {
             <p class="mb-1">Edit Task id ${newData.id}</p>
             <svg onclick="closeEventModals()" class="close-modal pointer drop-shadow" xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
         </div>
-        <form>
+        <form >
             <div class="center-modal">
 
                 <div class="mb-20">
                     <label class="form-label">Title</label>
-                    <input class="form-control w-full" type="text" name="title" value="${newData.title}">
+                    <input class="form-control w-full" type="text" name="title" value="${newData.title}" required>
                 </div>
                  <div class="mb-20">
                     <label class="form-label">Task</label>
-                    <textarea class="form-control w-full"  name="task">${newData.title}</textarea>
+                    <textarea class="form-control w-full"  name="task" required>${newData.title}</textarea>
                 </div>
                 <label class="form-label">For</label>
                 <div class="form-select-div">            
@@ -133,7 +126,7 @@ if(taskGet) {
  
                 <div class="flex">
                     <button class="button-blue-outline close-modal mr-10" onclick="closeEventModals()">Discard</button>
-                    <button type="submit" class="button-blue edit-task-save">Save</button>
+                    <button type="submit" class="button-blue edit-task-save" onclick="editTask(${newData.id})">Save</button>
                 </div>
             </div>
         </div>
@@ -169,8 +162,16 @@ if(taskGet) {
         document.querySelector('.all-tasks').innerHTML = allTasks
     }
 }
+
 function deleteTask(id){
     alert('delete task id=',id)
+}
+function addNewTask(){
+
+    alert('add new task')
+}
+function editTask(id){
+    alert('edit task id=',id)
 }
 /// POST
 const taskPost = new DataS({
