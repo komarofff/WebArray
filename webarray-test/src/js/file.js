@@ -161,7 +161,7 @@ function showFileMenu(e){
         let projectMenu = `<div class="project-section main-menu-box  animation-popup "
          style="position:fixed; left: ${xCoordinate}px; top: ${yCoordinate}px" data-data='${fileData}'>
     <ul>
-        <li class="open-file">
+        <li class="open-file" onclick="openFile()">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                  stroke-linejoin="round" class="feather feather-arrow-up-right">
@@ -169,7 +169,7 @@ function showFileMenu(e){
                 <polyline points="7 7 17 7 17 17"></polyline>
             </svg>
             <span>Open</span></li>
-        <li class="preview">
+        <li class="preview" onclick="previewFile()">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                  stroke-linejoin="round" class="feather feather-eye">
@@ -177,7 +177,7 @@ function showFileMenu(e){
                 <circle cx="12" cy="12" r="3"></circle>
             </svg>
             <span>Preview</span></li>
-        <li class="download">
+        <li class="download" onclick="downloadFile()">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                  fill="none"
                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -209,7 +209,7 @@ function showFileMenu(e){
             </ul>
 
         </li>
-        <li class="branch">
+        <li class="branch" onclick="branchFile()">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                  stroke-linejoin="round" class="feather feather-layers">
@@ -231,7 +231,7 @@ function showFileMenu(e){
     </ul>
     <p class="stripe-gray"></p>
     <ul>
-        <li class="share">
+        <li class="share" onclick="shareFile()">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                  fill="none"
                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -243,7 +243,7 @@ function showFileMenu(e){
     </ul>
     <p class="stripe-gray"></p>
     <ul>
-        <li class="rename">
+        <li class="rename" onclick="renameFile()">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                  stroke-linejoin="round" class="feather feather-edit-3">
@@ -251,7 +251,7 @@ function showFileMenu(e){
                 <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
             </svg>
             <span>Rename</span></li>
-        <li class="copy">
+        <li class="copy" onclick="copyFile()">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                  stroke-linejoin="round" class="feather feather-copy">
@@ -259,7 +259,7 @@ function showFileMenu(e){
                 <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
             </svg>
             <span>Copy</span></li>
-        <li class="delete">
+        <li class="delete" onclick="deleteFile()">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                  stroke-linejoin="round" class="feather feather-trash-2">
@@ -327,4 +327,28 @@ function editFile() {
         newWindow.innerHTML = window
         document.body.appendChild(newWindow)
     }, 100)
+}
+function openFile(){
+    alert("open file id="+fileId)
+}
+function previewFile(){
+    alert("Need light gallery for showing files / preview File id="+fileId)
+}
+function downloadFile(){
+    alert("download file id="+fileId)
+}
+function branchFile(){
+    alert("branch File id="+fileId)
+}
+function shareFile(){
+    alert("share file id="+fileId)
+}
+function renameFile(){
+    alert("rename File id="+fileId)
+}
+function copyFile(){
+    alert("copy file id="+fileId)
+}
+function deleteFile(){
+    alert("delete file id="+fileId)
 }
