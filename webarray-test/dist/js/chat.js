@@ -1,7 +1,30 @@
-document.querySelector('.send-message-box').addEventListener('click', (e) => {
-    console.log('send-message - ', e.target)
-})
+document.querySelector('.send-message-button').addEventListener('click', (e) => {
+    let newMessage = document.querySelector('.send-message-input').value
+    let now = getTimeNow()
+    alert('message='+ newMessage+' date='+now)
+    document.querySelector('.send-message-input').value = null
 
+})
+function getTimeNow(){
+    // let options = {
+    //     era: 'long',
+    //     year: 'numeric',
+    //     month: 'long',
+    //     day: 'numeric',
+    //     weekday: 'long',
+    //     timezone: 'UTC',
+    //     hour: 'numeric',
+    //     minute: 'numeric',
+    //     second: 'numeric'
+    // };
+    var options = {  year: 'numeric', month: 'long', day: 'numeric',hour: 'numeric', minute: 'numeric', second: 'numeric' }
+
+    let date = new Date()
+    let dateNow = new Date(date.getFullYear(),date.getMonth() ,date.getDate(), date.getHours(),date.getMinutes(),date.getSeconds())
+
+   return  dateNow.toLocaleString("en-US", options)
+
+}
 let chat  = document.querySelector('.chat-data')
 let divChat = null
 let chatId = null
