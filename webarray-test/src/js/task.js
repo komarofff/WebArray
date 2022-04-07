@@ -5,39 +5,45 @@
 // })
 // newTask.click()
 document.querySelector('.new-task').addEventListener('click',()=>{
-    let addTaskWindow = `<div class="black-background modal add-task-window ">
+    let addTaskWindow = `<div class="black-background modal edit-task-window ">
     <div class="modal-window">
         <div class="top-modal flex flex-between align-center w-full">
             <p class="mb-1">Add New Task</p>
             <svg onclick="closeEventModals()" class="close-modal pointer drop-shadow" xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
         </div>
-        <form>
+        <form onsubmit="addNewTask()">
             <div class="center-modal">
 
                 <div class="mb-20">
-                    <label class="form-label">Task</label>
-                    <input class="form-control w-full" type="text" placeholder="new task">
+                    <label class="form-label">Title</label>
+                    <input class="form-control w-full" type="text" name="title" placeholder="Title of your task...">
                 </div>
+                 <div class="mb-20">
+                    <label class="form-label">Task</label>
+                    <textarea class="form-control w-full"  name="task" placeholder="Type here..."></textarea>
+                </div>
+                <label class="form-label">For</label>
+                <div class="form-select-div">            
+                  <select name="select" class="form-select w-full">
+                   <option selected>General</option>
+                   <option>Orange</option>
+                   <option>White</option>
+                   <option>Purple</option>
+                 </select>            
+            </div>
                 
             </div>
-        </form>
-        <div class="bottom-modal">
+            <div class="bottom-modal">
             <div class="stripe-gray my-30"></div>
-            <div class="flex flex-between align-center my-40">
-                <div class="select"  onclick="selectEvents()">
-                    <p class="mb-1">General</p>
-                    <ul class="select-popup hidden">
-                        <li>Text</li>
-                        <li>HTML</li>
-                        <li>CSS</li>
-                    </ul>
-                </div>
+            <div class="flex flex-end align-center my-40">     
                 <div class="flex">
                     <button class="button-blue-outline close-modal mr-10" onclick="closeEventModals()">Discard</button>
                     <button type="submit" class="button-blue edit-task-save">Save</button>
                 </div>
             </div>
         </div>
+        </form>
+        
     </div>
 
 </div>`
@@ -99,23 +105,32 @@ if(taskGet) {
             <div class="center-modal">
 
                 <div class="mb-20">
-                    <label class="form-label">Task</label>
-                    <input class="form-control w-full" type="text" value="${newData.title}">
+                    <label class="form-label">Title</label>
+                    <input class="form-control w-full" type="text" name="title" value="${newData.title}">
                 </div>
+                 <div class="mb-20">
+                    <label class="form-label">Task</label>
+                    <textarea class="form-control w-full"  name="task">${newData.title}</textarea>
+                </div>
+                <label class="form-label">For</label>
+                <div class="form-select-div">            
+                  <select name="select" class="form-select w-full">
+                   <option selected>General</option>
+                   <option>Text</option>
+                   <option>HTML</option>
+                   <option>CSS</option>
+                 </select>            
+            </div>
                 
             </div>
         </form>
         <div class="bottom-modal">
             <div class="stripe-gray my-30"></div>
             <div class="flex flex-between align-center my-40">
-                <div class="select"  onclick="selectEvents()">
-                    <p class="mb-1">General</p>
-                    <ul class="select-popup hidden">
-                        <li>Text</li>
-                        <li>HTML</li>
-                        <li>CSS</li>
-                    </ul>
-                </div>
+              <p class="flex  align-center" onclick="deleteTask(${newData.id})">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"  stroke="#000" fill="rgba(0,23,55,.08)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash-2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>
+              <span class="font-small ml-8 weight-500">Delete</span></p>
+ 
                 <div class="flex">
                     <button class="button-blue-outline close-modal mr-10" onclick="closeEventModals()">Discard</button>
                     <button type="submit" class="button-blue edit-task-save">Save</button>
@@ -154,7 +169,9 @@ if(taskGet) {
         document.querySelector('.all-tasks').innerHTML = allTasks
     }
 }
-
+function deleteTask(id){
+    alert('delete task id=',id)
+}
 /// POST
 const taskPost = new DataS({
     url: 'https://jsonplaceholder.typicode.com/posts',

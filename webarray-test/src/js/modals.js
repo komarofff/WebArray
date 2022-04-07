@@ -22,17 +22,26 @@ function closeEventModals() {
 }
 
 //closeModals()
-
-function select() {
-    const selects = document.querySelectorAll('.select')
-    selects.forEach((el) => {
-        el.addEventListener('click', () => {
-            el.classList.toggle('rotate-after')
-            el.querySelector('.select-popup').classList.toggle('hidden')
-        })
-    })
-}
-
+//
+// function select() {
+//     const selects = document.querySelectorAll('.select')
+//     selects.forEach((el) => {
+//         el.addEventListener('click', () => {
+//             el.classList.toggle('rotate-after')
+//             el.querySelector('.select-popup').classList.toggle('hidden')
+//         })
+//     })
+// }
+//
+// // function selectEvents() {
+// //     const selects = document.querySelectorAll('.select')
+// //     selects.forEach((el) => {
+// //         el.classList.toggle('rotate-after')
+// //         el.querySelector('.select-popup').classList.toggle('hidden')
+// //         el.addEventListener('click', changeSelect)
+// //
+// //     })
+// // }
 // function selectEvents() {
 //     const selects = document.querySelectorAll('.select')
 //     selects.forEach((el) => {
@@ -40,35 +49,26 @@ function select() {
 //         el.querySelector('.select-popup').classList.toggle('hidden')
 //         el.addEventListener('click', changeSelect)
 //
+//
 //     })
 // }
-function selectEvents() {
-    const selects = document.querySelectorAll('.select')
-    selects.forEach((el) => {
-        el.classList.toggle('rotate-after')
-        el.querySelector('.select-popup').classList.toggle('hidden')
-        el.addEventListener('click', changeSelect)
-
-
-    })
-}
-
-function changeSelect(e) {
-    let newTitle = null
-    let oldTitleElement = null
-    let oldTitle = null
-    e.stopPropagation()
-    newTitle = e.target.textContent
-    oldTitleElement = e.target.parentNode.parentNode
-    oldTitle = oldTitleElement.querySelector(".selectTile")
-    console.log('e=', e.target)
-    console.log('oldTitleElement=', oldTitleElement)
-    console.log('newTitle=', newTitle)
-    console.log('oldTitle=', oldTitle)
-    // e.target.textContent = oldTitle
-    // e.target.parentNode.parentNode.childNodes[1].textContent = newTitle
-    //el.removeEventListener('click', changeSelect)
-}
-
+//
+// function changeSelect(e) {
+//     let newTitle = null
+//     let oldTitleElement = null
+//     let oldTitle = null
+//     e.stopPropagation()
+//     newTitle = e.target.textContent
+//     oldTitleElement = e.target.parentNode.parentNode
+//     oldTitle = oldTitleElement.querySelector(".selectTile")
+//     console.log('e=', e.target)
+//     console.log('oldTitleElement=', oldTitleElement)
+//     console.log('newTitle=', newTitle)
+//     console.log('oldTitle=', oldTitle)
+//     // e.target.textContent = oldTitle
+//     // e.target.parentNode.parentNode.childNodes[1].textContent = newTitle
+//     //el.removeEventListener('click', changeSelect)
+// }
+//
 
 
