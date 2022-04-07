@@ -1,5 +1,5 @@
 let newData = null
-
+let fileId = null
 // function fileSection(e) {
 //     closeMainMenus()
 //     if (e.target.classList.contains('project')) {
@@ -157,6 +157,7 @@ function showFileMenu(e){
             fileData= e.target.parentNode.parentNode.dataset.data
         }
        newData = JSON.parse( fileData)
+     fileId = newData.id
         let projectMenu = `<div class="project-section main-menu-box  animation-popup "
          style="position:fixed; left: ${xCoordinate}px; top: ${yCoordinate}px" data-data='${fileData}'>
     <ul>
@@ -284,6 +285,7 @@ function showFileMenu(e){
 }
 
 function editFile() {
+
     let data = newData
     let window = `<div class="black-background modal edit-file-window">
     <div class="modal-window">
@@ -294,11 +296,6 @@ function editFile() {
         </div>
         <form>
             <div class="center-modal">
-
-<!--                <div class="mb-20">-->
-<!--                    <label class="form-label">File Name</label>-->
-<!--                    <input class="form-control w-full" type="text" placeholder="File.txt">-->
-<!--                </div>-->
                 <div class="mb-20">
                     <textarea class="form-control w-full" placeholder="Additional notes..."> need code editor</textarea>
                 </div>

@@ -214,6 +214,7 @@ function folderMenu(e) {
     e.preventDefault()
     closeMainMenus()
     let folderData = null
+    console.log('data=',JSON.parse(e.target.dataset.data))
     if (e.target.dataset.data) {
         folderData = e.target.dataset.data
     }
@@ -223,11 +224,12 @@ function folderMenu(e) {
     if (e.target.parentNode.parentNode.dataset.data) {
         folderData = e.target.parentNode.parentNode.dataset.data
     }
-   id = folderData.id
+   let parseData = JSON.parse(folderData)
+    id = parseData.id
     let folderMenu = `<div class="folder-section main-menu-box  animation-popup "
          style="position:fixed; left: ${xCoordinate}px; top: ${yCoordinate}px"  data-data='${folderData}'>
     <ul>
-        <li class="open-folder" onclick="openFolder()">
+        <li class="open-folder" onclick="openFolder(${folderData.id})">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                  stroke-linejoin="round" class="feather feather-arrow-up-right">
@@ -318,24 +320,25 @@ function folderMenu(e) {
 
     setTimeout(() => {
         mainMenu('folder-section')
+
         console.log(JSON.parse(folderData))
     }, 200)
 }
 function openFolder(){
-    alert('open folder')
+    alert('open folder '+ id)
 }
 function downloadFolder(){
-    alert('download folder')
+    alert('download folder '+id)
 }
 function shareFolder(){
-    alert('shareFolder')
+    alert('shareFolder '+id)
 }
 function renameFolder(){
-    alert('renameFolder')
+    alert('renameFolder '+id)
 }
 function copyFolder(){
-    alert('')
+    alert('copyFolder '+id)
 }
 function deleteFolder(){
-    alert('copyFolder')
+    alert('deleteFolder '+id)
 }
