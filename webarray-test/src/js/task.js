@@ -1,6 +1,6 @@
 let task  = document.querySelector('.task-data')
 let div = null
-
+let taskId = null
 document.querySelector('.new-task').addEventListener('click',()=>{
     let addTaskWindow = `<div class="black-background modal edit-task-window ">
     <div class="modal-window">
@@ -117,8 +117,8 @@ function amounOfTasks() {
     document.querySelector('.all-tasks').innerHTML = allTasks
 }
 
-function deleteTask(idx){
-    alert('delete task id=',idx)
+function deleteTask(){
+    alert('delete task id='+ taskId)
 }
 function addNewTask(){
     alert('add new task')
@@ -128,7 +128,7 @@ function showEditTaskWindow(e){
         if (e.target.classList.contains('edit-task')) {
                     let arrIdNew = todosList.findIndex(val => val.id === parseFloat(e.target.dataset.id))
                     newData = todosList[arrIdNew]
-                    let taskId = newData.id
+                    taskId = newData.id
                     let editWindow = `<div class="black-background modal edit-task-window ">
     <div class="modal-window">
         <div class="top-modal flex flex-between align-center w-full">
@@ -160,7 +160,7 @@ function showEditTaskWindow(e){
              <div class="bottom-modal">
             <div class="stripe-gray my-30"></div>
             <div class="flex flex-between align-center my-40">
-              <p class="flex  align-center pointer" onclick="deleteTask(${taskId})">
+              <p class="flex  align-center pointer" onclick="deleteTask()">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"  stroke="#000" fill="rgba(0,23,55,.08)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash-2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>
               <span class="font-small ml-8 weight-500">Delete</span></p>
 
@@ -185,8 +185,8 @@ function showEditTaskWindow(e){
         }
 
 }
-function editTask(idx){
-    alert('edit task id=',idx)
+function editTask(){
+    alert('edit task id='+ taskId)
 }
 
 /// POST
