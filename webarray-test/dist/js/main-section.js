@@ -29,7 +29,7 @@ function mainSection(e){
     </ul>
     <p class="stripe-gray"></p>
     <ul>
-        <li class="upload">
+        <li class="upload" onclick="uploadFile()">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                  class="feather feather-arrow-up-circle">
@@ -59,7 +59,7 @@ function mainSection(e){
     </ul>
     <p class="stripe-gray"></p>
     <ul>
-        <li class="share">
+        <li class="share" onclick="share()">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                  class="feather feather-link">
@@ -151,6 +151,57 @@ function createNewFolder(){
 
                 <div class="mb-20">
                     <label class="form-label">Folder Name</label>
+                    <input class="form-control" type="text" placeholder="File.txt">
+                </div>
+               
+
+            </div>
+        </form>
+        <div class="bottom-modal">
+            <div class="stripe-gray my-30"></div>
+            <div class="flex flex-between align-center my-40">
+                
+                <div class="flex">
+                    <button class="button-blue-outline close-modal mr-10" onclick="closeEventModals()">Discard</button>
+                    <button type="submit" class="button-blue new-file-save">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+`
+    let box = document.createElement('div')
+    setTimeout(() => {
+        box.innerHTML = modal
+        document.body.appendChild(box)
+    }, 100)
+}
+function uploadFile(){
+    let input = document.createElement('input');
+    input.type = 'file';
+    input.click();
+}
+function share(){
+    let modal = `<div class="black-background modal new-file-window ">
+    <div class="modal-window">
+        <div class="top-modal flex flex-between align-center w-full">
+            <p class="mb-1">Share URL</p>
+            <svg onclick="closeEventModals()" class="close-modal pointer drop-shadow" xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        
+        </div>
+        <form>
+            <div class="center-modal">
+                <div class="select big-select mb-20"  onclick="selectEvents()">
+                    <p class="mb-1">View+Edit</p>
+                    <ul class="select-popup big-select hidden">
+                        <li>Only View</li>
+                        <li>View+Edit+Delete</li>
+                        
+                    </ul>
+                </div>
+                <div class="mb-20">
+                    <label class="form-label">Link</label>
                     <input class="form-control" type="text" placeholder="File.txt">
                 </div>
                
