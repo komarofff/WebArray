@@ -68,15 +68,9 @@ if(taskGet) {
             div.innerHTML = `<p>No data available</p>`
             task.insertAdjacentElement('beforeend', div)
         }
-
-
     }).catch((error) => {
         console.log('error get',error)
     })
-
-
-
-
 }
 
 function showTasksInDiv(){
