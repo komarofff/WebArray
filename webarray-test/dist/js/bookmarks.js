@@ -90,7 +90,7 @@ function editBookmark(id) {
                     <div class="mb-20">
                         <label class="form-label">Preview</label>
                         <p class="preview-box">
-                            <img src="../images/test-image-bookmark-preview.jpg" alt="test image">
+                            <img src="images/test-image-bookmark-preview.jpg" alt="test image">
                         </p>
                     </div>
                 </div>
