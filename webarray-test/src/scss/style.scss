@@ -52,3 +52,25 @@
   z-index: 9;
 }
 
+.gallery{
+  .center-zone__inner-section{
+    grid-template-columns: repeat(auto-fill,minmax(220px,220px)) !important;
+    .project,.folder{
+      width:220px !important;
+      height:240px !important;
+    }
+  }
+
+}
+.medium{
+  & .center-zone__inner-section{
+    grid-template-columns: repeat(auto-fill,minmax(140px,140px)) !important;
+    grid-gap: 25px;
+    .project,.folder{
+      width:130px !important;
+      height:150px !important;
+    }
+  }
+
+}
+
