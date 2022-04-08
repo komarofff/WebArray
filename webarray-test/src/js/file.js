@@ -143,22 +143,22 @@ let fileId = null
 //
 // }
 
-function showFileMenu(e){
-        e.preventDefault()
-        closeMainMenus()
-    let fileData= null
-        if (e.target.dataset.data) {
-            fileData= e.target.dataset.data
-        }
-        if (e.target.parentNode.dataset.data) {
-            fileData= e.target.parentNode.dataset.data
-        }
-        if (e.target.parentNode.parentNode.dataset.data) {
-            fileData= e.target.parentNode.parentNode.dataset.data
-        }
-       newData = JSON.parse( fileData)
-     fileId = newData.id
-        let projectMenu = `<div class="project-section main-menu-box  animation-popup "
+function showFileMenu(e) {
+    e.preventDefault()
+    closeMainMenus()
+    let fileData = null
+    if (e.target.dataset.data) {
+        fileData = e.target.dataset.data
+    }
+    if (e.target.parentNode.dataset.data) {
+        fileData = e.target.parentNode.dataset.data
+    }
+    if (e.target.parentNode.parentNode.dataset.data) {
+        fileData = e.target.parentNode.parentNode.dataset.data
+    }
+    newData = JSON.parse(fileData)
+    fileId = newData.id
+    let projectMenu = `<div class="project-section main-menu-box  animation-popup "
          style="position:fixed; left: ${xCoordinate}px; top: ${yCoordinate}px" data-data='${fileData}'>
     <ul>
         <li class="open-file" onclick="openFile()">
@@ -271,17 +271,17 @@ function showFileMenu(e){
             <span>Delete</span></li>
     </ul>
 </div>`
-        let newMenuFile = document.createElement('div')
-        setTimeout(() => {
-            newMenuFile.innerHTML = projectMenu
-            document.body.appendChild(newMenuFile)
-        }, 100)
+    let newMenuFile = document.createElement('div')
+    setTimeout(() => {
+        newMenuFile.innerHTML = projectMenu
+        document.body.appendChild(newMenuFile)
+    }, 100)
 
-        setTimeout(() => {
-            mainMenu('project-section')
-            console.log(JSON.parse(fileData))
-        }, 200)
-    
+    setTimeout(() => {
+        mainMenu('project-section')
+        console.log(JSON.parse(fileData))
+    }, 200)
+
 }
 
 function editFile() {
@@ -297,27 +297,12 @@ function editFile() {
         <form>
             <div class="center-modal">
                 <div class="mb-20">                
-                    <textarea id="mytextarea" rows="10" class="form-control w-full textarea" placeholder="Additional notes...">
-<div class="bottom-modal">
-    <div class="stripe-gray my-30"></div>
-    <div class="flex flex-between align-center my-40">
-        <div class="form-select-div">
-            <select name="select" class="form-select">
-                <option selected>General</option>
-                <option>Text</option>
-                <option>HTML</option>
-                <option>CSS</option>
-            </select>
-        </div>
-        <div class="flex">
-            <button class="button-blue-outline close-modal mr-10" onclick="closeEventModals()">Discard</button>
-            <button type="submit" class="button-blue edit-file-save">Save</button>
-        </div>
-    </div>
-</div>
+<!--<textarea  rows="10" class="form-control w-full textarea" placeholder="Additional notes..."></textarea> -->
+
+<div id="file-editor" ></div>
+
                     
-                    
-</textarea>               
+              
                 </div>  
             </div>
         </form>
@@ -347,15 +332,50 @@ function editFile() {
         document.body.appendChild(newWindow)
     }, 100)
     setTimeout(() => {
-        // tinymce.init({
-        //     selector: '#mytextarea',
-        //     // plugins: [
-        //     //     'a11ychecker','advlist','advcode','advtable','autolink','checklist','export',
-        //     //     'lists','link','image','charmap','preview','anchor','searchreplace','visualblocks',
-        //     //     'powerpaste','fullscreen','formatpainter','insertdatetime','media','table','help','wordcount'
-        //     // ],
-        //     toolbar: 'code'
-        // });
+
+        let code = ` <div class="bottom-modal">
+            <div class="stripe-gray my-30"></div>
+            <div class="flex flex-between align-center my-40">
+                 <div class="form-select-div">            
+              <select name="select" class="form-select">
+              <option selected>General</option>
+                 <option>Text</option>
+                 <option>HTML</option>
+                 <option>CSS</option>
+              </select>            
+            </div>
+                <div class="flex">
+                    <button class="button-blue-outline close-modal mr-10" onclick="closeEventModals()">Discard</button>
+                    <button type="submit" class="button-blue edit-file-save">Save</button>
+                </div>
+            </div>
+        </div>
+<script>
+flask.onUpdate((code) => {
+            // do something with code here.
+            // this will trigger whenever the code
+            // in the editor changes.
+            //console.log(code)
+        });
+        flask.updateCode(code);
+
+</script>
+`
+        let language = 'js'
+        textEditor(language)
+
+        function textEditor(lang) {
+           let  languageEditor = lang
+            const flask = new CodeFlask('#file-editor', {language: languageEditor, lineNumbers: true});
+            flask.onUpdate((code) => {
+                // do something with code here.
+                // this will trigger whenever the code
+                // in the editor changes.
+                //console.log(code)
+            });
+            flask.updateCode(code);
+
+        }
 
         // document.querySelectorAll(".code").forEach(function(element) {
         //     element.innerHTML = element.innerHTML.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
@@ -370,27 +390,35 @@ function editFile() {
 
     }, 200)
 }
-function openFile(){
-    alert("open file id="+fileId)
+
+function openFile() {
+    alert("open file id=" + fileId)
 }
-function previewFile(){
-    alert("Need light gallery for showing files / preview File id="+fileId)
+
+function previewFile() {
+    alert("Need light gallery for showing files / preview File id=" + fileId)
 }
-function downloadFile(){
-    alert("download file id="+fileId)
+
+function downloadFile() {
+    alert("download file id=" + fileId)
 }
-function branchFile(){
-    alert("branch File id="+fileId)
+
+function branchFile() {
+    alert("branch File id=" + fileId)
 }
-function shareFile(){
-    alert("share file id="+fileId)
+
+function shareFile() {
+    alert("share file id=" + fileId)
 }
-function renameFile(){
-    alert("rename File id="+fileId)
+
+function renameFile() {
+    alert("rename File id=" + fileId)
 }
-function copyFile(){
-    alert("copy file id="+fileId)
+
+function copyFile() {
+    alert("copy file id=" + fileId)
 }
-function deleteFile(){
-    alert("delete file id="+fileId)
+
+function deleteFile() {
+    alert("delete file id=" + fileId)
 }

@@ -6,3 +6,16 @@
 @import 'right-section';
 @import "default.min.scss";
 @import "inputs-buttons";
+.relative{
+  position: relative;
+}
+.codeflask {
+  background: #fff;
+  color: #030623 !important;
+  font-weight: 600 !important;
+}
+#file-editor{
+  position: relative;
+  min-height: 60vh;
+  overflow-y: hidden;
+}

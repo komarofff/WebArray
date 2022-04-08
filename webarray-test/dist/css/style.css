@@ -5589,3 +5589,19 @@ select {
   padding-top: 10px;
   border-color: #ccc;
 }
+
+.relative {
+  position: relative;
+}
+
+.codeflask {
+  background: #fff;
+  color: #030623 !important;
+  font-weight: 600 !important;
+}
+
+#file-editor {
+  position: relative;
+  min-height: 60vh;
+  overflow-y: hidden;
+}
