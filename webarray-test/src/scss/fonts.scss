@@ -166,7 +166,18 @@ $menu-light-color: #888ea8;
 .color-bad {
   color: $danger !important;
 }
-
+.flag-bad {
+  border: 2px solid $danger !important;
+  position: relative;
+  z-index: 1;
+  &::after {
+    content: 'x';
+    position: absolute;
+    left:0;
+    top:0;
+    z-index: 1;
+  }
+}
 .color-date {
   color: $svg-color !important;
 }

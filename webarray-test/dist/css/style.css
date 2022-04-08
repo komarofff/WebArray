@@ -150,6 +150,19 @@
   color: #e7515a !important;
 }
 
+.flag-bad {
+  border: 2px solid #e7515a !important;
+  position: relative;
+  z-index: 1;
+}
+.flag-bad::after {
+  content: "x";
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+
 .color-date {
   color: #b3b4b6 !important;
 }
@@ -4938,6 +4951,16 @@ main {
   background: #fff;
   border: 1px solid #e5eaf0;
   padding: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .folder {
@@ -5688,4 +5711,8 @@ select {
 
 .lg-backdrop {
   background: rgba(0, 0, 0, 0.8) !important;
+}
+
+.no-click {
+  z-index: 9;
 }

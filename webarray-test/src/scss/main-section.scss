@@ -235,6 +235,9 @@ main {
   background: #fff;
   border: 1px solid #e5eaf0;
   padding: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .folder{
