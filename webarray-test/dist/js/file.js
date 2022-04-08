@@ -279,7 +279,7 @@ function showFileMenu(e) {
 
     setTimeout(() => {
         mainMenu('project-section')
-        console.log(JSON.parse(fileData))
+        //console.log(JSON.parse(fileData))
     }, 200)
 
 }
@@ -365,7 +365,7 @@ flask.onUpdate((code) => {
         textEditor(language)
 
         function textEditor(lang) {
-           let  languageEditor = lang
+            let languageEditor = lang
             const flask = new CodeFlask('#file-editor', {language: languageEditor, lineNumbers: true});
             flask.onUpdate((code) => {
                 // do something with code here.
@@ -396,7 +396,14 @@ function openFile() {
 }
 
 function previewFile() {
-    alert("Need light gallery for showing files / preview File id=" + fileId)
+    let files = document.querySelectorAll('.project')
+    files.forEach((el) => {
+        let data = JSON.parse(el.dataset.data)
+        if (fileId === data.id) {
+          el.querySelector('.item').click()
+        }
+    })
+    //document.getElementById('elementID').click();
 }
 
 function downloadFile() {

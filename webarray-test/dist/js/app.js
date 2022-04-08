@@ -185,12 +185,12 @@ document.addEventListener('mouseover',(e)=>{
 
 
 
-// // first, find all the div.code blocks
-// document.querySelectorAll('textarea.code').forEach(el => {
-//     // then highlight each
-//     hljs.highlightElement(el);
-// });
-
+lightGallery(document.getElementById('app'), {
+    selector: '.item',
+    thumbnail: true,
+    zoom: true,
+    plugins: [lgZoom, lgThumbnail],
+});
 
 
 
