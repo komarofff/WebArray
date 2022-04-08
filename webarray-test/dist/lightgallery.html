@@ -15,20 +15,20 @@
 <body>
 <div id="selector1">
   <h2>Gallery title</h2>
-    <div class="item" data-src="https://picsum.photos/200/300"  data-external-thumb-image="https://picsum.photos/200/300">
-      <img data-external-thumb-image="https://picsum.photos/200/300" src="https://picsum.photos/200/300" />
+    <div class="item" data-src="https://picsum.photos/900/600" data-sub-html="<h4>Photo by - <a href='https://unsplash.com/@thesaboo' >Sascha Bosshard </a></h4><p> Location - <a href='https://unsplash.com/s/photos/pizol%2C-mels%2C-schweiz'>Pizol, Mels, Schweiz</a></p>"  data-lg-size="1600-2400">
+      <img  src="https://picsum.photos/200/300" />
     </div>
-    <div class="item" data-src="https://picsum.photos/200/300" data-external-thumb-image="https://picsum.photos/200/300">
-      <img data-external-thumb-image="https://picsum.photos/200/300" src="https://picsum.photos/200/300" />
+    <div class="item" data-src="https://picsum.photos/900/600" data-sub-html="<h4>Photo by - <a href='https://unsplash.com/@thesaboo' >Sascha Bosshard </a></h4><p> Location - <a href='https://unsplash.com/s/photos/pizol%2C-mels%2C-schweiz'>Pizol, Mels, Schweiz</a></p>" data-lg-size="1600-2400">
+      <img  src="https://picsum.photos/200/300" />
     </div>
-<div class="item" data-src="https://picsum.photos/200/300" data-external-thumb-image="https://picsum.photos/200/300">
-      <img data-external-thumb-image="https://picsum.photos/200/300" src="https://picsum.photos/200/300" />
+<div class="item" data-src="https://picsum.photos/900/600" data-sub-html="<h4>Photo by - <a href='https://unsplash.com/@thesaboo' >Sascha Bosshard </a></h4><p> Location - <a href='https://unsplash.com/s/photos/pizol%2C-mels%2C-schweiz'>Pizol, Mels, Schweiz</a></p>" data-lg-size="1600-2400">
+      <img  src="https://picsum.photos/200/300" />
     </div>
-<div class="item" data-src="https://picsum.photos/200/300" data-external-thumb-image="https://picsum.photos/200/300">
-      <img data-external-thumb-image="https://picsum.photos/200/300" src="https://picsum.photos/200/300" />
+<div class="item" data-src="https://picsum.photos/900/600" data-sub-html="<h4>Photo by - <a href='https://unsplash.com/@thesaboo' >Sascha Bosshard </a></h4><p> Location - <a href='https://unsplash.com/s/photos/pizol%2C-mels%2C-schweiz'>Pizol, Mels, Schweiz</a></p>" data-lg-size="1600-2400">
+      <img  src="https://picsum.photos/200/300" />
     </div>
-<div class="item" data-src="https://picsum.photos/200/300" data-external-thumb-image="https://picsum.photos/200/300">
-      <img data-external-thumb-image="https://picsum.photos/200/300" src="https://picsum.photos/200/300" />
+<div class="item" data-src="https://picsum.photos/900/600" data-sub-html="<h4>Photo by - <a href='https://unsplash.com/@thesaboo' >Sascha Bosshard </a></h4><p> Location - <a href='https://unsplash.com/s/photos/pizol%2C-mels%2C-schweiz'>Pizol, Mels, Schweiz</a></p>" data-lg-size="1600-2400">
+      <img  src="https://picsum.photos/200/300" />
     </div>
 
 </div>
@@ -36,6 +36,7 @@
     lightGallery(document.getElementById('selector1'), {
         selector: '.item',
         thumbnail: true,
+        zoom: true,
         plugins: [lgZoom, lgThumbnail],
     });
 </script>
