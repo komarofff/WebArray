@@ -111,7 +111,7 @@ $white: #fff;
 $top-blue: #445ede;
 $dark-top-blue: #304aca;
 $main-color: #fafafa;
-$border-color: #b9bbbf;
+$border-color: #eef1ef;
 $svg-color: #b3b4b6;
 $shadow-color: rgba(82, 83, 85, 0.1);
 $shadow-size: 0 10px 30px 0;
@@ -144,6 +144,21 @@ $menu-light-color: #888ea8;
   color: $success !important;
 }
 
+.flag-good {
+  border: 2px solid $success !important;
+  position: relative;
+
+  &::after {
+    content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="rgb(238,241,239)" stroke="rgb(26,188,156)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>');
+    position: absolute;
+    bottom: -13px;
+    left: -13px;
+    width: 32px;
+    height: 32px;
+    z-index: 3;
+  }
+}
+
 .color-old {
   color: $border-color !important;
 }
@@ -174,8 +189,8 @@ $menu-light-color: #888ea8;
   }
 }
 
-p{
-  margin-bottom:0 !important;
+p {
+  margin-bottom: 0 !important;
 }
 
 @for $i from 1 through 70 {

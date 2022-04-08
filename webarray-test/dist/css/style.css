@@ -128,8 +128,22 @@
   color: #1abc9c !important;
 }
 
+.flag-good {
+  border: 2px solid #1abc9c !important;
+  position: relative;
+}
+.flag-good::after {
+  content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="rgb(238,241,239)" stroke="rgb(26,188,156)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>');
+  position: absolute;
+  bottom: -13px;
+  left: -13px;
+  width: 32px;
+  height: 32px;
+  z-index: 3;
+}
+
 .color-old {
-  color: #b9bbbf !important;
+  color: #eef1ef !important;
 }
 
 .color-bad {
@@ -4270,7 +4284,7 @@ html {
 .stripe-gray {
   height: 1px;
   width: 100%;
-  background: #b9bbbf;
+  background: #eef1ef;
 }
 
 .pointer {
@@ -4381,8 +4395,8 @@ html {
   margin-right: 20px;
   overflow: hidden;
   border-radius: 6px;
-  border: 1px solid #b9bbbf;
-  background: #b9bbbf;
+  border: 1px solid #eef1ef;
+  background: #eef1ef;
 }
 .preview-box img {
   -o-object-fit: contain;
@@ -4415,8 +4429,8 @@ html {
 }
 
 .drop-shadow {
-  -webkit-filter: drop-shadow(2px 4px 6px #b9bbbf);
-          filter: drop-shadow(2px 4px 6px #b9bbbf);
+  -webkit-filter: drop-shadow(2px 4px 6px #eef1ef);
+          filter: drop-shadow(2px 4px 6px #eef1ef);
 }
 
 .logo {
@@ -4441,7 +4455,7 @@ header {
   display: none;
   background: #fff;
   border-radius: 6px;
-  border: 1px solid #b9bbbf;
+  border: 1px solid #eef1ef;
   -webkit-box-shadow: 0 10px 30px 0 rgba(82, 83, 85, 0.1);
           box-shadow: 0 10px 30px 0 rgba(82, 83, 85, 0.1);
   min-width: -webkit-fit-content;
@@ -4633,7 +4647,7 @@ header {
   -webkit-transition: 0.2s ease-in-out;
   -o-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
-  border-right: 1px solid #b9bbbf;
+  border-right: 1px solid #eef1ef;
 }
 .left-zone::-webkit-scrollbar {
   width: 0px;
@@ -4681,7 +4695,7 @@ header {
   height: 80px;
   overflow: hidden;
   border-radius: 6px;
-  border: 1px solid #b9bbbf;
+  border: 1px solid #eef1ef;
   background: #fafafa url('data:image/svg+xml; utf8,<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="rgba(179, 180, 182, 1)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>') no-repeat;
   background-position: center center;
 }
@@ -4727,7 +4741,7 @@ main {
   right: 0;
   background: #fff;
   border-radius: 6px;
-  border: 1px solid #b9bbbf;
+  border: 1px solid #eef1ef;
   -webkit-box-shadow: 0 10px 30px 0 rgba(82, 83, 85, 0.1);
           box-shadow: 0 10px 30px 0 rgba(82, 83, 85, 0.1);
   padding: 0;
@@ -4783,7 +4797,7 @@ main {
   left: 107%;
   background: #fff;
   border-radius: 6px;
-  border: 1px solid #b9bbbf;
+  border: 1px solid #eef1ef;
   -webkit-box-shadow: 0 10px 30px 0 rgba(82, 83, 85, 0.1);
           box-shadow: 0 10px 30px 0 rgba(82, 83, 85, 0.1);
   padding: 0;
@@ -4838,8 +4852,8 @@ main {
   border-left: 12px solid #fff;
   border-right: 0;
   border-top: 8px solid transparent;
-  -webkit-filter: drop-shadow(2px 2px 2px #b9bbbf);
-          filter: drop-shadow(2px 2px 2px #b9bbbf);
+  -webkit-filter: drop-shadow(2px 2px 2px #eef1ef);
+          filter: drop-shadow(2px 2px 2px #eef1ef);
 }
 
 /* BREADCRUMBS  */
@@ -4978,7 +4992,7 @@ main {
   width: 100%;
   background: #fff;
   border-radius: 6px;
-  border: 1px solid #b9bbbf;
+  border: 1px solid #eef1ef;
   -webkit-box-shadow: 0 10px 30px 0 rgba(82, 83, 85, 0.1);
           box-shadow: 0 10px 30px 0 rgba(82, 83, 85, 0.1);
 }
@@ -4987,7 +5001,7 @@ main {
   width: 100%;
   background: #fff;
   border-radius: 6px;
-  border: 1px solid #b9bbbf;
+  border: 1px solid #eef1ef;
   font-size: 0.74rem;
   display: block;
   color: #0e1726;
@@ -5027,7 +5041,7 @@ main {
 }
 
 .popup-box__inner-section {
-  border-top: 1px dashed #b9bbbf;
+  border-top: 1px dashed #eef1ef;
   letter-spacing: 0;
   font-weight: 400;
   margin-bottom: 0;
@@ -5056,7 +5070,7 @@ main {
   -webkit-transform: translateX(-50%);
       -ms-transform: translateX(-50%);
           transform: translateX(-50%);
-  border-color: #b9bbbf;
+  border-color: #eef1ef;
   width: 0;
   height: auto;
   top: 22px;
@@ -5145,7 +5159,7 @@ main {
   z-index: 1;
   width: 100%;
   padding: 10px 40px;
-  border: 1px dashed #b9bbbf;
+  border: 1px dashed #eef1ef;
   border-radius: 6px;
   outline: none;
   background: transparent;
@@ -5442,27 +5456,27 @@ label {
 }
 .form-control::-webkit-input-placeholder {
   font-family: Sans-Serif;
-  color: #b9bbbf;
+  color: #eef1ef;
   font-size: 0.7rem;
 }
 .form-control::-moz-placeholder {
   font-family: Sans-Serif;
-  color: #b9bbbf;
+  color: #eef1ef;
   font-size: 0.7rem;
 }
 .form-control:-ms-input-placeholder {
   font-family: Sans-Serif;
-  color: #b9bbbf;
+  color: #eef1ef;
   font-size: 0.7rem;
 }
 .form-control::-ms-input-placeholder {
   font-family: Sans-Serif;
-  color: #b9bbbf;
+  color: #eef1ef;
   font-size: 0.7rem;
 }
 .form-control::placeholder {
   font-family: Sans-Serif;
-  color: #b9bbbf;
+  color: #eef1ef;
   font-size: 0.7rem;
 }
 
@@ -5477,7 +5491,7 @@ label {
 
 .select {
   padding: 10px 35px 10px 20px;
-  border: 1px solid #b9bbbf;
+  border: 1px solid #eef1ef;
   border-radius: 6px;
   position: relative;
   font-size: 0.8rem;
@@ -5561,7 +5575,7 @@ label {
 
 .select-popup {
   background: #fff;
-  border: 1px solid #b9bbbf;
+  border: 1px solid #eef1ef;
   border-radius: 6px;
   position: absolute;
   font-size: 0.8rem;
@@ -5582,7 +5596,7 @@ label {
   position: relative;
   outline: none;
   padding: 10px 35px 10px 20px;
-  border: 1px solid #b9bbbf;
+  border: 1px solid #eef1ef;
   border-radius: 6px;
   font-size: 0.8rem;
   font-weight: 300;
