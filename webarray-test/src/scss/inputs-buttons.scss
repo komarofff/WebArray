@@ -267,3 +267,19 @@ select{
     transition: .3s linear;
   }
 }
+
+textarea{
+  background: url('../images/textarea-line.png');
+  background-attachment: local;
+  background-repeat: no-repeat;
+  padding-left: 35px!important;
+  padding-top: 10px;
+  border-color:#ccc;
+
+}
+//pre{
+//  color:black;
+//}
+//.code,.inner-code {
+//  white-space: pre;
+//}

@@ -296,10 +296,9 @@ function editFile() {
         </div>
         <form>
             <div class="center-modal">
-                <div class="mb-20">
-                    <textarea class="form-control w-full" placeholder="Additional notes..."> need code editor</textarea>
-                </div>
-
+                <div class="mb-20">                
+                    <textarea id="mytextarea" rows="10" class="form-control w-full" placeholder="Additional notes..."></textarea>               
+                </div>  
             </div>
         </form>
         <div class="bottom-modal">
@@ -327,6 +326,29 @@ function editFile() {
         newWindow.innerHTML = window
         document.body.appendChild(newWindow)
     }, 100)
+    setTimeout(() => {
+        tinymce.init({
+            selector: '#mytextarea',
+            // plugins: [
+            //     'a11ychecker','advlist','advcode','advtable','autolink','checklist','export',
+            //     'lists','link','image','charmap','preview','anchor','searchreplace','visualblocks',
+            //     'powerpaste','fullscreen','formatpainter','insertdatetime','media','table','help','wordcount'
+            // ],
+            toolbar: 'code'
+        });
+
+        // document.querySelectorAll(".code").forEach(function(element) {
+        //     element.innerHTML = element.innerHTML.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+        // });
+        // document.querySelectorAll('textarea.code').forEach(el => {
+        //     hljs.highlightElement(el);
+        // });
+        //
+        // let fileCode = document.querySelector('.code').innerHTML
+        // document.querySelector('.inner-code').innerHTML = fileCode
+
+
+    }, 200)
 }
 function openFile(){
     alert("open file id="+fileId)
