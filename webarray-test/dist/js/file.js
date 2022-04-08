@@ -297,7 +297,27 @@ function editFile() {
         <form>
             <div class="center-modal">
                 <div class="mb-20">                
-                    <textarea id="mytextarea" rows="10" class="form-control w-full" placeholder="Additional notes..."></textarea>               
+                    <textarea id="mytextarea" rows="10" class="form-control w-full textarea" placeholder="Additional notes...">
+                    <div class="bottom-modal">
+            <div class="stripe-gray my-30"></div>
+            <div class="flex flex-between align-center my-40">
+                 <div class="form-select-div">            
+              <select name="select" class="form-select">
+              <option selected>General</option>
+                 <option>Text</option>
+                 <option>HTML</option>
+                 <option>CSS</option>
+              </select>            
+            </div>
+                <div class="flex">
+                    <button class="button-blue-outline close-modal mr-10" onclick="closeEventModals()">Discard</button>
+                    <button type="submit" class="button-blue edit-file-save">Save</button>
+                </div>
+            </div>
+        </div>
+                    
+                    
+</textarea>               
                 </div>  
             </div>
         </form>
@@ -327,15 +347,15 @@ function editFile() {
         document.body.appendChild(newWindow)
     }, 100)
     setTimeout(() => {
-        tinymce.init({
-            selector: '#mytextarea',
-            // plugins: [
-            //     'a11ychecker','advlist','advcode','advtable','autolink','checklist','export',
-            //     'lists','link','image','charmap','preview','anchor','searchreplace','visualblocks',
-            //     'powerpaste','fullscreen','formatpainter','insertdatetime','media','table','help','wordcount'
-            // ],
-            toolbar: 'code'
-        });
+        // tinymce.init({
+        //     selector: '#mytextarea',
+        //     // plugins: [
+        //     //     'a11ychecker','advlist','advcode','advtable','autolink','checklist','export',
+        //     //     'lists','link','image','charmap','preview','anchor','searchreplace','visualblocks',
+        //     //     'powerpaste','fullscreen','formatpainter','insertdatetime','media','table','help','wordcount'
+        //     // ],
+        //     toolbar: 'code'
+        // });
 
         // document.querySelectorAll(".code").forEach(function(element) {
         //     element.innerHTML = element.innerHTML.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");

@@ -2,46 +2,47 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-  <link rel="stylesheet"
-        href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/default.min.css">
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
-  <script>hljs.highlightAll();</script>
-  <style>
-    .code {
-      white-space: pre;
-    }
-  </style>
+    <link rel="stylesheet"
+          href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <style>
+        .code {
+            white-space: pre;
+        }
+    </style>
     <title>Title</title>
 </head>
 <body>
 <div class="code language-html">
-  <div class="bottom-modal">
-    <div class="stripe-gray my-30"></div>
-    <div class="flex flex-between align-center my-40">
-      <div class="form-select-div">
-        <select name="select" class="form-select">
-          <option selected>General</option>
-          <option>Text</option>
-          <option>HTML</option>
-          <option>CSS</option>
-        </select>
-      </div>
+    <div class="bottom-modal">
+        <div class="stripe-gray my-30"></div>
+        <div class="flex flex-between align-center my-40">
+            <div class="form-select-div">
+                <select name="select" class="form-select">
+                    <option selected>General</option>
+                    <option>Text</option>
+                    <option>HTML</option>
+                    <option>CSS</option>
+                </select>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 <script>
-  document.querySelectorAll(".code").forEach(function(element) {
-    element.innerHTML = element.innerHTML.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
-  });
-  document.querySelectorAll('div.code').forEach(el => {
-    // then highlight each
+    document.querySelectorAll(".code").forEach(function (element) {
+        element.innerHTML = element.innerHTML.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+    });
+    document.querySelectorAll('div.code').forEach(el => {
+        // then highlight each
 
 
-    hljs.highlightElement(el,{language:'html'});
+        hljs.highlightElement(el, {language: 'html'});
 
-  });
+    });
 
 </script>
 
 </body>
 </html>
+
