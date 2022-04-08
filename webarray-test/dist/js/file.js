@@ -396,16 +396,25 @@ function openFile() {
 }
 
 function previewFile() {
+
     let files = document.querySelectorAll('.project')
     files.forEach((el) => {
         let data = JSON.parse(el.dataset.data)
         if (fileId === data.id) {
-          el.querySelector('.item').click()
+
+
+            el.querySelector('.item').click()
+            setTimeout(() => {
+
+            }, 200)
         }
     })
-    //document.getElementById('elementID').click();
-}
 
+}
+function fileClick(event){
+    event.stopPropagation();
+    event.preventDefault()
+}
 function downloadFile() {
     alert("download file id=" + fileId)
 }

@@ -183,14 +183,24 @@ document.addEventListener('mouseover',(e)=>{
     }
 })
 
-
+// document.addEventListener('click',(e)=>{
+//
+//     if(e.target.classList.contains('no-click')){
+//         e.preventDefault()
+//         e.stopImmediatePropagation()
+//         console.log('555',e.target)
+//     }
+//
+// },true)
 
 lightGallery(document.getElementById('app'), {
     selector: '.item',
+    exThumbImage: 'data-external-thumb-image',
     thumbnail: true,
     zoom: true,
     plugins: [lgZoom, lgThumbnail],
 });
+
 
 
 
