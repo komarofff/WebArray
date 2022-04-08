@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.5.0-beta.2/lightgallery.umd.min.js" integrity="sha512-e+39qUKXdaNAHHzMx+zHLald62YcdVqJpJGAqs6iIJ6RRWy5/9PKJr1eDAc3SuM/PTpguz9v2d83j6SFgnbTdg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.5.0-beta.2/plugins/fullscreen/lg-fullscreen.umd.min.js" integrity="sha512-xmNLmAH+RvR1Bbdq1hML9/Hqp3Uvf6++oZbc6h+KVw2CpJE0oOPIc0zV5nbuTLlOU+1pLOIPlBvcrVqUUXZh7w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.5.0-beta.2/plugins/thumbnail/lg-thumbnail.umd.min.js" integrity="sha512-k0frmdLGJwy4TgST+EQdWd/RSG38k7/XZmYHhy0246xTOCJnto6KEZGyh7GnGgiU7CKECV9t7RX/CHWKxM6bzQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.5.0-beta.2/plugins/zoom/lg-zoom.umd.min.js" integrity="sha512-sUhyULf75y+uI1rJe7qF/rDQLesVkJK6ur2/cE0dD30n4NXSms/RqvtzOkItf9D5Wo7zm0gYRLUp4w5k8zhMKQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.5.0-beta.2/css/lg-thumbnail.min.css" integrity="sha512-GRxDpj/bx6/I4y6h2LE5rbGaqRcbTu4dYhaTewlS8Nh9hm/akYprvOTZD7GR+FRCALiKfe8u1gjvWEEGEtoR6g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.5.0-beta.2/css/lg-zoom.min.css" integrity="sha512-SGo05yQXwPFKXE+GtWCn7J4OZQBaQIakZSxQSqUyVWqO0TAv3gaF/Vox1FmG4IyXJWDwu/lXzXqPOnfX1va0+A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.5.0-beta.2/css/lightgallery-bundle.min.css" integrity="sha512-91yJwfiGTCo9TM74ZzlAIAN4Eh5EWHpQJUfvo/XhpH6lzQtiRFkFRW1W+JSg4ch4XW3/xzh+dY4TOw/ILpavQA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Lightgallery</title>
+</head>
+<body>
+<div id="selector1">
+  <h2>Gallery title</h2>
+    <div class="item" data-src="https://picsum.photos/200/300"  data-external-thumb-image="https://picsum.photos/200/300">
+      <img data-external-thumb-image="https://picsum.photos/200/300" src="https://picsum.photos/200/300" />
+    </div>
+    <div class="item" data-src="https://picsum.photos/200/300" data-external-thumb-image="https://picsum.photos/200/300">
+      <img data-external-thumb-image="https://picsum.photos/200/300" src="https://picsum.photos/200/300" />
+    </div>
+<div class="item" data-src="https://picsum.photos/200/300" data-external-thumb-image="https://picsum.photos/200/300">
+      <img data-external-thumb-image="https://picsum.photos/200/300" src="https://picsum.photos/200/300" />
+    </div>
+<div class="item" data-src="https://picsum.photos/200/300" data-external-thumb-image="https://picsum.photos/200/300">
+      <img data-external-thumb-image="https://picsum.photos/200/300" src="https://picsum.photos/200/300" />
+    </div>
+<div class="item" data-src="https://picsum.photos/200/300" data-external-thumb-image="https://picsum.photos/200/300">
+      <img data-external-thumb-image="https://picsum.photos/200/300" src="https://picsum.photos/200/300" />
+    </div>
+
+</div>
+<script>
+    lightGallery(document.getElementById('selector1'), {
+        selector: '.item',
+        thumbnail: true,
+        plugins: [lgZoom, lgThumbnail],
+    });
+</script>
+</body>
+</html>
