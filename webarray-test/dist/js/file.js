@@ -483,6 +483,24 @@ function previewFile() {
 function fileClick(event){
     event.stopPropagation();
     event.preventDefault()
+
+    let fileData = null
+    if (event.target.dataset.data) {
+        fileData = event.target.dataset.data
+    }
+    if (event.target.parentNode.dataset.data) {
+        fileData = event.target.parentNode.dataset.data
+    }
+    if (event.target.parentNode.parentNode.dataset.data) {
+        fileData = event.target.parentNode.parentNode.dataset.data
+    }
+    newData = JSON.parse(fileData)
+    fileId = newData.id
+    document.querySelector('.file-name').innerHTML = newData.filename
+    document.querySelector('.file-date').innerHTML = newData.createdAt
+    document.querySelector('.file-author').innerHTML = newData.author
+    document.querySelector('.file-information').classList.remove('hidden')
+
 }
 
 function downloadFile() {
