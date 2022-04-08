@@ -5733,3 +5733,21 @@ select {
   width: 130px !important;
   height: 150px !important;
 }
+
+.small .center-zone__inner-section {
+  grid-template-columns: repeat(auto-fill, minmax(80px, 80px)) !important;
+  grid-gap: 15px;
+}
+.small .center-zone__inner-section .project, .small .center-zone__inner-section .folder {
+  width: 80px !important;
+  height: 80px !important;
+  font-weight: bold;
+}
+.small .center-zone__inner-section .project p, .small .center-zone__inner-section .folder p {
+  font-size: 0.42rem !important;
+}
+.small .center-zone__inner-section .project-name, .small .center-zone__inner-section .folder-name {
+  margin: 2px !important;
+  bottom: 7px;
+  left: 6px;
+}

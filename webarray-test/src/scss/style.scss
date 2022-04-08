@@ -74,3 +74,25 @@
 
 }
 
+.small{
+  & .center-zone__inner-section{
+    grid-template-columns: repeat(auto-fill,minmax(80px,80px)) !important;
+    grid-gap: 15px;
+    .project,.folder{
+      width:80px !important;
+      height:80px !important;
+
+      font-weight: bold;
+      p{
+        font-size: .42rem!important;
+      }
+    }
+    .project-name,.folder-name{
+      margin:2px!important;
+      bottom: 7px;
+      left: 6px;
+    }
+  }
+
+}
+
