@@ -484,8 +484,12 @@ function fileClick(event){
     event.stopPropagation();
     event.preventDefault()
 }
+
 function downloadFile() {
-    alert("download file id=" + fileId)
+
+    let data = newData
+    url =newData.link
+    download('url', newData.fileName);
 }
 
 function branchFile() {
