@@ -23,7 +23,8 @@ function getTimeNow() {
 let chat = document.querySelector('.chat-data')
 let divChat = null
 let chatId = null
-
+let chatList = []
+let allchats = 0
 
 /// GET
 getChatFromServer('https://jsonplaceholder.typicode.com/todos/')
@@ -33,8 +34,11 @@ function getChatFromServer(url) {
     })
     if (chatGet) {
         chatGet.get().then(data => {
-            // console.log(data)
-            chatList = data
+          //  console.log(data)
+           chatList= data
+
+
+            //console.log(chatList)
             // let chat = document.querySelector('.chat-data')
 
             if (chatList) {
@@ -68,9 +72,9 @@ function showchatsInDiv() {
 }
 
 function amounOfchats() {
-    let allchats = chatList.length
-    let resolvedchats = chatList.filter((val) => val.completed === true).length
-    let notResolvedchats = chatList.filter((val) => val.completed === false).length
+     allchats = chatList.length
+    //let resolvedchats = chatList.filter((val) => val.completed === true).length
+    //let notResolvedchats = chatList.filter((val) => val.completed === false).length
     // document.querySelector('.not-resolved-chats').innerHTML = notResolvedchats
     //document.querySelector('.resolved-chats').innerHTML = resolvedchats
     document.querySelector('.all-chats').innerHTML = allchats

@@ -1,7 +1,9 @@
-let task  = document.querySelector('.task-data')
+let task = document.querySelector('.task-data')
 let div = null
 let taskId = null
-document.querySelector('.new-task').addEventListener('click',()=>{
+let todosList = null
+let tList = []
+document.querySelector('.new-task').addEventListener('click', () => {
     let addTaskWindow = `<div class="black-background modal edit-task-window ">
     <div class="modal-window">
         <div class="top-modal flex flex-between align-center w-full">
@@ -52,14 +54,24 @@ document.querySelector('.new-task').addEventListener('click',()=>{
 
 /// GET
 getTasksFromServer('https://jsonplaceholder.typicode.com/todos/')
-function getTasksFromServer(url){
+
+function getTasksFromServer(url) {
     const taskGet = new DataS({
         url: url
     })
-    if(taskGet) {
+    if (taskGet) {
         taskGet.get().then(data => {
-            //console.log(data)
+
+            // tList.push(data)
+            // console.log('tlist length=',tList.length)
+            // if (tList.length === 1) {
+            //     todosList = tList
+            //     console.log(todosList)
+            // } else {
+            //     todosList = tList[0]
+            // }
             todosList = data
+
             // let task = document.querySelector('.task-data')
 
             if (todosList) {
@@ -71,13 +83,13 @@ function getTasksFromServer(url){
                 task.insertAdjacentElement('beforeend', div)
             }
         }).catch((error) => {
-            console.log('error get',error)
+            console.log('error get', error)
         })
     }
 }
 
 
-function showTasksInDiv(){
+function showTasksInDiv() {
     task.innerHTML = ``
     amounOfTasks()
     todosList.forEach((el) => {
@@ -104,31 +116,34 @@ function showTasksInDiv(){
         }
 
     })
-    task.addEventListener('contextmenu',showEditTaskWindow)
+    task.addEventListener('contextmenu', showEditTaskWindow)
 }
+
 function amounOfTasks() {
     let allTasks = todosList.length
-    let resolvedTasks = todosList.filter((val) => val.completed === true).length
-    let notResolvedTasks = todosList.filter((val) => val.completed === false).length
+    //let resolvedTasks = todosList.filter((val) => val.completed === true).length
+    //let notResolvedTasks = todosList.filter((val) => val.completed === false).length
     // document.querySelector('.not-resolved-tasks').innerHTML = notResolvedTasks
     //document.querySelector('.resolved-tasks').innerHTML = resolvedTasks
     document.querySelector('.all-tasks').innerHTML = allTasks
     return allTasks
 }
 
-function deleteTask(){
-    alert('delete task id='+ taskId)
+function deleteTask() {
+    alert('delete task id=' + taskId)
 }
-function addNewTask(){
+
+function addNewTask() {
     alert('add new task')
 }
-function showEditTaskWindow(e){
-        e.preventDefault()
-        if (e.target.classList.contains('edit-task')) {
-                    let arrIdNew = todosList.findIndex(val => val.id === parseFloat(e.target.dataset.id))
-                    newData = todosList[arrIdNew]
-                    taskId = newData.id
-                    let editWindow = `<div class="black-background modal edit-task-window ">
+
+function showEditTaskWindow(e) {
+    e.preventDefault()
+    if (e.target.classList.contains('edit-task')) {
+        let arrIdNew = todosList.findIndex(val => val.id === parseFloat(e.target.dataset.id))
+        newData = todosList[arrIdNew]
+        taskId = newData.id
+        let editWindow = `<div class="black-background modal edit-task-window ">
     <div class="modal-window">
         <div class="top-modal flex flex-between align-center w-full">
             <p class="mb-1">Edit Task id ${newData.id}</p>
@@ -174,18 +189,19 @@ function showEditTaskWindow(e){
     </div>
 
 </div>`
-                    let box = document.createElement('div')
-                    setTimeout(() => {
-                        box.innerHTML = editWindow
-                        document.body.appendChild(box)
-                    }, 100)
-            showEditTaskWindow
+        let box = document.createElement('div')
+        setTimeout(() => {
+            box.innerHTML = editWindow
+            document.body.appendChild(box)
+        }, 100)
+        showEditTaskWindow
 
-        }
+    }
 
 }
-function saveTaskChanges(){
-    alert('save changes for  task id='+ taskId)
+
+function saveTaskChanges() {
+    alert('save changes for  task id=' + taskId)
 }
 
 /// POST
@@ -197,10 +213,10 @@ const taskPost = new DataS({
         userId: 11,
     })
 })
-taskPost.post().then(data=>{
+taskPost.post().then(data => {
     //console.log('data',data)
 }).catch((error) => {
-    console.log('error post',error)
+    console.log('error post', error)
 })
 
 /// PUT
@@ -213,10 +229,10 @@ const taskPut = new DataS({
         userId: 1,
     })
 })
-taskPut.put().then(data=>{
+taskPut.put().then(data => {
     //console.log('data',data)
 }).catch((error) => {
-    console.log('error put',error)
+    console.log('error put', error)
 })
 
 /// DELETE
@@ -226,8 +242,8 @@ const taskDelete = new DataS({
         id: 13
     })
 })
-taskPut.delete().then(data=>{
+taskPut.delete().then(data => {
     //console.log('data',data)
 }).catch((error) => {
-    console.log('error delete',error)
+    console.log('error delete', error)
 })

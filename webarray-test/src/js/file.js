@@ -287,7 +287,7 @@ function showFileMenu(e) {
 function fileClick(event) {
     event.stopPropagation();
     event.preventDefault()
-    console.log(event.target)
+    //console.log(event.target)
     let fileData = null
     let source = null
     if (event.target.dataset.data) {
@@ -330,8 +330,8 @@ function fileClick(event) {
 
     let amountMessages = amounOfchats()
     let amountTasks = amounOfTasks()
-    source.querySelector('.project-tasks').textContent = amountTasks
-    source.querySelector('.project-chat').textContent = amountMessages
+    source.querySelector('.project-tasks').innerHTML = amountTasks
+    source.querySelector('.project-chat').innerHTML= amountMessages
 
 }
 
