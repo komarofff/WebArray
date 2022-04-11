@@ -204,7 +204,9 @@ function showEditTaskWindow(e) {
 function saveTaskChanges() {
     alert('save changes for  task id=' + taskId)
 }
-
+function sortTask(time){
+    alert('sort tasks time='+time)
+}
 /// POST
 const taskPost = new DataS({
     url: 'https://jsonplaceholder.typicode.com/posts',

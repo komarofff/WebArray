@@ -1,5 +1,6 @@
 let newData = null
 let fileId = null
+let arrId = null
 let filesList = [
     {
         id: 0,
@@ -73,7 +74,7 @@ let filesList = [
 
 ]
 let flags_lists = ['none', 'old', 'bad', 'good', 'important', 'approved', 'final']
-
+let fileData = null
 function showFiles() {
     // to get files data from server
 
@@ -83,7 +84,7 @@ function showFiles() {
         counter++
         let data = JSON.stringify(el)
         let itemVar = 'item'
-        if(el.flag==='bad'){
+        if (el.flag === 'bad') {
             itemVar = null
         }
         let fileBox = `
@@ -116,22 +117,22 @@ showFiles()
 function showFileMenu(e) {
     e.preventDefault()
     closeMainMenus()
-    let fileData = null
-    if (e.target.dataset.data) {
-        fileData = e.target.dataset.data
+    if (e.target.dataset.arrid) {
+        fileData = e.target.dataset.arrid
     }
-    if (e.target.parentNode.dataset.data) {
-        fileData = e.target.parentNode.dataset.data
+    if (e.target.parentNode.dataset.arrid) {
+        fileData = e.target.parentNode.dataset.arrid
     }
-    if (e.target.parentNode.parentNode.dataset.data) {
-        fileData = e.target.parentNode.parentNode.dataset.data
+    if (e.target.parentNode.parentNode.dataset.arrid) {
+        fileData = e.target.parentNode.parentNode.dataset.arrid
     }
-    newData = JSON.parse(fileData)
-    fileId = newData.id
 
+    //newData = JSON.stringify(filesList[fileData])
+    fileId = filesList[fileData].id
+    arrId = fileData
 
     let projectMenu = `<div class="project-section main-menu-box  animation-popup file-menu"
-         style="position:fixed; left: ${xCoordinate}px; top: ${yCoordinate}px" data-data='${fileData}'>
+         style="position:fixed; left: ${xCoordinate}px; top: ${yCoordinate}px" >
     <ul>
         <li class="open-file" onclick="openFile()">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -254,13 +255,13 @@ function showFileMenu(e) {
         //console.log(JSON.parse(fileData))
         let flag_menu_box = document.querySelector('.flag-menu-box')
         let liInFlags = flag_menu_box.querySelectorAll('li')
-        liInFlags.forEach((el)=>{
-            let findColor = el.classList.value.replace('color-','')
-            let idx = filesList.findIndex(el=> el.id === fileId)
-            if(findColor === filesList[idx].flag ){
+        liInFlags.forEach((el) => {
+            let findColor = el.classList.value.replace('color-', '')
+            let idx = filesList.findIndex(el => el.id === fileId)
+            if (findColor === filesList[idx].flag) {
                 el.classList.add('checked')
             }
-            if(filesList[idx].flag === 'bad'){
+            if (filesList[idx].flag === 'bad') {
                 document.querySelector(`[data-startid="${fileId}"]`).querySelector('.no-click').src = '../images/no-image.png'
                 document.querySelector(`[data-startid="${fileId}"]`).querySelector('.project-box').classList.remove('item')
             }
@@ -275,25 +276,27 @@ function fileClick(event) {
     event.stopPropagation();
     event.preventDefault()
     //console.log(event.target)
-    let fileData = null
+
     let source = null
-    if (event.target.dataset.data) {
-        fileData = event.target.dataset.data
+    if (event.target.dataset.arrid) {
+        fileData = event.target.dataset.arrid
         source = event.target
     }
-    if (event.target.parentNode.dataset.data) {
-        fileData = event.target.parentNode.dataset.data
+    if (event.target.parentNode.dataset.arrid) {
+        fileData = event.target.parentNode.dataset.arrid
         source = event.target.parentNode
     }
-    if (event.target.parentNode.parentNode.dataset.data) {
-        fileData = event.target.parentNode.parentNode.dataset.data
+    if (event.target.parentNode.parentNode.dataset.arrid) {
+        fileData = event.target.parentNode.parentNode.dataset.arrid
         source = event.target.parentNode.parentNode
     }
-    newData = JSON.parse(fileData)
-    fileId = newData.id
-    document.querySelector('.file-name').innerHTML = newData.filename
-    document.querySelector('.file-date').innerHTML = newData.createdAt
-    document.querySelector('.file-author').innerHTML = newData.author
+    fileId = filesList[fileData].id
+    arrId = fileData
+
+
+    document.querySelector('.file-name').innerHTML = filesList[fileData].filename
+    document.querySelector('.file-date').innerHTML = filesList[fileData].createdAt
+    document.querySelector('.file-author').innerHTML = filesList[fileData].author
     document.querySelector('.file-information').classList.remove('hidden')
 
     // show amount of messages and tasks
@@ -328,7 +331,7 @@ let del_flag = null
 function fileFlag(event, flag = 'no') {
     let flag_menu_box = document.querySelector('.flag-menu-box')
     let liInFlags = flag_menu_box.querySelectorAll('li')
-    liInFlags.forEach((el)=>{
+    liInFlags.forEach((el) => {
         el.classList.remove('checked')
     })
     event.target.classList.add('checked')
@@ -352,11 +355,10 @@ function fileFlag(event, flag = 'no') {
 
 function editFile() {
 
-    let data = newData
     let window = `<div class="black-background modal edit-file-window">
     <div class="modal-window">
         <div class="top-modal flex flex-between align-center w-full">
-            <p class="mb-1">${data.filename}</p>
+            <p class="mb-1">${filesList[fileData].filename}</p>
             <svg onclick="closeEventModals()" class="close-modal pointer drop-shadow" xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
             
         </div>
@@ -458,12 +460,12 @@ flask.onUpdate((code) => {
 }
 
 function openFile() {
-    let data = newData
+
     let fileText = `
 <div class="black-background modal edit-file-window">
     <div class="modal-window">
         <div class="top-modal flex flex-between align-center w-full">
-            <p class="mb-1">${data.filename}</p>
+            <p class="mb-1">${filesList[fileData].filename}</p>
             <svg onclick="closeEventModals()" class="close-modal pointer drop-shadow" xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
             
         </div>
@@ -534,14 +536,10 @@ function previewFile() {
 
     let files = document.querySelectorAll('.project')
     files.forEach((el) => {
-        let data = JSON.parse(el.dataset.data)
-        if (fileId === data.id) {
-
-
-            if(el.querySelector('.item')){el.querySelector('.item').click()}
-            setTimeout(() => {
-
-            }, 200)
+        if (fileId === parseFloat(el.dataset.startid)) {
+            if (el.querySelector('.item')) {
+                el.querySelector('.item').click()
+            }
         }
     })
 
@@ -553,9 +551,9 @@ function previewFile() {
 
 function downloadFile() {
 
-    let data = newData
-    url = newData.link
-    download('url', newData.l);
+
+    url = filesList[fileData].link
+    download('url', url);
 }
 
 function branchFile() {
