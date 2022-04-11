@@ -108,7 +108,7 @@
   font-weight: 600 !important;
 }
 
-.color-base {
+.color-base, .color-none {
   color: #030305 !important;
 }
 

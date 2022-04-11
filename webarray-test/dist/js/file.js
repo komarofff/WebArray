@@ -1,6 +1,7 @@
 let newData = null
 let fileId = null
 let filesList = []
+let flags_lists = ['none', 'old', 'bad', 'good', 'important', 'approved', 'final']
 // function fileSection(e) {
 //     closeMainMenus()
 //     if (e.target.classList.contains('project')) {
@@ -261,6 +262,8 @@ function showFileMenu(e) {
     }
     newData = JSON.parse(fileData)
     fileId = newData.id
+
+
     let projectMenu = `<div class="project-section main-menu-box  animation-popup file-menu"
          style="position:fixed; left: ${xCoordinate}px; top: ${yCoordinate}px" data-data='${fileData}'>
     <ul>
@@ -302,7 +305,7 @@ function showFileMenu(e) {
             </svg>
             <span>Flag</span>
             <ul class="flag-menu-box">
-                <li class="color-base" onclick="fileFlag(event,'none')">No flag</li>
+                <li class="color-none" onclick="fileFlag(event,'none')">No flag</li>
                 <li class="color-important"  onclick="fileFlag(event,'important')">Important</li>
                 <li class="color-approved"  onclick="fileFlag(event,'approved')">Approved</li>
                 <li class="color-final"  onclick="fileFlag(event,'final')">Final</li>
@@ -383,6 +386,20 @@ function showFileMenu(e) {
     setTimeout(() => {
         mainMenu('project-section')
         //console.log(JSON.parse(fileData))
+        let flag_menu_box = document.querySelector('.flag-menu-box')
+        let liInFlags = flag_menu_box.querySelectorAll('li')
+        liInFlags.forEach((el)=>{
+            let findColor = el.classList.value.replace('color-','')
+            let idx = filesList.findIndex(el=> el.id === fileId)
+            if(findColor === filesList[idx].flag ){
+                el.classList.add('checked')
+            }
+            if(filesList[idx].flag === 'bad'){
+                document.querySelector(`[data-startid="${fileId}"]`).querySelector('.no-click').src = '../images/no-image.png'
+            }
+        })
+
+
     }, 200)
 
 }
@@ -438,7 +455,7 @@ function fileClick(event) {
 
 }
 
-let flags_lists = ['none', 'old', 'bad', 'good', 'important', 'approved', 'final']
+
 let del_flag = null
 
 function fileFlag(event, flag = 'no') {
