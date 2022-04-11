@@ -5840,3 +5840,24 @@ select {
   bottom: 7px;
   left: 6px;
 }
+
+.project-chat {
+  position: absolute;
+  left: -15px;
+  top: -14px;
+  z-index: 1;
+  content: url('data:image/svg+xml; utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="rgb(226,160,63)" stroke="rgb(226,160,63)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-square"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>');
+  -webkit-transform: scaleX(-1);
+      -ms-transform: scaleX(-1);
+          transform: scaleX(-1);
+  cursor: pointer;
+}
+
+.project-tasks {
+  position: absolute;
+  right: -12px;
+  top: -15px;
+  z-index: 1;
+  content: url('data:image/svg+xml; utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="rgb(231,81,90)" stroke="rgb(231,81,90)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-briefcase"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>');
+  cursor: pointer;
+}
