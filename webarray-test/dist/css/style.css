@@ -145,7 +145,7 @@
 }
 
 .color-old {
-  color: #eef1ef !important;
+  color: #d8dbd9 !important;
 }
 
 .color-bad {
@@ -159,9 +159,9 @@
           box-shadow: 0 0 5px #e2a03f;
 }
 .flag-important::after {
-  content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="rgb(238,241,239)" stroke="rgb(26,188,156)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>');
+  content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="rgb(238,241,239)" stroke="rgb(226,160,63)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-triangle"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>');
   position: absolute;
-  bottom: -13px;
+  bottom: -18px;
   left: -13px;
   width: 32px;
   height: 32px;
@@ -175,7 +175,7 @@
           box-shadow: 0 0 5px #2196f3;
 }
 .flag-approved::after {
-  content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="rgb(238,241,239)" stroke="rgb(26,188,156)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>');
+  content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="rgb(238,241,239)" stroke="rgb(33,150,243)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-thumbs-up"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg>');
   position: absolute;
   bottom: -13px;
   left: -13px;
@@ -207,7 +207,7 @@
           box-shadow: 0 0 5px #1abc9c;
 }
 .flag-good::after {
-  content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="rgb(238,241,239)" stroke="rgb(26,188,156)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>');
+  content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="rgb(238,241,239)" stroke="rgb(26,188,156)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>');
   position: absolute;
   bottom: -13px;
   left: -13px;
@@ -217,19 +217,19 @@
 }
 
 .flag-old {
-  border: 1px solid #eef1ef !important;
+  border: 1px solid #d8dbd9 !important;
   position: relative;
-  -webkit-box-shadow: 0 0 5px #eef1ef;
-          box-shadow: 0 0 5px #eef1ef;
+  -webkit-box-shadow: 0 0 5px #d8dbd9;
+          box-shadow: 0 0 5px #d8dbd9;
 }
 .flag-old::after {
-  content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="rgb(238,241,239)" stroke="rgb(26,188,156)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>');
+  content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="rgb(255,255,255)" stroke="rgb(216,217,219)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-frown"><circle cx="12" cy="12" r="10"></circle><path d="M16 16s-1.5-2-4-2-4 2-4 2"></path><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line></svg>');
   position: absolute;
   bottom: -13px;
   left: -13px;
   width: 32px;
   height: 32px;
-  z-index: -1;
+  z-index: 1;
 }
 
 .flag-bad {
@@ -4382,7 +4382,7 @@ html {
 .stripe-gray {
   height: 1px;
   width: 100%;
-  background: #eef1ef;
+  background: #d8dbd9;
 }
 
 .pointer {
@@ -4493,8 +4493,8 @@ html {
   margin-right: 20px;
   overflow: hidden;
   border-radius: 6px;
-  border: 1px solid #eef1ef;
-  background: #eef1ef;
+  border: 1px solid #d8dbd9;
+  background: #d8dbd9;
 }
 .preview-box img {
   -o-object-fit: contain;
@@ -4527,8 +4527,8 @@ html {
 }
 
 .drop-shadow {
-  -webkit-filter: drop-shadow(2px 4px 6px #eef1ef);
-          filter: drop-shadow(2px 4px 6px #eef1ef);
+  -webkit-filter: drop-shadow(2px 4px 6px #d8dbd9);
+          filter: drop-shadow(2px 4px 6px #d8dbd9);
 }
 
 .logo {
@@ -4553,7 +4553,7 @@ header {
   display: none;
   background: #fff;
   border-radius: 6px;
-  border: 1px solid #eef1ef;
+  border: 1px solid #d8dbd9;
   -webkit-box-shadow: 0 10px 30px 0 rgba(82, 83, 85, 0.1);
           box-shadow: 0 10px 30px 0 rgba(82, 83, 85, 0.1);
   min-width: -webkit-fit-content;
@@ -4745,7 +4745,7 @@ header {
   -webkit-transition: 0.2s ease-in-out;
   -o-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
-  border-right: 1px solid #eef1ef;
+  border-right: 1px solid #d8dbd9;
 }
 .left-zone::-webkit-scrollbar {
   width: 0px;
@@ -4793,7 +4793,7 @@ header {
   height: 80px;
   overflow: hidden;
   border-radius: 6px;
-  border: 1px solid #eef1ef;
+  border: 1px solid #d8dbd9;
   background: #fafafa url('data:image/svg+xml; utf8,<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="rgba(179, 180, 182, 1)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>') no-repeat;
   background-position: center center;
 }
@@ -4839,7 +4839,7 @@ main {
   right: 0;
   background: #fff;
   border-radius: 6px;
-  border: 1px solid #eef1ef;
+  border: 1px solid #d8dbd9;
   -webkit-box-shadow: 0 10px 30px 0 rgba(82, 83, 85, 0.1);
           box-shadow: 0 10px 30px 0 rgba(82, 83, 85, 0.1);
   padding: 0;
@@ -4895,7 +4895,7 @@ main {
   left: 107%;
   background: #fff;
   border-radius: 6px;
-  border: 1px solid #eef1ef;
+  border: 1px solid #d8dbd9;
   -webkit-box-shadow: 0 10px 30px 0 rgba(82, 83, 85, 0.1);
           box-shadow: 0 10px 30px 0 rgba(82, 83, 85, 0.1);
   padding: 0;
@@ -4950,8 +4950,8 @@ main {
   border-left: 12px solid #fff;
   border-right: 0;
   border-top: 8px solid transparent;
-  -webkit-filter: drop-shadow(2px 2px 2px #eef1ef);
-          filter: drop-shadow(2px 2px 2px #eef1ef);
+  -webkit-filter: drop-shadow(2px 2px 2px #d8dbd9);
+          filter: drop-shadow(2px 2px 2px #d8dbd9);
 }
 
 /* BREADCRUMBS  */
@@ -5100,7 +5100,7 @@ main {
   width: 100%;
   background: #fff;
   border-radius: 6px;
-  border: 1px solid #eef1ef;
+  border: 1px solid #d8dbd9;
   -webkit-box-shadow: 0 10px 30px 0 rgba(82, 83, 85, 0.1);
           box-shadow: 0 10px 30px 0 rgba(82, 83, 85, 0.1);
 }
@@ -5109,7 +5109,7 @@ main {
   width: 100%;
   background: #fff;
   border-radius: 6px;
-  border: 1px solid #eef1ef;
+  border: 1px solid #d8dbd9;
   font-size: 0.74rem;
   display: block;
   color: #0e1726;
@@ -5149,7 +5149,7 @@ main {
 }
 
 .popup-box__inner-section {
-  border-top: 1px dashed #eef1ef;
+  border-top: 1px dashed #d8dbd9;
   letter-spacing: 0;
   font-weight: 400;
   margin-bottom: 0;
@@ -5178,7 +5178,7 @@ main {
   -webkit-transform: translateX(-50%);
       -ms-transform: translateX(-50%);
           transform: translateX(-50%);
-  border-color: #eef1ef;
+  border-color: #d8dbd9;
   width: 0;
   height: auto;
   top: 22px;
@@ -5267,7 +5267,7 @@ main {
   z-index: 1;
   width: 100%;
   padding: 10px 40px;
-  border: 1px dashed #eef1ef;
+  border: 1px dashed #d8dbd9;
   border-radius: 6px;
   outline: none;
   background: transparent;
@@ -5564,27 +5564,27 @@ label {
 }
 .form-control::-webkit-input-placeholder {
   font-family: Sans-Serif;
-  color: #eef1ef;
+  color: #d8dbd9;
   font-size: 0.7rem;
 }
 .form-control::-moz-placeholder {
   font-family: Sans-Serif;
-  color: #eef1ef;
+  color: #d8dbd9;
   font-size: 0.7rem;
 }
 .form-control:-ms-input-placeholder {
   font-family: Sans-Serif;
-  color: #eef1ef;
+  color: #d8dbd9;
   font-size: 0.7rem;
 }
 .form-control::-ms-input-placeholder {
   font-family: Sans-Serif;
-  color: #eef1ef;
+  color: #d8dbd9;
   font-size: 0.7rem;
 }
 .form-control::placeholder {
   font-family: Sans-Serif;
-  color: #eef1ef;
+  color: #d8dbd9;
   font-size: 0.7rem;
 }
 
@@ -5599,7 +5599,7 @@ label {
 
 .select {
   padding: 10px 35px 10px 20px;
-  border: 1px solid #eef1ef;
+  border: 1px solid #d8dbd9;
   border-radius: 6px;
   position: relative;
   font-size: 0.8rem;
@@ -5683,7 +5683,7 @@ label {
 
 .select-popup {
   background: #fff;
-  border: 1px solid #eef1ef;
+  border: 1px solid #d8dbd9;
   border-radius: 6px;
   position: absolute;
   font-size: 0.8rem;
@@ -5704,7 +5704,7 @@ label {
   position: relative;
   outline: none;
   padding: 10px 35px 10px 20px;
-  border: 1px solid #eef1ef;
+  border: 1px solid #d8dbd9;
   border-radius: 6px;
   font-size: 0.8rem;
   font-weight: 300;

@@ -111,7 +111,7 @@ $white: #fff;
 $top-blue: #445ede;
 $dark-top-blue: #304aca;
 $main-color: #fafafa;
-$border-color: #eef1ef;
+$border-color: #d8dbd9;
 $svg-color: #b3b4b6;
 $shadow-color: rgba(82, 83, 85, 0.1);
 $shadow-size: 0 10px 30px 0;
@@ -132,7 +132,7 @@ $menu-light-color: #888ea8;
   color: $warning !important;
 }
 .flag-important {
-  border: 1px solid $warning !important;
+  border: 1px solid $warning !important;//226,160,63
   position: relative;
   box-shadow: 0 0 5px $warning;
 
@@ -162,7 +162,7 @@ $menu-light-color: #888ea8;
 
 
 .color-old {
-  color: $border-color !important;
+  color: $border-color !important;//238,241,239
 }
 
 
@@ -170,14 +170,14 @@ $menu-light-color: #888ea8;
   color: $danger !important;
 }
 .flag-important {
-  border: 1px solid $warning !important;
+  border: 1px solid $warning !important;//226,160,63
   position: relative;
   box-shadow: 0 0 5px $warning;
 
   &::after {
-    content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="rgb(238,241,239)" stroke="rgb(26,188,156)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>');
+    content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="rgb(238,241,239)" stroke="rgb(226,160,63)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-triangle"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>');
     position: absolute;
-    bottom: -13px;
+    bottom: -18px;
     left: -13px;
     width: 32px;
     height: 32px;
@@ -185,12 +185,12 @@ $menu-light-color: #888ea8;
   }
 }
 .flag-approved {
-  border: 1px solid $info !important;
+  border: 1px solid $info !important;//33,150,243
   position: relative;
   box-shadow: 0 0 5px $info;
 
   &::after {
-    content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="rgb(238,241,239)" stroke="rgb(26,188,156)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>');
+    content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="rgb(238,241,239)" stroke="rgb(33,150,243)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-thumbs-up"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg>');
     position: absolute;
     bottom: -13px;
     left: -13px;
@@ -220,7 +220,7 @@ $menu-light-color: #888ea8;
   box-shadow: 0 0 5px $success;
 
   &::after {
-    content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="rgb(238,241,239)" stroke="rgb(26,188,156)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>');
+    content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="rgb(238,241,239)" stroke="rgb(26,188,156)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>');
     position: absolute;
     bottom: -13px;
     left: -13px;
@@ -235,13 +235,14 @@ $menu-light-color: #888ea8;
   box-shadow: 0 0 5px $border-color;
 
   &::after {
-    content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="rgb(238,241,239)" stroke="rgb(26,188,156)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>');
+   content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="rgb(255,255,255)" stroke="rgb(216,217,219)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-frown"><circle cx="12" cy="12" r="10"></circle><path d="M16 16s-1.5-2-4-2-4 2-4 2"></path><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line></svg>');
+
     position: absolute;
     bottom: -13px;
     left: -13px;
     width: 32px;
     height: 32px;
-    z-index: -1;
+    z-index: 1;
   }
 }
 .flag-bad {
