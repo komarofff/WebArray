@@ -28,14 +28,16 @@ let allchats = 0
 
 /// GET
 getChatFromServer('https://jsonplaceholder.typicode.com/todos/')
+
 function getChatFromServer(url) {
+    chat.innerHTML = ''
     const chatGet = new DataS({
         url: url,
     })
     if (chatGet) {
         chatGet.get().then(data => {
 
-           chatList= data
+            chatList = data
 
             if (chatList) {
                 showchatsInDiv()
@@ -50,6 +52,7 @@ function getChatFromServer(url) {
         })
     }
 }
+
 function showchatsInDiv() {
     chat.innerHTML = ``
     amounOfchats()
@@ -68,7 +71,7 @@ function showchatsInDiv() {
 }
 
 function amounOfchats() {
-     allchats = chatList.length
+    allchats = chatList.length
     //let resolvedchats = chatList.filter((val) => val.completed === true).length
     //let notResolvedchats = chatList.filter((val) => val.completed === false).length
     // document.querySelector('.not-resolved-chats').innerHTML = notResolvedchats

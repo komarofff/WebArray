@@ -56,6 +56,7 @@ document.querySelector('.new-task').addEventListener('click', () => {
 getTasksFromServer('https://jsonplaceholder.typicode.com/todos/')
 
 function getTasksFromServer(url) {
+    task.innerHTML = ''
     const taskGet = new DataS({
         url: url
     })
