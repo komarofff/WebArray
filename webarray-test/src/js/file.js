@@ -283,19 +283,24 @@ function showFileMenu(e) {
     }, 200)
 
 }
-function fileClick(event){
+
+function fileClick(event) {
     event.stopPropagation();
     event.preventDefault()
     console.log(event.target)
     let fileData = null
+    let source = null
     if (event.target.dataset.data) {
         fileData = event.target.dataset.data
+        source = event.target
     }
     if (event.target.parentNode.dataset.data) {
         fileData = event.target.parentNode.dataset.data
+        source = event.target.parentNode
     }
     if (event.target.parentNode.parentNode.dataset.data) {
         fileData = event.target.parentNode.parentNode.dataset.data
+        source = event.target.parentNode.parentNode
     }
     newData = JSON.parse(fileData)
     fileId = newData.id
@@ -303,6 +308,30 @@ function fileClick(event){
     document.querySelector('.file-date').innerHTML = newData.createdAt
     document.querySelector('.file-author').innerHTML = newData.author
     document.querySelector('.file-information').classList.remove('hidden')
+
+    // show amount of messages and tasks
+    let taskDivs = document.querySelectorAll('.project-tasks')
+    taskDivs.forEach((el) => {
+        el.classList.add('hidden')
+    })
+
+    let chatDivs = document.querySelectorAll('.project-chat')
+    chatDivs.forEach((el) => {
+        el.classList.add('hidden')
+    })
+
+    let allProjects = document.querySelectorAll('.project')
+    source.querySelector('.project-tasks').classList.remove('hidden')
+    source.querySelector('.project-chat').classList.remove('hidden')
+// start request to server and get new data for task. use id of file for getting url
+ getTasksFromServer('https://jsonplaceholder.typicode.com/todos/')
+// start request to server and get new data for chat. use id of file for getting url
+    getChatFromServer('https://jsonplaceholder.typicode.com/todos/')
+
+    let amountMessages = amounOfchats()
+    let amountTasks = amounOfTasks()
+    source.querySelector('.project-tasks').textContent = amountTasks
+    source.querySelector('.project-chat').textContent = amountMessages
 
 }
 
@@ -415,7 +444,7 @@ flask.onUpdate((code) => {
 
 function openFile() {
     let data = newData
-let fileText = `
+    let fileText = `
 <div class="black-background modal edit-file-window">
     <div class="modal-window">
         <div class="top-modal flex flex-between align-center w-full">
@@ -473,15 +502,15 @@ flask.onUpdate((code) => {
         document.body.appendChild(newWindow)
     }, 100)
 
-    setTimeout(()=>{
-        document.querySelectorAll(".code").forEach(function(element) {
+    setTimeout(() => {
+        document.querySelectorAll(".code").forEach(function (element) {
             element.innerHTML = element.innerHTML.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
         });
         document.querySelectorAll('div.code').forEach(el => {
             hljs.highlightElement(el);
             hljs.lineNumbersBlock(el);
         });
-    },200)
+    }, 200)
 
 
 }
@@ -503,13 +532,14 @@ function previewFile() {
 
 }
 
-function flagFile(){
-    alert('flag file id='+ fileId)
+function flagFile() {
+    alert('flag file id=' + fileId)
 }
+
 function downloadFile() {
 
     let data = newData
-    url =newData.link
+    url = newData.link
     download('url', newData.fileName);
 }
 

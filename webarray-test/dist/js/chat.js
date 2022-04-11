@@ -26,28 +26,30 @@ let chatId = null
 
 
 /// GET
-const chatGet = new DataS({
-    url: 'https://jsonplaceholder.typicode.com/todos/',
-})
-if (chatGet) {
-    chatGet.get().then(data => {
-        // console.log(data)
-        chatList = data
-        // let chat = document.querySelector('.chat-data')
-
-        if (chatList) {
-            showchatsInDiv()
-
-        } else {
-            divChat = document.createElement('div')
-            divChat.innerHTML = `<p>No data available</p>`
-            chat.insertAdjacentElement('beforeend', divChat)
-        }
-    }).catch((error) => {
-        console.log('error get', error)
+getChatFromServer('https://jsonplaceholder.typicode.com/todos/')
+function getChatFromServer(url) {
+    const chatGet = new DataS({
+        url: url,
     })
-}
+    if (chatGet) {
+        chatGet.get().then(data => {
+            // console.log(data)
+            chatList = data
+            // let chat = document.querySelector('.chat-data')
 
+            if (chatList) {
+                showchatsInDiv()
+
+            } else {
+                divChat = document.createElement('div')
+                divChat.innerHTML = `<p>No data available</p>`
+                chat.insertAdjacentElement('beforeend', divChat)
+            }
+        }).catch((error) => {
+            console.log('error get', error)
+        })
+    }
+}
 function showchatsInDiv() {
     chat.innerHTML = ``
     amounOfchats()
@@ -72,6 +74,7 @@ function amounOfchats() {
     // document.querySelector('.not-resolved-chats').innerHTML = notResolvedchats
     //document.querySelector('.resolved-chats').innerHTML = resolvedchats
     document.querySelector('.all-chats').innerHTML = allchats
+    return allchats
 }
 
 

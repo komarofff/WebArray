@@ -51,27 +51,31 @@ document.querySelector('.new-task').addEventListener('click',()=>{
 })
 
 /// GET
-const taskGet = new DataS({
-    url: 'https://jsonplaceholder.typicode.com/todos/',
-})
-if(taskGet) {
-    taskGet.get().then(data => {
-        //console.log(data)
-        todosList = data
-        // let task = document.querySelector('.task-data')
-
-        if (todosList) {
-            showTasksInDiv()
-
-        } else {
-            div = document.createElement('div')
-            div.innerHTML = `<p>No data available</p>`
-            task.insertAdjacentElement('beforeend', div)
-        }
-    }).catch((error) => {
-        console.log('error get',error)
+getTasksFromServer('https://jsonplaceholder.typicode.com/todos/')
+function getTasksFromServer(url){
+    const taskGet = new DataS({
+        url: url
     })
+    if(taskGet) {
+        taskGet.get().then(data => {
+            //console.log(data)
+            todosList = data
+            // let task = document.querySelector('.task-data')
+
+            if (todosList) {
+                showTasksInDiv()
+
+            } else {
+                div = document.createElement('div')
+                div.innerHTML = `<p>No data available</p>`
+                task.insertAdjacentElement('beforeend', div)
+            }
+        }).catch((error) => {
+            console.log('error get',error)
+        })
+    }
 }
+
 
 function showTasksInDiv(){
     task.innerHTML = ``
@@ -109,6 +113,7 @@ function amounOfTasks() {
     // document.querySelector('.not-resolved-tasks').innerHTML = notResolvedTasks
     //document.querySelector('.resolved-tasks').innerHTML = resolvedTasks
     document.querySelector('.all-tasks').innerHTML = allTasks
+    return allTasks
 }
 
 function deleteTask(){
