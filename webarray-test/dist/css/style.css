@@ -236,15 +236,14 @@
   border: 2px solid #e7515a !important;
   position: relative;
   z-index: 0;
-  overflow: hidden;
 }
 .flag-bad::after {
-  content: url('data:image/svg+xml; utf8,<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"   viewBox="0 0 490 540" style="enable-background:new 0 0 490 540;" xml:space="preserve" stroke="rgba(231,81,90,0.5)" fill="rgba(231,81,90,0.5)">    <polygon points="11.387,490 245,255.832 478.613,490 489.439,479.174 255.809,244.996 489.439,10.811 478.613,0 245,234.161     11.387,0 0.561,10.811 234.191,244.996 0.561,479.174 "/></svg>');
+  content: url('data:image/svg+xml; utf8,<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="220px" y="240px"   viewBox="0 0 490 540" style="enable-background:new 0 0 490 540;" xml:space="preserve" stroke="rgba(231,81,90,0.5)" fill="rgba(231,81,90,0.5)">    <polygon points="11.387,490 245,255.832 478.613,490 489.439,479.174 255.809,244.996 489.439,10.811 478.613,0 245,234.161     11.387,0 0.561,10.811 234.191,244.996 0.561,479.174 "/></svg>');
   position: absolute;
-  left: -14px;
-  top: -7px;
-  width: 114%;
-  height: 111%;
+  left: -2px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
   z-index: -1;
 }
 
