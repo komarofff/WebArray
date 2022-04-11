@@ -69,7 +69,7 @@
     }
 
 }
-.gallery{
+.gallery-grid{
   .center-zone__inner-section{
     grid-template-columns: repeat(auto-fill,minmax(220px,220px)) !important;
     .project,.folder{
@@ -79,7 +79,7 @@
   }
 
 }
-.medium{
+.medium-grid{
   & .center-zone__inner-section{
     grid-template-columns: repeat(auto-fill,minmax(140px,140px)) !important;
     grid-gap: 25px;
@@ -95,7 +95,7 @@
 
 }
 
-.small{
+.small-grid{
   & .center-zone__inner-section{
     grid-template-columns: repeat(auto-fill,minmax(80px,80px)) !important;
     grid-gap: 15px;

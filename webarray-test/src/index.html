@@ -36,7 +36,7 @@
     <link rel="stylesheet" href="css/style.min.css">
 
 </head>
-<body id="app" class="gallery">
+<body id="app" class="gallery-grid">
 <header>
     <div class="flex flex-between align-center">
         <div><a href="#"> <img class="logo" src="@img/logo-new.png" alt="logo"></a></div>
@@ -107,11 +107,11 @@
                     </div>
 
                 </div>
-                <div class="relative open-menu-box">
+                <div class="relative open-menu-box change-grid">
                     <img class="mr-17" src="@img/menu-info-3.png" alt="1">
                     <div class="menu-box  animation-popup ">
                         <ul>
-                            <li class="list">
+                            <li class="switcher-grid list">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                      fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                      stroke-linejoin="round" class="feather feather-list">
@@ -124,7 +124,7 @@
                                 </svg>
                                 <span>List</span>
                             </li>
-                            <li class="">
+                            <li class="switcher-grid small">
                                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px"
                                      stroke="currentColor"
                                      fill="none">
@@ -133,7 +133,7 @@
                                 </svg>
                                 <span>Small</span>
                             </li>
-                            <li class="medium">
+                            <li class="switcher-grid medium">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                      fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                      stroke-linejoin="round" class="feather feather-grid">
@@ -143,7 +143,7 @@
                                     <rect x="3" y="14" width="7" height="7"></rect>
                                 </svg>
                                 <span>Medium</span></li>
-                            <li class="gallery active">
+                            <li class="switcher-grid gallery active">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                      fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                      stroke-linejoin="round" class="feather feather-square">
@@ -332,104 +332,6 @@
                 </div>
             </div>
 
-
-<!--            <div  class=" project"  data-flag="none"-->
-<!--                  data-id="1"-->
-<!--                  data-data='{"id":1,"filename":" Project  0","link":"https://webarray.ca/fggg.txt","author":"Konrad","createdAt":"22.03.2022"}'-->
-<!--                  oncontextmenu="showFileMenu(event)">-->
-<!--                <div class="project-box item" data-src="@img/test-image-bookmark-preview.jpg"-->
-<!--                     data-sub-html="<h4>Project 1</h4>"-->
-<!--                     data-external-thumb-image="@img/test-image-bookmark-preview.jpg">-->
-<!--                    <img class="no-click" src="@img/test-image-bookmark-preview.jpg" alt="image" onclick="fileClick(event)">-->
-<!--                </div>-->
-<!--                <div class="project-name">-->
-<!--                    <p>Project 0</p>-->
-<!--                </div>-->
-<!--                <div class="project-chat hidden" data-id="0"></div>-->
-<!--                <div class="project-tasks hidden" data-id="0"></div>-->
-<!--            </div>-->
-<!--            <div  class=" project"  data-flag="old"-->
-<!--                 data-data='{"id":1,"filename":" Project  1","link":"https://webarray.ca/fggg.txt","author":"Konrad","createdAt":"22.03.2022"}'-->
-<!--                 oncontextmenu="showFileMenu(event)">-->
-<!--                <div class="project-box item" data-src="@img/test-image-bookmark-preview.jpg"-->
-<!--                     data-sub-html="<h4>Project 1</h4>"-->
-<!--                     data-external-thumb-image="@img/test-image-bookmark-preview.jpg">-->
-<!--                   <img class="no-click" src="@img/test-image-bookmark-preview.jpg" alt="image" onclick="fileClick(event)">-->
-<!--                </div>-->
-<!--                <div class="project-name">-->
-<!--                    <p>Project 1</p>-->
-<!--                </div>-->
-<!--                <div class="project-chat hidden" data-id="1"></div>-->
-<!--                <div class="project-tasks hidden" data-id="1"></div>-->
-<!--            </div>-->
-<!--            <div class=" project"  data-flag="approved"-->
-<!--                 data-data='{"id":2,"filename":" Project  2","link":"https://webarray.ca","author":"Konrad","createdAt":"22.03.2022"}'-->
-<!--                 oncontextmenu="showFileMenu(event)">-->
-<!--                <div class="project-box item" data-src="@img/test-image-bookmark-preview.jpg"-->
-<!--                     data-sub-html="<h4>Project 2</h4>"-->
-<!--                     data-external-thumb-image="@img/test-image-bookmark-preview.jpg">-->
-<!--                    <img class="no-click" src="@img/test-image-bookmark-preview.jpg" alt="image" onclick="fileClick(event)">-->
-<!--                </div>-->
-<!--                <div class="project-name">-->
-<!--                    <p>Project 2</p>-->
-<!--                </div>-->
-<!--                <div class="project-chat hidden" data-id="2"></div>-->
-<!--                <div class="project-tasks hidden" data-id="2"></div>-->
-<!--            </div>-->
-<!--            <div class=" project"  data-flag="important"-->
-<!--                 data-data='{"id":3,"filename":" Project  3","link":"https://webarray.ca","author":"Anatoly","createdAt":"22.03.2022"}'-->
-<!--                 oncontextmenu="showFileMenu(event)">-->
-<!--                <div class="project-box item" data-src="@img/test-image-bookmark-preview.jpg"-->
-<!--                     data-sub-html="<h4>Project 3</h4>"-->
-<!--                     data-external-thumb-image="@img/test-image-bookmark-preview.jpg">-->
-<!--                    <img class="no-click" src="@img/test-image-bookmark-preview.jpg" alt="image" onclick="fileClick(event)">-->
-<!--                </div>-->
-<!--                <div class="project-name">-->
-<!--                    <p>Project 3</p>-->
-<!--                </div>-->
-<!--                <div class="project-chat hidden" data-id="3"></div>-->
-<!--                <div class="project-tasks hidden" data-id="3"></div>-->
-<!--            </div>-->
-<!--            <div class=" project " data-flag="final"-->
-<!--                 data-data='{"id":4,"filename":" Project  4","link":"https://webarray.ca","author":"Michal","createdAt":"22.03.2022"}'-->
-<!--                 oncontextmenu="showFileMenu(event)">-->
-<!--                <div class="project-box item" data-src="@img/test-image-bookmark-preview.jpg"-->
-<!--                     data-sub-html="<h4>Project 4</h4>"-->
-<!--                     data-external-thumb-image="@img/test-image-bookmark-preview.jpg">-->
-<!--                    <img class="no-click" src="@img/test-image-bookmark-preview.jpg" alt="image" onclick="fileClick(event)">-->
-<!--                </div>-->
-<!--                <div class="project-name">-->
-<!--                    <p>Project 4</p>-->
-<!--                </div>-->
-<!--                <div class="project-chat hidden" data-id="4"></div>-->
-<!--                <div class="project-tasks hidden" data-id="4"></div>-->
-<!--            </div>-->
-<!--            <div class=" project " data-flag="bad"-->
-<!--                 data-data='{"id":5,"filename":" Project  5","link":"https://webarray.ca","author":"Elena","createdAt":"22.03.2022"}'-->
-<!--                 oncontextmenu="showFileMenu(event)">-->
-<!--                <div class="project-box">-->
-<!--                  <img class="no-click" src="@img/no-image.png" alt="image" onclick="fileClick(event)">-->
-<!--                </div>-->
-<!--                <div class="project-name">-->
-<!--                    <p>Project 5</p>-->
-<!--                </div>-->
-<!--                <div class="project-chat hidden" data-id="5"></div>-->
-<!--                <div class="project-tasks hidden" data-id="5"></div>-->
-<!--            </div>-->
-<!--            <div class=" project " data-flag="good"-->
-<!--                 data-data='{"id":6,"filename":" Project  6","link":"https://webarray.ca","author":"Max","createdAt":"22.03.2022"}'-->
-<!--                 oncontextmenu="showFileMenu(event)">-->
-<!--                <div class="project-box item" data-src="@img/test-image-bookmark-preview.jpg"-->
-<!--                     data-sub-html="<h4>Project 6</h4>"-->
-<!--                     data-external-thumb-image="@img/test-image-bookmark-preview.jpg">-->
-<!--                    <img class="no-click" src="@img/test-image-bookmark-preview.jpg" alt="image" onclick="fileClick(event)">-->
-<!--                </div>-->
-<!--                <div class="project-name">-->
-<!--                    <p>Project 6</p>-->
-<!--                </div>-->
-<!--                <div class="project-chat hidden" data-id="6"></div>-->
-<!--                <div class="project-tasks hidden" data-id="6"></div>-->
-<!--            </div>-->
 
         </div>
 

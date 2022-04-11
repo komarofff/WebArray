@@ -5816,40 +5816,40 @@ select {
   top: 0px;
 }
 
-.gallery .center-zone__inner-section {
+.gallery-grid .center-zone__inner-section {
   grid-template-columns: repeat(auto-fill, minmax(220px, 220px)) !important;
 }
-.gallery .center-zone__inner-section .project, .gallery .center-zone__inner-section .folder {
+.gallery-grid .center-zone__inner-section .project, .gallery-grid .center-zone__inner-section .folder {
   width: 220px !important;
   height: 240px !important;
 }
 
-.medium .center-zone__inner-section {
+.medium-grid .center-zone__inner-section {
   grid-template-columns: repeat(auto-fill, minmax(140px, 140px)) !important;
   grid-gap: 25px;
 }
-.medium .center-zone__inner-section .project, .medium .center-zone__inner-section .folder {
+.medium-grid .center-zone__inner-section .project, .medium-grid .center-zone__inner-section .folder {
   width: 130px !important;
   height: 150px !important;
 }
-.medium .flag-bad::after {
+.medium-grid .flag-bad::after {
   left: -10px;
   top: 0px;
 }
 
-.small .center-zone__inner-section {
+.small-grid .center-zone__inner-section {
   grid-template-columns: repeat(auto-fill, minmax(80px, 80px)) !important;
   grid-gap: 15px;
 }
-.small .center-zone__inner-section .project, .small .center-zone__inner-section .folder {
+.small-grid .center-zone__inner-section .project, .small-grid .center-zone__inner-section .folder {
   width: 80px !important;
   height: 80px !important;
   font-weight: bold;
 }
-.small .center-zone__inner-section .project p, .small .center-zone__inner-section .folder p {
+.small-grid .center-zone__inner-section .project p, .small-grid .center-zone__inner-section .folder p {
   font-size: 0.42rem !important;
 }
-.small .center-zone__inner-section .project-name, .small .center-zone__inner-section .folder-name {
+.small-grid .center-zone__inner-section .project-name, .small-grid .center-zone__inner-section .folder-name {
   margin: 2px !important;
   bottom: 7px;
   left: 6px;

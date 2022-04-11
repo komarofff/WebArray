@@ -249,3 +249,20 @@ document.addEventListener('click', (el) => {
 })
 
 
+// change grid on the page
+let gridSwitcher = document.querySelector('.change-grid')
+let switchersArr = gridSwitcher.querySelectorAll('.switcher-grid')
+switchersArr.forEach((el)=>{
+    el.addEventListener('click',(e)=>{
+        for(let i=0; i<switchersArr.length;i++){
+            switchersArr[i].classList.remove('active')
+        }
+        let elem = el.classList.value
+        let newGrid = elem.replace('switcher-grid ','')
+        newGrid = newGrid+'-grid'
+        el.classList.add('active')
+        document.querySelector('#app').classList.value = ''
+        document.querySelector('#app').classList.add(newGrid)
+        
+    })
+})
