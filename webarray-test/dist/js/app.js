@@ -14,9 +14,10 @@ function closeMainMenus() {
     })
 
 }
+
 let centerZone = document.querySelector('.center-zone')
-centerZone.addEventListener('contextmenu', (e)=>{
-    if(e.target.classList.contains('center-zone__inner-section') || e.target.classList.contains('breadcrumb')){
+centerZone.addEventListener('contextmenu', (e) => {
+    if (e.target.classList.contains('center-zone__inner-section') || e.target.classList.contains('breadcrumb')) {
         showCommonMenu(e)
     }
 })
@@ -30,7 +31,7 @@ document.querySelector('.center-zone').addEventListener('click', (e) => {
 
 function mainMenu(section) {
     setTimeout(() => {
-        let menuBox = document.querySelector('.'+section)
+        let menuBox = document.querySelector('.' + section)
         //console.log(menuBox)
         let menuBoxHeight = menuBox.getBoundingClientRect().height
         const clientHeight = document.documentElement.clientHeight
@@ -177,8 +178,8 @@ const leftZone = document.querySelector('.left-zone')
 //         leftZone.classList.toggle('left-zone-full')
 //     }, true)
 // })
-document.addEventListener('mouseover',(e)=>{
-    if(e.target.classList.contains('bookmark-image')){
+document.addEventListener('mouseover', (e) => {
+    if (e.target.classList.contains('bookmark-image')) {
         leftZone.classList.toggle('left-zone-full')
     }
 })
@@ -211,9 +212,9 @@ const download = (path, filename) => {
 
 function setFlagForProjects() {
     let project_files = document.querySelectorAll('.project')
-    let flags_list=['old','bad','good','important','approved','final']
-    project_files.forEach((el)=>{
-        for(let i=0; i<flags_list;i++){
+    let flags_list = ['old', 'bad', 'good', 'important', 'approved', 'final']
+    project_files.forEach((el) => {
+        for (let i = 0; i < flags_list; i++) {
             let del_flag = `flag-${flags_list[i]}`
             el.classList.remove(class_flag)
         }
@@ -223,8 +224,28 @@ function setFlagForProjects() {
     })
 
 }
-document.addEventListener('DOMContentLoaded',()=>{
+
+document.addEventListener('DOMContentLoaded', () => {
     setFlagForProjects()
+})
+
+document.addEventListener('click', (el) => {
+    if (el.target.classList.contains('project-chat')) {
+        let id = el.target.dataset.id
+        alert('open chat for id=' + id)
+        // start request to server and get new data for chat. use id of file for getting url
+        getChatFromServer('https://jsonplaceholder.typicode.com/todos/')
+        document.querySelector('.chat-box').querySelector('.popup-box__inner-section').classList.remove('hidden')
+
+    }
+    if (el.target.classList.contains('project-tasks')) {
+        let id = el.target.dataset.id
+        alert('open tasks for id=' + id)
+        // start request to server and get new data for task. use id of file for getting url
+        getTasksFromServer('https://jsonplaceholder.typicode.com/todos/')
+
+        document.querySelector('.task-box').querySelector('.popup-box__inner-section').classList.remove('hidden')
+    }
 })
 
 

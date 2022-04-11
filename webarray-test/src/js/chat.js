@@ -34,12 +34,8 @@ function getChatFromServer(url) {
     })
     if (chatGet) {
         chatGet.get().then(data => {
-          //  console.log(data)
+
            chatList= data
-
-
-            //console.log(chatList)
-            // let chat = document.querySelector('.chat-data')
 
             if (chatList) {
                 showchatsInDiv()

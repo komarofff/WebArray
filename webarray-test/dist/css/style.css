@@ -5029,7 +5029,7 @@ main {
   font-size: 0.5rem !important;
 }
 
-.center-zone__project-box {
+.project {
   width: 100%;
   height: 100%;
   border-radius: 6px;
@@ -5822,6 +5822,10 @@ select {
   width: 130px !important;
   height: 150px !important;
 }
+.medium .flag-bad::after {
+  left: -10px;
+  top: 0px;
+}
 
 .small .center-zone__inner-section {
   grid-template-columns: repeat(auto-fill, minmax(80px, 80px)) !important;
@@ -5845,7 +5849,7 @@ select {
   position: absolute;
   left: -15px;
   top: -14px;
-  z-index: 1;
+  z-index: 3;
   background: url('data:image/svg+xml; utf8,<svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 0 24 24" width="40px" fill="rgb(226,160,63)"><path d="M0 0h24v24H0z" fill="none"/><path d="M21.99 4c0-1.1-.89-2-1.99-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14l4 4-.01-18z"/></svg>');
   cursor: pointer;
   color: #fff;
@@ -5874,7 +5878,7 @@ select {
   position: absolute;
   right: -12px;
   top: -15px;
-  z-index: 1;
+  z-index: 3;
   background: url('data:image/svg+xml; utf8,<svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 24 24" fill="rgb(231,81,90)" stroke="rgb(231,81,90)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-briefcase"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>');
   cursor: pointer;
   background-repeat: no-repeat;

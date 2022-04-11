@@ -326,7 +326,7 @@ function fileClick(event) {
 // start request to server and get new data for task. use id of file for getting url
  getTasksFromServer('https://jsonplaceholder.typicode.com/todos/')
 // start request to server and get new data for chat. use id of file for getting url
-    getChatFromServer('https://jsonplaceholder.typicode.com/todos/')
+getChatFromServer('https://jsonplaceholder.typicode.com/todos/')
 
     let amountMessages = amounOfchats()
     let amountTasks = amounOfTasks()
@@ -334,6 +334,8 @@ function fileClick(event) {
     source.querySelector('.project-chat').innerHTML= amountMessages
 
 }
+
+
 
 function editFile() {
 
