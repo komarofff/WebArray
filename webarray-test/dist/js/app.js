@@ -274,7 +274,7 @@ sortArr.forEach((el)=>{
         for(let i=0; i<sortArr.length;i++){
             sortArr[i].classList.remove('checked')
         }
-        alert(el.dataset.time)
+        alert('sort tasks time='+el.dataset.time)
         el.classList.add('checked')
 
 
