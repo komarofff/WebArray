@@ -184,15 +184,6 @@ document.addEventListener('mouseover', (e) => {
     }
 })
 
-// document.addEventListener('click',(e)=>{
-//
-//     if(e.target.classList.contains('no-click')){
-//         e.preventDefault()
-//         e.stopImmediatePropagation()
-//         console.log('555',e.target)
-//     }
-//
-// },true)
 
 lightGallery(document.getElementById('app'), {
     selector: '.item',
@@ -201,6 +192,7 @@ lightGallery(document.getElementById('app'), {
     zoom: true,
     plugins: [lgZoom, lgThumbnail],
 });
+// download files
 const download = (path, filename) => {
     const anchor = document.createElement('a')
     anchor.href = path

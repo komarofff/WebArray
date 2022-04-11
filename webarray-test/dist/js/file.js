@@ -93,7 +93,7 @@ function showFiles() {
                      data-external-thumb-image="${el.image}">
                     <img class="no-click" src="${el.image}" alt="image" onclick="fileClick(event)">
                 </div>
-                <div class="project-name">
+                <div class="project-name"  onclick="fileClick(event)">
                     <p>${el.filename}</p>
                 </div>
                 <div class="project-chat hidden" data-id="${el.id}"></div>
@@ -106,6 +106,7 @@ function showFiles() {
         newFile.setAttribute('data-startid', el.id)
         newFile.setAttribute('data-arrid', counter)
         newFile.setAttribute('oncontextmenu', 'showFileMenu(event)')
+        newFile.setAttribute('onclick', 'fileClick(event)')
         newFile.innerHTML = fileBox
         document.querySelector('.center-zone__inner-section').appendChild(newFile)
     })
