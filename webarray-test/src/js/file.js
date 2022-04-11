@@ -276,7 +276,22 @@ function showFileMenu(e) {
 function fileClick(event) {
     event.stopPropagation();
     event.preventDefault()
-    //console.log(event.target)
+    if (event.target.classList.contains('project-chat')) {
+        let idd = event.target.dataset.id
+        alert('open chat for id=' + idd)
+        // start request to server and get new data for chat. use id of file for getting url
+        getChatFromServer('https://jsonplaceholder.typicode.com/todos/')
+        document.querySelector('.chat-box').querySelector('.popup-box__inner-section').classList.remove('hidden')
+
+    }
+    if (event.target.classList.contains('project-tasks')) {
+        let idd = event.target.dataset.id
+        alert('open tasks for id=' + idd)
+        // start request to server and get new data for task. use id of file for getting url
+        getTasksFromServer('https://jsonplaceholder.typicode.com/todos/')
+
+        document.querySelector('.task-box').querySelector('.popup-box__inner-section').classList.remove('hidden')
+    }
 
     let source = null
     if (event.target.dataset.arrid) {
