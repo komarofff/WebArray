@@ -143,74 +143,74 @@ let filesList = []
 //
 //
 // }
-function showFiles(){
+function showFiles() {
     // to get files data from server
-    filesList=[
+    filesList = [
         {
-            id:0,
+            id: 0,
             filename: 'Project 0',
             link: 'https://webarray.ca/fggg.txt',
             author: 'Test author 0',
-            createdAt:'22.03.2022',
+            createdAt: '22.03.2022',
             image: '../images/test-image-bookmark-preview.jpg',
             flag: 'none',
             type: 'file'
         },
         {
-            id:1,
+            id: 1,
             filename: 'Project 1',
             link: 'https://webarray.ca/fggg.txt',
             author: 'Test author 1',
-            createdAt:'22.03.2021',
+            createdAt: '22.03.2021',
             image: '../images/test-image-bookmark-preview.jpg',
             flag: 'good',
             type: 'file'
         },
- {
-            id:2,
+        {
+            id: 2,
             filename: 'Project 2',
             link: 'https://webarray.ca/fggg.txt',
             author: 'Test author 2',
-            createdAt:'22.04.2022',
+            createdAt: '22.04.2022',
             image: '../images/test-image-bookmark-preview.jpg',
             flag: 'important',
             type: 'file'
         },
-{
-            id:3,
+        {
+            id: 3,
             filename: 'Project 3',
             link: 'https://webarray.ca/fggg.txt',
             author: 'Test author 3',
-            createdAt:'15.04.2022',
+            createdAt: '15.04.2022',
             image: '../images/test-image-bookmark-preview.jpg',
             flag: 'approved',
             type: 'file'
-        },{
-            id:4,
+        }, {
+            id: 4,
             filename: 'Project 4',
             link: 'https://webarray.ca/fggg.txt',
             author: 'Test author 4',
-            createdAt:'15.04.2022',
+            createdAt: '15.04.2022',
             image: '../images/test-image-bookmark-preview.jpg',
             flag: 'old',
             type: 'file'
         },
-{
-            id:5,
+        {
+            id: 5,
             filename: 'Project 5',
             link: 'https://webarray.ca/fggg.txt',
             author: 'Test author 5',
-            createdAt:'15.04.2022',
+            createdAt: '15.04.2022',
             image: '../images/test-image-bookmark-preview.jpg',
             flag: 'final',
             type: 'file'
         },
-{
-            id:6,
+        {
+            id: 6,
             filename: 'Project 6',
             link: 'https://webarray.ca/fggg.txt',
             author: 'Test author 6',
-            createdAt:'15.04.2022',
+            createdAt: '15.04.2022',
             image: '../images/no-image.png',
             flag: 'bad',
             type: 'file'
@@ -218,9 +218,9 @@ function showFiles(){
 
     ]
     //['none','old', 'bad', 'good', 'important', 'approved', 'final']
-    filesList.forEach((el)=>{
+    filesList.forEach((el) => {
         let data = JSON.stringify(el)
-        let fileBox=`
+        let fileBox = `
                 <div class="project-box item" data-src="${el.image}"
                      data-sub-html="<h4>${el.filename}</h4>"
                      data-external-thumb-image="${el.image}">
@@ -233,16 +233,17 @@ function showFiles(){
                 <div class="project-tasks hidden" data-id="${el.id}"></div>
             `
         let newFile = document.createElement('div')
-        newFile.setAttribute('class','project')
-        newFile.setAttribute('data-flag',el.flag)
-        newFile.setAttribute('data-data',data)
-        newFile.setAttribute('data-startid',el.id)
-        newFile.setAttribute('oncontextmenu','showFileMenu(event)')
-        newFile.innerHTML=fileBox
+        newFile.setAttribute('class', 'project')
+        newFile.setAttribute('data-flag', el.flag)
+        newFile.setAttribute('data-data', data)
+        newFile.setAttribute('data-startid', el.id)
+        newFile.setAttribute('oncontextmenu', 'showFileMenu(event)')
+        newFile.innerHTML = fileBox
         document.querySelector('.center-zone__inner-section').appendChild(newFile)
     })
 
 }
+
 showFiles()
 
 function showFileMenu(e) {
@@ -260,7 +261,7 @@ function showFileMenu(e) {
     }
     newData = JSON.parse(fileData)
     fileId = newData.id
-    let projectMenu = `<div class="project-section main-menu-box  animation-popup "
+    let projectMenu = `<div class="project-section main-menu-box  animation-popup file-menu"
          style="position:fixed; left: ${xCoordinate}px; top: ${yCoordinate}px" data-data='${fileData}'>
     <ul>
         <li class="open-file" onclick="openFile()">
@@ -301,13 +302,13 @@ function showFileMenu(e) {
             </svg>
             <span>Flag</span>
             <ul class="flag-menu-box">
-                <li class="color-base" onclick="fileFlag('none')">No flag</li>
-                <li class="color-important"  onclick="fileFlag('important')">Important</li>
-                <li class="color-approved"  onclick="fileFlag('approved')">Approved</li>
-                <li class="color-final"  onclick="fileFlag('final')">Final</li>
-                <li class="color-good"  onclick="fileFlag('good')">Good</li>
-                <li class="color-old"  onclick="fileFlag('old')">Old</li>
-                <li class="color-bad"  onclick="fileFlag('bad')">Bad</li>
+                <li class="color-base" onclick="fileFlag(event,'none')">No flag</li>
+                <li class="color-important"  onclick="fileFlag(event,'important')">Important</li>
+                <li class="color-approved"  onclick="fileFlag(event,'approved')">Approved</li>
+                <li class="color-final"  onclick="fileFlag(event,'final')">Final</li>
+                <li class="color-good"  onclick="fileFlag(event,'good')">Good</li>
+                <li class="color-old"  onclick="fileFlag(event,'old')">Old</li>
+                <li class="color-bad"  onclick="fileFlag(event,'bad')">Bad</li>
             </ul>
 
         </li>
@@ -426,32 +427,38 @@ function fileClick(event) {
     source.querySelector('.project-tasks').classList.remove('hidden')
     source.querySelector('.project-chat').classList.remove('hidden')
 // start request to server and get new data for task. use id of file for getting url
- getTasksFromServer('https://jsonplaceholder.typicode.com/todos/')
+    getTasksFromServer('https://jsonplaceholder.typicode.com/todos/')
 // start request to server and get new data for chat. use id of file for getting url
-getChatFromServer('https://jsonplaceholder.typicode.com/todos/')
+    getChatFromServer('https://jsonplaceholder.typicode.com/todos/')
 
     let amountMessages = amounOfchats()
     let amountTasks = amounOfTasks()
     source.querySelector('.project-tasks').innerHTML = amountTasks
-    source.querySelector('.project-chat').innerHTML= amountMessages
+    source.querySelector('.project-chat').innerHTML = amountMessages
 
 }
 
-let flags_lists = ['none','old', 'bad', 'good', 'important', 'approved', 'final']
+let flags_lists = ['none', 'old', 'bad', 'good', 'important', 'approved', 'final']
 let del_flag = null
-function fileFlag(flag = 'no'){
-    alert('flag for file id='+fileId+' flag='+flag)
- let newFlag = `flag-${flag}`
-        for (let i = 0; i < flags_lists.length; i++) {
-            del_flag = `flag-${flags_lists[i]}`
-            //console.log('del-flag=',del_flag)
-            document.querySelector(`[data-startid="${fileId}"]`).classList.remove(del_flag)
-        }
+
+function fileFlag(event, flag = 'no') {
+    let flag_menu_box = document.querySelector('.flag-menu-box')
+    let liInFlags = flag_menu_box.querySelectorAll('li')
+    liInFlags.forEach((el)=>{
+        el.classList.remove('checked')
+    })
+    event.target.classList.add('checked')
+    let newFlag = `flag-${flag}`
+    for (let i = 0; i < flags_lists.length; i++) {
+        del_flag = `flag-${flags_lists[i]}`
+        //console.log('del-flag=',del_flag)
+        document.querySelector(`[data-startid="${fileId}"]`).classList.remove(del_flag)
+    }
     document.querySelector(`[data-startid="${fileId}"]`).classList.add(newFlag)
-    if(newFlag === 'flag-bad'){
+    if (newFlag === 'flag-bad') {
         document.querySelector(`[data-startid="${fileId}"]`).querySelector('.no-click').src = '../images/no-image.png'
-    }else{
-        let idxInArray = filesList.findIndex((el)=> el.id===fileId)
+    } else {
+        let idxInArray = filesList.findIndex((el) => el.id === fileId)
         let idInArray = filesList[idxInArray].id
         document.querySelector(`[data-startid="${fileId}"]`).querySelector('.no-click').src = `${filesList[idxInArray].image}`
     }
