@@ -263,6 +263,6 @@ switchersArr.forEach((el)=>{
         el.classList.add('active')
         document.querySelector('#app').classList.value = ''
         document.querySelector('#app').classList.add(newGrid)
-        
+
     })
 })
