@@ -1,82 +1,82 @@
 let newData = null
 let fileId = null
-let filesList = []
+let filesList = [
+    {
+        id: 0,
+        filename: 'Project 0',
+        link: 'https://webarray.ca/fggg.txt',
+        author: 'Test author 0',
+        createdAt: '22.03.2022',
+        image: '../images/test-image-bookmark-preview.jpg',
+        flag: 'none',
+        type: 'file'
+    },
+    {
+        id: 1,
+        filename: 'Project 1',
+        link: 'https://webarray.ca/fggg.txt',
+        author: 'Test author 1',
+        createdAt: '22.03.2021',
+        image: '../images/test-image-bookmark-preview.jpg',
+        flag: 'good',
+        type: 'file'
+    },
+    {
+        id: 2,
+        filename: 'Project 2',
+        link: 'https://webarray.ca/fggg.txt',
+        author: 'Test author 2',
+        createdAt: '22.04.2022',
+        image: '../images/test-image-bookmark-preview.jpg',
+        flag: 'important',
+        type: 'file'
+    },
+    {
+        id: 3,
+        filename: 'Project 3',
+        link: 'https://webarray.ca/fggg.txt',
+        author: 'Test author 3',
+        createdAt: '15.04.2022',
+        image: '../images/test-image-bookmark-preview.jpg',
+        flag: 'approved',
+        type: 'file'
+    }, {
+        id: 4,
+        filename: 'Project 4',
+        link: 'https://webarray.ca/fggg.txt',
+        author: 'Test author 4',
+        createdAt: '15.04.2022',
+        image: '../images/test-image-bookmark-preview.jpg',
+        flag: 'old',
+        type: 'file'
+    },
+    {
+        id: 5,
+        filename: 'Project 5',
+        link: 'https://webarray.ca/fggg.txt',
+        author: 'Test author 5',
+        createdAt: '15.04.2022',
+        image: '../images/test-image-bookmark-preview.jpg',
+        flag: 'final',
+        type: 'file'
+    },
+    {
+        id: 6,
+        filename: 'Project 6',
+        link: 'https://webarray.ca/fggg.txt',
+        author: 'Test author 6',
+        createdAt: '15.04.2022',
+        image: '../images/no-image.png',
+        flag: 'bad',
+        type: 'file'
+    },
+
+]
 let flags_lists = ['none', 'old', 'bad', 'good', 'important', 'approved', 'final']
 
 function showFiles() {
     // to get files data from server
-    filesList = [
-        {
-            id: 0,
-            filename: 'Project 0',
-            link: 'https://webarray.ca/fggg.txt',
-            author: 'Test author 0',
-            createdAt: '22.03.2022',
-            image: '../images/test-image-bookmark-preview.jpg',
-            flag: 'none',
-            type: 'file'
-        },
-        {
-            id: 1,
-            filename: 'Project 1',
-            link: 'https://webarray.ca/fggg.txt',
-            author: 'Test author 1',
-            createdAt: '22.03.2021',
-            image: '../images/test-image-bookmark-preview.jpg',
-            flag: 'good',
-            type: 'file'
-        },
-        {
-            id: 2,
-            filename: 'Project 2',
-            link: 'https://webarray.ca/fggg.txt',
-            author: 'Test author 2',
-            createdAt: '22.04.2022',
-            image: '../images/test-image-bookmark-preview.jpg',
-            flag: 'important',
-            type: 'file'
-        },
-        {
-            id: 3,
-            filename: 'Project 3',
-            link: 'https://webarray.ca/fggg.txt',
-            author: 'Test author 3',
-            createdAt: '15.04.2022',
-            image: '../images/test-image-bookmark-preview.jpg',
-            flag: 'approved',
-            type: 'file'
-        }, {
-            id: 4,
-            filename: 'Project 4',
-            link: 'https://webarray.ca/fggg.txt',
-            author: 'Test author 4',
-            createdAt: '15.04.2022',
-            image: '../images/test-image-bookmark-preview.jpg',
-            flag: 'old',
-            type: 'file'
-        },
-        {
-            id: 5,
-            filename: 'Project 5',
-            link: 'https://webarray.ca/fggg.txt',
-            author: 'Test author 5',
-            createdAt: '15.04.2022',
-            image: '../images/test-image-bookmark-preview.jpg',
-            flag: 'final',
-            type: 'file'
-        },
-        {
-            id: 6,
-            filename: 'Project 6',
-            link: 'https://webarray.ca/fggg.txt',
-            author: 'Test author 6',
-            createdAt: '15.04.2022',
-            image: '../images/no-image.png',
-            flag: 'bad',
-            type: 'file'
-        },
 
-    ]
     //['none','old', 'bad', 'good', 'important', 'approved', 'final']
     let counter = -1
     filesList.forEach((el) => {

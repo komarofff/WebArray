@@ -7,7 +7,7 @@ let folderList = [
         createdAt: '22.03.2022',
         image: '../images/test-image-bookmark-preview.jpg',
         flag: 'none',
-        type: 'file'
+        type: 'folder'
     },
     {
         id: 1,
@@ -17,7 +17,7 @@ let folderList = [
         createdAt: '22.03.2021',
         image: '../images/test-image-bookmark-preview.jpg',
         flag: 'good',
-        type: 'file'
+        type: 'folder'
     },
     {
         id: 2,
@@ -27,7 +27,7 @@ let folderList = [
         createdAt: '22.04.2022',
         image: '../images/test-image-bookmark-preview.jpg',
         flag: 'important',
-        type: 'file'
+        type: 'folder'
     },
     {
         id: 3,
@@ -37,7 +37,7 @@ let folderList = [
         createdAt: '15.04.2022',
         image: '../images/test-image-bookmark-preview.jpg',
         flag: 'approved',
-        type: 'file'
+        type: 'folder'
     }, {
         id: 4,
         foldername: 'Folder 4',
@@ -46,7 +46,7 @@ let folderList = [
         createdAt: '15.04.2022',
         image: '../images/test-image-bookmark-preview.jpg',
         flag: 'old',
-        type: 'file'
+        type: 'folder'
     },
     {
         id: 5,
@@ -56,7 +56,7 @@ let folderList = [
         createdAt: '15.04.2022',
         image: '../images/test-image-bookmark-preview.jpg',
         flag: 'final',
-        type: 'file'
+        type: 'folder'
     },
     {
         id: 6,
@@ -66,7 +66,7 @@ let folderList = [
         createdAt: '15.04.2022',
         image: '../images/no-image.png',
         flag: 'bad',
-        type: 'file'
+        type: 'folder'
     },
 
 ]
@@ -93,7 +93,7 @@ function showFolders() {
         let newFolder= document.createElement('div')
         newFolder.setAttribute('class', 'relative folder')
         newFolder.setAttribute('data-data', data)
-        newFolder.setAttribute('data-startid', el.id)
+        newFolder.setAttribute('data-folderstartid', el.id)
         newFolder.setAttribute('data-arrid', counter)
         newFolder.setAttribute('oncontextmenu', 'folderMenu(event)')
         newFolder.innerHTML = fileBox

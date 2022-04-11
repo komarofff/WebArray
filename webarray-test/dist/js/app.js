@@ -266,7 +266,7 @@ switchersArr.forEach((el)=>{
 
     })
 })
-// change sort of tasks
+//  sort of tasks user-menu
 let sortSwitcher = document.querySelector('.user-menu')
 let sortArr = sortSwitcher.querySelectorAll('.task-time')
 sortArr.forEach((el)=>{
@@ -274,8 +274,7 @@ sortArr.forEach((el)=>{
         for(let i=0; i<sortArr.length;i++){
             sortArr[i].classList.remove('checked')
         }
-        console.log(el.dataset.time)
-
+        alert(el.dataset.time)
         el.classList.add('checked')
 
 
