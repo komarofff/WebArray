@@ -147,37 +147,101 @@ function showFiles(){
     // to get files data from server
     filesList=[
         {
-            id:55,
-            filename: 'Project 55',
+            id:0,
+            filename: 'Project 0',
             link: 'https://webarray.ca/fggg.txt',
-            author: 'Test author',
+            author: 'Test author 0',
             createdAt:'22.03.2022',
             image: '../images/test-image-bookmark-preview.jpg',
             flag: 'none',
             type: 'file'
-        }
+        },
+        {
+            id:1,
+            filename: 'Project 1',
+            link: 'https://webarray.ca/fggg.txt',
+            author: 'Test author 1',
+            createdAt:'22.03.2021',
+            image: '../images/test-image-bookmark-preview.jpg',
+            flag: 'good',
+            type: 'file'
+        },
+ {
+            id:2,
+            filename: 'Project 2',
+            link: 'https://webarray.ca/fggg.txt',
+            author: 'Test author 2',
+            createdAt:'22.04.2022',
+            image: '../images/test-image-bookmark-preview.jpg',
+            flag: 'important',
+            type: 'file'
+        },
+{
+            id:3,
+            filename: 'Project 3',
+            link: 'https://webarray.ca/fggg.txt',
+            author: 'Test author 3',
+            createdAt:'15.04.2022',
+            image: '../images/test-image-bookmark-preview.jpg',
+            flag: 'approved',
+            type: 'file'
+        },{
+            id:4,
+            filename: 'Project 4',
+            link: 'https://webarray.ca/fggg.txt',
+            author: 'Test author 4',
+            createdAt:'15.04.2022',
+            image: '../images/test-image-bookmark-preview.jpg',
+            flag: 'old',
+            type: 'file'
+        },
+{
+            id:5,
+            filename: 'Project 5',
+            link: 'https://webarray.ca/fggg.txt',
+            author: 'Test author 5',
+            createdAt:'15.04.2022',
+            image: '../images/test-image-bookmark-preview.jpg',
+            flag: 'final',
+            type: 'file'
+        },
+{
+            id:6,
+            filename: 'Project 6',
+            link: 'https://webarray.ca/fggg.txt',
+            author: 'Test author 6',
+            createdAt:'15.04.2022',
+            image: '../images/no-image.png',
+            flag: 'bad',
+            type: 'file'
+        },
+
     ]
-let data = JSON.stringify(filesList[0])
-    let fileBox=`
-                <div class="project-box item" data-src="${filesList[0].image}"
-                     data-sub-html="<h4>${filesList[0].filename}</h4>"
-                     data-external-thumb-image="${filesList[0].image}">
-                    <img class="no-click" src="${filesList[0].image}" alt="image" onclick="fileClick(event)">
+    //['none','old', 'bad', 'good', 'important', 'approved', 'final']
+    filesList.forEach((el)=>{
+        let data = JSON.stringify(el)
+        let fileBox=`
+                <div class="project-box item" data-src="${el.image}"
+                     data-sub-html="<h4>${el.filename}</h4>"
+                     data-external-thumb-image="${el.image}">
+                    <img class="no-click" src="${el.image}" alt="image" onclick="fileClick(event)">
                 </div>
                 <div class="project-name">
-                    <p>${filesList[0].filename}</p>
+                    <p>${el.filename}</p>
                 </div>
-                <div class="project-chat hidden" data-id="${filesList[0].id}"></div>
-                <div class="project-tasks hidden" data-id="${filesList[0].id}"></div>
+                <div class="project-chat hidden" data-id="${el.id}"></div>
+                <div class="project-tasks hidden" data-id="${el.id}"></div>
             `
-let newFile = document.createElement('div')
-    newFile.setAttribute('class','project')
-    newFile.setAttribute('data-flag',filesList[0].flag)
-    newFile.setAttribute('data-data',data)
-    newFile.setAttribute('data-startid',filesList[0].id)
-    newFile.setAttribute('oncontextmenu','showFileMenu(event)')
-    newFile.innerHTML=fileBox
-    document.querySelector('.center-zone__inner-section').appendChild(newFile)
+        let newFile = document.createElement('div')
+        newFile.setAttribute('class','project')
+        newFile.setAttribute('data-flag',el.flag)
+        newFile.setAttribute('data-data',data)
+        newFile.setAttribute('data-startid',el.id)
+        newFile.setAttribute('oncontextmenu','showFileMenu(event)')
+        newFile.innerHTML=fileBox
+        document.querySelector('.center-zone__inner-section').appendChild(newFile)
+    })
+
 }
 showFiles()
 
@@ -372,17 +436,25 @@ getChatFromServer('https://jsonplaceholder.typicode.com/todos/')
     source.querySelector('.project-chat').innerHTML= amountMessages
 
 }
+
 let flags_lists = ['none','old', 'bad', 'good', 'important', 'approved', 'final']
 let del_flag = null
 function fileFlag(flag = 'no'){
     alert('flag for file id='+fileId+' flag='+flag)
-
+ let newFlag = `flag-${flag}`
         for (let i = 0; i < flags_lists.length; i++) {
             del_flag = `flag-${flags_lists[i]}`
-            console.log('del-flag=',del_flag)
+            //console.log('del-flag=',del_flag)
             document.querySelector(`[data-startid="${fileId}"]`).classList.remove(del_flag)
         }
-    document.querySelector(`[data-startid="${fileId}"]`).classList.add(`flag-${flag}`)
+    document.querySelector(`[data-startid="${fileId}"]`).classList.add(newFlag)
+    if(newFlag === 'flag-bad'){
+        document.querySelector(`[data-startid="${fileId}"]`).querySelector('.no-click').src = '../images/no-image.png'
+    }else{
+        let idxInArray = filesList.findIndex((el)=> el.id===fileId)
+        let idInArray = filesList[idxInArray].id
+        document.querySelector(`[data-startid="${fileId}"]`).querySelector('.no-click').src = `${filesList[idxInArray].image}`
+    }
 }
 
 function editFile() {
