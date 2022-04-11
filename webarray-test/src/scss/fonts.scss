@@ -131,22 +131,67 @@ $menu-light-color: #888ea8;
 .color-important {
   color: $warning !important;
 }
+.flag-important {
+  border: 1px solid $warning !important;
+  position: relative;
+  box-shadow: 0 0 5px $warning;
+
+  &::after {
+    content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="rgb(238,241,239)" stroke="rgb(26,188,156)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>');
+    position: absolute;
+    bottom: -13px;
+    left: -13px;
+    width: 32px;
+    height: 32px;
+    z-index: 3;
+  }
+}
+
 
 .color-approved {
   color: $info !important;
 }
+.flag-approved {
+  border: 1px solid $info !important;
+  position: relative;
+  box-shadow: 0 0 5px $info;
 
+  &::after {
+    content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="rgb(238,241,239)" stroke="rgb(26,188,156)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>');
+    position: absolute;
+    bottom: -13px;
+    left: -13px;
+    width: 32px;
+    height: 32px;
+    z-index: 3;
+  }
+}
 .color-final {
   color: $secondary !important;
 }
+.flag-final {
+  border: 1px solid $secondary !important;
+  position: relative;
+  box-shadow: 0 0 5px $secondary;
 
+  &::after {
+    content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="rgb(238,241,239)" stroke="rgb(26,188,156)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>');
+    position: absolute;
+    bottom: -13px;
+    left: -13px;
+    width: 32px;
+    height: 32px;
+    z-index: 3;
+  }
+}
 .color-good {
   color: $success !important;
 }
 
 .flag-good {
-  border: 2px solid $success !important;
+  border: 1px solid $success !important;
   position: relative;
+  box-shadow: 0 0 5px $success;
 
   &::after {
     content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="rgb(238,241,239)" stroke="rgb(26,188,156)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>');
@@ -162,20 +207,37 @@ $menu-light-color: #888ea8;
 .color-old {
   color: $border-color !important;
 }
+.flag-bad {
+  border: 1px solid $border-color !important;
+  position: relative;
+  box-shadow: 0 0 5px $border-color;
 
+  &::after {
+    content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="rgb(238,241,239)" stroke="rgb(26,188,156)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>');
+    position: absolute;
+    bottom: -13px;
+    left: -13px;
+    width: 32px;
+    height: 32px;
+    z-index: 3;
+  }
+}
 .color-bad {
   color: $danger !important;
 }
 .flag-bad {
   border: 2px solid $danger !important;
   position: relative;
-  z-index: 1;
+  z-index: 0;
+  overflow: hidden;
   &::after {
-    content: 'x';
+    content: url('data:image/svg+xml; utf8,<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"   viewBox="0 0 490 540" style="enable-background:new 0 0 490 540;" xml:space="preserve" stroke="rgba(231,81,90,0.5)" fill="rgba(231,81,90,0.5)">    <polygon points="11.387,490 245,255.832 478.613,490 489.439,479.174 255.809,244.996 489.439,10.811 478.613,0 245,234.161     11.387,0 0.561,10.811 234.191,244.996 0.561,479.174 "/></svg>');
     position: absolute;
-    left:0;
-    top:0;
-    z-index: 1;
+    left: -14px;
+    top: 0;
+    width: 114%;
+    height: 111%;
+    z-index: -1;
   }
 }
 .color-date {

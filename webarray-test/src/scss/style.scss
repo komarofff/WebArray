@@ -51,7 +51,9 @@
 .no-click{
   z-index: 9;
 }
-
+.project,.folder{
+  z-index: 2;
+}
 .gallery{
   .center-zone__inner-section{
     grid-template-columns: repeat(auto-fill,minmax(220px,220px)) !important;
