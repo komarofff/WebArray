@@ -221,8 +221,12 @@ function showFiles() {
     //['none','old', 'bad', 'good', 'important', 'approved', 'final']
     filesList.forEach((el) => {
         let data = JSON.stringify(el)
+        let itemVar = 'item'
+        if(el.flag==='bad'){
+            itemVar = null
+        }
         let fileBox = `
-                <div class="project-box item" data-src="${el.image}"
+                <div class="project-box ${itemVar}" data-src="${el.image}"
                      data-sub-html="<h4>${el.filename}</h4>"
                      data-external-thumb-image="${el.image}">
                     <img class="no-click" src="${el.image}" alt="image" onclick="fileClick(event)">
@@ -396,6 +400,7 @@ function showFileMenu(e) {
             }
             if(filesList[idx].flag === 'bad'){
                 document.querySelector(`[data-startid="${fileId}"]`).querySelector('.no-click').src = '../images/no-image.png'
+                document.querySelector(`[data-startid="${fileId}"]`).querySelector('.project-box').classList.remove('item')
             }
         })
 
@@ -474,10 +479,12 @@ function fileFlag(event, flag = 'no') {
     document.querySelector(`[data-startid="${fileId}"]`).classList.add(newFlag)
     if (newFlag === 'flag-bad') {
         document.querySelector(`[data-startid="${fileId}"]`).querySelector('.no-click').src = '../images/no-image.png'
+        document.querySelector(`[data-startid="${fileId}"]`).querySelector('.project-box').classList.remove('item')
     } else {
         let idxInArray = filesList.findIndex((el) => el.id === fileId)
         let idInArray = filesList[idxInArray].id
         document.querySelector(`[data-startid="${fileId}"]`).querySelector('.no-click').src = `${filesList[idxInArray].image}`
+        document.querySelector(`[data-startid="${fileId}"]`).querySelector('.project-box').classList.add('item')
     }
 }
 
@@ -669,7 +676,7 @@ function previewFile() {
         if (fileId === data.id) {
 
 
-            el.querySelector('.item').click()
+            if(el.querySelector('.item')){el.querySelector('.item').click()}
             setTimeout(() => {
 
             }, 200)

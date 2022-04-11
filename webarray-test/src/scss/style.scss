@@ -117,6 +117,29 @@
 
 }
 
+.list-grid{
+  & .center-zone__inner-section{
+    grid-template-columns: 1fr;
+    grid-gap: 15px;
+    .project,.folder{
+      width:fit-content !important;
+      height:20px !important;
+      white-space: nowrap;
+
+      font-weight: bold;
+      p{
+        font-size: .42rem!important;
+      }
+    }
+    .project-name,.folder-name{
+      margin:2px!important;
+      bottom: 7px;
+      left: 6px;
+    }
+  }
+
+}
+
 .project-chat{
   position: absolute;
   left: -15px;

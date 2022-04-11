@@ -5862,6 +5862,27 @@ select {
   left: 6px;
 }
 
+.list-grid .center-zone__inner-section {
+  grid-template-columns: 1fr;
+  grid-gap: 15px;
+}
+.list-grid .center-zone__inner-section .project, .list-grid .center-zone__inner-section .folder {
+  width: -webkit-fit-content !important;
+  width: -moz-fit-content !important;
+  width: fit-content !important;
+  height: 20px !important;
+  white-space: nowrap;
+  font-weight: bold;
+}
+.list-grid .center-zone__inner-section .project p, .list-grid .center-zone__inner-section .folder p {
+  font-size: 0.42rem !important;
+}
+.list-grid .center-zone__inner-section .project-name, .list-grid .center-zone__inner-section .folder-name {
+  margin: 2px !important;
+  bottom: 7px;
+  left: 6px;
+}
+
 .project-chat {
   position: absolute;
   left: -15px;
