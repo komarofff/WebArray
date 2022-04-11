@@ -5094,6 +5094,7 @@ main {
   -webkit-transform-origin: top center;
       -ms-transform-origin: top center;
           transform-origin: top center;
+  z-index: 9;
 }
 
 .popup-box {

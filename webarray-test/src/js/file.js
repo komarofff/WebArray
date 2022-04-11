@@ -1,5 +1,6 @@
 let newData = null
 let fileId = null
+let filesList = []
 // function fileSection(e) {
 //     closeMainMenus()
 //     if (e.target.classList.contains('project')) {
@@ -142,6 +143,43 @@ let fileId = null
 //
 //
 // }
+function showFiles(){
+    // to get files data from server
+    filesList=[
+        {
+            id:55,
+            filename: 'Project 55',
+            link: 'https://webarray.ca/fggg.txt',
+            author: 'Test author',
+            createdAt:'22.03.2022',
+            image: '../images/test-image-bookmark-preview.jpg',
+            flag: 'none',
+            type: 'file'
+        }
+    ]
+let data = JSON.stringify(filesList[0])
+    let fileBox=`
+                <div class="project-box item" data-src="${filesList[0].image}"
+                     data-sub-html="<h4>${filesList[0].filename}</h4>"
+                     data-external-thumb-image="${filesList[0].image}">
+                    <img class="no-click" src="${filesList[0].image}" alt="image" onclick="fileClick(event)">
+                </div>
+                <div class="project-name">
+                    <p>${filesList[0].filename}</p>
+                </div>
+                <div class="project-chat hidden" data-id="${filesList[0].id}"></div>
+                <div class="project-tasks hidden" data-id="${filesList[0].id}"></div>
+            `
+let newFile = document.createElement('div')
+    newFile.setAttribute('class','project')
+    newFile.setAttribute('data-flag',filesList[0].flag)
+    newFile.setAttribute('data-data',data)
+    newFile.setAttribute('data-startid',filesList[0].id)
+    newFile.setAttribute('oncontextmenu','showFileMenu(event)')
+    newFile.innerHTML=fileBox
+    document.querySelector('.center-zone__inner-section').appendChild(newFile)
+}
+showFiles()
 
 function showFileMenu(e) {
     e.preventDefault()
@@ -190,7 +228,7 @@ function showFileMenu(e) {
     </ul>
     <p class="stripe-gray"></p>
     <ul>
-        <li class="flag"  onclick="flagFile()">
+        <li class="flag" >
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                  stroke-linejoin="round" class="feather feather-flag">
@@ -199,13 +237,13 @@ function showFileMenu(e) {
             </svg>
             <span>Flag</span>
             <ul class="flag-menu-box">
-                <li class="color-base">No flag</li>
-                <li class="color-important">Important</li>
-                <li class="color-approved">Approved</li>
-                <li class="color-final">Final</li>
-                <li class="color-good">Good</li>
-                <li class="color-old">Old</li>
-                <li class="color-bad">Bad</li>
+                <li class="color-base" onclick="fileFlag('none')">No flag</li>
+                <li class="color-important"  onclick="fileFlag('important')">Important</li>
+                <li class="color-approved"  onclick="fileFlag('approved')">Approved</li>
+                <li class="color-final"  onclick="fileFlag('final')">Final</li>
+                <li class="color-good"  onclick="fileFlag('good')">Good</li>
+                <li class="color-old"  onclick="fileFlag('old')">Old</li>
+                <li class="color-bad"  onclick="fileFlag('bad')">Bad</li>
             </ul>
 
         </li>
@@ -334,8 +372,18 @@ getChatFromServer('https://jsonplaceholder.typicode.com/todos/')
     source.querySelector('.project-chat').innerHTML= amountMessages
 
 }
+let flags_lists = ['none','old', 'bad', 'good', 'important', 'approved', 'final']
+let del_flag = null
+function fileFlag(flag = 'no'){
+    alert('flag for file id='+fileId+' flag='+flag)
 
-
+        for (let i = 0; i < flags_lists.length; i++) {
+            del_flag = `flag-${flags_lists[i]}`
+            console.log('del-flag=',del_flag)
+            document.querySelector(`[data-startid="${fileId}"]`).classList.remove(del_flag)
+        }
+    document.querySelector(`[data-startid="${fileId}"]`).classList.add(`flag-${flag}`)
+}
 
 function editFile() {
 
@@ -534,9 +582,9 @@ function previewFile() {
 
 }
 
-function flagFile() {
-    alert('flag file id=' + fileId)
-}
+// function flagFile() {
+//     alert('flag file id=' + fileId)
+// }
 
 function downloadFile() {
 

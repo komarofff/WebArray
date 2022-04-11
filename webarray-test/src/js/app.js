@@ -214,9 +214,9 @@ function setFlagForProjects() {
     let project_files = document.querySelectorAll('.project')
     let flags_list = ['old', 'bad', 'good', 'important', 'approved', 'final']
     project_files.forEach((el) => {
-        for (let i = 0; i < flags_list; i++) {
+        for (let i = 0; i < flags_list.length; i++) {
             let del_flag = `flag-${flags_list[i]}`
-            el.classList.remove(class_flag)
+            el.classList.remove(del_flag)
         }
         let flag = el.dataset.flag
         let class_flag = `flag-${flag}`
