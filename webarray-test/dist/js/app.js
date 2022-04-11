@@ -221,25 +221,6 @@ document.addEventListener('DOMContentLoaded', () => {
     setFlagForProjects()
 })
 
-// document.addEventListener('click', (el) => {
-//     console.log(el.target.classList)
-//     if (el.target.classList.contains('project-chat')) {
-//         let idd = el.target.dataset.id
-//         alert('open chat for id=' + idd)
-//         // start request to server and get new data for chat. use id of file for getting url
-//         getChatFromServer('https://jsonplaceholder.typicode.com/todos/')
-//         document.querySelector('.chat-box').querySelector('.popup-box__inner-section').classList.remove('hidden')
-//
-//     }
-//     if (el.target.classList.contains('project-tasks')) {
-//         let idd = el.target.dataset.id
-//         alert('open tasks for id=' + idd)
-//         // start request to server and get new data for task. use id of file for getting url
-//         getTasksFromServer('https://jsonplaceholder.typicode.com/todos/')
-//
-//         document.querySelector('.task-box').querySelector('.popup-box__inner-section').classList.remove('hidden')
-//     }
-// })
 
 
 // change grid on the page
