@@ -209,6 +209,21 @@ const download = (path, filename) => {
     document.body.removeChild(anchor)
 }
 
+function setFlagForProjects() {
+    let project_files = document.querySelectorAll('.project')
+    let flags_list=['old','bad','good','important','approved','final']
+    project_files.forEach((el)=>{
+        for(let i=0; i<flags_list;i++){
+            let del_flag = `flag-${flags_list[i]}`
+            el.classList.remove(class_flag)
+        }
+        let flag = el.dataset.flag
+        let class_flag = `flag-${flag}`
+        el.classList.add(class_flag)
+    })
 
-
+}
+document.addEventListener('DOMContentLoaded',()=>{
+    setFlagForProjects()
+})
 
