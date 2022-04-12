@@ -247,66 +247,40 @@ let dropzoneBig = null
 let dropCentral = null
 
 function onDragOverBig(event) {
-    // event.preventDefault();
-    // if (event.target.dataset.id) {
-    //     dropzoneBig = event.target
-    //     if (dropzoneBig.dataset.id === 'central-zone') {
-    //         dropCentral = dropzoneBig
-    //     }else{
-    //         dropCentral = null
-    //     }
-    // }
-    //
-    // if (event.target.parentNode.dataset.id) {
-    //     dropzoneBig = event.target.parentNode
-    //
-    //         dropCentral = null
-    //
-    // }
-    // if (event.target.parentNode.parentNode.dataset.id) {
-    //     dropzoneBig = event.target.parentNode.parentNode
-    //
-    //         dropCentral = null
-    //
-    // }
-    //
-    // console.log('dropCentral = ',dropCentral)
+    event.preventDefault();
+    if (event.target.dataset.idd) {
+        dropzoneBig = event.target
+        if (dropzoneBig.dataset.idd === 'central-zone') {
+            dropCentral = dropzoneBig
+        } else {
+            dropCentral = null
+        }
+    }
+
+    if (event.target.parentNode.dataset.idd) {
+        dropzoneBig = event.target.parentNode
+        dropCentral = null
+
+    }
+    if (event.target.parentNode.parentNode.dataset.idd) {
+        dropzoneBig = event.target.parentNode.parentNode
+        dropCentral = null
+
+    }
+
 
 }
 
 function onDropBig(event) {
-    // if (dropzoneBig ) {
-    //     if (dropzoneBig.classList.value) {
-    //         if (dropzoneBig.classList.contains('dropzone')) {
-    //             alert('5555555555555')
-    //             dropzone = dropzoneBig
-    //             counterDrop += 3
-    //             const id5 = event
-    //                 .dataTransfer
-    //                 .getData('text');
-    //             const draggableElement = document.getElementById(id5);
-    //             draggableElement.style.cssText = `position:absolute; top:${counterDrop}px; right:${counterDrop}px;`
-    //             console.log('dropzone=', dropzone)
-    //             dropzone.appendChild(draggableElement);
-    //
-    //             event
-    //                 .dataTransfer
-    //                 .clearData();
-    //             event.preventDefault();
-    //             return false
-    //
-    //         }else if (dropCentral) {
-    //             const id6 = event.dataTransfer.getData('text');
-    //             const draggableElement = document.getElementById(id6);
-    //             draggableElement.style.cssText = `position:relative; `
-    //             let dropzone2 = document.getElementById('central-zone');
-    //             dropzone2.appendChild(draggableElement);
-    //
-    //             event.dataTransfer.clearData();
-    //         }
-    //
-    //     }
-    // }
+     if (dropCentral) {
+                const id6 = event.dataTransfer.getData('text');
+                const draggableElement = document.getElementById(id6);
+                draggableElement.style.cssText = `position:relative; `
+                let dropzone2 = document.getElementById('central-zone');
+                dropzone2.appendChild(draggableElement);
+
+                event.dataTransfer.clearData();
+            }
 
 
 }
