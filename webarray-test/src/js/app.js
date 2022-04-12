@@ -258,21 +258,44 @@ function onDragOverBig(event) {
             dropCentral = null
         }
     }
-    //
-    // if (event.target.parentNode.dataset.idd) {
-    //     dropzoneBig = event.target.parentNode
-    //     dropCentral = null
-    //
-    // }
-    // if (event.target.parentNode.parentNode.dataset.idd) {
-    //     dropzoneBig = event.target.parentNode.parentNode
-    //     dropCentral = null
-    // }
 
 
 }
 
+function isFile(evt) {
+    var dt = evt.dataTransfer;
+    for (var i = 0; i < dt.types.length; i++) {
+        if (dt.types[i] === "Files") {
+            return true;
+        }
+    }
+    return false;
+}
+
 function onDropBig(event) {
+    if (isFile(event)) {
+        event.preventDefault()
+        let totalfiles = event.dataTransfer.files.length;
+        if (totalfiles > 0) {
+            let formData = new FormData();
+            for (let index = 0; index < totalfiles; index++) {
+                formData.append('draguploads[]', event.dataTransfer.files[index]);
+            }
+            alert('send new file to server', +formData)
+            // $.ajax('/wafm/index.php', {
+            //     type: 'POST',
+            //     contentType: false,
+            //     processData: false,
+            //     data: formData,
+            //     error: function() {
+            //         console.log("Error Occured");
+            //     },
+            //     success: function(res) {
+            //         console.log("Screenshot Uploaded");
+            //     }
+            // });
+        }
+    }else
     if (dropCentral) {
         const id6 = event.dataTransfer.getData('text');
         const draggableElement = document.getElementById(id6);
@@ -280,6 +303,7 @@ function onDropBig(event) {
         let dropzone2 = document.getElementById('central-zone');
         dropzone2.appendChild(draggableElement);
         event.dataTransfer.clearData();
+
     }
 
 
