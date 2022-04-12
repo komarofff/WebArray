@@ -278,22 +278,11 @@ function onDropBig(event) {
         let totalfiles = event.dataTransfer.files.length;
         if (totalfiles > 0) {
             let formData = new FormData();
+            let filename = null
             for (let index = 0; index < totalfiles; index++) {
                 formData.append('draguploads[]', event.dataTransfer.files[index]);
             }
-            alert('send new file to server', +formData)
-            // $.ajax('/wafm/index.php', {
-            //     type: 'POST',
-            //     contentType: false,
-            //     processData: false,
-            //     data: formData,
-            //     error: function() {
-            //         console.log("Error Occured");
-            //     },
-            //     success: function(res) {
-            //         console.log("Screenshot Uploaded");
-            //     }
-            // });
+            sendDropFileToServer(formData)
         }
     }else
     if (dropCentral) {
@@ -306,5 +295,25 @@ function onDropBig(event) {
 
     }
 
+
+}
+
+document.onpaste = function(event) {
+    var items = (event.clipboardData || event.originalEvent.clipboardData).items;
+    for(var i = 0; i < items.length; i++) {
+        var item = items[i];
+        console.log('item.type=',item.type)
+        if(item.type.indexOf("image") != -1) {
+            var file = item.getAsFile();
+            upload_screenshot(file);
+        }
+    }
+}
+
+function upload_screenshot(file) {
+    var formData = new FormData();
+    formData.append('screenshot', file);
+    alert('new screenshot', file)
+    sendDropFileToServer(formData)
 
 }
