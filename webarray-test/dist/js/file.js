@@ -105,7 +105,7 @@ function showFiles() {
                 <div class="project-box ${itemVar}" data-src="${el.image}"
                      data-sub-html="<h4>${el.filename}</h4>"
                      data-external-thumb-image="${el.image}">
-                    <img class="no-click" src="${el.image}" alt="image" onclick="fileClick(event)">
+                    <img class="no-click" src="${el.image}" alt="image" draggable="false" onclick="fileClick(event)">
                 </div>
                 <div class="project-name"  onclick="fileClick(event)">
                     <p>${el.filename}</p>
@@ -158,20 +158,18 @@ function onDragStart(event) {
 }
 
 function onDrop(event) {
-    counterDrop += 3
+
     const id5 = event
         .dataTransfer
         .getData('text');
     const draggableElement = document.getElementById(id5);
     if(draggableElement) {
-        draggableElement.style.cssText = `position:absolute; top:${counterDrop}px; right:${counterDrop}px;`
-
+        //counterDrop += 3
+        draggableElement.style.cssText = `position:absolute; margin-top:${counterDrop}px; margin-right:${counterDrop}px;`
         console.log('dropzone=', dropzone)
         dropzone.appendChild(draggableElement);
+        event.dataTransfer.clearData();
 
-        event
-            .dataTransfer
-            .clearData();
         changeDropPosition()
     }
 }
