@@ -254,38 +254,28 @@ function share() {
 }
 
 function pasteFile(e){
+    alert('paste')
     e.stopPropagation();
     e.preventDefault();
 
-
-document.onpaste=function(event) {
-    let items = (event.clipboardData || event.originalEvent.clipboardData).items;
-    for (let i = 0; i < items.length; i++) {
-        let item = items[i];
-        if (item.type.indexOf("image") != -1) {
-            let file = item.getAsFile();
+document.onpaste = function(event) {
+    var items = (event.clipboardData || event.originalEvent.clipboardData).items;
+    for(var i = 0; i < items.length; i++) {
+        var item = items[i];
+        console.log('item.type=',item.type)
+        if(item.type.indexOf("image") != -1) {
+            var file = item.getAsFile();
             upload_screenshot(file);
         }
     }
 }
 
-    function upload_screenshot(file) {
-       let formData = new FormData();
-        formData.append('screenshot', file);
-        alert('screenshot and new file list', file)
-        sendDropFileToServer(formData)
-        // $.ajax('/wafm/index.php', {
-        //     type: 'POST',
-        //     contentType: false,
-        //     processData: false,
-        //     data: formData,
-        //     error: function() {
-        //         console.log("Error Occured");
-        //     },
-        //     success: function(res) {
-        //         console.log("Screenshot Uploaded");
-        //     }
-        // });
-    }
+function upload_screenshot(file) {
+    var formData = new FormData();
+    formData.append('screenshot', file);
+    alert('new screenshot', file)
+    sendDropFileToServer(formData)
+
+}
 
 }

@@ -298,6 +298,7 @@ function onDropBig(event) {
 
 }
 
+/// paste file or screenshot
 document.onpaste = function(event) {
     var items = (event.clipboardData || event.originalEvent.clipboardData).items;
     for(var i = 0; i < items.length; i++) {
