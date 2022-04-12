@@ -120,6 +120,7 @@ showFiles()
 let dropzone = null
 
 function onDragOver(event) {
+    dropzone = null
     event.preventDefault();
     if (event.target.dataset.id) {
         dropzone = event.target
@@ -151,15 +152,21 @@ function onDrop(event) {
         .dataTransfer
         .getData('text');
     const draggableElement = document.getElementById(id5);
-    draggableElement.style.cssText = `position:absolute; top:${counterDrop}px; right:${counterDrop}px;`
-    console.log('dropzone=', dropzone)
-    dropzone.appendChild(draggableElement);
+    if(draggableElement) {
+        draggableElement.style.cssText = `position:absolute; top:${counterDrop}px; right:${counterDrop}px;`
 
-    event
-        .dataTransfer
-        .clearData();
+        console.log('dropzone=', dropzone)
+        dropzone.appendChild(draggableElement);
+
+        event
+            .dataTransfer
+            .clearData();
+        changeDropPosition()
+    }
 }
+function changeDropPosition(){
 
+}
 /////////////////////////////////////////
 function showFileMenu(e) {
     e.preventDefault()

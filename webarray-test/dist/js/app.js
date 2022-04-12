@@ -247,6 +247,8 @@ let dropzoneBig = null
 let dropCentral = null
 
 function onDragOverBig(event) {
+    dropzoneBig = null
+    dropCentral = null
     event.preventDefault();
     if (event.target.dataset.idd) {
         dropzoneBig = event.target
@@ -256,31 +258,29 @@ function onDragOverBig(event) {
             dropCentral = null
         }
     }
-
-    if (event.target.parentNode.dataset.idd) {
-        dropzoneBig = event.target.parentNode
-        dropCentral = null
-
-    }
-    if (event.target.parentNode.parentNode.dataset.idd) {
-        dropzoneBig = event.target.parentNode.parentNode
-        dropCentral = null
-
-    }
+    //
+    // if (event.target.parentNode.dataset.idd) {
+    //     dropzoneBig = event.target.parentNode
+    //     dropCentral = null
+    //
+    // }
+    // if (event.target.parentNode.parentNode.dataset.idd) {
+    //     dropzoneBig = event.target.parentNode.parentNode
+    //     dropCentral = null
+    // }
 
 
 }
 
 function onDropBig(event) {
-     if (dropCentral) {
-                const id6 = event.dataTransfer.getData('text');
-                const draggableElement = document.getElementById(id6);
-                draggableElement.style.cssText = `position:relative; `
-                let dropzone2 = document.getElementById('central-zone');
-                dropzone2.appendChild(draggableElement);
-
-                event.dataTransfer.clearData();
-            }
+    if (dropCentral) {
+        const id6 = event.dataTransfer.getData('text');
+        const draggableElement = document.getElementById(id6);
+        draggableElement.style.cssText = `position:relative; `
+        let dropzone2 = document.getElementById('central-zone');
+        dropzone2.appendChild(draggableElement);
+        event.dataTransfer.clearData();
+    }
 
 
 }
