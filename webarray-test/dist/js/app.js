@@ -301,6 +301,7 @@ function onDropBig(event) {
 /// paste file or screenshot
 document.onpaste = function(event) {
     var items = (event.clipboardData || event.originalEvent.clipboardData).items;
+    alert('ctr+v')
     for(var i = 0; i < items.length; i++) {
         var item = items[i];
         console.log('item.type=',item.type)
