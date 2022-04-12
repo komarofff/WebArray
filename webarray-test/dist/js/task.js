@@ -62,18 +62,7 @@ function getTasksFromServer(url) {
     })
     if (taskGet) {
         taskGet.get().then(data => {
-
-            // tList.push(data)
-            // console.log('tlist length=',tList.length)
-            // if (tList.length === 1) {
-            //     todosList = tList
-            //     console.log(todosList)
-            // } else {
-            //     todosList = tList[0]
-            // }
             todosList = data
-
-            // let task = document.querySelector('.task-data')
 
             if (todosList) {
                 showTasksInDiv()

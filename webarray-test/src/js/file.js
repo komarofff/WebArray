@@ -5,7 +5,17 @@ let filesListFromServer = null
 let  filesList = null
 let flags_lists = ['none', 'old', 'bad', 'good', 'important', 'approved', 'final']
 let fileData = null
-function getFileDataFromServer(){
+function getFileDataFromServer(url){
+    // const filesGet = new DataS({
+    //     url: url
+    // })
+    // if (filesGet) {
+    //     filesGet.get().then(data => {
+    //         filesListFromServer = data
+    //     }).catch((error) => {
+    //         console.log('error get', error)
+    //     })
+    // }
     // get data from server and make fileList var
     filesListFromServer = [
         {
@@ -89,7 +99,7 @@ function showFiles() {
     })
 
     // to get files data from server
-    filesList = getFileDataFromServer()
+    filesList = getFileDataFromServer('need url')
     //['none','old', 'bad', 'good', 'important', 'approved', 'final']
     let counter = -1
     filesList.forEach((el) => {
@@ -129,21 +139,26 @@ function showFiles() {
 showFiles()
 ///DnDrop files
 let dropzone = null
-
+let iddSource = null
 function onDragOver(event) {
     dropzone = null
+
     event.preventDefault();
     if (event.target.dataset.id) {
         dropzone = event.target
+        iddSource = event.target.dataset.id
     }
     if (event.target.parentNode.dataset.id) {
         dropzone = event.target.parentNode
+        iddSource = event.target.parentNode.dataset.id
     }
     if (event.target.parentNode.parentNode.dataset.id) {
         dropzone = event.target.parentNode.parentNode
+        iddSource = event.target.parentNode.parentNode.dataset.id
     }
     if (event.target.parentNode.parentNode.parentNode.dataset.id) {
         dropzone = event.target.parentNode.parentNode.parentNode
+        iddSource = event.target.parentNode.parentNode.parentNode.dataset.id
     }
 
 }
@@ -165,16 +180,18 @@ function onDrop(event) {
     const draggableElement = document.getElementById(id5);
     if(draggableElement) {
         //counterDrop += 3
+        console.log('id=',iddSource)
         draggableElement.style.cssText = `position:absolute; margin-top:${counterDrop}px; margin-right:${counterDrop}px;`
         console.log('dropzone=', dropzone)
         dropzone.appendChild(draggableElement);
         event.dataTransfer.clearData();
 
-        changeDropPosition()
+        changeDropPosition(dropzone)
     }
 }
-function changeDropPosition(){
-
+function changeDropPosition(drop){
+let allDrops =drop.querySelectorAll('.dropzone')
+    console.log('allDrops='+allDrops.length)
 }
 /////////////////////////////////////////
 function showFileMenu(e) {

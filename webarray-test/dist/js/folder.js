@@ -1,79 +1,70 @@
-let folderList = [
-    {
-        id: 0,
-        foldername: 'Folder 0',
-        link: 'https://webarray.ca/fggg.txt',
-        author: 'Test author 0',
-        createdAt: '22.03.2022',
-        image: 'images//test-image-bookmark-preview.jpg',
-        flag: 'none',
-        type: 'folder'
-    },
-    {
-        id: 1,
-        foldername: 'Folder 1',
-        link: 'https://webarray.ca/fggg.txt',
-        author: 'Test author 1',
-        createdAt: '22.03.2021',
-        image: 'images//test-image-bookmark-preview.jpg',
-        flag: 'good',
-        type: 'folder'
-    },
-    {
-        id: 2,
-        foldername: 'Folder 2',
-        link: 'https://webarray.ca/fggg.txt',
-        author: 'Test author 2',
-        createdAt: '22.04.2022',
-        image: 'images//test-image-bookmark-preview.jpg',
-        flag: 'important',
-        type: 'folder'
-    },
-    {
-        id: 3,
-        foldername: 'Folder 3',
-        link: 'https://webarray.ca/fggg.txt',
-        author: 'Test author 3',
-        createdAt: '15.04.2022',
-        image: 'images//test-image-bookmark-preview.jpg',
-        flag: 'approved',
-        type: 'folder'
-    }, {
-        id: 4,
-        foldername: 'Folder 4',
-        link: 'https://webarray.ca/fggg.txt',
-        author: 'Test author 4',
-        createdAt: '15.04.2022',
-        image: 'images//test-image-bookmark-preview.jpg',
-        flag: 'old',
-        type: 'folder'
-    },
-    {
-        id: 5,
-        foldername: 'Folder 5',
-        link: 'https://webarray.ca/fggg.txt',
-        author: 'Test author 5',
-        createdAt: '15.04.2022',
-        image: 'images//test-image-bookmark-preview.jpg',
-        flag: 'final',
-        type: 'folder'
-    },
-    {
-        id: 6,
-        foldername: 'Folder 6',
-        link: 'https://webarray.ca/fggg.txt',
-        author: 'Test author 6',
-        createdAt: '15.04.2022',
-        image: 'images//no-image.png',
-        flag: 'bad',
-        type: 'folder'
-    },
+let folderList = null
+let folderListServer = null
+function getFoldersFromServer(url){
+    // const foldersGet = new DataS({
+    //     url: url
+    // })
+    // if (foldersGet) {
+    //     foldersGet.get().then(data => {
+    //         folderListServer = data
+    //     }).catch((error) => {
+    //         console.log('error get', error)
+    //     })
+    // }
 
-]
-folderList.sort((start,finish)=> finish.id - start.id)
+      folderListServer = [
+        {
+            id: 0,
+            foldername: 'Folder 0',
+            link: 'https://webarray.ca/fggg.txt',
+            author: 'Test author 0',
+            createdAt: '22.03.2022',
+            image: 'images//test-image-bookmark-preview.jpg',
+            flag: 'none',
+            type: 'folder'
+        },
+        {
+            id: 1,
+            foldername: 'Folder 1',
+            link: 'https://webarray.ca/fggg.txt',
+            author: 'Test author 1',
+            createdAt: '22.03.2021',
+            image: 'images//test-image-bookmark-preview.jpg',
+            flag: 'good',
+            type: 'folder'
+        },
+        {
+            id: 2,
+            foldername: 'Folder 2',
+            link: 'https://webarray.ca/fggg.txt',
+            author: 'Test author 2',
+            createdAt: '22.04.2022',
+            image: 'images//test-image-bookmark-preview.jpg',
+            flag: 'important',
+            type: 'folder'
+        },
+        {
+            id: 3,
+            foldername: 'Folder 3',
+            link: 'https://webarray.ca/fggg.txt',
+            author: 'Test author 3',
+            createdAt: '15.04.2022',
+            image: 'images//test-image-bookmark-preview.jpg',
+            flag: 'approved',
+            type: 'folder'
+        }
 
+    ]
+    return  folderListServer
+}
 function showFolders() {
+    let ifFolder = document.querySelectorAll('.folder')
+    ifFolder.forEach((el)=>{
+        el.remove()
+    })
     // to get files data from server
+    folderList = getFoldersFromServer('need url')
+    folderList.sort((start,finish)=> finish.id - start.id)
 
     //['none','old', 'bad', 'good', 'important', 'approved', 'final']
     let counter = -1
