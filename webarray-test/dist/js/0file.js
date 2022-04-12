@@ -75,7 +75,6 @@ let filesList = [
 ]
 let flags_lists = ['none', 'old', 'bad', 'good', 'important', 'approved', 'final']
 let fileData = null
-
 function showFiles() {
     // to get files data from server
 
@@ -88,9 +87,7 @@ function showFiles() {
         if (el.flag === 'bad') {
             itemVar = null
         }
-        let fileBox = ` 
-               <div class="project" data-flag="${el.flag}" data-data="${data}" data-startid="${el.id}" data-arrid="${counter}"
-               oncontextmenu="showFileMenu(event)" onclick="fileClick(event)" draggable="true" ondragstart="onDragStart(event)">
+        let fileBox = `
                 <div class="project-box ${itemVar}" data-src="${el.image}"
                      data-sub-html="<h4>${el.filename}</h4>"
                      data-external-thumb-image="${el.image}">
@@ -101,14 +98,19 @@ function showFiles() {
                 </div>
                 <div class="project-chat hidden" data-id="${el.id}"></div>
                 <div class="project-tasks hidden" data-id="${el.id}"></div>
-               </div>
+                
             `
         let newFile = document.createElement('div')
+        newFile.setAttribute('class', 'project')
+        newFile.setAttribute('data-flag', el.flag)
+        newFile.setAttribute('data-data', data)
+        newFile.setAttribute('data-startid', el.id)
+        newFile.setAttribute('data-arrid', counter)
+        newFile.setAttribute('oncontextmenu', 'showFileMenu(event)')
+        newFile.setAttribute('onclick', 'fileClick(event)')
+        newFile.setAttribute('draggable', 'true')
+        newFile.setAttribute('ondragstart', 'onDragStart(event)')
         newFile.setAttribute('ondragover', 'onDragOver(event)')
-        newFile.setAttribute('ondrop', 'onDrop(event)')
-        newFile.setAttribute('class', 'dropzone')
-        newFile.setAttribute('id', `${el.id}`)
-        newFile.setAttribute('data-id', `${el.id}`)
         newFile.innerHTML = fileBox
         document.querySelector('.center-zone__inner-section').appendChild(newFile)
     })
@@ -117,49 +119,33 @@ function showFiles() {
 
 showFiles()
 ///DnDrop files
-let dropzone = null
-
 function onDragOver(event) {
     event.preventDefault();
-    if (event.target.dataset.id) {
-        dropzone = event.target
-    }
-    if (event.target.parentNode.dataset.id) {
-        dropzone = event.target.parentNode
-    }
-    if (event.target.parentNode.parentNode.dataset.id) {
-        dropzone = event.target.parentNode.parentNode
-    }
-    if (event.target.parentNode.parentNode.parentNode.dataset.id) {
-        dropzone = event.target.parentNode.parentNode.parentNode
-    }
-
 }
-
-let counterDrop = 3
-
 function onDragStart(event) {
     event
         .dataTransfer
         .setData('text/plain', event.target.dataset.startid);
-
+    console.log(event.target.dataset.startid)
+    event
+        .currentTarget
+        .style
+        .backgroundColor = 'yellow';
 }
-
 function onDrop(event) {
-    counterDrop += 3
-    const id5 = event
+    const id = event
         .dataTransfer
-        .getData('text');
-    const draggableElement = document.getElementById(id5);
-    draggableElement.style.cssText = `position:absolute; top:${counterDrop}px; right:${counterDrop}px;`
-    console.log('dropzone=', dropzone)
+        .getData('text/plain');
+
+    const draggableElement = document.getElementById(id);
+    const dropzone = event.target;
+
     dropzone.appendChild(draggableElement);
 
     event
         .dataTransfer
         .clearData();
 }
-
 /////////////////////////////////////////
 function showFileMenu(e) {
     e.preventDefault()

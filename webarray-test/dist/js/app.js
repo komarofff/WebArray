@@ -222,35 +222,91 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 
-
 // change grid on the page
 let gridSwitcher = document.querySelector('.change-grid')
 let switchersArr = gridSwitcher.querySelectorAll('.switcher-grid')
-switchersArr.forEach((el)=>{
-    el.addEventListener('click',(e)=>{
-        for(let i=0; i<switchersArr.length;i++){
+switchersArr.forEach((el) => {
+    el.addEventListener('click', (e) => {
+        for (let i = 0; i < switchersArr.length; i++) {
             switchersArr[i].classList.remove('active')
         }
         let elem = el.classList.value
-        let newGrid = elem.replace('switcher-grid ','')
-        newGrid = newGrid+'-grid'
+        let newGrid = elem.replace('switcher-grid ', '')
+        newGrid = newGrid + '-grid'
         el.classList.add('active')
         document.querySelector('#app').classList.value = ''
         document.querySelector('#app').classList.add(newGrid)
 
     })
 })
-//  sort  tasks in user-menu
-let sortSwitcher = document.querySelector('.user-menu')
-let sortArr = sortSwitcher.querySelectorAll('.task-time')
-sortArr.forEach((el)=>{
-    el.addEventListener('click',(e)=>{
-        for(let i=0; i<sortArr.length;i++){
-            sortArr[i].classList.remove('checked')
-        }
-        sortTask(el.dataset.time)
-        el.classList.add('checked')
 
 
-    })
-})
+//// DnD in central section
+let dropzoneBig = null
+//let dropzone = null
+let dropCentral = null
+
+function onDragOverBig(event) {
+    // event.preventDefault();
+    // if (event.target.dataset.id) {
+    //     dropzoneBig = event.target
+    //     if (dropzoneBig.dataset.id === 'central-zone') {
+    //         dropCentral = dropzoneBig
+    //     }else{
+    //         dropCentral = null
+    //     }
+    // }
+    //
+    // if (event.target.parentNode.dataset.id) {
+    //     dropzoneBig = event.target.parentNode
+    //
+    //         dropCentral = null
+    //
+    // }
+    // if (event.target.parentNode.parentNode.dataset.id) {
+    //     dropzoneBig = event.target.parentNode.parentNode
+    //
+    //         dropCentral = null
+    //
+    // }
+    //
+    // console.log('dropCentral = ',dropCentral)
+
+}
+
+function onDropBig(event) {
+    // if (dropzoneBig ) {
+    //     if (dropzoneBig.classList.value) {
+    //         if (dropzoneBig.classList.contains('dropzone')) {
+    //             alert('5555555555555')
+    //             dropzone = dropzoneBig
+    //             counterDrop += 3
+    //             const id5 = event
+    //                 .dataTransfer
+    //                 .getData('text');
+    //             const draggableElement = document.getElementById(id5);
+    //             draggableElement.style.cssText = `position:absolute; top:${counterDrop}px; right:${counterDrop}px;`
+    //             console.log('dropzone=', dropzone)
+    //             dropzone.appendChild(draggableElement);
+    //
+    //             event
+    //                 .dataTransfer
+    //                 .clearData();
+    //             event.preventDefault();
+    //             return false
+    //
+    //         }else if (dropCentral) {
+    //             const id6 = event.dataTransfer.getData('text');
+    //             const draggableElement = document.getElementById(id6);
+    //             draggableElement.style.cssText = `position:relative; `
+    //             let dropzone2 = document.getElementById('central-zone');
+    //             dropzone2.appendChild(draggableElement);
+    //
+    //             event.dataTransfer.clearData();
+    //         }
+    //
+    //     }
+    // }
+
+
+}

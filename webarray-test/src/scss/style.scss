@@ -69,10 +69,26 @@
     }
 
 }
+.center-zone{
+  z-index: 0;
+}
+.dropzone {
+  z-index: 10;
+  $size: 5px;
+  position: relative;
+  .dropzone:nth-child(n){
+    position: absolute;
+    top:$size;
+    right:$size;
+    $size: $size+5;
+  }
+
+}
+
 .gallery-grid{
   .center-zone__inner-section{
     grid-template-columns: repeat(auto-fill,minmax(220px,220px)) !important;
-    .project,.folder{
+    .project,.folder,.dropzone{
       width:220px !important;
       height:240px !important;
     }
@@ -83,7 +99,7 @@
   & .center-zone__inner-section{
     grid-template-columns: repeat(auto-fill,minmax(140px,140px)) !important;
     grid-gap: 25px;
-    .project,.folder{
+    .project,.folder,.dropzone{
       width:130px !important;
       height:150px !important;
     }
@@ -99,7 +115,7 @@
   & .center-zone__inner-section{
     grid-template-columns: repeat(auto-fill,minmax(80px,80px)) !important;
     grid-gap: 15px;
-    .project,.folder{
+    .project,.folder,.dropzone{
       width:80px !important;
       height:80px !important;
 
@@ -121,7 +137,7 @@
   & .center-zone__inner-section{
     grid-template-columns: 1fr;
     grid-gap: 15px;
-    .project,.folder{
+    .project,.folder,.dropzone{
       width:fit-content !important;
       height:20px !important;
       white-space: nowrap;

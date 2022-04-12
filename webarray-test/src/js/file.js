@@ -8,7 +8,7 @@ let filesList = [
         link: 'https://webarray.ca/fggg.txt',
         author: 'Test author 0',
         createdAt: '22.03.2022',
-        image: '../images/test-image-bookmark-preview.jpg',
+        image: 'images//test-image-bookmark-preview.jpg',
         flag: 'none',
         type: 'file'
     },
@@ -18,7 +18,7 @@ let filesList = [
         link: 'https://webarray.ca/fggg.txt',
         author: 'Test author 1',
         createdAt: '22.03.2021',
-        image: '../images/test-image-bookmark-preview.jpg',
+        image: 'images//test-image-bookmark-preview.jpg',
         flag: 'good',
         type: 'file'
     },
@@ -28,7 +28,7 @@ let filesList = [
         link: 'https://webarray.ca/fggg.txt',
         author: 'Test author 2',
         createdAt: '22.04.2022',
-        image: '../images/test-image-bookmark-preview.jpg',
+        image: 'images//test-image-bookmark-preview.jpg',
         flag: 'important',
         type: 'file'
     },
@@ -38,7 +38,7 @@ let filesList = [
         link: 'https://webarray.ca/fggg.txt',
         author: 'Test author 3',
         createdAt: '15.04.2022',
-        image: '../images/test-image-bookmark-preview.jpg',
+        image: 'images//test-image-bookmark-preview.jpg',
         flag: 'approved',
         type: 'file'
     }, {
@@ -47,7 +47,7 @@ let filesList = [
         link: 'https://webarray.ca/fggg.txt',
         author: 'Test author 4',
         createdAt: '15.04.2022',
-        image: '../images/test-image-bookmark-preview.jpg',
+        image: 'images//test-image-bookmark-preview.jpg',
         flag: 'old',
         type: 'file'
     },
@@ -57,7 +57,7 @@ let filesList = [
         link: 'https://webarray.ca/fggg.txt',
         author: 'Test author 5',
         createdAt: '15.04.2022',
-        image: '../images/test-image-bookmark-preview.jpg',
+        image: 'images//test-image-bookmark-preview.jpg',
         flag: 'final',
         type: 'file'
     },
@@ -67,7 +67,7 @@ let filesList = [
         link: 'https://webarray.ca/fggg.txt',
         author: 'Test author 6',
         createdAt: '15.04.2022',
-        image: '../images/no-image.png',
+        image: 'images//no-image.png',
         flag: 'bad',
         type: 'file'
     },
@@ -75,6 +75,7 @@ let filesList = [
 ]
 let flags_lists = ['none', 'old', 'bad', 'good', 'important', 'approved', 'final']
 let fileData = null
+
 function showFiles() {
     // to get files data from server
 
@@ -87,7 +88,9 @@ function showFiles() {
         if (el.flag === 'bad') {
             itemVar = null
         }
-        let fileBox = `
+        let fileBox = ` 
+               <div class="project" data-flag="${el.flag}" data-data="${data}" data-startid="${el.id}" data-arrid="${counter}"
+               oncontextmenu="showFileMenu(event)" onclick="fileClick(event)" draggable="true" ondragstart="onDragStart(event)">
                 <div class="project-box ${itemVar}" data-src="${el.image}"
                      data-sub-html="<h4>${el.filename}</h4>"
                      data-external-thumb-image="${el.image}">
@@ -98,15 +101,14 @@ function showFiles() {
                 </div>
                 <div class="project-chat hidden" data-id="${el.id}"></div>
                 <div class="project-tasks hidden" data-id="${el.id}"></div>
+               </div>
             `
         let newFile = document.createElement('div')
-        newFile.setAttribute('class', 'project')
-        newFile.setAttribute('data-flag', el.flag)
-        newFile.setAttribute('data-data', data)
-        newFile.setAttribute('data-startid', el.id)
-        newFile.setAttribute('data-arrid', counter)
-        newFile.setAttribute('oncontextmenu', 'showFileMenu(event)')
-        newFile.setAttribute('onclick', 'fileClick(event)')
+        newFile.setAttribute('ondragover', 'onDragOver(event)')
+        newFile.setAttribute('ondrop', 'onDrop(event)')
+        newFile.setAttribute('class', 'dropzone')
+        newFile.setAttribute('id', `${el.id}`)
+        newFile.setAttribute('data-id', `${el.id}`)
         newFile.innerHTML = fileBox
         document.querySelector('.center-zone__inner-section').appendChild(newFile)
     })
@@ -114,7 +116,51 @@ function showFiles() {
 }
 
 showFiles()
+///DnDrop files
+let dropzone = null
 
+function onDragOver(event) {
+    event.preventDefault();
+    if (event.target.dataset.id) {
+        dropzone = event.target
+    }
+    if (event.target.parentNode.dataset.id) {
+        dropzone = event.target.parentNode
+    }
+    if (event.target.parentNode.parentNode.dataset.id) {
+        dropzone = event.target.parentNode.parentNode
+    }
+    if (event.target.parentNode.parentNode.parentNode.dataset.id) {
+        dropzone = event.target.parentNode.parentNode.parentNode
+    }
+
+}
+
+let counterDrop = 3
+
+function onDragStart(event) {
+    event
+        .dataTransfer
+        .setData('text/plain', event.target.dataset.startid);
+
+}
+
+function onDrop(event) {
+    counterDrop += 3
+    const id5 = event
+        .dataTransfer
+        .getData('text');
+    const draggableElement = document.getElementById(id5);
+    draggableElement.style.cssText = `position:absolute; top:${counterDrop}px; right:${counterDrop}px;`
+    console.log('dropzone=', dropzone)
+    dropzone.appendChild(draggableElement);
+
+    event
+        .dataTransfer
+        .clearData();
+}
+
+/////////////////////////////////////////
 function showFileMenu(e) {
     e.preventDefault()
     closeMainMenus()
@@ -263,7 +309,7 @@ function showFileMenu(e) {
                 el.classList.add('checked')
             }
             if (filesList[idx].flag === 'bad') {
-                document.querySelector(`[data-startid="${fileId}"]`).querySelector('.no-click').src = '../images/no-image.png'
+                document.querySelector(`[data-startid="${fileId}"]`).querySelector('.no-click').src = 'images//no-image.png'
                 document.querySelector(`[data-startid="${fileId}"]`).querySelector('.project-box').classList.remove('item')
             }
         })
@@ -359,7 +405,7 @@ function fileFlag(event, flag = 'no') {
     }
     document.querySelector(`[data-startid="${fileId}"]`).classList.add(newFlag)
     if (newFlag === 'flag-bad') {
-        document.querySelector(`[data-startid="${fileId}"]`).querySelector('.no-click').src = '../images/no-image.png'
+        document.querySelector(`[data-startid="${fileId}"]`).querySelector('.no-click').src = 'images//no-image.png'
         document.querySelector(`[data-startid="${fileId}"]`).querySelector('.project-box').classList.remove('item')
     } else {
         let idxInArray = filesList.findIndex((el) => el.id === fileId)

@@ -5823,10 +5823,24 @@ select {
   top: 0px;
 }
 
+.center-zone {
+  z-index: 0;
+}
+
+.dropzone {
+  z-index: 10;
+  position: relative;
+}
+.dropzone .dropzone:nth-child(n) {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
 .gallery-grid .center-zone__inner-section {
   grid-template-columns: repeat(auto-fill, minmax(220px, 220px)) !important;
 }
-.gallery-grid .center-zone__inner-section .project, .gallery-grid .center-zone__inner-section .folder {
+.gallery-grid .center-zone__inner-section .project, .gallery-grid .center-zone__inner-section .folder, .gallery-grid .center-zone__inner-section .dropzone {
   width: 220px !important;
   height: 240px !important;
 }
@@ -5835,7 +5849,7 @@ select {
   grid-template-columns: repeat(auto-fill, minmax(140px, 140px)) !important;
   grid-gap: 25px;
 }
-.medium-grid .center-zone__inner-section .project, .medium-grid .center-zone__inner-section .folder {
+.medium-grid .center-zone__inner-section .project, .medium-grid .center-zone__inner-section .folder, .medium-grid .center-zone__inner-section .dropzone {
   width: 130px !important;
   height: 150px !important;
 }
@@ -5848,12 +5862,12 @@ select {
   grid-template-columns: repeat(auto-fill, minmax(80px, 80px)) !important;
   grid-gap: 15px;
 }
-.small-grid .center-zone__inner-section .project, .small-grid .center-zone__inner-section .folder {
+.small-grid .center-zone__inner-section .project, .small-grid .center-zone__inner-section .folder, .small-grid .center-zone__inner-section .dropzone {
   width: 80px !important;
   height: 80px !important;
   font-weight: bold;
 }
-.small-grid .center-zone__inner-section .project p, .small-grid .center-zone__inner-section .folder p {
+.small-grid .center-zone__inner-section .project p, .small-grid .center-zone__inner-section .folder p, .small-grid .center-zone__inner-section .dropzone p {
   font-size: 0.42rem !important;
 }
 .small-grid .center-zone__inner-section .project-name, .small-grid .center-zone__inner-section .folder-name {
@@ -5866,7 +5880,7 @@ select {
   grid-template-columns: 1fr;
   grid-gap: 15px;
 }
-.list-grid .center-zone__inner-section .project, .list-grid .center-zone__inner-section .folder {
+.list-grid .center-zone__inner-section .project, .list-grid .center-zone__inner-section .folder, .list-grid .center-zone__inner-section .dropzone {
   width: -webkit-fit-content !important;
   width: -moz-fit-content !important;
   width: fit-content !important;
@@ -5874,7 +5888,7 @@ select {
   white-space: nowrap;
   font-weight: bold;
 }
-.list-grid .center-zone__inner-section .project p, .list-grid .center-zone__inner-section .folder p {
+.list-grid .center-zone__inner-section .project p, .list-grid .center-zone__inner-section .folder p, .list-grid .center-zone__inner-section .dropzone p {
   font-size: 0.42rem !important;
 }
 .list-grid .center-zone__inner-section .project-name, .list-grid .center-zone__inner-section .folder-name {

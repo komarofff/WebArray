@@ -207,6 +207,22 @@ function saveTaskChanges() {
 function sortTask(time){
     alert('sort tasks time='+time)
 }
+
+//  sort  tasks in user-menu
+let sortSwitcher = document.querySelector('.user-menu')
+let sortArr = sortSwitcher.querySelectorAll('.task-time')
+sortArr.forEach((el)=>{
+    el.addEventListener('click',(e)=>{
+        for(let i=0; i<sortArr.length;i++){
+            sortArr[i].classList.remove('checked')
+        }
+        sortTask(el.dataset.time)
+        el.classList.add('checked')
+
+
+    })
+})
+
 /// POST
 const taskPost = new DataS({
     url: 'https://jsonplaceholder.typicode.com/posts',

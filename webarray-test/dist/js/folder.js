@@ -5,7 +5,7 @@ let folderList = [
         link: 'https://webarray.ca/fggg.txt',
         author: 'Test author 0',
         createdAt: '22.03.2022',
-        image: '../images/test-image-bookmark-preview.jpg',
+        image: 'images//test-image-bookmark-preview.jpg',
         flag: 'none',
         type: 'folder'
     },
@@ -15,7 +15,7 @@ let folderList = [
         link: 'https://webarray.ca/fggg.txt',
         author: 'Test author 1',
         createdAt: '22.03.2021',
-        image: '../images/test-image-bookmark-preview.jpg',
+        image: 'images//test-image-bookmark-preview.jpg',
         flag: 'good',
         type: 'folder'
     },
@@ -25,7 +25,7 @@ let folderList = [
         link: 'https://webarray.ca/fggg.txt',
         author: 'Test author 2',
         createdAt: '22.04.2022',
-        image: '../images/test-image-bookmark-preview.jpg',
+        image: 'images//test-image-bookmark-preview.jpg',
         flag: 'important',
         type: 'folder'
     },
@@ -35,7 +35,7 @@ let folderList = [
         link: 'https://webarray.ca/fggg.txt',
         author: 'Test author 3',
         createdAt: '15.04.2022',
-        image: '../images/test-image-bookmark-preview.jpg',
+        image: 'images//test-image-bookmark-preview.jpg',
         flag: 'approved',
         type: 'folder'
     }, {
@@ -44,7 +44,7 @@ let folderList = [
         link: 'https://webarray.ca/fggg.txt',
         author: 'Test author 4',
         createdAt: '15.04.2022',
-        image: '../images/test-image-bookmark-preview.jpg',
+        image: 'images//test-image-bookmark-preview.jpg',
         flag: 'old',
         type: 'folder'
     },
@@ -54,7 +54,7 @@ let folderList = [
         link: 'https://webarray.ca/fggg.txt',
         author: 'Test author 5',
         createdAt: '15.04.2022',
-        image: '../images/test-image-bookmark-preview.jpg',
+        image: 'images//test-image-bookmark-preview.jpg',
         flag: 'final',
         type: 'folder'
     },
@@ -64,7 +64,7 @@ let folderList = [
         link: 'https://webarray.ca/fggg.txt',
         author: 'Test author 6',
         createdAt: '15.04.2022',
-        image: '../images/no-image.png',
+        image: 'images//no-image.png',
         flag: 'bad',
         type: 'folder'
     },
