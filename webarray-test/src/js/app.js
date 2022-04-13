@@ -311,14 +311,16 @@ function onDropBig(event) {
 }
 
 /// paste file or screenshot
+
+
 document.onpaste = function(event) {
-    var items = (event.clipboardData || event.originalEvent.clipboardData).items;
+    let  items = (event.clipboardData || event.originalEvent.clipboardData).items;
     alert('ctr+v')
-    for(var i = 0; i < items.length; i++) {
-        var item = items[i];
+    for(let i = 0; i < items.length; i++) {
+        let item = items[i];
         console.log('item.type=',item.type)
         if(item.type.indexOf("image") != -1) {
-            var file = item.getAsFile();
+            let file = item.getAsFile();
             upload_screenshot(file);
         }
     }

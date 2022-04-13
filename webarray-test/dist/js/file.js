@@ -175,16 +175,37 @@ function onDragStart(event) {
 }
 
 function onDrop(event) {
-
+event.stopPropagation()
     const id5 = event
         .dataTransfer
         .getData('text');
     const draggableElement = document.getElementById(id5);
+    console.log('draggableElement=',draggableElement)
     if (draggableElement) {
-        //counterDrop += 3
-        console.log('id=', iddSource)
+
+        draggableElement.querySelector('.project').removeAttribute('draggable')
+        draggableElement.querySelector('.project').removeAttribute('ondragstart')
+
         draggableElement.style.cssText = `position:absolute; margin-top:${counterDrop}px; margin-right:${counterDrop}px;`
         console.log('dropzone=', dropzone)
+        let arrflag = ['none','old', 'bad', 'good', 'important', 'approved', 'final']
+        arrflag.forEach((el)=>{
+            dropzone.querySelector('.project').classList.remove(`flag-${el}`)
+        })
+        dropzone.querySelector('.project').classList.add(`flag-none`)
+        dropzone.querySelector('.project-box').classList.remove(`item`)
+        dropzone.querySelector('.project').removeAttribute('draggable')
+        dropzone.querySelector('.project').removeAttribute('ondragstart')
+        dropzone.querySelector('.project').removeAttribute('onclick')
+        dropzone.querySelector('.no-click').removeAttribute('onclick')
+        dropzone.querySelector('.project-box').removeAttribute('data-src')
+        dropzone.querySelector('.project-box').removeAttribute('data-sub-html')
+        dropzone.querySelector('.project-box').removeAttribute('data-external-thumb-image')
+        dropzone.querySelector('.project-box').removeAttribute('data-lg-id')
+        dropzone.querySelector('.project-name').removeAttribute('onclick')
+       // let oldFileName = dropzone.querySelector('.project-name').innerHTML
+        //draggableElement.querySelector('.project-name').innerHTML = oldFileName+'-new copy'
+        alert('put new data about old file')
         dropzone.appendChild(draggableElement);
         event.dataTransfer.clearData();
 
