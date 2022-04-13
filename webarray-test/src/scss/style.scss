@@ -51,9 +51,16 @@
 .no-click{
   z-index: 9;
 }
+.project{
+  cursor: move;
+}
 .project,.folder{
   z-index: 2;
  // overflow: hidden;
+//  cursor:context-menu !important;
+}
+.changed{
+  //cursor:context-menu !important;
 }
 .flag-menu-box{
 
@@ -193,4 +200,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.no-pointer{
+  cursor: default!important;
 }

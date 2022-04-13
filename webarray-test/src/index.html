@@ -201,12 +201,12 @@
     </div>
 </header>
 <main class="flex flex-between ">
-    <aside class="left-zone ">
+    <div class="left-zone pointer" title="Click to open/close bookmarks" >
         <div class="flex flex-start ml-20 mb-17  w-full  ">
             <img class="add-bookmark pointer" src="@img/add-bookmark.svg" alt="add bookmark" title="Add bookmark"
                  onclick="addBookmark()">
         </div>
-        <div class="left-zone__inner-section">
+        <div class="left-zone__inner-section no-pointer"  title="">
             <div class="mb-10 flex flex-start bookmark-section">
                 <div class="bookmark-image-box">
                     <img class="bookmark-image" src="@img/test-image.png" alt=" bookmark">
@@ -278,7 +278,7 @@
 
 
         </div>
-    </aside>
+    </div>
     <div class="center-zone mr-17">
         <div class="relative main-section-menu">
         </div>
@@ -402,16 +402,7 @@
                 </div>
             </div>
             <div class="popup-box__inner-section animation-popup relative hidden ">
-                <div class="chat-section p-17  chat-data">
-
-                    <p>sfbvdfsbbsbdrfs</p>
-                    <p>sfbvdfsbbsbdrfs</p>
-                    <p>sfbvdfsbbsbdrfs</p>
-                    <p>sfbvdfsbbsbdrfs</p>
-                    <p>sfbvdfsbbsbdrfs</p>
-                    <p>666666666666</p>
-
-                </div>
+                <div class="chat-section p-17  chat-data"></div>
                 <div class="send-message">
                     <div class="send-message-box p-10">
                         <input class="send-message-input font-small weight-100" type="text" name="message"
@@ -430,6 +421,8 @@
 <!--scripts section-->
 <script src="js/user.js" defer></script>
 <script src="js/classes.js" defer></script>
+<script src="js/task.js" defer></script>
+<script src="js/chat.js" defer></script>
 <script src="js/file.js" defer></script>
 <script src="js/folder.js" defer></script>
 <script src="js/main-section.js" defer></script>
@@ -438,8 +431,7 @@
 
 <script src="js/modals.js" defer></script>
 
-<script src="js/task.js" defer></script>
-<script src="js/chat.js" defer></script>
+
 <script src="js/bookmarks.js" defer></script>
 
 

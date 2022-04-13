@@ -19,9 +19,9 @@
 }
 
 @font-face {
-  font-family: 'SansSerif';
+  font-family: sans-serif, Verdana,'SansSerif';
   //src:  url('../fonts/EncodeSansSemiExpanded-Semibold.ttf');
-  src: url('../fonts/EncodeSansSemiExpanded-Semibold.woff2') format('woff2'), url('../fonts/EncodeSansSemiExpanded-Semibold.woff') format('woff'), url('../fonts/EncodeSansSemiExpanded-Semibold.ttf') format('truetype');
+ // src: url('../fonts/EncodeSansSemiExpanded-Semibold.woff2') format('woff2'), url('../fonts/EncodeSansSemiExpanded-Semibold.woff') format('woff'), url('../fonts/EncodeSansSemiExpanded-Semibold.ttf') format('truetype');
 
   font-style: normal;
   font-weight: 500;
@@ -123,7 +123,9 @@ $menu-light-color: #888ea8;
     font-weight: #{$i*100} !important;
   }
 }
-
+.weight-500{
+  font-weight: 501 !important;
+}
 .color-base ,.color-none{
   color: $menu-color !important;
 }

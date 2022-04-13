@@ -2,10 +2,11 @@ let newData = null
 let fileId = null
 let arrId = null
 let filesListFromServer = null
-let  filesList = null
+let filesList = null
 let flags_lists = ['none', 'old', 'bad', 'good', 'important', 'approved', 'final']
 let fileData = null
-function getFileDataFromServer(url){
+
+function getFileDataFromServer(url) {
     // const filesGet = new DataS({
     //     url: url
     // })
@@ -94,7 +95,7 @@ function getFileDataFromServer(url){
 
 function showFiles() {
     let ifFiles = document.querySelectorAll('.dropzone')
-    ifFiles.forEach((el)=>{
+    ifFiles.forEach((el) => {
         el.remove()
     })
 
@@ -140,6 +141,7 @@ showFiles()
 ///DnDrop files
 let dropzone = null
 let iddSource = null
+
 function onDragOver(event) {
     dropzone = null
 
@@ -178,9 +180,9 @@ function onDrop(event) {
         .dataTransfer
         .getData('text');
     const draggableElement = document.getElementById(id5);
-    if(draggableElement) {
+    if (draggableElement) {
         //counterDrop += 3
-        console.log('id=',iddSource)
+        console.log('id=', iddSource)
         draggableElement.style.cssText = `position:absolute; margin-top:${counterDrop}px; margin-right:${counterDrop}px;`
         console.log('dropzone=', dropzone)
         dropzone.appendChild(draggableElement);
@@ -189,10 +191,12 @@ function onDrop(event) {
         changeDropPosition(dropzone)
     }
 }
-function changeDropPosition(drop){
-let allDrops =drop.querySelectorAll('.dropzone')
-    console.log('allDrops='+allDrops.length)
+
+function changeDropPosition(drop) {
+    let allDrops = drop.querySelectorAll('.dropzone')
+    console.log('allDrops=' + allDrops.length)
 }
+
 /////////////////////////////////////////
 function showFileMenu(e) {
     e.preventDefault()
@@ -409,14 +413,22 @@ function fileClick(event) {
     source.querySelector('.project-tasks').classList.remove('hidden')
     source.querySelector('.project-chat').classList.remove('hidden')
 // start request to server and get new data for task. use id of file for getting url
-    getTasksFromServer('https://jsonplaceholder.typicode.com/todos/')
-// start request to server and get new data for chat. use id of file for getting url
-    getChatFromServer('https://jsonplaceholder.typicode.com/todos/')
 
-    let amountMessages = amounOfchats()
-    let amountTasks = amounOfTasks()
-    source.querySelector('.project-tasks').innerHTML = amountTasks
-    source.querySelector('.project-chat').innerHTML = amountMessages
+  let queryTasks =   getTasksFromServer('https://jsonplaceholder.typicode.com/todos/')
+    queryTasks.then(data => {
+      // console.log('todosList=',todosList)
+        let amountTasks = amounOfTasks()
+        source.querySelector('.project-tasks').innerHTML = amountTasks
+
+    })
+
+    let queryChat =   getChatFromServer('https://jsonplaceholder.typicode.com/todos/')
+    queryChat.then(data => {
+        //console.log('todosList=',todosList)
+        let amountMessages = amounOfchats()
+        source.querySelector('.project-chat').innerHTML = amountMessages
+
+    })
 
 }
 
@@ -669,7 +681,7 @@ function deleteFile() {
     alert("delete file id=" + fileId)
 }
 
-function sendDropFileToServer(data){
+function sendDropFileToServer(data) {
     /// PUT
     // const sendDropFile = new DataS({
     //     url: 'https://new-data-for-new-file',

@@ -11,8 +11,7 @@
   font-weight: 600;
 }
 @font-face {
-  font-family: "SansSerif";
-  src: url("../fonts/EncodeSansSemiExpanded-Semibold.woff2") format("woff2"), url("../fonts/EncodeSansSemiExpanded-Semibold.woff") format("woff"), url("../fonts/EncodeSansSemiExpanded-Semibold.ttf") format("truetype");
+  font-family: sans-serif, Verdana, "SansSerif";
   font-style: normal;
   font-weight: 500;
 }
@@ -106,6 +105,10 @@
 
 .weight-600 {
   font-weight: 600 !important;
+}
+
+.weight-500 {
+  font-weight: 501 !important;
 }
 
 .color-base, .color-none {
@@ -5809,6 +5812,10 @@ select {
   z-index: 9;
 }
 
+.project {
+  cursor: move;
+}
+
 .project, .folder {
   z-index: 2;
 }
@@ -5949,4 +5956,8 @@ select {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.no-pointer {
+  cursor: default !important;
 }

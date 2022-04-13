@@ -164,25 +164,25 @@ function timerStart() {
 }
 
 // left section
-// const leftZone = document.querySelector('.left-zone')
-// leftZone.addEventListener('click', (e) => {
-//     // start stop left section full width
-//     if (e.target.classList.contains('left-zone') || e.target.classList.contains('open-left-section')) {
-//         leftZone.classList.toggle('left-zone-full')
-//     }
-// }, true)
 const leftZone = document.querySelector('.left-zone')
+leftZone.addEventListener('click', (e) => {
+    // start stop left section full width
+    if (e.target.classList.contains('left-zone') || e.target.classList.contains('open-left-section')) {
+        leftZone.classList.toggle('left-zone-full')
+    }
+}, true)
+//const leftZone = document.querySelector('.left-zone')
 // const bookZone =  document.querySelectorAll('.bookmark-image')
 // bookZone.forEach((el)=>{
 //     el.addEventListener('mouseover', (e) => {
 //         leftZone.classList.toggle('left-zone-full')
 //     }, true)
 // })
-document.addEventListener('mouseover', (e) => {
-    if (e.target.classList.contains('bookmark-image')) {
-        leftZone.classList.toggle('left-zone-full')
-    }
-})
+// document.addEventListener('mouseover', (e) => {
+//     if (e.target.classList.contains('bookmark-image')) {
+//         leftZone.classList.toggle('left-zone-full')
+//     }
+// })
 
 
 lightGallery(document.getElementById('app'), {

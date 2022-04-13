@@ -53,20 +53,20 @@ document.querySelector('.new-task').addEventListener('click', () => {
 })
 
 /// GET
-getTasksFromServer('https://jsonplaceholder.typicode.com/todos/')
+//getTasksFromServer('https://jsonplaceholder.typicode.com/todos/')
 
-function getTasksFromServer(url) {
+async function getTasksFromServer(url) {
     task.innerHTML = ''
     const taskGet = new DataS({
         url: url
     })
     if (taskGet) {
-        taskGet.get().then(data => {
+     await  taskGet.get().then(data => {
             todosList = data
 
             if (todosList) {
                 showTasksInDiv()
-
+                return todosList
             } else {
                 div = document.createElement('div')
                 div.innerHTML = `<p>No data available</p>`

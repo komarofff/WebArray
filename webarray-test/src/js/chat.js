@@ -27,21 +27,21 @@ let chatList = []
 let allchats = 0
 
 /// GET
-getChatFromServer('https://jsonplaceholder.typicode.com/todos/')
+//getChatFromServer('https://jsonplaceholder.typicode.com/todos/')
 
-function getChatFromServer(url) {
+async function getChatFromServer(url) {
     chat.innerHTML = ''
     const chatGet = new DataS({
         url: url,
     })
     if (chatGet) {
-        chatGet.get().then(data => {
+        await chatGet.get().then(data => {
 
             chatList = data
 
             if (chatList) {
                 showchatsInDiv()
-
+                return chatList
             } else {
                 divChat = document.createElement('div')
                 divChat.innerHTML = `<p>No data available</p>`
