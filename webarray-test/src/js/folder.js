@@ -1,5 +1,7 @@
 let folderList = null
 let folderListServer = null
+let arridfolder = null
+let folderId = null
 function getFoldersFromServer(url){
     // const foldersGet = new DataS({
     //     url: url
@@ -64,7 +66,7 @@ function showFolders() {
     })
     // to get files data from server
     folderList = getFoldersFromServer('need url')
-    folderList.sort((start,finish)=> finish.id - start.id)
+   // folderList.sort((start,finish)=> finish.id - start.id)
 
     //['none','old', 'bad', 'good', 'important', 'approved', 'final']
     let counter = -1
@@ -76,18 +78,19 @@ function showFolders() {
         if(el.flag==='bad'){
             itemVar = null
         }
-        let fileBox = `
+        let folderBox = `
                 <div class="folder-name">
                     <p>${el.foldername}</p>
                 </div>
             `
         let newFolder= document.createElement('div')
-        newFolder.setAttribute('class', 'relative folder')
-        newFolder.setAttribute('data-data', data)
+        newFolder.setAttribute('class', `relative folder flag-${el.flag}`)
+        //newFolder.setAttribute('data-data', data)
         newFolder.setAttribute('data-folderstartid', el.id)
-        newFolder.setAttribute('data-arrid', counter)
+        newFolder.setAttribute('data-arridfolder', counter)
+        newFolder.setAttribute('data-flagstartid', el.flag)
         newFolder.setAttribute('oncontextmenu', 'folderMenu(event)')
-        newFolder.innerHTML = fileBox
+        newFolder.innerHTML = folderBox
         document.querySelector('.center-zone__inner-section').prepend(newFolder)
     })
 
@@ -99,22 +102,28 @@ function folderMenu(e) {
     e.preventDefault()
     closeMainMenus()
     let folderData = null
-    console.log('data=',JSON.parse(e.target.dataset.data))
-    if (e.target.dataset.data) {
-        folderData = e.target.dataset.data
+    //console.log('data=',JSON.parse(e.target.dataset.data))
+    if (e.target.dataset.arridfolder) {
+        folderData = e.target.dataset.arridfolder
     }
-    if (e.target.parentNode.dataset.data) {
-        folderData = e.target.parentNode.dataset.data
+    if (e.target.parentNode.dataset.arridfolder) {
+        folderData = e.target.parentNode.dataset.arridfolder
     }
-    if (e.target.parentNode.parentNode.dataset.data) {
-        folderData = e.target.parentNode.parentNode.dataset.data
+    if (e.target.parentNode.parentNode.dataset.arridfolder) {
+        folderData = e.target.parentNode.parentNode.dataset.arridfolder
     }
-   let parseData = JSON.parse(folderData)
-    id = parseData.id
+
+    //newData = JSON.stringify(filesList[fileData])
+    folderId = folderList[folderData].id
+    arridfolder = folderData
+    id = folderId
+    console.log('folderId =',folderId )
+    console.log('arridfolder =',arridfolder )
+    console.log('id =',id )
     let folderMenu = `<div class="folder-section main-menu-box  animation-popup "
-         style="position:fixed; left: ${xCoordinate}px; top: ${yCoordinate}px"  data-data='${folderData}'>
+         style="position:fixed; left: ${xCoordinate}px; top: ${yCoordinate}px"  >
     <ul>
-        <li class="open-folder" onclick="openFolder(${folderData.id})">
+        <li class="open-folder" onclick="openFolder()">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                  stroke-linejoin="round" class="feather feather-arrow-up-right">
@@ -143,14 +152,14 @@ function folderMenu(e) {
                 <line x1="4" y1="22" x2="4" y2="15"></line>
             </svg>
             <span>Flag</span>
-            <ul class="flag-menu-box">
-                <li class="color-base">No flag</li>
-                <li class="color-important">Important</li>
-                <li class="color-approved">Approved</li>
-                <li class="color-final">Final</li>
-                <li class="color-good">Good</li>
-                <li class="color-old">Old</li>
-                <li class="color-bad">Bad</li>
+            <ul class="flag-menu-box folder-flag">
+                <li class="color-none" onclick="folderFlag(event,'none')">No flag</li>
+                <li class="color-important"  onclick="folderFlag(event,'important')">Important</li>
+                <li class="color-approved"  onclick="folderFlag(event,'approved')">Approved</li>
+                <li class="color-final"  onclick="folderFlag(event,'final')">Final</li>
+                <li class="color-good"  onclick="folderFlag(event,'good')">Good</li>
+                <li class="color-old"  onclick="folderFlag(event,'old')">Old</li>
+                <li class="color-bad"  onclick="folderFlag(event,'bad')">Bad</li>
             </ul>
         </li>
     </ul>
@@ -206,24 +215,54 @@ function folderMenu(e) {
     setTimeout(() => {
         mainMenu('folder-section')
 
-        console.log(JSON.parse(folderData))
+        let flag_menu_box = document.querySelector('.folder-flag')
+        let liInFlags = flag_menu_box.querySelectorAll('li')
+        liInFlags.forEach((el) => {
+            let findColor = el.classList.value.replace('color-', '')
+            let idx = filesList.findIndex(el => el.id === folderId)
+            if (findColor === filesList[idx].flag) {
+                el.classList.add('checked')
+            }
+
+        })
     }, 200)
 }
+
+function folderFlag(event, flag = 'no') {
+
+    let flag_menu_box = document.querySelector('.folder-flag')
+    let liInFlags2 = flag_menu_box.querySelectorAll('li')
+    liInFlags2.forEach((el) => {
+        el.classList.remove('checked')
+    })
+    event.target.classList.add('checked')
+    let newFlag = `flag-${flag}`
+    for (let i = 0; i < flags_lists.length; i++) {
+        del_flag = `flag-${flags_lists[i]}`
+        //console.log('del-flag=',del_flag)
+        document.querySelector(`[data-folderstartid="${folderId}"]`).classList.remove(del_flag)
+    }
+    document.querySelector(`[data-folderstartid="${folderId}"]`).classList.add(newFlag)
+
+        let idxInArray = folderList.findIndex((el) => el.id === folderId)
+        let idInArray = folderList[idxInArray].id
+
+}
 function openFolder(){
-    alert('open folder '+ id)
+    alert('open folder '+ folderId)
 }
 function downloadFolder(){
-    alert('download folder '+id)
+    alert('download folder '+folderId)
 }
 function shareFolder(){
-    alert('shareFolder '+id)
+    alert('shareFolder '+folderId)
 }
 function renameFolder(){
-    alert('renameFolder '+id)
+    alert('renameFolder '+folderId)
 }
 function copyFolder(){
-    alert('copyFolder '+id)
+    alert('copyFolder '+folderId)
 }
 function deleteFolder(){
-    alert('deleteFolder '+id)
+    alert('deleteFolder '+folderId)
 }

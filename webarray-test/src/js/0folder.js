@@ -1,7 +1,5 @@
 let folderList = null
 let folderListServer = null
-let arridfolder = null
-let folderId = null
 function getFoldersFromServer(url){
     // const foldersGet = new DataS({
     //     url: url
@@ -66,7 +64,7 @@ function showFolders() {
     })
     // to get files data from server
     folderList = getFoldersFromServer('need url')
-   // folderList.sort((start,finish)=> finish.id - start.id)
+    folderList.sort((start,finish)=> finish.id - start.id)
 
     //['none','old', 'bad', 'good', 'important', 'approved', 'final']
     let counter = -1
@@ -78,19 +76,18 @@ function showFolders() {
         if(el.flag==='bad'){
             itemVar = null
         }
-        let folderBox = `
+        let fileBox = `
                 <div class="folder-name">
                     <p>${el.foldername}</p>
                 </div>
             `
         let newFolder= document.createElement('div')
-        newFolder.setAttribute('class', `relative folder flag-${el.flag}`)
-        //newFolder.setAttribute('data-data', data)
+        newFolder.setAttribute('class', 'relative folder')
+        newFolder.setAttribute('data-data', data)
         newFolder.setAttribute('data-folderstartid', el.id)
-        newFolder.setAttribute('data-arridfolder', counter)
-        newFolder.setAttribute('data-flagstartid', el.flag)
+        newFolder.setAttribute('data-arrid', counter)
         newFolder.setAttribute('oncontextmenu', 'folderMenu(event)')
-        newFolder.innerHTML = folderBox
+        newFolder.innerHTML = fileBox
         document.querySelector('.center-zone__inner-section').prepend(newFolder)
     })
 
@@ -102,28 +99,22 @@ function folderMenu(e) {
     e.preventDefault()
     closeMainMenus()
     let folderData = null
-    //console.log('data=',JSON.parse(e.target.dataset.data))
-    if (e.target.dataset.arridfolder) {
-        folderData = e.target.dataset.arridfolder
+    console.log('data=',JSON.parse(e.target.dataset.data))
+    if (e.target.dataset.data) {
+        folderData = e.target.dataset.data
     }
-    if (e.target.parentNode.dataset.arridfolder) {
-        folderData = e.target.parentNode.dataset.arridfolder
+    if (e.target.parentNode.dataset.data) {
+        folderData = e.target.parentNode.dataset.data
     }
-    if (e.target.parentNode.parentNode.dataset.arridfolder) {
-        folderData = e.target.parentNode.parentNode.dataset.arridfolder
+    if (e.target.parentNode.parentNode.dataset.data) {
+        folderData = e.target.parentNode.parentNode.dataset.data
     }
-
-    //newData = JSON.stringify(filesList[fileData])
-    folderId = folderList[folderData].id
-    arridfolder = folderData
-    id = folderId
-    console.log('folderId =',folderId )
-    console.log('arridfolder =',arridfolder )
-    console.log('id =',id )
+   let parseData = JSON.parse(folderData)
+    id = parseData.id
     let folderMenu = `<div class="folder-section main-menu-box  animation-popup "
-         style="position:fixed; left: ${xCoordinate}px; top: ${yCoordinate}px"  >
+         style="position:fixed; left: ${xCoordinate}px; top: ${yCoordinate}px"  data-data='${folderData}'>
     <ul>
-        <li class="open-folder" onclick="openFolder()">
+        <li class="open-folder" onclick="openFolder(${folderData.id})">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                  stroke-linejoin="round" class="feather feather-arrow-up-right">
@@ -215,21 +206,11 @@ function folderMenu(e) {
     setTimeout(() => {
         mainMenu('folder-section')
 
-        let flag_menu_box = document.querySelector('.folder-flag')
-        let liInFlags = flag_menu_box.querySelectorAll('li')
-        liInFlags.forEach((el) => {
-            let findColor = el.classList.value.replace('color-', '')
-            let idx = filesList.findIndex(el => el.id === folderId)
-            if (findColor === filesList[idx].flag) {
-                el.classList.add('checked')
-            }
-
-        })
+        console.log(JSON.parse(folderData))
     }, 200)
 }
 
 function folderFlag(event, flag = 'no') {
-
     let flag_menu_box = document.querySelector('.folder-flag')
     let liInFlags2 = flag_menu_box.querySelectorAll('li')
     liInFlags2.forEach((el) => {
@@ -240,29 +221,34 @@ function folderFlag(event, flag = 'no') {
     for (let i = 0; i < flags_lists.length; i++) {
         del_flag = `flag-${flags_lists[i]}`
         //console.log('del-flag=',del_flag)
-        document.querySelector(`[data-folderstartid="${folderId}"]`).classList.remove(del_flag)
+        document.querySelector(`[data-flagstartid="${fileId}"]`).classList.remove(del_flag)
     }
-    document.querySelector(`[data-folderstartid="${folderId}"]`).classList.add(newFlag)
-
-        let idxInArray = folderList.findIndex((el) => el.id === folderId)
-        let idInArray = folderList[idxInArray].id
-
+    document.querySelector(`[data-startid="${fileId}"]`).classList.add(newFlag)
+    if (newFlag === 'flag-bad') {
+        document.querySelector(`[data-startid="${fileId}"]`).querySelector('.no-click').src = 'images//no-image.png'
+        document.querySelector(`[data-startid="${fileId}"]`).querySelector('.project-box').classList.remove('item')
+    } else {
+        let idxInArray = filesList.findIndex((el) => el.id === fileId)
+        let idInArray = filesList[idxInArray].id
+        document.querySelector(`[data-startid="${fileId}"]`).querySelector('.no-click').src = `${filesList[idxInArray].image}`
+        document.querySelector(`[data-startid="${fileId}"]`).querySelector('.project-box').classList.add('item')
+    }
 }
 function openFolder(){
-    alert('open folder '+ folderId)
+    alert('open folder '+ id)
 }
 function downloadFolder(){
-    alert('download folder '+folderId)
+    alert('download folder '+id)
 }
 function shareFolder(){
-    alert('shareFolder '+folderId)
+    alert('shareFolder '+id)
 }
 function renameFolder(){
-    alert('renameFolder '+folderId)
+    alert('renameFolder '+id)
 }
 function copyFolder(){
-    alert('copyFolder '+folderId)
+    alert('copyFolder '+id)
 }
 function deleteFolder(){
-    alert('deleteFolder '+folderId)
+    alert('deleteFolder '+id)
 }

@@ -255,7 +255,7 @@ function showFileMenu(e) {
                 <line x1="4" y1="22" x2="4" y2="15"></line>
             </svg>
             <span>Flag</span>
-            <ul class="flag-menu-box">
+            <ul class="flag-menu-box file-flag">
                 <li class="color-none" onclick="fileFlag(event,'none')">No flag</li>
                 <li class="color-important"  onclick="fileFlag(event,'important')">Important</li>
                 <li class="color-approved"  onclick="fileFlag(event,'approved')">Approved</li>
@@ -337,7 +337,7 @@ function showFileMenu(e) {
     setTimeout(() => {
         mainMenu('project-section')
         //console.log(JSON.parse(fileData))
-        let flag_menu_box = document.querySelector('.flag-menu-box')
+        let flag_menu_box = document.querySelector('.file-flag')
         let liInFlags = flag_menu_box.querySelectorAll('li')
         liInFlags.forEach((el) => {
             let findColor = el.classList.value.replace('color-', '')
