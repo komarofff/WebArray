@@ -1,3 +1,9 @@
+// show folders and files. Here will sort how we can show files and folders
+showFolders()
+showFiles()
+////////////////////////////////
+
+
 let xCoordinate = null
 let yCoordinate = null
 document.addEventListener('mousemove', (e) => {
@@ -325,3 +331,4 @@ function upload_screenshot(file) {
     sendDropFileToServer(formData)
 
 }
+

@@ -91,11 +91,11 @@ function showFolders() {
         newFolder.setAttribute('data-flagstartid', el.flag)
         newFolder.setAttribute('oncontextmenu', 'folderMenu(event)')
         newFolder.innerHTML = folderBox
-        document.querySelector('.center-zone__inner-section').prepend(newFolder)
+        document.querySelector('.center-zone__inner-section').append(newFolder)
     })
 
 }
-showFolders()
+//showFolders()
 
 let id= null
 function folderMenu(e) {
@@ -116,10 +116,8 @@ function folderMenu(e) {
     //newData = JSON.stringify(filesList[fileData])
     folderId = folderList[folderData].id
     arridfolder = folderData
-    id = folderId
-    console.log('folderId =',folderId )
-    console.log('arridfolder =',arridfolder )
-    console.log('id =',id )
+   // id = folderId
+
     let folderMenu = `<div class="folder-section main-menu-box  animation-popup "
          style="position:fixed; left: ${xCoordinate}px; top: ${yCoordinate}px"  >
     <ul>
