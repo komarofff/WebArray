@@ -175,12 +175,12 @@ function onDragStart(event) {
 }
 
 function onDrop(event) {
-event.stopPropagation()
+    event.stopPropagation()
     const id5 = event
         .dataTransfer
         .getData('text');
     const draggableElement = document.getElementById(id5);
-    console.log('draggableElement=',draggableElement)
+    console.log('draggableElement=', draggableElement)
     if (draggableElement) {
 
         draggableElement.querySelector('.project').removeAttribute('draggable')
@@ -188,8 +188,8 @@ event.stopPropagation()
 
         draggableElement.style.cssText = `position:absolute; margin-top:${counterDrop}px; margin-right:${counterDrop}px;`
         console.log('dropzone=', dropzone)
-        let arrflag = ['none','old', 'bad', 'good', 'important', 'approved', 'final']
-        arrflag.forEach((el)=>{
+        let arrflag = ['none', 'old', 'bad', 'good', 'important', 'approved', 'final']
+        arrflag.forEach((el) => {
             dropzone.querySelector('.project').classList.remove(`flag-${el}`)
         })
         dropzone.querySelector('.project').classList.add(`flag-none`)
@@ -203,7 +203,16 @@ event.stopPropagation()
         dropzone.querySelector('.project-box').removeAttribute('data-external-thumb-image')
         dropzone.querySelector('.project-box').removeAttribute('data-lg-id')
         dropzone.querySelector('.project-name').removeAttribute('onclick')
-       // let oldFileName = dropzone.querySelector('.project-name').innerHTML
+        dropzone.querySelector('.project-chat').remove()
+        dropzone.querySelector('.project-tasks').remove()
+        document.querySelector('.task-data').innerHTML = ''
+        document.querySelector('.chat-data').innerHTML = ''
+        document.querySelector('.all-chats').innerHTML = ''
+        document.querySelector('.all-tasks').innerHTML = ''
+        document.querySelector('.task-box').querySelector('.animation-popup').classList.add('hidden')
+        document.querySelector('.chat-box').querySelector('.animation-popup').classList.add('hidden')
+        document.querySelector('.new-task').classList.add('hidden')
+        // let oldFileName = dropzone.querySelector('.project-name').innerHTML
         //draggableElement.querySelector('.project-name').innerHTML = oldFileName+'-new copy'
         alert('put new data about old file')
         dropzone.appendChild(draggableElement);
@@ -436,15 +445,15 @@ function fileClick(event) {
 
 // start request to server and get new data for task and chat. use id of file for getting url
 
-  let queryTasks =   getTasksFromServer('https://jsonplaceholder.typicode.com/todos/')
+    let queryTasks = getTasksFromServer('https://jsonplaceholder.typicode.com/todos/')
     queryTasks.then(data => {
-      // console.log('todosList=',todosList)
+        // console.log('todosList=',todosList)
         let amountTasks = amounOfTasks()
         source.querySelector('.project-tasks').innerHTML = amountTasks
 
     })
 
-    let queryChat =   getChatFromServer('https://jsonplaceholder.typicode.com/todos/')
+    let queryChat = getChatFromServer('https://jsonplaceholder.typicode.com/todos/')
     queryChat.then(data => {
         //console.log('todosList=',todosList)
         let amountMessages = amounOfchats()
