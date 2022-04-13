@@ -412,7 +412,8 @@ function fileClick(event) {
     let allProjects = document.querySelectorAll('.project')
     source.querySelector('.project-tasks').classList.remove('hidden')
     source.querySelector('.project-chat').classList.remove('hidden')
-// start request to server and get new data for task. use id of file for getting url
+
+// start request to server and get new data for task and chat. use id of file for getting url
 
   let queryTasks =   getTasksFromServer('https://jsonplaceholder.typicode.com/todos/')
     queryTasks.then(data => {

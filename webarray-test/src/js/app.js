@@ -168,8 +168,14 @@ const leftZone = document.querySelector('.left-zone')
 leftZone.addEventListener('click', (e) => {
     // start stop left section full width
     if (e.target.classList.contains('left-zone') || e.target.classList.contains('open-left-section')) {
-        leftZone.classList.toggle('left-zone-full')
+        leftZone.classList.add('left-zone-full')
+        document.querySelector('.close-bookmark-section').classList.remove('hidden')
     }
+    if (e.target.classList.contains('close-svg') || e.target.classList.contains('close-bookmark-section') ) {
+        leftZone.classList.remove('left-zone-full')
+        document.querySelector('.close-bookmark-section').classList.add('hidden')
+    }
+
 }, true)
 //const leftZone = document.querySelector('.left-zone')
 // const bookZone =  document.querySelectorAll('.bookmark-image')

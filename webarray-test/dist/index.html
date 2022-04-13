@@ -201,12 +201,21 @@
     </div>
 </header>
 <main class="flex flex-between ">
-    <div class="left-zone pointer" title="Click to open/close bookmarks" >
-        <div class="flex flex-start ml-20 mb-17  w-full  ">
+    <div class="left-zone pointer" title="Click to open bookmarks">
+        <div class="flex flex-between ml-20 mb-17  w-full  ">
             <img class="add-bookmark pointer" src="images/add-bookmark.svg" alt="add bookmark" title="Add bookmark"
                  onclick="addBookmark()">
+            <div class="close-bookmark-section hidden mr-20" title="Close bookmark section">
+                <svg class="close-svg" xmlns="http://www.w3.org/2000/svg" width="25"
+                     height="25"
+                     viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round"
+                     stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </div>
         </div>
-        <div class="left-zone__inner-section no-pointer"  title="">
+        <div class="left-zone__inner-section no-pointer" title="">
             <div class="mb-10 flex flex-start bookmark-section">
                 <div class="bookmark-image-box">
                     <img class="bookmark-image" src="images/test-image.png" alt=" bookmark">
@@ -302,7 +311,8 @@
                 </ul>
             </div>
         </div>
-        <div class="center-zone__inner-section central-zone" data-idd="central-zone" id="central-zone" ondragover="onDragOverBig(event)" ondrop="onDropBig(event)"></div>
+        <div class="center-zone__inner-section central-zone" data-idd="central-zone" id="central-zone"
+             ondragover="onDragOverBig(event)" ondrop="onDropBig(event)"></div>
 
     </div>
     <aside class="popups-zone">

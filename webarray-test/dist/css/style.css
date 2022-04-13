@@ -4814,6 +4814,18 @@ header {
      object-fit: cover;
 }
 
+.close-svg {
+  z-index: 99;
+  -webkit-transition: 0.3s linear;
+  -o-transition: 0.3s linear;
+  transition: 0.3s linear;
+}
+.close-svg:hover {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
 main {
   padding: 17px 17px 17px 100px;
   position: relative;
