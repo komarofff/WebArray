@@ -12589,3 +12589,198 @@ textarea.form-control-lg {
   font-weight: 900;
   font-style: normal;
 }
+html {
+  font-family: "Motiva Sans";
+  font-size: 16px;
+  color: #232649;
+  scroll-behavior: smooth;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.top-gradient {
+  background: -webkit-gradient(linear, left top, right top, from(#84499a), color-stop(50%, #c74494), to(#f49b92));
+  background: -o-linear-gradient(left, #84499a 0%, #c74494 50%, #f49b92 100%);
+  background: linear-gradient(90deg, #84499a 0%, #c74494 50%, #f49b92 100%);
+}
+
+.bg-white-opacity-1 {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.bg-white-opacity-2 {
+  background: rgba(255, 255, 255, 0.6);
+  -webkit-box-shadow: 0px 4px 5px #685e5e75;
+          box-shadow: 0px 4px 5px #685e5e75;
+}
+
+header {
+  color: #232649 !important;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.navbar {
+  height: 110px;
+}
+
+.small-nav {
+  height: 50px;
+}
+
+.nav-link {
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #232649 !important;
+  font-size: 1.5rem;
+}
+
+.btn-purple {
+  background: #bc4595;
+  border: 1px solid #bc4595;
+  color: #fff !important;
+  font-size: 1.75rem;
+  padding: 0.25rem 2.8rem;
+  -webkit-box-shadow: 3px 0px 7px rgba(0, 0, 0, 0.35);
+          box-shadow: 3px 0px 7px rgba(0, 0, 0, 0.35);
+}
+.btn-purple:hover {
+  background: #9f2b79;
+  color: #fff;
+}
+
+.btn-purple-outline {
+  background: #fff;
+  border: 1px solid #bc4595;
+  color: #bc4595 !important;
+  font-size: 1.75rem;
+  padding: 0.25rem 2.8rem;
+  -webkit-box-shadow: 3px 0px 7px rgba(0, 0, 0, 0.35);
+          box-shadow: 3px 0px 7px rgba(0, 0, 0, 0.35);
+}
+.btn-purple-outline:hover {
+  background: #9f2b79;
+  border: 1px solid #9f2b79;
+  color: #fff;
+}
+
+.btn-green {
+  background: #4db6ac;
+  border: 1px solid #4db6ac;
+  color: #fff !important;
+  font-size: 1.75rem;
+  padding: 0.25rem 2.8rem;
+  -webkit-box-shadow: 3px 0px 7px rgba(0, 0, 0, 0.35);
+          box-shadow: 3px 0px 7px rgba(0, 0, 0, 0.35);
+}
+.btn-green:hover {
+  background: #108176;
+  color: #fff;
+}
+
+.btn-green-outline {
+  background: #fff;
+  border: 1px solid #4db6ac;
+  color: #4db6ac !important;
+  font-size: 1.75rem;
+  padding: 0.25rem 2.8rem;
+  -webkit-box-shadow: 3px 0px 7px rgba(0, 0, 0, 0.35);
+          box-shadow: 3px 0px 7px rgba(0, 0, 0, 0.35);
+}
+.btn-green-outline:hover {
+  background: #4db6ac;
+  color: #fff;
+  border: 1px solid #4db6ac;
+}
+
+.btn-orange {
+  background: #f87b5f;
+  border: 1px solid #f87b5f;
+  color: #fff !important;
+  font-size: 1.75rem;
+  padding: 0.25rem 2.8rem;
+  -webkit-box-shadow: 3px 0px 7px rgba(0, 0, 0, 0.35);
+          box-shadow: 3px 0px 7px rgba(0, 0, 0, 0.35);
+}
+.btn-orange:hover {
+  background: #d94423;
+  color: #fff;
+}
+
+.btn-orange-outline {
+  background: #fff;
+  border: 1px solid #f87b5f;
+  color: #f87b5f !important;
+  font-size: 1.75rem;
+  padding: 0.25rem 2.8rem;
+  -webkit-box-shadow: 3px 0px 7px rgba(0, 0, 0, 0.35);
+          box-shadow: 3px 0px 7px rgba(0, 0, 0, 0.35);
+}
+.btn-orange-outline:hover {
+  background: #f87b5f;
+  color: #fff;
+  border: 1px solid #f87b5f;
+}
+
+.btn-blue {
+  background: #0079d7;
+  border: 1px solid #f87b5f;
+  color: #fff !important;
+  font-size: 1.75rem;
+  padding: 0.25rem 2.8rem;
+  -webkit-box-shadow: 3px 0px 7px rgba(0, 0, 0, 0.35);
+          box-shadow: 3px 0px 7px rgba(0, 0, 0, 0.35);
+}
+.btn-blue:hover {
+  background: #005fa7;
+  color: #fff;
+}
+
+.btn-blue-outline {
+  background: #fff;
+  border: 1px solid #0079d7;
+  color: #0079d7 !important;
+  font-size: 1.75rem;
+  padding: 0.25rem 2.8rem;
+  -webkit-box-shadow: 3px 0px 7px rgba(0, 0, 0, 0.35);
+          box-shadow: 3px 0px 7px rgba(0, 0, 0, 0.35);
+}
+.btn-blue-outline:hover {
+  background: #0079d7;
+  color: #fff;
+  border: 1px solid #0079d7;
+}
+
+.btn-black {
+  background: #000;
+  border: 1px solid #000;
+  color: #fff !important;
+  font-size: 1.75rem;
+  padding: 0.25rem 2.8rem;
+  -webkit-box-shadow: 3px 0px 7px rgba(0, 0, 0, 0.35);
+          box-shadow: 3px 0px 7px rgba(0, 0, 0, 0.35);
+}
+.btn-black:hover {
+  background: #313131;
+  color: #fff;
+}
+
+.btn-black-outline {
+  background: #fff;
+  border: 1px solid #000;
+  color: #000 !important;
+  font-size: 1.75rem;
+  padding: 0.25rem 2.8rem;
+  -webkit-box-shadow: 3px 0px 7px rgba(0, 0, 0, 0.35);
+          box-shadow: 3px 0px 7px rgba(0, 0, 0, 0.35);
+}
+.btn-black-outline:hover {
+  background: #000;
+  color: #fff;
+  border: 1px solid #000;
+}
