@@ -194,10 +194,12 @@ function onDrop(event) {
         })
         dropzone.querySelector('.project').classList.add(`flag-none`)
         dropzone.querySelector('.project-box').classList.remove(`item`)
+        dropzone.querySelector('.project-box').classList.add(`null`)
         dropzone.querySelector('.project').removeAttribute('draggable')
         dropzone.querySelector('.project').removeAttribute('ondragstart')
         dropzone.querySelector('.project').removeAttribute('onclick')
         dropzone.querySelector('.no-click').removeAttribute('onclick')
+        dropzone.querySelector('.no-click').src = 'images/no-image.png'
         dropzone.querySelector('.project-box').removeAttribute('data-src')
         dropzone.querySelector('.project-box').removeAttribute('data-sub-html')
         dropzone.querySelector('.project-box').removeAttribute('data-external-thumb-image')
@@ -481,7 +483,7 @@ function fileFlag(event, flag = 'no') {
     }
     document.querySelector(`[data-startid="${fileId}"]`).classList.add(newFlag)
     if (newFlag === 'flag-bad') {
-        document.querySelector(`[data-startid="${fileId}"]`).querySelector('.no-click').src = 'images//no-image.png'
+        document.querySelector(`[data-startid="${fileId}"]`).querySelector('.no-click').src = 'images/no-image.png'
         document.querySelector(`[data-startid="${fileId}"]`).querySelector('.project-box').classList.remove('item')
     } else {
         let idxInArray = filesList.findIndex((el) => el.id === fileId)
@@ -671,7 +673,13 @@ flask.onUpdate((code) => {
 }
 
 function previewFile() {
-
+    lightGallery(document.getElementById('app'), {
+        selector: '.item',
+        exThumbImage: 'data-external-thumb-image',
+        thumbnail: true,
+        zoom: true,
+        plugins: [lgZoom, lgThumbnail],
+    });
     let files = document.querySelectorAll('.project')
     files.forEach((el) => {
         if (fileId === parseFloat(el.dataset.startid)) {

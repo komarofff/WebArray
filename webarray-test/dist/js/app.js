@@ -197,13 +197,13 @@ leftZone.addEventListener('click', (e) => {
 // })
 
 
-lightGallery(document.getElementById('app'), {
-    selector: '.item',
-    exThumbImage: 'data-external-thumb-image',
-    thumbnail: true,
-    zoom: true,
-    plugins: [lgZoom, lgThumbnail],
-});
+// lightGallery(document.getElementById('app'), {
+//     selector: '.item',
+//     exThumbImage: 'data-external-thumb-image',
+//     thumbnail: true,
+//     zoom: true,
+//     plugins: [lgZoom, lgThumbnail],
+// });
 // download files
 const download = (path, filename) => {
     const anchor = document.createElement('a')
