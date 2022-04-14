@@ -5,6 +5,10 @@ let filesListFromServer = null
 let filesList = null
 let flags_lists = ['none', 'old', 'bad', 'good', 'important', 'approved', 'final']
 let fileData = null
+let dropzone = null
+let iddSource = null
+let counterDrop = 3
+let del_flag = null
 
 function getFileDataFromServer(url) {
     // const filesGet = new DataS({
@@ -139,9 +143,6 @@ function showFiles() {
 
 // showFiles()
 ///DnDrop files
-let dropzone = null
-let iddSource = null
-
 function onDragOver(event) {
     dropzone = null
 
@@ -164,8 +165,6 @@ function onDragOver(event) {
     }
 
 }
-
-let counterDrop = 3
 
 function onDragStart(event) {
     event
@@ -465,9 +464,6 @@ function fileClick(event) {
 
 }
 
-
-let del_flag = null
-
 function fileFlag(event, flag = 'no') {
     let flag_menu_box = document.querySelector('.flag-menu-box')
     let liInFlags = flag_menu_box.querySelectorAll('li')
@@ -732,7 +728,7 @@ function sendDropFileToServer(data) {
     // }).catch((error) => {
     //     console.log('error put', error)
     // })
-    alert('re-show files start function to get files')
+    alert('re-show files start function to get files'+data)
     showFiles()
 
 }

@@ -327,9 +327,9 @@ document.onpaste = function(event) {
 }
 
 function upload_screenshot(file) {
-    var formData = new FormData();
+    let formData = new FormData();
     formData.append('screenshot', file);
-    alert('new screenshot', file)
+   // alert('new screenshot='+ file)
     sendDropFileToServer(formData)
 
 }

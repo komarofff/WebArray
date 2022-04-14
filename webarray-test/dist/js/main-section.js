@@ -183,6 +183,23 @@ function createNewFolder() {
     }, 100)
 }
 
+////////////////////////////////////
+function getBase64(file) {
+    return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = error => reject(error);
+    });
+}
+
+function getUploadFileData(file) {
+   let ext = "не определилось"
+   let  parts = file.name.split('.');
+    if (parts.length > 1) ext = parts.pop();
+   console.log("Размер файла: " , file.size , " B",   "Расширение: " , ext,  "MIME тип: " , file.type)
+}
+
 function uploadFile() {
     // let input = document.createElement('input');
     // input.setAttribute('id','upload-new-file')
@@ -190,17 +207,42 @@ function uploadFile() {
     let input = document.getElementById('upload-new-file')
     input.click();
 
+//if image
+    input.addEventListener('change', function () {
+        let files = input.files; // список выбранных файлов
+        console.log(files)
+        for (let i = 0; i < files.length; i++) {
+            getBase64(files[i]).then(
+                data => console.log(data)
+            );
+            getUploadFileData(files[i])
+            // let formData = new FormData();
+            // formData.append('new-file', files[i]);
+            // console.log('new file=', files[i])
+            // sendDropFileToServer(formData)
+        }
+
+    }, false);
+
+
     input.addEventListener('change', () => {
         let filesFromInput = input.files
         console.log('upload-files:')
         for (let i = 0; i < filesFromInput.length; i++) {
-            console.log(filesFromInput[i].name,filesFromInput[i])
+            console.log(filesFromInput[i].name, filesFromInput[i])
+            let formData = new FormData();
+            formData.append('new-file', filesFromInput[i]);
+            console.log('new file=', filesFromInput[i])
+            sendDropFileToServer(formData)
         }
 
 
     })
+
+
 }
 
+///////////////////////////////////////////////////////
 function share() {
     let modal = `<div class="black-background modal new-file-window ">
     <div class="modal-window">
@@ -255,29 +297,29 @@ function share() {
     }, 100)
 }
 
-function pasteFile(e){
+function pasteFile(e) {
     alert('paste')
     e.stopPropagation();
     e.preventDefault();
 
-document.onpaste = function(event) {
-    var items = (event.clipboardData || event.originalEvent.clipboardData).items;
-    for(var i = 0; i < items.length; i++) {
-        var item = items[i];
-        console.log('item.type=',item.type)
-        if(item.type.indexOf("image") != -1) {
-            var file = item.getAsFile();
-            upload_screenshot(file);
+    document.onpaste = function (event) {
+        var items = (event.clipboardData || event.originalEvent.clipboardData).items;
+        for (var i = 0; i < items.length; i++) {
+            var item = items[i];
+            console.log('item.type=', item.type)
+            if (item.type.indexOf("image") != -1) {
+                var file = item.getAsFile();
+                upload_screenshot(file);
+            }
         }
     }
-}
 
-function upload_screenshot(file) {
-    var formData = new FormData();
-    formData.append('screenshot', file);
-    alert('new screenshot', file)
-    sendDropFileToServer(formData)
+    function upload_screenshot(file) {
+        var formData = new FormData();
+        formData.append('screenshot', file);
+        alert('new screenshot', file)
+        sendDropFileToServer(formData)
 
-}
+    }
 
 }
