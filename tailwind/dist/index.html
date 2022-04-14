@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
+
+    <script src="files/slick/jquery-1.11.0.min.js"></script>
+    <script src="files/slick/slick.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="files/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="files/slick/slick-theme.css"/>
+    <link rel="stylesheet" href="css/style.min.css">
+</head>
+<body>
+<header class="header">
+    <div class="container grid_12_col header-white font-500 full-width">
+        <div class="header-logo-block font-small">
+            <a href="/"><img class="logo" src="images/logo.png" alt="megapolise_re"></a>
+            <div class="header-hours none-768">
+                <p class="pb-6  flex-row-between"><img src="images/date.svg" alt="Рабочие часы"><span
+                        class="ml-1">Пн - пт  9:00 - 18:00</span></p>
+                <p class="pb-6 header-info flex-row-between"><img src="images/map.svg" alt="Address"><span class="ml-1">ул. Уручская 21, офис 225</span>
+                </p>
+            </div>
+
+        </div>
+        <div class="header-contact-block font-small ">
+            <div class="header-contacts  full-width none-768">
+            <p class="pb-6  flex-row-between none-768"><img src="images/a1.svg" alt="phone"><a class="ml-1"
+                                                                                               href="tel:+375 (29) 336-77-14">+375
+                (29) 336-77-14</a></p>
+            <p class="pb-6 header-info flex-row-between none-768"><img src="images/email.svg" alt="phone"><a class="ml-1"
+                                                                                                  href="mailto:megapolis_re@mail.ru">megapolis_re@mail.ru</a>
+            </p>
+
+            </div>
+            <div class="show-768 pb-6"><img class="start-mobile-menu" src="images/burger-menu.svg" alt="mobile menu"></div>
+        </div>
+
+    </div>
+    <div class="dark-stripe">
+        <div class="container  header-dark grid_12_col full-width">
+        <nav class="top-menu full-width">
+        <ul class="flex-row-start items-center  font-400">
+            <li class="category  top-list ">
+                <a class="topmenu-category-link" href="#">Каталог товаров <span><img class="rotate" src="images/arrow-down.svg" alt="open menu"></span></a>
+            <ul class="subcategory font-base">
+                <li class="open-drop"><a class="topmenu-subcategory-link " href="">Контейнеры для мусора</a>
+                    <ul class="subcategory-2 font-base">
+                        <li><a class="topmenu-subcategory-link" href="">Контейнеры для мусора1</a>
+                        </li>
+                        <li><a class="topmenu-subcategory-link" href="">Урны1</a></li>
+                        <li><a class="topmenu-subcategory-link" href="">Водосточные системы1</a></li>
+                        <li class="open-drop"><a class="topmenu-subcategory-link" href="">Нержавейка1</a>
+                            <ul class="subcategory-3 font-base">
+                                <li><a class="topmenu-subcategory-link" href="">Контейнеры для мусора2</a>
+                                </li>
+                                <li><a class="topmenu-subcategory-link" href="">Урны2</a></li>
+                                <li><a class="topmenu-subcategory-link" href="">Водосточные системы2</a></li>
+                                <li><a class="topmenu-subcategory-link" href="">Нержавейка2</a></li>
+                            </ul>
+
+                        </li>
+                    </ul>
+                </li>
+                <li><a class="topmenu-subcategory-link" href="">Урны</a></li>
+                <li><a class="topmenu-subcategory-link" href="">Водосточные системы</a></li>
+                <li  class="open-drop"><a class="topmenu-subcategory-link" href="">Нержавейка</a>
+                    <ul class="subcategory-2 font-base">
+                        <li><a class="topmenu-subcategory-link" href="">Контейнеры для мусора2</a>
+                        </li>
+                        <li><a class="topmenu-subcategory-link" href="">Урны2</a></li>
+                        <li><a class="topmenu-subcategory-link" href="">Водосточные системы2</a></li>
+                        <li><a class="topmenu-subcategory-link" href="">Нержавейка2</a></li>
+                    </ul>
+                </li>
+            </ul>
+            </li>
+            <li class="top-list"><a class="topmenu-category-link" href="">Спецпредложение</a></li>
+            <li class="top-list"><a class="topmenu-category-link" href="">Оплата и доставка</a></li>
+            <li class="top-list"><a class="topmenu-category-link" href="">Контакты</a></li>
+        </ul>
+        </nav>
+
+            <div class="search-block full-width">
+                <input class="search font-base" type="search" value="" placeholder="Поиск по товарам">
+                <img class="search-image" src="images/search.svg" alt="search">
+            </div>
+        </div>
+    </div>
+
+</header>
+<main class="main bg-blue-500">
+    <div class="slider">
+        <img src="images/sliders/top-slider-1.jpg" alt="">
+    </div>
+
+    <section class="container">
+        <div class="about-box">
+            <div class="box">
+                <img class="box-image" src="images/box-1.svg" alt="">
+                <p class="font-base text-center font-500">Большая база поставщиков - быстро и своевременно доставляем
+                    любую продукцию</p>
+            </div>
+            <div class="box">
+                <img class="box-image" src="images/box-2.svg" alt="">
+                <p class="font-base text-center font-500">Конкурентноспособные цены на качественные товары</p>
+            </div>
+            <div class="box">
+                <img class="box-image" src="images/box-3.svg" alt="">
+                <p class="font-base text-center font-500">Гибкая система скидок, индивидуальный подход</p>
+            </div>
+            <div class="box">
+                <img class="box-image" src="images/box-4.svg" alt="">
+                <p class="font-base text-center font-500">Качественно проконсультируем по любым вопросам</p>
+            </div>
+        </div>
+    </section>
+    <section class="background-gray ">
+        <div class="container">
+            <h1 class="h1">Спецпредложение</h1>
+            <div class="full-width mt-1 proposal font-white ">
+                <div class="grid_2_col">
+                    <div class="flex-col-start p-4">
+                        <p class="font-xl font-500">
+                            Стеклоомывающая жидкость (незамерзайка) оптом <strong>от 4 р.</strong>
+                        </p>
+                        <button class="mt-2 button-base font-base font-600">Купить</button>
+                    </div>
+                    <div class="grid_3_col full-width proposal-items">
+                        <div class="border-white ">
+                            <div class="grid_1_col full-width full-height grid-items-center grid-align-end py-1 proposal-item">
+                                <img class="animation-scale proposal-image" src="images/banka-1.png" alt="">
+                            </div>
+                        </div>
+                        <div class="border-white">
+                            <div class="grid_1_col full-width full-height grid-items-center grid-align-start py-1 proposal-item">
+                                <img class="animation-scale proposal-image" src="images/banka-2.png" alt="">
+                            </div>
+                        </div>
+                        <div class="border-white">
+                            <div class="grid_1_col full-width full-height grid-items-center grid-align-end py-1 proposal-item">
+                                <img class="animation-scale proposal-image" src="images/banka-3.png" alt="">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="container">
+        <h1 class="h1">СУПЕРцена</h1>
+        <!--        <div class="grid_4_col mt-2 gap-2 " id="slider-price">-->
+        <div class=" mt-2 gap-2 " id="slider-price">
+            <div class="item-box p-2 relative">
+                <p class="super-price font-white font-lg font-600">СУПЕРцена</p>
+                <div class="item-image">
+                    <img src="images/item-1.png" alt="item">
+                </div>
+                <p class="font-base font-600 text-center">Мусорный контейнер 120л </p>
+                <p class="font-lg font-600">164,5р. </p>
+            </div>
+            <div class="item-box p-2 relative">
+                <p class="super-price font-white font-lg font-600">СУПЕРцена</p>
+                <div class="item-image">
+                    <img src="images/item-2.png" alt="item">
+                </div>
+                <p class="font-base font-600 text-center">Контейнер оцинкованный для общего сбора ТБО</p>
+                <p class="font-lg font-600">164,5р. </p>
+            </div>
+            <div class="item-box p-2 relative">
+                <p class="super-price font-white font-lg font-600">СУПЕРцена</p>
+                <div class="item-image">
+                    <img src="images/item-3.png" alt="item">
+                </div>
+                <p class="font-base font-600 text-center">Скамейка «Урбан»</p>
+                <p class="font-lg font-600">164,5р. </p>
+            </div>
+            <div class="item-box p-2 relative">
+                <p class="super-price font-white font-lg font-600">СУПЕРцена</p>
+                <div class="item-image">
+                    <img src="images/item-4.png" alt="item">
+                </div>
+                <p class="font-base font-600 text-center">Урна уличная </p>
+                <p class="font-lg font-600">164,5р. </p>
+            </div>
+
+        </div>
+    </section>
+    <section class="container">
+        <h1 class="h1">Популярные товары</h1>
+
+        <div class="grid_4_col mt-2 gap-2">
+            <div class="item-box p-2">
+                <div class="item-image">
+                    <img src="images/item-1.png" alt="item">
+                </div>
+
+                <p class="font-base font-600 text-center">Мусорный контейнер 120л </p>
+                <p class="font-lg font-600">164,5р. </p>
+            </div>
+            <div class="item-box p-2">
+                <div class="item-image">
+                    <img src="images/item-2.png" alt="item">
+                </div>
+                <p class="font-base font-600 text-center">Контейнер оцинкованный для общего сбора ТБО</p>
+                <p class="font-lg font-600">164,5р. </p>
+            </div>
+            <div class="item-box p-2">
+                <div class="item-image">
+                    <img src="images/item-3.png" alt="item">
+                </div>
+                <p class="font-base font-600 text-center">Скамейка «Урбан»</p>
+                <p class="font-lg font-600">164,5р. </p>
+            </div>
+            <div class="item-box p-2">
+                <div class="item-image">
+                    <img src="images/item-4.png" alt="item">
+                </div>
+                <p class="font-base font-600 text-center">Урна уличная </p>
+                <p class="font-lg font-600">164,5р. </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="background-gray">
+        <div class="container about-section">
+
+            <div class="grid_2_col gap-2 grid-items-end items-center ">
+                <div>
+                    <h1 class="h1">O нас</h1>
+                    <p class="mt-1 font-lg font-400">Наша компания универсальна и занимается всеми видами снабжения
+                        предприятий. Помогаем отделам
+                        снабжения быстро и качественно выполнять свою работу.
+                        Мы работаем как с крупными предприятиями (строительными и промышленными организациями, заводами
+                        и т. д.), так и с малым и средним бизнесом. Используем клиенто-ориентированный подход и
+                        проявляем гибкость к каждому партнеру. Работаем на условиях предоплаты и отсрочки платежа.
+                        Для нашей компании выполнение своих обязательств и расширение клиентской базы – дополнительный
+                        стимул развиваться и возможность реализовывать интересные проекты!
+                    </p>
+                </div>
+                <div>
+                    <img class="border-10" src="images/about-index.jpg" alt="about us">
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+<footer class="footer">
+    <div class="container grid_12_col header-white font-500 full-width py-2 gap-2 font-small">
+        <div class="footer-logo-block  ">
+           <div class="flex-col-between font-400 none-768">
+               <a href="/"><img class="logo" src="images/logo.png" alt="megapolise_re"></a>
+               <p class="font-small">Качественные строительные<br> материалы в каждый дом!</p>
+           </div>
+            <div class="flex-col-between font-400">
+                <p class="mb-1"><a href="">Главная</a></p>
+                <p class=""><a href="">Спецпредложения</a></p>
+            </div>
+            <div class="flex-col-between font-400">
+                <p class="mb-1"><a href="">Контакты</a></p>
+                <p class=""><a href="">Оплата и доставка</a></p>
+            </div>
+
+        </div>
+        <div class="footer-contact-block  font-400">
+            <div class="flex-col-between full-width font-400">
+                <p class="mb-1  flex-row-start"><img src="images/date.svg" alt="Рабочие часы"><span
+                        class="ml-1">Пн - пт  9:00 - 18:00</span></p>
+                <p class=" flex-row-start"><img src="images/map.svg" alt="Address"><span class="ml-1">ул. Уручская 21, офис 225</span>
+                </p>
+            </div>
+            <div class="flex-col-between items-bottom full-width">
+                <p class="mb-1  flex-row-end"><img src="images/a1.svg" alt="phone"><a class="ml-1"
+                                                                                        href="tel:+375 (29) 336-77-14">+375
+                    (29) 336-77-14</a></p>
+                <p class="  flex-row-end"><img src="images/email.svg" alt="phone"><a class="ml-1"
+                                                                                                      href="mailto:megapolis_re@mail.ru">megapolis_re@mail.ru</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="dark-stripe">
+        <div class="container text-center">
+            <p class="font-white font-small py-1">
+                © 2016 - 2022 МегаполисРЕ
+            </p>
+        </div>
+    </div>
+</footer>
+<script src="js/app.min.js"></script>
+<script src="js/slider-rules.js"></script>
+</body>
+</html>
+
+
