@@ -1,19 +1,12 @@
 //FONTS colors and sizes
-$base-text-color: #232649;
-$text-base: 1.5rem;
-$text-small: 1.125rem;
-$text-title: 2rem;
-$button-text-size: 1.75rem;
-$big-button-text-size: 2.25rem;
-$h1-text-size: 5rem;
-$h2-text-size: 4rem;
-$h3-text-size: 3rem;
-$white: #fff;
+
 html {
   font-family: 'Motiva Sans';
   font-size: 16px;
   color: $base-text-color;
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  background: $white;
 }
 
 *, *::before, *::after {
@@ -35,21 +28,75 @@ html {
   background: rgba(255, 255, 255, .6);
   box-shadow: 0px 4px 5px #685e5e75;
 }
-header{
+.bg-white{
+  opacity: 1;
+  background: $white;
+}
+header {
   color: $base-text-color !important;
   font-size: $text-base;
   font-weight: 400;
 }
-.navbar{
-  height:110px;
+
+.navbar {
+  height: 110px;
 }
-.small-nav{
+
+.small-nav {
   height: 50px;
 }
- .nav-link {
-    font-weight: 600;
-    text-transform: uppercase;
-    color: $base-text-color !important;
-    font-size: $text-base;
-  }
 
+.nav-link {
+  font-weight: 600;
+  text-transform: uppercase;
+  color: $base-text-color !important;
+  font-size: $text-base;
+}
+
+.pt-150 {
+  padding-top: 150px;
+}
+
+.slider-image {
+  max-height: 95%;
+  width: auto;
+  right: -55px !important;
+}
+
+.slider-text {
+  font-size: 4rem;
+  line-height: 110%;
+  color: $white;
+}
+.icons-move-left{
+  min-width: 100vw;
+  overflow: hidden;
+  display: inline-flex;
+}
+.icons-move-right{
+  min-width: 100vw;
+  overflow: hidden;
+  display: inline-flex;
+}
+.icon{
+
+}
+.phones{
+  max-width: 120% !important;
+  bottom: -50px;
+}
+.clip-left{
+  clip-path:  polygon(0% 0%,100% 0%,100% 100%, 0% 90%);
+  z-index: 0;
+}
+.btn{
+  z-index: 2 !important;
+  &:focus{
+    box-shadow: none;
+
+  }
+}
+.button-center-absolute{
+  left:50%;
+  transform: translateX(-50%);
+}

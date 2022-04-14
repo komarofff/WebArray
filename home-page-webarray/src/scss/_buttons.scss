@@ -4,11 +4,11 @@
   border:1px solid #bc4595;
   color: $white !important;
   font-size: $button-text-size;
-  padding: .25rem 2.8rem;
+  padding: .25rem 2.4rem;
   box-shadow: 3px 0px 7px rgba(0, 0, 0, .35);
   &:hover{
     background: #9f2b79;
-    color: $white;
+    color: $white !important;
   }
 }
 .btn-purple-outline {
@@ -16,12 +16,12 @@
   border:1px solid #bc4595;
   color: #bc4595 !important;
   font-size: $button-text-size;
-  padding: .25rem 2.8rem;
+  padding: .25rem 2.4rem;
   box-shadow: 3px 0px 7px rgba(0, 0, 0, .35);
   &:hover{
     background: #bc4595;
     border:1px solid #bc4595;
-    color: $white;
+    color: $white !important;
   }
 }
 .btn-green {
@@ -29,11 +29,11 @@
   border:1px solid #4db6ac;
   color: $white !important;
   font-size: $button-text-size;
-  padding: .25rem 2.8rem;
+  padding: .25rem 2.4rem;
   box-shadow: 3px 0px 7px rgba(0, 0, 0, .35);
   &:hover{
     background: #108176;
-    color: $white;
+    color: $white !important;
   }
 }
 .btn-green-outline {
@@ -41,11 +41,11 @@
   border:1px solid #4db6ac;
   color: #4db6ac !important;
   font-size: $button-text-size;
-  padding: .25rem 2.8rem;
+  padding: .25rem 2.4rem;
   box-shadow: 3px 0px 7px rgba(0, 0, 0, .35);
   &:hover{
     background: #4db6ac;
-    color: $white;
+    color: $white !important;
     border:1px solid #4db6ac;
   }
 }
@@ -54,11 +54,11 @@
   border:1px solid #f87b5f;
   color: $white !important;
   font-size: $button-text-size;
-  padding: .25rem 2.8rem;
+  padding: .25rem 2.4rem;
   box-shadow: 3px 0px 7px rgba(0, 0, 0, .35);
   &:hover{
     background: #d94423;
-    color: $white;
+    color: $white !important;
   }
 }
 .btn-orange-outline {
@@ -66,11 +66,11 @@
   border:1px solid #f87b5f;
   color: #f87b5f !important;
   font-size: $button-text-size;
-  padding: .25rem 2.8rem;
+  padding: .25rem 2.4rem;
   box-shadow: 3px 0px 7px rgba(0, 0, 0, .35);
   &:hover{
     background: #f87b5f;
-    color: $white;
+    color: $white !important;
     border:1px solid #f87b5f;
   }
 }
@@ -79,11 +79,11 @@
   border:1px solid #f87b5f;
   color: $white !important;
   font-size: $button-text-size;
-  padding: .25rem 2.8rem;
+  padding: .25rem 2.4rem;
   box-shadow: 3px 0px 7px rgba(0, 0, 0, .35);
   &:hover{
     background: #005fa7;
-    color: $white;
+    color: $white !important;
   }
 }
 .btn-blue-outline {
@@ -91,11 +91,11 @@
   border:1px solid #0079d7;
   color:#0079d7 !important;
   font-size: $button-text-size;
-  padding: .25rem 2.8rem;
+  padding: .25rem 2.4rem;
   box-shadow: 3px 0px 7px rgba(0, 0, 0, .35);
   &:hover{
     background: #0079d7;
-    color: $white;
+    color: $white !important;
     border:1px solid #0079d7;
   }
 }
@@ -104,11 +104,12 @@
   border:1px solid $black ;
   color: $white !important;
   font-size: $button-text-size;
-  padding: .25rem 2.8rem;
+  padding: .25rem 2.4rem;
   box-shadow: 3px 0px 7px rgba(0, 0, 0, .35);
   &:hover{
     background: #313131;
-    color: $white;
+    color: $white !important;
+    border:1px solid  #313131 ;
   }
 }
 .btn-black-outline {
@@ -116,11 +117,11 @@
   border:1px solid $black;
   color:$black !important;
   font-size: $button-text-size;
-  padding: .25rem 2.8rem;
+  padding: .25rem 2.4rem;
   box-shadow: 3px 0px 7px rgba(0, 0, 0, .35);
   &:hover{
     background: $black;
-    color: $white;
+    color: $white !important;
     border:1px solid $black;
   }
 }

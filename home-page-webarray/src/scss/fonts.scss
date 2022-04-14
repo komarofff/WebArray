@@ -62,4 +62,83 @@
   font-weight: 900;
   font-style: normal;
 }
+$base-text-color: #232649;
+$text-base: 1.5rem;
+$text-small: 1.125rem;
+$text-title: 2rem;
+$button-text-size: 1.75rem;
+$big-button-text-size: 2.25rem;
+$h1-text-size: 5rem;
+$h2-text-size: 4rem;
+$h3-text-size: 3rem;
+$white: #fff;
+$black: #000;
+$purple:#bc4595;
+$dark-purple: #9f2b79;
+$light-blue: #d6f0ff;
+$blue: #007ad8;
+$green: #4db6ac;
+$dark-green: #0a473d;
+$orange: #ff8a65;
+.bg-light-blue{
+  background: $light-blue;
+}
+.color-white {
+  color: $white;
+}
+.color-purple{
+  color:$purple;
+}
+.color-black {
+  color: #000;
+}
 
+a.color-black {
+  &:hover {
+    color: $white;
+  }
+}
+
+
+a {
+  transition: .3s linear;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.h1 {
+  font-size: $h1-text-size !important;
+}
+
+.h2 {
+  font-size: $h2-text-size !important;
+}
+
+.h3 {
+  font-size: $h3-text-size !important;
+}
+
+.text-base {
+  font-size: $text-base !important;
+}
+
+.text-small {
+  font-size: $text-small !important;
+}
+
+.text-title {
+  font-size: $text-title !important;
+}
+
+.button-text-size {
+  font-size: $button-text-size;
+}
+
+.big-button-text-size {
+  font-size: $big-button-text-size;
+}
+@for $i from 1 through 9{
+ .weight-#{$i*100}{
+   font-weight: #{$i*100};
+ }
+}
