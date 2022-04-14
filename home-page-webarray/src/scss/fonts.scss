@@ -80,8 +80,12 @@ $blue: #007ad8;
 $green: #4db6ac;
 $dark-green: #0a473d;
 $orange: #ff8a65;
+
 .bg-light-blue{
   background: $light-blue;
+}
+.bg-blue{
+  background: $blue;
 }
 .color-white {
   color: $white;
@@ -99,7 +103,9 @@ a.color-black {
   }
 }
 
-
+.color-base{
+  color:$base-text-color;
+}
 a {
   transition: .3s linear;
   cursor: pointer;

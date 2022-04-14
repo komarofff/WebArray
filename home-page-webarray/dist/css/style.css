@@ -12593,6 +12593,10 @@ textarea.form-control-lg {
   background: #d6f0ff;
 }
 
+.bg-blue {
+  background: #007ad8;
+}
+
 .color-white {
   color: #fff;
 }
@@ -12607,6 +12611,10 @@ textarea.form-control-lg {
 
 a.color-black:hover {
   color: #fff;
+}
+
+.color-base {
+  color: #232649;
 }
 
 a {
@@ -12799,6 +12807,23 @@ header {
   -webkit-transform: translateX(-50%);
       -ms-transform: translateX(-50%);
           transform: translateX(-50%);
+}
+
+.blue-container {
+  min-width: 80%;
+  z-index: 2;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.p-b-200 {
+  padding-bottom: 200px;
+}
+
+.phone-image {
+  bottom: -12px;
 }
 
 .btn-purple {
