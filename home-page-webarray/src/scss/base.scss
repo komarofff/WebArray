@@ -71,15 +71,37 @@ header {
   line-height: 110%;
   color: $white;
 }
+@keyframes move-left {
+0%{
+  transform: translateX(0%);
+}
+  100%{
+  transform: translateX(-50%);
+}
+
+}
+@keyframes move-right {
+0%{
+  transform: translateX(0%);
+}
+  100%{
+  transform: translateX(50%);
+}
+
+}
 .icons-move-left{
-  min-width: 100vw;
-  overflow: hidden;
-  display: inline-flex;
+  //width: fit-content;
+  //overflow: hidden;
+  display: flex;
+  justify-content: start;
+ animation: move-left 180s linear;
 }
 .icons-move-right{
-  min-width: 100vw;
-  overflow: hidden;
-  display: inline-flex;
+  //width: fit-content;
+  //overflow: hidden;
+  display: flex;
+  justify-content: end;
+ animation: move-right 180s linear;
 }
 .icon-static-box{
 
