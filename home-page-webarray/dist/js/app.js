@@ -4,9 +4,11 @@ document.addEventListener('scroll', () => {
     let yCoordinate = window.pageYOffset
     if (yCoordinate > 0) {
         topMenu.classList.add('bg-white')
+        topMenu.querySelector('.logo-image').src='images/logo-top.png'
         smallNav.style.cssText = 'opacity:0;'
     } else {
         topMenu.classList.remove('bg-white')
+        topMenu.querySelector('.logo-image').src='images/logo.png'
         smallNav.style.cssText = ''
     }
 

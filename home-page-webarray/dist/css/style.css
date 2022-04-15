@@ -12589,6 +12589,10 @@ textarea.form-control-lg {
   font-weight: 900;
   font-style: normal;
 }
+.bg-light-green {
+  background: #cef7dc;
+}
+
 .bg-light-blue {
   background: #d6f0ff;
 }
@@ -12883,12 +12887,19 @@ header {
 }
 
 .shadow-top {
-  -webkit-box-shadow: 3px 12px 16px rgba(0, 0, 0, 0.3);
-          box-shadow: 3px 12px 16px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: -1px -5px 16px rgba(0, 0, 0, 0.3);
+          box-shadow: -1px -5px 16px rgba(0, 0, 0, 0.3);
 }
 
 .tabs-section {
   grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 2rem;
+}
+.tabs-section .tabs-header:hover {
+  border: 1px solid #dc3545;
+}
+.tabs-section .active-tab {
+  border: 1px solid #007ad8 !important;
 }
 
 .checked-list li {

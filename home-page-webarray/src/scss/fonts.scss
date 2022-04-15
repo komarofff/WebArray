@@ -80,7 +80,11 @@ $blue: #007ad8;
 $green: #4db6ac;
 $dark-green: #0a473d;
 $orange: #ff8a65;
+$light-green: #cef7dc;
 
+.bg-light-green{
+  background: $light-green;
+}
 .bg-light-blue{
   background: $light-blue;
 }
