@@ -204,3 +204,10 @@ header {
 .-right-50{
   left: 80%;
 }
+text-section{
+  position: absolute;
+  top:50%;
+  transform: translateY(-50%);
+}
+
+//.carousel-control-prev carousel-control-next breakpoints

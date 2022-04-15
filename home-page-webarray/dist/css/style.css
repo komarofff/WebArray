@@ -12965,6 +12965,14 @@ header {
   left: 80%;
 }
 
+text-section {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
 .btn-purple {
   background: #bc4595;
   border: 1px solid #bc4595;
