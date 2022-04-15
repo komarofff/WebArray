@@ -36,3 +36,12 @@ for(let i=0; i<tabs.length;i++){
         tabsContent[i].classList.remove('d-none')
     })
 }
+
+$('.slider').slick({
+    dots: true,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 1,
+    centerMode: true,
+    variableWidth: true
+});
