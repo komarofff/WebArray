@@ -4,17 +4,33 @@ document.addEventListener('scroll', () => {
     let yCoordinate = window.pageYOffset
     if (yCoordinate > 0) {
         topMenu.classList.add('bg-white')
-        smallNav.classList.add('d-none')
+        smallNav.style.cssText = 'opacity:0;'
     } else {
         topMenu.classList.remove('bg-white')
-        smallNav.classList.remove('d-none')
+        smallNav.style.cssText = ''
     }
 
     if (scrollY > yCoordinate) {
-        smallNav.classList.remove('d-none')
+        smallNav.style.cssText = ''
     }
     if (scrollY < yCoordinate) {
-        smallNav.classList.add('d-none')
+        smallNav.style.cssText = 'opacity:0;'
     }
     scrollY = yCoordinate
 })
+/// tabs home page tabs-section  tabs-header
+// tabs-content-section  tabs-content
+let tabs = document.querySelector('.tabs-section').querySelectorAll('.tabs-header')
+let tabsContent = document.querySelector('.tabs-content-section').querySelectorAll('.tabs-content')
+for(let i=0; i<tabs.length;i++){
+    tabs[i].addEventListener('click',()=>{
+        tabsContent.forEach((el)=>{
+            el.classList.add('d-none')
+        })
+        tabs.forEach((el)=>{
+            el.classList.remove('active-tab')
+        })
+        tabs[i].classList.add('active-tab')
+        tabsContent[i].classList.remove('d-none')
+    })
+}
