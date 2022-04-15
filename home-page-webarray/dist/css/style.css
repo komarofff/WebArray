@@ -12948,6 +12948,9 @@ header {
 .tabs-section .active-tab {
   border: 1px solid #007ad8 !important;
 }
+.tabs-section .active {
+  border: 1px solid #007ad8 !important;
+}
 
 .checked-list li {
   position: relative;

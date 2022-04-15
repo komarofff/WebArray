@@ -22,26 +22,18 @@ document.addEventListener('scroll', () => {
 })
 /// tabs home page tabs-section  tabs-header
 // tabs-content-section  tabs-content
-let tabs = document.querySelector('.tabs-section').querySelectorAll('.tabs-header')
-let tabsContent = document.querySelector('.tabs-content-section').querySelectorAll('.tabs-content')
-for(let i=0; i<tabs.length;i++){
-    tabs[i].addEventListener('click',()=>{
-        tabsContent.forEach((el)=>{
-            el.classList.add('d-none')
-        })
-        tabs.forEach((el)=>{
-            el.classList.remove('active-tab')
-        })
-        tabs[i].classList.add('active-tab')
-        tabsContent[i].classList.remove('d-none')
-    })
-}
+// let tabs = document.querySelector('.tabs-section').querySelectorAll('.tabs-header')
+// let tabsContent = document.querySelector('.tabs-content-section').querySelectorAll('.tabs-content')
+// for(let i=0; i<tabs.length;i++){
+//     tabs[i].addEventListener('click',()=>{
+//         tabsContent.forEach((el)=>{
+//             el.classList.add('d-none')
+//         })
+//         tabs.forEach((el)=>{
+//             el.classList.remove('active-tab')
+//         })
+//         tabs[i].classList.add('active-tab')
+//         tabsContent[i].classList.remove('d-none')
+//     })
+// }
 
-$('.slider').slick({
-    dots: true,
-    infinite: true,
-    speed: 300,
-    slidesToShow: 1,
-    centerMode: true,
-    variableWidth: true
-});
