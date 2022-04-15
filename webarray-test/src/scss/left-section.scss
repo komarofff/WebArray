@@ -75,3 +75,12 @@
   height: 80px;
   object-fit: cover;
 }
+.close-svg{
+  z-index: 99;
+  transition: .3s linear;
+
+    &:hover {
+      transform: rotate(180deg);
+    }
+
+}

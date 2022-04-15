@@ -1,7 +1,206 @@
 @import 'fonts';
 @import "base";
-@import "inputs-buttons";
 @import "top-section";
 @import "left-section";
 @import 'main-section';
 @import 'right-section';
+@import "default.min.scss";
+@import "inputs-buttons";
+.relative{
+  position: relative;
+}
+.codeflask {
+  background: #fff;
+  color: #030623 !important;
+  font-weight: 600 !important;
+}
+.code{
+  font-size: .7rem;
+  white-space: pre;
+}
+.hljs-ln-n{
+  //background: url('../images/textarea-line.png');
+  //background-attachment: local;
+  //background-repeat: no-repeat;
+  background: #e2dfdf;
+  border-right: 1px solid #bbbaba;
+  padding-left:5px;
+  padding-right: 5px!important;
+  color: #2195f3;
+}
+.hljs-line-numbers {
+
+  text-align: right;
+  border-right: 1px solid #ccc;
+  color: #999;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+#file-editor{
+  position: relative;
+  min-height: 60vh;
+  overflow-y: hidden;
+}
+.lg-backdrop{
+  background: rgba(0,0,0,.8) !important;
+}
+.no-click{
+  z-index: 9;
+}
+.project{
+  cursor: move;
+}
+.project,.folder{
+  z-index: 2;
+ // overflow: hidden;
+//  cursor:context-menu !important;
+}
+.changed{
+  //cursor:context-menu !important;
+}
+.flag-menu-box{
+
+   li.checked {
+      position: relative;
+
+      &::before {
+        content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="rgba(0, 23, 55, 0.08)" stroke="rgba(179, 180, 182, 1)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check"><polyline points="20 6 9 17 4 12"></polyline></svg>');
+        position: absolute;
+        left: 0px;
+        top: 0px;
+      }
+    }
+
+}
+.center-zone{
+  z-index: 0;
+}
+.dropzone {
+  z-index: 10;
+  $size: 5px;
+  position: relative;
+  .dropzone:nth-child(n){
+    position: absolute;
+    top:$size;
+    right:$size;
+    $size: $size+5;
+  }
+
+}
+
+.gallery-grid{
+  .center-zone__inner-section{
+    grid-template-columns: repeat(auto-fill,minmax(220px,220px)) !important;
+    .project,.folder,.dropzone{
+      width:220px !important;
+      height:240px !important;
+    }
+  }
+
+}
+.medium-grid{
+  & .center-zone__inner-section{
+    grid-template-columns: repeat(auto-fill,minmax(140px,140px)) !important;
+    grid-gap: 25px;
+    .project,.folder,.dropzone{
+      width:130px !important;
+      height:150px !important;
+    }
+  }
+  .flag-bad::after{
+    left: -10px;
+    top: 0px;
+  }
+
+}
+
+.small-grid{
+  & .center-zone__inner-section{
+    grid-template-columns: repeat(auto-fill,minmax(80px,80px)) !important;
+    grid-gap: 15px;
+    .project,.folder,.dropzone{
+      width:80px !important;
+      height:80px !important;
+
+      font-weight: bold;
+      p{
+        font-size: .42rem!important;
+      }
+    }
+    .project-name,.folder-name{
+      margin:2px!important;
+      bottom: 7px;
+      left: 6px;
+    }
+  }
+
+}
+
+.list-grid{
+  & .center-zone__inner-section{
+    grid-template-columns: 1fr;
+    grid-gap: 15px;
+    .project,.folder,.dropzone{
+      width:fit-content !important;
+      height:20px !important;
+      white-space: nowrap;
+
+      font-weight: bold;
+      p{
+        font-size: .42rem!important;
+      }
+    }
+    .project-name,.folder-name{
+      margin:2px!important;
+      bottom: 7px;
+      left: 6px;
+    }
+  }
+
+}
+
+.project-chat{
+  position: absolute;
+  left: -15px;
+  top: -14px;
+  z-index: 3;
+  background: url('data:image/svg+xml; utf8,<svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 0 24 24" width="40px" fill="rgb(226,160,63)"><path d="M0 0h24v24H0z" fill="none"/><path d="M21.99 4c0-1.1-.89-2-1.99-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14l4 4-.01-18z"/></svg>');
+ // transform: scaleX(-1);
+  cursor: pointer;
+  color: $white;
+  font-weight: bold;
+  font-size: .5rem;
+  width: 40px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mirror{
+  transform: scaleX(-1);
+}
+.project-tasks{
+  position: absolute;
+  right: -12px;
+  top: -15px;
+  z-index: 3;
+  background: url('data:image/svg+xml; utf8,<svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 24 24" fill="rgb(231,81,90)" stroke="rgb(231,81,90)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-briefcase"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>');
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 35px;
+  height: 35px;
+  color: $white;
+  font-weight: bold;
+  font-size: .5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.no-pointer{
+  cursor: default!important;
+}

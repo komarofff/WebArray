@@ -1,0 +1,1052 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home page</title>
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="files/slick/slick.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="files/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="files/slick/slick-theme.css"/>
+    <link rel="stylesheet" href="css/style.min.css">
+</head>
+<body>
+<header class="vh-100 vw-100 top-gradient">
+    <div class="fixed-top">
+        <nav class="top-navbar navbar navbar-expand-lg navbar-light bg-white-opacity-1">
+            <div class="container d-flex justify-content-between">
+                <a href="/"><img class="logo-image" src="@img/logo.png" alt="WebArray"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNavAltMarkup"
+                        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse flex-grow-1 me-4" id="navbarNavAltMarkup">
+                    <div class="navbar-nav d-flex justify-content-evenly w-100">
+                        <a class="nav-link active" href="#">Features</a>
+                        <a class="nav-link" href="#">Devices</a>
+                        <a class="nav-link" href="#">Prices</a>
+                    </div>
+                </div>
+                <a href="" class="btn btn-purple ">Get A Quote</a>
+
+            </div>
+        </nav>
+        <div class="p-1 w-100 bg-white-opacity-2 small-nav d-flex align-items-center">
+            <div class="container">
+                <div class="row justify-content-end">
+                    <p class=" col-12 col-md-4 col-xl-3 col-xxl-2 d-flex justify-content-center align-items-center mb-0">
+                        <span class="nav-link mb-0 p-0">Sales:</span><span class="ms-1">000 000</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--    <div class="pt-150 h-100">       -->
+    <!--        <div class="container h-100">-->
+    <!--            <div class="row align-items-center h-100 text-section">-->
+    <!--                <div class="col-xl-8 col-xxl-7">-->
+    <!--                    <h1 class="slider-text color-white">222 Build better connections and deliver amazing customer-->
+    <!--                        experiences.</h1>-->
+    <!--                    <div class="d-flex justify-content-start align-items-center mt-4">-->
+    <!--                        <a href="#" class="btn btn-black big-button-text-size mt-5 me-5">Start Now</a>-->
+    <!--                        <a href="#" class="color-black big-button-text-size mt-5">Start Now</a>-->
+    <!--                    </div>-->
+    <!--                </div>-->
+    <!--                <div class="col-xl-4 col-xxl-5 position-relative align-self-stretch">-->
+    <!--                    <img class="position-absolute bottom-0 end-0 slider-image" src="@img/girl.png" alt="girl">-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    </div>-->
+    <div class="vh-100">
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="vh-100 pt-150">
+                            <div class="container  h-100 position-relative">
+                                <div class="row align-items-center h-100 text-section ">
+                                    <div class="col-xl-8 col-xxl-7">
+                                        <h1 class="slider-text color-white">Build better connections and deliver amazing
+                                            customer
+                                            experiences.</h1>
+                                        <div class="d-flex justify-content-start align-items-center mt-4">
+                                            <a href="#" class="btn btn-black big-button-text-size mt-5 me-5">Start
+                                                Now</a>
+                                            <a href="#" class="color-black big-button-text-size mt-5">Start Now</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-4 col-xxl-5 position-relative align-self-stretch">
+                                        <img class="position-absolute bottom-0 end-0 slider-image" src="@img/girl.png"
+                                             alt="girl">
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="vh-100 pt-150">
+                        <div class="container  h-100 position-relative">
+                            <div class="row align-items-center h-100 text-section ">
+                                <div class="col-xl-8 col-xxl-7">
+                                    <h1 class="slider-text color-white">2 Build better connections and deliver amazing
+                                        customer
+                                        experiences.</h1>
+                                    <div class="d-flex justify-content-start align-items-center mt-4">
+                                        <a href="#" class="btn btn-black big-button-text-size mt-5 me-5">Start
+                                            Now</a>
+                                        <a href="#" class="color-black big-button-text-size mt-5">Start Now</a>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-xxl-5 position-relative align-self-stretch">
+                                    <img class="position-absolute bottom-0 end-0 slider-image" src="@img/girl.png"
+                                         alt="girl">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                    data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                    data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<main>
+    <div class="vw-100 overflow-hidden">
+        <div class="my-4 opacity-25 icons-move-left">
+            <img class="icon mx-3" src="@img/icon-blue.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-green.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-red.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-purple.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-yellow.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-blue.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-green.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-red.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-purple.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-yellow.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-blue.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-green.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-red.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-purple.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-yellow.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-blue.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-green.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-red.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-purple.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-yellow.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-blue.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-green.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-red.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-purple.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-yellow.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-blue.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-green.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-red.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-purple.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-yellow.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-blue.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-green.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-red.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-purple.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-yellow.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-blue.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-green.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-red.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-purple.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-yellow.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-blue.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-green.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-red.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-purple.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-yellow.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-blue.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-green.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-red.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-purple.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-yellow.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-blue.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-green.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-red.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-purple.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-yellow.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-blue.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-green.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-red.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-purple.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-yellow.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-blue.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-green.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-red.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-purple.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-yellow.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-blue.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-green.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-red.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-purple.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-yellow.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-blue.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-green.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-red.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-purple.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-yellow.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-blue.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-green.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-red.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-purple.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-yellow.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-blue.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-green.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-red.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-purple.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-yellow.png" alt="icon-blue">
+
+        </div>
+    </div>
+    <div class="vw-100 overflow-hidden">
+        <div class="my-4 opacity-25 icons-move-right">
+            <img class="icon mx-3" src="@img/icon-blue.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-green.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-red.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-purple.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-yellow.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-blue.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-green.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-red.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-purple.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-yellow.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-blue.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-green.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-red.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-purple.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-yellow.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-blue.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-green.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-red.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-purple.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-yellow.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-blue.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-green.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-red.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-purple.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-yellow.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-blue.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-green.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-red.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-purple.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-yellow.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-blue.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-green.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-red.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-purple.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-yellow.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-blue.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-green.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-red.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-purple.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-yellow.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-blue.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-green.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-red.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-purple.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-yellow.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-blue.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-green.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-red.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-purple.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-yellow.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-blue.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-green.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-red.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-purple.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-yellow.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-blue.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-green.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-red.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-purple.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-yellow.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-blue.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-green.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-red.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-purple.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-yellow.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-blue.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-green.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-red.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-purple.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-yellow.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-blue.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-green.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-red.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-purple.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-yellow.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-blue.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-green.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-red.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-purple.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-yellow.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-blue.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-green.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-red.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-purple.png" alt="icon-blue">
+            <img class="icon mx-3" src="@img/icon-yellow.png" alt="icon-blue">
+
+
+        </div>
+    </div>
+    <div class="container mt-5">
+        <div class="row align-items-start">
+            <div class="col-7">
+                <h2 class="h2">Top Rated</h2>
+                <h2 class="h2 color-purple">Cloud Phone System</h2>
+                <p class="text-base mt-4">Made for business owners, not IT wizards</p>
+                <div class="d-flex justify-content-start align-items-center mt-5">
+                    <a href="#" class="btn btn-purple me-5 button-text-size">Let’s get started</a>
+                    <a href="#" class="button-text-size color-purple ">Get More Info</a>
+                </div>
+
+            </div>
+            <div class="col-5 position-relative ">
+                <img class="phones img-fluid" src="@img/phones.jpg" alt="phones">
+            </div>
+        </div>
+    </div>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-12 col-sm-6 col-lg-4 d-flex flex-column justify-content-start align-items-start my-4">
+                <img src="@img/headphones-blue.png" alt="headphones">
+                <p class="text-title weight-700 my-3">Never Miss a Call</p>
+                <p class="text-base">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commo
+                </p>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-4 d-flex flex-column justify-content-start align-items-start my-4">
+                <img src="@img/headphones-red.png" alt="headphones">
+                <p class="text-title weight-700 my-3">Never Miss a Call</p>
+                <p class="text-base">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commo
+                </p>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-4 d-flex flex-column justify-content-start align-items-start my-4">
+                <img src="@img/headphones-blue.png" alt="headphones">
+                <p class="text-title weight-700 my-3">Never Miss a Call</p>
+                <p class="text-base">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commo
+                </p>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-4 d-flex flex-column justify-content-start align-items-start my-4">
+                <img src="@img/headphones-red.png" alt="headphones">
+                <p class="text-title weight-700 my-3">Never Miss a Call</p>
+                <p class="text-base">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commo
+                </p>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-4 d-flex flex-column justify-content-start align-items-start my-4">
+                <img src="@img/headphones-blue.png" alt="headphones">
+                <p class="text-title weight-700 my-3">Never Miss a Call</p>
+                <p class="text-base">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commo
+                </p>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-4 d-flex flex-column justify-content-start align-items-start my-4">
+                <img src="@img/headphones-red.png" alt="headphones">
+                <p class="text-title weight-700 my-3">Never Miss a Call</p>
+                <p class="text-base">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commo
+                </p>
+            </div>
+
+        </div>
+    </div>
+    <div class="vw-100 mt-5 position-relative">
+        <div class="d-grid blue-block">
+            <div class="d-flex flex-column h-100">
+                <div class="h-50 bg-white"></div>
+                <div class="h-50 bg-light-blue"></div>
+            </div>
+            <div class="container bg-blue p-5  blue-container position-relative">
+                <img class="phone-image position-absolute start-0 " src="@img/phone-hand.png" alt="phone">
+                <div class="row position-relative justify-content-end">
+
+                    <div class="col-8">
+                        <h2 class="h2 color-base weight-700">Switch Your Old Phone</h2>
+                        <h2 class="h2 color-white weight-700">To A New Phone System</h2>
+                        <div class="d-flex mt-5 justify-content-center align-items-center">
+                            <a class="btn color-white button-text-size me-4" href="#">Contact Us</a>
+                            <a class="btn btn-black-outline button-text-size" href="#">Let’s get started</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex flex-column h-100">
+                <div class="h-50 bg-white"></div>
+                <div class="h-50 bg-light-blue"></div>
+            </div>
+        </div>
+        <div class="bg-light-blue py-5 clip-left position-relative icon-static-box">
+            <div class="my-5 icons-box d-flex justify-content-center align-items-center">
+                <div class="d-flex align-items-center me-5">
+                    <img class="icon me-1" src="@img/icon-blue.png" alt="icon-blue">
+                    <p class="mb-0 color-base text-base">Voicemail</p>
+                </div>
+                <div class="d-flex align-items-center me-5">
+                    <img class="icon me-1" src="@img/icon-green.png" alt="icon-blue">
+                    <p class="mb-0 color-base text-base">Call Queing</p>
+                </div>
+                <div class="d-flex align-items-center me-5">
+                    <img class="icon me-1" src="@img/icon-red.png" alt="icon-blue">
+                    <p class="mb-0 color-base text-base">Call Recording</p>
+                </div>
+                <div class="d-flex align-items-center me-5">
+                    <img class="icon me-1" src="@img/icon-purple.png" alt="icon-blue">
+                    <p class="mb-0 color-base text-base">Business Hours</p>
+                </div>
+                <div class="d-flex align-items-center me-5">
+                    <img class="icon me-1" src="@img/icon-yellow.png" alt="icon-blue">
+                    <p class="mb-0 color-base text-base">Short Numbers</p>
+                </div>
+                <div class="d-flex align-items-center me-5">
+                    <img class="icon me-1" src="@img/icon-blue.png" alt="icon-blue">
+                    <p class="mb-0 color-base text-base">Voicemail</p>
+                </div>
+                <div class="d-flex align-items-center me-5">
+                    <img class="icon me-1" src="@img/icon-green.png" alt="icon-blue">
+                    <p class="mb-0 color-base text-base">Call Queing</p>
+                </div>
+                <div class="d-flex align-items-center me-5">
+                    <img class="icon me-1" src="@img/icon-red.png" alt="icon-blue">
+                    <p class="mb-0 color-base text-base">Call Recording</p>
+                </div>
+                <div class="d-flex align-items-center me-5">
+                    <img class="icon me-1" src="@img/icon-purple.png" alt="icon-blue">
+                    <p class="mb-0 color-base text-base">Business Hours</p>
+                </div>
+                <div class="d-flex align-items-center me-5">
+                    <img class="icon me-1" src="@img/icon-yellow.png" alt="icon-blue">
+                    <p class="mb-0 color-base text-base">Short Numbers</p>
+                </div>
+                <div class="d-flex align-items-center me-5">
+                    <img class="icon me-1" src="@img/icon-blue.png" alt="icon-blue">
+                    <p class="mb-0 color-base text-base">Voicemail</p>
+                </div>
+                <div class="d-flex align-items-center me-5">
+                    <img class="icon me-1" src="@img/icon-green.png" alt="icon-blue">
+                    <p class="mb-0 color-base text-base">Call Queing</p>
+                </div>
+                <div class="d-flex align-items-center me-5">
+                    <img class="icon me-1" src="@img/icon-red.png" alt="icon-blue">
+                    <p class="mb-0 color-base text-base">Call Recording</p>
+                </div>
+                <div class="d-flex align-items-center me-5">
+                    <img class="icon me-1" src="@img/icon-purple.png" alt="icon-blue">
+                    <p class="mb-0 color-base text-base">Business Hours</p>
+                </div>
+                <div class="d-flex align-items-center me-5">
+                    <img class="icon me-1" src="@img/icon-yellow.png" alt="icon-blue">
+                    <p class="mb-0 color-base text-base">Short Numbers</p>
+                </div>
+            </div>
+            <div class="ps-16 my-5 icons-box d-flex justify-content-center align-items-center">
+                <div class="d-flex align-items-center me-5">
+                    <img class="icon me-1" src="@img/icon-blue.png" alt="icon-blue">
+                    <p class="mb-0 color-base text-base">Voicemail</p>
+                </div>
+                <div class="d-flex align-items-center me-5">
+                    <img class="icon me-1" src="@img/icon-green.png" alt="icon-blue">
+                    <p class="mb-0 color-base text-base">Call Queing</p>
+                </div>
+                <div class="d-flex align-items-center me-5">
+                    <img class="icon me-1" src="@img/icon-red.png" alt="icon-blue">
+                    <p class="mb-0 color-base text-base">Call Recording</p>
+                </div>
+                <div class="d-flex align-items-center me-5">
+                    <img class="icon me-1" src="@img/icon-purple.png" alt="icon-blue">
+                    <p class="mb-0 color-base text-base">Business Hours</p>
+                </div>
+                <div class="d-flex align-items-center me-5">
+                    <img class="icon me-1" src="@img/icon-yellow.png" alt="icon-blue">
+                    <p class="mb-0 color-base text-base">Short Numbers</p>
+                </div>
+                <div class="d-flex align-items-center me-5">
+                    <img class="icon me-1" src="@img/icon-blue.png" alt="icon-blue">
+                    <p class="mb-0 color-base text-base">Voicemail</p>
+                </div>
+                <div class="d-flex align-items-center me-5">
+                    <img class="icon me-1" src="@img/icon-green.png" alt="icon-blue">
+                    <p class="mb-0 color-base text-base">Call Queing</p>
+                </div>
+                <div class="d-flex align-items-center me-5">
+                    <img class="icon me-1" src="@img/icon-red.png" alt="icon-blue">
+                    <p class="mb-0 color-base text-base">Call Recording</p>
+                </div>
+                <div class="d-flex align-items-center me-5">
+                    <img class="icon me-1" src="@img/icon-purple.png" alt="icon-blue">
+                    <p class="mb-0 color-base text-base">Business Hours</p>
+                </div>
+                <div class="d-flex align-items-center me-5">
+                    <img class="icon me-1" src="@img/icon-yellow.png" alt="icon-blue">
+                    <p class="mb-0 color-base text-base">Short Numbers</p>
+                </div>
+                <div class="d-flex align-items-center me-5">
+                    <img class="icon me-1" src="@img/icon-blue.png" alt="icon-blue">
+                    <p class="mb-0 color-base text-base">Voicemail</p>
+                </div>
+                <div class="d-flex align-items-center me-5">
+                    <img class="icon me-1" src="@img/icon-green.png" alt="icon-blue">
+                    <p class="mb-0 color-base text-base">Call Queing</p>
+                </div>
+                <div class="d-flex align-items-center me-5">
+                    <img class="icon me-1" src="@img/icon-red.png" alt="icon-blue">
+                    <p class="mb-0 color-base text-base">Call Recording</p>
+                </div>
+                <div class="d-flex align-items-center me-5">
+                    <img class="icon me-1" src="@img/icon-purple.png" alt="icon-blue">
+                    <p class="mb-0 color-base text-base">Business Hours</p>
+                </div>
+                <div class="d-flex align-items-center me-5">
+                    <img class="icon me-1" src="@img/icon-yellow.png" alt="icon-blue">
+                    <p class="mb-0 color-base text-base">Short Numbers</p>
+                </div>
+            </div>
+            <div class="my-5 icons-box d-flex justify-content-center align-items-center">
+                <div class="d-flex align-items-center me-5">
+                    <img class="icon me-1" src="@img/icon-blue.png" alt="icon-blue">
+                    <p class="mb-0 color-base text-base">Voicemail</p>
+                </div>
+                <div class="d-flex align-items-center me-5">
+                    <img class="icon me-1" src="@img/icon-green.png" alt="icon-blue">
+                    <p class="mb-0 color-base text-base">Call Queing</p>
+                </div>
+                <div class="d-flex align-items-center me-5">
+                    <img class="icon me-1" src="@img/icon-red.png" alt="icon-blue">
+                    <p class="mb-0 color-base text-base">Call Recording</p>
+                </div>
+                <div class="d-flex align-items-center me-5">
+                    <img class="icon me-1" src="@img/icon-purple.png" alt="icon-blue">
+                    <p class="mb-0 color-base text-base">Business Hours</p>
+                </div>
+                <div class="d-flex align-items-center me-5">
+                    <img class="icon me-1" src="@img/icon-yellow.png" alt="icon-blue">
+                    <p class="mb-0 color-base text-base">Short Numbers</p>
+                </div>
+                <div class="d-flex align-items-center me-5">
+                    <img class="icon me-1" src="@img/icon-blue.png" alt="icon-blue">
+                    <p class="mb-0 color-base text-base">Voicemail</p>
+                </div>
+                <div class="d-flex align-items-center me-5">
+                    <img class="icon me-1" src="@img/icon-green.png" alt="icon-blue">
+                    <p class="mb-0 color-base text-base">Call Queing</p>
+                </div>
+                <div class="d-flex align-items-center me-5">
+                    <img class="icon me-1" src="@img/icon-red.png" alt="icon-blue">
+                    <p class="mb-0 color-base text-base">Call Recording</p>
+                </div>
+                <div class="d-flex align-items-center me-5">
+                    <img class="icon me-1" src="@img/icon-purple.png" alt="icon-blue">
+                    <p class="mb-0 color-base text-base">Business Hours</p>
+                </div>
+                <div class="d-flex align-items-center me-5">
+                    <img class="icon me-1" src="@img/icon-yellow.png" alt="icon-blue">
+                    <p class="mb-0 color-base text-base">Short Numbers</p>
+                </div>
+                <div class="d-flex align-items-center me-5">
+                    <img class="icon me-1" src="@img/icon-blue.png" alt="icon-blue">
+                    <p class="mb-0 color-base text-base">Voicemail</p>
+                </div>
+                <div class="d-flex align-items-center me-5">
+                    <img class="icon me-1" src="@img/icon-green.png" alt="icon-blue">
+                    <p class="mb-0 color-base text-base">Call Queing</p>
+                </div>
+                <div class="d-flex align-items-center me-5">
+                    <img class="icon me-1" src="@img/icon-red.png" alt="icon-blue">
+                    <p class="mb-0 color-base text-base">Call Recording</p>
+                </div>
+                <div class="d-flex align-items-center me-5">
+                    <img class="icon me-1" src="@img/icon-purple.png" alt="icon-blue">
+                    <p class="mb-0 color-base text-base">Business Hours</p>
+                </div>
+                <div class="d-flex align-items-center me-5">
+                    <img class="icon me-1" src="@img/icon-yellow.png" alt="icon-blue">
+                    <p class="mb-0 color-base text-base">Short Numbers</p>
+                </div>
+            </div>
+            <div class="ps-16 my-5 icons-box d-flex justify-content-center align-items-center">
+                <div class="d-flex align-items-center me-5">
+                    <img class="icon me-1" src="@img/icon-blue.png" alt="icon-blue">
+                    <p class="mb-0 color-base text-base">Voicemail</p>
+                </div>
+                <div class="d-flex align-items-center me-5">
+                    <img class="icon me-1" src="@img/icon-green.png" alt="icon-blue">
+                    <p class="mb-0 color-base text-base">Call Queing</p>
+                </div>
+                <div class="d-flex align-items-center me-5">
+                    <img class="icon me-1" src="@img/icon-red.png" alt="icon-blue">
+                    <p class="mb-0 color-base text-base">Call Recording</p>
+                </div>
+                <div class="d-flex align-items-center me-5">
+                    <img class="icon me-1" src="@img/icon-purple.png" alt="icon-blue">
+                    <p class="mb-0 color-base text-base">Business Hours</p>
+                </div>
+                <div class="d-flex align-items-center me-5">
+                    <img class="icon me-1" src="@img/icon-yellow.png" alt="icon-blue">
+                    <p class="mb-0 color-base text-base">Short Numbers</p>
+                </div>
+                <div class="d-flex align-items-center me-5">
+                    <img class="icon me-1" src="@img/icon-blue.png" alt="icon-blue">
+                    <p class="mb-0 color-base text-base">Voicemail</p>
+                </div>
+                <div class="d-flex align-items-center me-5">
+                    <img class="icon me-1" src="@img/icon-green.png" alt="icon-blue">
+                    <p class="mb-0 color-base text-base">Call Queing</p>
+                </div>
+                <div class="d-flex align-items-center me-5">
+                    <img class="icon me-1" src="@img/icon-red.png" alt="icon-blue">
+                    <p class="mb-0 color-base text-base">Call Recording</p>
+                </div>
+                <div class="d-flex align-items-center me-5">
+                    <img class="icon me-1" src="@img/icon-purple.png" alt="icon-blue">
+                    <p class="mb-0 color-base text-base">Business Hours</p>
+                </div>
+                <div class="d-flex align-items-center me-5">
+                    <img class="icon me-1" src="@img/icon-yellow.png" alt="icon-blue">
+                    <p class="mb-0 color-base text-base">Short Numbers</p>
+                </div>
+                <div class="d-flex align-items-center me-5">
+                    <img class="icon me-1" src="@img/icon-blue.png" alt="icon-blue">
+                    <p class="mb-0 color-base text-base">Voicemail</p>
+                </div>
+                <div class="d-flex align-items-center me-5">
+                    <img class="icon me-1" src="@img/icon-green.png" alt="icon-blue">
+                    <p class="mb-0 color-base text-base">Call Queing</p>
+                </div>
+                <div class="d-flex align-items-center me-5">
+                    <img class="icon me-1" src="@img/icon-red.png" alt="icon-blue">
+                    <p class="mb-0 color-base text-base">Call Recording</p>
+                </div>
+                <div class="d-flex align-items-center me-5">
+                    <img class="icon me-1" src="@img/icon-purple.png" alt="icon-blue">
+                    <p class="mb-0 color-base text-base">Business Hours</p>
+                </div>
+                <div class="d-flex align-items-center me-5">
+                    <img class="icon me-1" src="@img/icon-yellow.png" alt="icon-blue">
+                    <p class="mb-0 color-base text-base">Short Numbers</p>
+                </div>
+            </div>
+            <div class="my-5 icons-box d-flex justify-content-center align-items-center">
+                <div class="d-flex align-items-center me-5">
+                    <img class="icon me-1" src="@img/icon-blue.png" alt="icon-blue">
+                    <p class="mb-0 color-base text-base">Voicemail</p>
+                </div>
+                <div class="d-flex align-items-center me-5">
+                    <img class="icon me-1" src="@img/icon-green.png" alt="icon-blue">
+                    <p class="mb-0 color-base text-base">Call Queing</p>
+                </div>
+                <div class="d-flex align-items-center me-5">
+                    <img class="icon me-1" src="@img/icon-red.png" alt="icon-blue">
+                    <p class="mb-0 color-base text-base">Call Recording</p>
+                </div>
+                <div class="d-flex align-items-center me-5">
+                    <img class="icon me-1" src="@img/icon-purple.png" alt="icon-blue">
+                    <p class="mb-0 color-base text-base">Business Hours</p>
+                </div>
+                <div class="d-flex align-items-center me-5">
+                    <img class="icon me-1" src="@img/icon-yellow.png" alt="icon-blue">
+                    <p class="mb-0 color-base text-base">Short Numbers</p>
+                </div>
+                <div class="d-flex align-items-center me-5">
+                    <img class="icon me-1" src="@img/icon-blue.png" alt="icon-blue">
+                    <p class="mb-0 color-base text-base">Voicemail</p>
+                </div>
+                <div class="d-flex align-items-center me-5">
+                    <img class="icon me-1" src="@img/icon-green.png" alt="icon-blue">
+                    <p class="mb-0 color-base text-base">Call Queing</p>
+                </div>
+                <div class="d-flex align-items-center me-5">
+                    <img class="icon me-1" src="@img/icon-red.png" alt="icon-blue">
+                    <p class="mb-0 color-base text-base">Call Recording</p>
+                </div>
+                <div class="d-flex align-items-center me-5">
+                    <img class="icon me-1" src="@img/icon-purple.png" alt="icon-blue">
+                    <p class="mb-0 color-base text-base">Business Hours</p>
+                </div>
+                <div class="d-flex align-items-center me-5">
+                    <img class="icon me-1" src="@img/icon-yellow.png" alt="icon-blue">
+                    <p class="mb-0 color-base text-base">Short Numbers</p>
+                </div>
+                <div class="d-flex align-items-center me-5">
+                    <img class="icon me-1" src="@img/icon-blue.png" alt="icon-blue">
+                    <p class="mb-0 color-base text-base">Voicemail</p>
+                </div>
+                <div class="d-flex align-items-center me-5">
+                    <img class="icon me-1" src="@img/icon-green.png" alt="icon-blue">
+                    <p class="mb-0 color-base text-base">Call Queing</p>
+                </div>
+                <div class="d-flex align-items-center me-5">
+                    <img class="icon me-1" src="@img/icon-red.png" alt="icon-blue">
+                    <p class="mb-0 color-base text-base">Call Recording</p>
+                </div>
+                <div class="d-flex align-items-center me-5">
+                    <img class="icon me-1" src="@img/icon-purple.png" alt="icon-blue">
+                    <p class="mb-0 color-base text-base">Business Hours</p>
+                </div>
+                <div class="d-flex align-items-center me-5">
+                    <img class="icon me-1" src="@img/icon-yellow.png" alt="icon-blue">
+                    <p class="mb-0 color-base text-base">Short Numbers</p>
+                </div>
+            </div>
+
+        </div>
+        <a href="#" class=" btn btn-blue big-button-text-size position-absolute button-center-absolute bottom-0">
+            Let’s get started
+        </a>
+    </div>
+
+    <div class="container mt-5">
+        <div class="d-grid map-box">
+            <div class="position-relative">
+                <img class="img-fluid position-absolute -left-5" src="@img/Map.png" alt="">
+            </div>
+            <div class="d-flex flex-column align-items-end">
+                <h2 class="h2 color-base weight-700 text-end">Service Available</h2>
+                <h2 class="h2 color-blue weight-700 text-end">All Over The World!</h2>
+                <p class="text-base color-base text-end mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas
+                    accumsan lacus vel
+                </p>
+                <p class="text-base color-base text-end mb-0">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas
+                    accumsan lacus vel
+                </p>
+            </div>
+        </div>
+        <div class="d-grid tabs-box">
+            <div>
+                <h2 class="h2 color-blue weight-700 text-start">How We</h2>
+                <h2 class="h2 color-base weight-700 text-start">Serve Your</h2>
+                <h2 class="h2 color-blue weight-700 text-start">Industry</h2>
+                <div class="d-grid  py-5  w-100 tabs-section">
+                    <div class="tabs-header   rounded-box p-2 d-flex flex-column justify-content-center align-items-center active-tab">
+                        <img class="mt-3 img-fluid" src="@img/construction.png" alt="icon">
+                        <p class="my-3">Constructions</p>
+                    </div>
+                    <div class="tabs-header   rounded-box p-2 d-flex flex-column justify-content-center align-items-center">
+                        <img class="mt-3 img-fluid" src="@img/construction.png" alt="icon">
+                        <p class="my-3">Constructions</p>
+                    </div>
+                    <div class="tabs-header   rounded-box p-2 d-flex flex-column justify-content-center align-items-center">
+                        <img class="mt-3 img-fluid" src="@img/construction.png" alt="icon">
+                        <p class="my-3">Constructions</p>
+                    </div>
+                    <div class="tabs-header   rounded-box p-2 d-flex flex-column justify-content-center align-items-center">
+                        <img class="mt-3 img-fluid" src="@img/construction.png" alt="icon">
+                        <p class="my-3">Constructions</p>
+                    </div>
+                    <div class="tabs-header   rounded-box p-2 d-flex flex-column justify-content-center align-items-center">
+                        <img class="mt-3 img-fluid" src="@img/construction.png" alt="icon">
+                        <p class="my-3">Constructions</p>
+                    </div>
+                    <div class="tabs-header   rounded-box p-2 d-flex flex-column justify-content-center align-items-center">
+                        <img class="mt-3 img-fluid" src="@img/construction.png" alt="icon">
+                        <p class="my-3">Constructions</p>
+                    </div>
+                    <div class="tabs-header   rounded-box p-2 d-flex flex-column justify-content-center align-items-center">
+                        <img class="mt-3 img-fluid" src="@img/construction.png" alt="icon">
+                        <p class="my-3">Constructions</p>
+                    </div>
+                    <div class="tabs-header   rounded-box p-2 d-flex flex-column justify-content-center align-items-center">
+                        <img class="mt-3 img-fluid" src="@img/construction.png" alt="icon">
+                        <p class="my-3">Constructions</p>
+                    </div>
+                    <div class="tabs-header   rounded-box p-2 d-flex flex-column justify-content-center align-items-center">
+                        <img class="mt-3 img-fluid" src="@img/construction.png" alt="icon">
+                        <p class="my-3">Constructions</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="mt-5">
+                <div class="phone-box pt-5 ps-5 pe-5 mt-5 tabs-content-section">
+                    <div class="tabs-content position-relative ">
+                        <h3 class="h3 color-base weight-700 text-center">Constructions?</h3>
+                        <h3 class="h3 color-blue weight-700 text-center">We Got You!</h3>
+                        <p class="text-base color-base mt-4">Made for business owners, not IT wizards. We can help you
+                            set
+                            up in
+                            minutes. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed nulla pariatur.
+                            Excepteur
+                            sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+                            laborum.
+                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+                        </p>
+                        <p class="text-title weight-800">Main Advantages</p>
+                        <ul class="text-base checked-list">
+                            <li class="mb-2">Lorem ipsum dolor sit amet</li>
+                            <li class="mb-2">Lorem ipsum dolor sit amet</li>
+                            <li class="mb-2">Lorem ipsum dolor sit amet</li>
+                            <li class="mb-2">Lorem ipsum dolor sit amet</li>
+                        </ul>
+                        <a class="my-5 btn btn-blue button-text-size" href="#">Lets get Started</a>
+                        <img class="position-absolute bottom-0 -right-50" src="@img/worker.png" alt="worker">
+                    </div>
+                    <div class="tabs-content position-relative d-none">
+                        <h3 class="h3 color-base weight-700 text-center"> 2 Constructions?</h3>
+                        <h3 class="h3 color-blue weight-700 text-center">We Got You!</h3>
+                        <p class="text-base color-base mt-4">Made for business owners, not IT wizards. We can help you
+                            set
+                            up in
+                            minutes. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed nulla pariatur.
+                            Excepteur
+                            sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+                            laborum.
+                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+                        </p>
+                        <p class="text-title weight-800">Main Advantages</p>
+                        <ul class="text-base checked-list">
+                            <li class="mb-2">Lorem ipsum dolor sit amet</li>
+                            <li class="mb-2">Lorem ipsum dolor sit amet</li>
+                            <li class="mb-2">Lorem ipsum dolor sit amet</li>
+                            <li class="mb-2">Lorem ipsum dolor sit amet</li>
+                        </ul>
+                        <a class="my-5 btn btn-blue button-text-size" href="#">Lets get Started</a>
+                        <img class="position-absolute bottom-0 -right-50" src="@img/worker.png" alt="worker">
+                    </div>
+                    <div class="tabs-content position-relative d-none">
+                        <h3 class="h3 color-base weight-700 text-center"> 3 Constructions?</h3>
+                        <h3 class="h3 color-blue weight-700 text-center">We Got You!</h3>
+                        <p class="text-base color-base mt-4">Made for business owners, not IT wizards. We can help you
+                            set
+                            up in
+                            minutes. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed nulla pariatur.
+                            Excepteur
+                            sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+                            laborum.
+                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+                        </p>
+                        <p class="text-title weight-800">Main Advantages</p>
+                        <ul class="text-base checked-list">
+                            <li class="mb-2">Lorem ipsum dolor sit amet</li>
+                            <li class="mb-2">Lorem ipsum dolor sit amet</li>
+                            <li class="mb-2">Lorem ipsum dolor sit amet</li>
+                            <li class="mb-2">Lorem ipsum dolor sit amet</li>
+                        </ul>
+                        <a class="my-5 btn btn-blue button-text-size" href="#">Lets get Started</a>
+                        <img class="position-absolute bottom-0 -right-50" src="@img/worker.png" alt="worker">
+                    </div>
+                    <div class="tabs-content position-relative d-none">
+                        <h3 class="h3 color-base weight-700 text-center"> 4 Constructions?</h3>
+                        <h3 class="h3 color-blue weight-700 text-center">We Got You!</h3>
+                        <p class="text-base color-base mt-4">Made for business owners, not IT wizards. We can help you
+                            set
+                            up in
+                            minutes. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed nulla pariatur.
+                            Excepteur
+                            sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+                            laborum.
+                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+                        </p>
+                        <p class="text-title weight-800">Main Advantages</p>
+                        <ul class="text-base checked-list">
+                            <li class="mb-2">Lorem ipsum dolor sit amet</li>
+                            <li class="mb-2">Lorem ipsum dolor sit amet</li>
+                            <li class="mb-2">Lorem ipsum dolor sit amet</li>
+                            <li class="mb-2">Lorem ipsum dolor sit amet</li>
+                        </ul>
+                        <a class="my-5 btn btn-blue button-text-size" href="#">Lets get Started</a>
+                        <img class="position-absolute bottom-0 -right-50" src="@img/worker.png" alt="worker">
+                    </div>
+                    <div class="tabs-content position-relative d-none">
+                        <h3 class="h3 color-base weight-700 text-center">5 Constructions?</h3>
+                        <h3 class="h3 color-blue weight-700 text-center">We Got You!</h3>
+                        <p class="text-base color-base mt-4">Made for business owners, not IT wizards. We can help you
+                            set
+                            up in
+                            minutes. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed nulla pariatur.
+                            Excepteur
+                            sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+                            laborum.
+                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+                        </p>
+                        <p class="text-title weight-800">Main Advantages</p>
+                        <ul class="text-base checked-list">
+                            <li class="mb-2">Lorem ipsum dolor sit amet</li>
+                            <li class="mb-2">Lorem ipsum dolor sit amet</li>
+                            <li class="mb-2">Lorem ipsum dolor sit amet</li>
+                            <li class="mb-2">Lorem ipsum dolor sit amet</li>
+                        </ul>
+                        <a class="my-5 btn btn-blue button-text-size" href="#">Lets get Started</a>
+                        <img class="position-absolute bottom-0 -right-50" src="@img/worker.png" alt="worker">
+                    </div>
+                    <div class="tabs-content position-relative d-none">
+                        <h3 class="h3 color-base weight-700 text-center"> 6 Constructions?</h3>
+                        <h3 class="h3 color-blue weight-700 text-center">We Got You!</h3>
+                        <p class="text-base color-base mt-4">Made for business owners, not IT wizards. We can help you
+                            set
+                            up in
+                            minutes. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed nulla pariatur.
+                            Excepteur
+                            sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+                            laborum.
+                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+                        </p>
+                        <p class="text-title weight-800">Main Advantages</p>
+                        <ul class="text-base checked-list">
+                            <li class="mb-2">Lorem ipsum dolor sit amet</li>
+                            <li class="mb-2">Lorem ipsum dolor sit amet</li>
+                            <li class="mb-2">Lorem ipsum dolor sit amet</li>
+                            <li class="mb-2">Lorem ipsum dolor sit amet</li>
+                        </ul>
+                        <a class="my-5 btn btn-blue button-text-size" href="#">Lets get Started</a>
+                        <img class="position-absolute bottom-0 -right-50" src="@img/worker.png" alt="worker">
+                    </div>
+                    <div class="tabs-content position-relative d-none">
+                        <h3 class="h3 color-base weight-700 text-center">7 Constructions?</h3>
+                        <h3 class="h3 color-blue weight-700 text-center">We Got You!</h3>
+                        <p class="text-base color-base mt-4">Made for business owners, not IT wizards. We can help you
+                            set
+                            up in
+                            minutes. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed nulla pariatur.
+                            Excepteur
+                            sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+                            laborum.
+                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+                        </p>
+                        <p class="text-title weight-800">Main Advantages</p>
+                        <ul class="text-base checked-list">
+                            <li class="mb-2">Lorem ipsum dolor sit amet</li>
+                            <li class="mb-2">Lorem ipsum dolor sit amet</li>
+                            <li class="mb-2">Lorem ipsum dolor sit amet</li>
+                            <li class="mb-2">Lorem ipsum dolor sit amet</li>
+                        </ul>
+                        <a class="my-5 btn btn-blue button-text-size" href="#">Lets get Started</a>
+                        <img class="position-absolute bottom-0 -right-50" src="@img/worker.png" alt="worker">
+                    </div>
+                    <div class="tabs-content position-relative d-none">
+                        <h3 class="h3 color-base weight-700 text-center">8 Constructions?</h3>
+                        <h3 class="h3 color-blue weight-700 text-center">We Got You!</h3>
+                        <p class="text-base color-base mt-4">Made for business owners, not IT wizards. We can help you
+                            set
+                            up in
+                            minutes. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed nulla pariatur.
+                            Excepteur
+                            sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+                            laborum.
+                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+                        </p>
+                        <p class="text-title weight-800">Main Advantages</p>
+                        <ul class="text-base checked-list">
+                            <li class="mb-2">Lorem ipsum dolor sit amet</li>
+                            <li class="mb-2">Lorem ipsum dolor sit amet</li>
+                            <li class="mb-2">Lorem ipsum dolor sit amet</li>
+                            <li class="mb-2">Lorem ipsum dolor sit amet</li>
+                        </ul>
+                        <a class="my-5 btn btn-blue button-text-size" href="#">Lets get Started</a>
+                        <img class="position-absolute bottom-0 -right-50" src="@img/worker.png" alt="worker">
+                    </div>
+                    <div class="tabs-content position-relative d-none">
+                        <h3 class="h3 color-base weight-700 text-center">9 Constructions?</h3>
+                        <h3 class="h3 color-blue weight-700 text-center">We Got You!</h3>
+                        <p class="text-base color-base mt-4">Made for business owners, not IT wizards. We can help you
+                            set
+                            up in
+                            minutes. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed nulla pariatur.
+                            Excepteur
+                            sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+                            laborum.
+                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+                        </p>
+                        <p class="text-title weight-800">Main Advantages</p>
+                        <ul class="text-base checked-list">
+                            <li class="mb-2">Lorem ipsum dolor sit amet</li>
+                            <li class="mb-2">Lorem ipsum dolor sit amet</li>
+                            <li class="mb-2">Lorem ipsum dolor sit amet</li>
+                            <li class="mb-2">Lorem ipsum dolor sit amet</li>
+                        </ul>
+                        <a class="my-5 btn btn-blue button-text-size" href="#">Lets get Started</a>
+                        <img class="position-absolute bottom-0 -right-50" src="@img/worker.png" alt="worker">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid p-5 bg-dark-green shadow-top text-center">
+        <h1 class="h1 my-2 color-white weight-900">Let Us Help You!</h1>
+    </div>
+    <div class="container-fluid p-5 bg-light-green">
+        <div class="container">
+            <div class="row ">
+                <div class="col-12 gap-4  d-flex justify-content-around">
+                    <div class="col-4 p-2 shadow rounded bg-white d-flex flex-column justify-content-between align-items-center">
+                        <img src="@img/Rocket.png" alt="rocket">
+                        <p class="text-title weight-800 mb-0 text-center text-nowrap my-3">I`m Just Starting Up</p>
+                        <p class="text-base color-base mt-2 text-center">and don’t have experience with cloud phone
+                            system</p>
+                        <a class="my-2 btn btn-orange button-text-size" href="#">Lets get Started</a>
+                    </div>
+                    <div class="col-4 p-2 shadow rounded bg-white d-flex flex-column justify-content-between align-items-center">
+                        <img src="@img/Rocket.png" alt="rocket">
+                        <p class="text-title weight-800 mb-0 text-center text-nowrap my-3">I`m Just Starting Up</p>
+                        <p class="text-base color-base mt-2 text-center">and don’t have experience with cloud phone
+                            system</p>
+                        <a class="my-2 btn btn-orange button-text-size" href="#">Lets get Started</a>
+                    </div>
+                    <div class="col-4 p-2 shadow rounded bg-white d-flex flex-column justify-content-between align-items-center">
+                        <img src="@img/Rocket.png" alt="rocket">
+                        <p class="text-title weight-800 mb-0 text-center text-nowrap my-3">I`m Just Starting Up</p>
+                        <p class="text-base color-base mt-2 text-center">and don’t have experience with cloud phone
+                            system</p>
+                        <a class="my-2 btn btn-orange button-text-size" href="#">Lets get Started</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid p-5 bg-dark-green shadow-top text-center">
+        <h2 class="h2 color-white weight-900">Still searching?</h2>
+        <p class="text-title color-white text-center my-4">Get yourself a custom phone system, ready for all your
+            needs!</p>
+        <a class="btn btn-orange button-text-size" href="#">Contact One Of Our Specialists</a>
+    </div>
+
+</main>
+<footer class="container-fluid p-5 bg-black">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-4"><a href="/"><img src="@img/logo-bottom.png" alt="WebArray"></a>
+            </div>
+            <div class="col-8 d-flex flex-column">
+                <div>
+                    <p class="text-base text-uppercase color-white"> PRICING FEATURES DEVICES CONTACT US</p>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                    <p class="text-small color-white">© 2022 WebArray. All rights reserved </p>
+                    <p class="text-small color-white">🇺🇸 United States | English | USD </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="js/app.js"></script>
+<script src="js/modules/bootstrap.bundle.min.js"></script>
+</body>
+</html>
