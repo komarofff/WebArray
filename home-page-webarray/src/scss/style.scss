@@ -2,3 +2,149 @@
 @import 'fonts';
 @import 'base';
 @import 'buttons';
+.bg-transparent{
+  background: transparent!important;
+}
+.whitespace-nowrap{
+  white-space: nowrap;
+}
+@media(max-width: 1599px) {
+  .carousel-control-prev {
+    left: -50px;
+  }
+  .carousel-control-next {
+    right: -50px;
+  }
+}
+@media(max-width: 1200px) {
+  .slider-text {
+    font-size: 3.5rem;
+  }
+}
+
+  @media(max-width: 992px){
+    $slider-text-size: 2.25rem;
+    $text-base: 1rem;
+    $text-small: 0.875rem;
+    $text-title: 1.125rem;
+    $button-text-size: 1rem;
+    $big-button-text-size: 1.125rem;
+    $h1-text-size: 2.25rem;
+    $h2-text-size: 2rem;
+    $h3-text-size: 1.5rem;
+    .carousel-control-prev {
+      margin-top:50px;
+    }
+    .carousel-control-next {
+      margin-top:50px;
+    }
+    .slider-text {
+      font-size: $slider-text-size;
+    }
+    .h1 {
+      font-size: $h1-text-size !important;
+    }
+
+    .h2 {
+      font-size: $h2-text-size !important;
+    }
+
+    .h3 {
+      font-size: $h3-text-size !important;
+    }
+
+    .text-base {
+      font-size: $text-base !important;
+    }
+
+    .text-small {
+      font-size: $text-small !important;
+    }
+
+    .text-title {
+      font-size: $text-title !important;
+    }
+
+    .button-text-size {
+      font-size: $button-text-size;
+    }
+
+    .big-button-text-size {
+      font-size: $big-button-text-size;
+    }
+    .slider-image {
+      max-height: 80%;
+      width: auto;
+      right: -90px!important;
+    }
+  }
+@media(max-width:768px){
+  .slider-image {
+    max-height: 90%;
+  }
+  .carousel-control-prev {
+   display: none;
+  }
+  .carousel-control-next {
+    display: none;
+  }
+}
+@media(max-width: 576px){
+  $slider-text-size: 2.25rem;
+  $text-base: 1rem;
+  $text-small: 0.875rem;
+  $text-title: 1.125rem;
+  $button-text-size: 1rem;
+  $big-button-text-size: 1.125rem;
+  $h1-text-size: 2.25rem;
+  $h2-text-size: 2rem;
+  $h3-text-size: 1.5rem;
+
+  .slider-text {
+    font-size: $slider-text-size;
+  }
+  .h1 {
+    font-size: $h1-text-size !important;
+  }
+
+  .h2 {
+    font-size: $h2-text-size !important;
+  }
+
+  .h3 {
+    font-size: $h3-text-size !important;
+  }
+
+  .text-base {
+    font-size: $text-base !important;
+  }
+
+  .text-small {
+    font-size: $text-small !important;
+  }
+
+  .text-title {
+    font-size: $text-title !important;
+  }
+
+  .button-text-size {
+    font-size: $button-text-size;
+  }
+
+  .big-button-text-size {
+    font-size: $big-button-text-size;
+  }
+
+}
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+    @each $prop, $unit in (width: vw, height: vh) {
+      @each $size in [25, 50, 75, 100] {
+        .#{$unit}#{$infix}-#{$size} { #{$prop}: #{$size}#{$unit} !important; }
+      }
+    }
+  }
+}

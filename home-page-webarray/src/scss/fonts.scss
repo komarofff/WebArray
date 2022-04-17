@@ -68,6 +68,7 @@ $text-small: 1.125rem;
 $text-title: 2rem;
 $button-text-size: 1.75rem;
 $big-button-text-size: 2.25rem;
+$slider-text-size: 4rem;
 $h1-text-size: 5rem;
 $h2-text-size: 4rem;
 $h3-text-size: 3rem;
@@ -82,6 +83,7 @@ $dark-green: #0a473d;
 $orange: #ff8a65;
 $light-green: #cef7dc;
 
+
 .bg-light-green{
   background: $light-green;
 }
@@ -95,16 +97,16 @@ $light-green: #cef7dc;
   background: $dark-green;
 }
 .color-white {
-  color: $white;
+  color: $white !important;
 }
 .color-blue {
-  color: $blue;
+  color: $blue !important;
 }
 .color-purple{
-  color:$purple;
+  color:$purple !important;
 }
 .color-black {
-  color: #000;
+  color: #000 !important;
 }
 
 a.color-black {
@@ -114,7 +116,7 @@ a.color-black {
 }
 
 .color-base{
-  color:$base-text-color;
+  color:$base-text-color !important;
 }
 a {
   transition: .3s linear;

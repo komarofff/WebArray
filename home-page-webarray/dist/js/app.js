@@ -5,10 +5,14 @@ document.addEventListener('scroll', () => {
     if (yCoordinate > 0) {
         topMenu.classList.add('bg-white')
         topMenu.querySelector('.logo-image').src='images/logo-top.png'
+        topMenu.querySelector('.navbar-toggler-icon').style.cssText='filter: invert(1)'
+        topMenu.querySelector('.call-image').style.cssText='filter: invert(1)'
         smallNav.style.cssText = 'opacity:0;'
     } else {
         topMenu.classList.remove('bg-white')
         topMenu.querySelector('.logo-image').src='images/logo.png'
+        topMenu.querySelector('.navbar-toggler-icon').style.cssText=''
+        topMenu.querySelector('.call-image').style.cssText=''
         smallNav.style.cssText = ''
     }
 

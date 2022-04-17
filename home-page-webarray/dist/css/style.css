@@ -12606,19 +12606,19 @@ textarea.form-control-lg {
 }
 
 .color-white {
-  color: #fff;
+  color: #fff !important;
 }
 
 .color-blue {
-  color: #007ad8;
+  color: #007ad8 !important;
 }
 
 .color-purple {
-  color: #bc4595;
+  color: #bc4595 !important;
 }
 
 .color-black {
-  color: #000;
+  color: #000 !important;
 }
 
 a.color-black:hover {
@@ -12626,7 +12626,7 @@ a.color-black:hover {
 }
 
 .color-base {
-  color: #232649;
+  color: #232649 !important;
 }
 
 a {
@@ -12836,8 +12836,8 @@ header {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: start;
-  -webkit-animation: move-left 180s linear;
-          animation: move-left 180s linear;
+  -webkit-animation: move-left 120s linear;
+          animation: move-left 120s linear;
 }
 
 .icons-move-right {
@@ -12847,8 +12847,8 @@ header {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: end;
-  -webkit-animation: move-right 180s linear;
-          animation: move-right 180s linear;
+  -webkit-animation: move-right 120s linear;
+          animation: move-right 120s linear;
 }
 
 .icons-box {
@@ -12974,6 +12974,42 @@ text-section {
   -webkit-transform: translateY(-50%);
       -ms-transform: translateY(-50%);
           transform: translateY(-50%);
+}
+
+.show, .collapsing {
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  min-width: 100vw;
+  position: fixed;
+  top: 110px;
+  left: 0;
+  right: 0;
+  -webkit-box-shadow: -1px 4px 10px #ccc;
+          box-shadow: -1px 4px 10px #ccc;
+}
+
+.h-65 {
+  height: 65px;
+}
+
+.navbar-light .navbar-toggler-icon {
+  background-image: url("../images/Menu.png");
+}
+
+.navbar-light .navbar-toggler {
+  border-color: transparent;
+}
+
+.navbar-toggler:focus {
+  text-decoration: none;
+  outline: 0;
+  -webkit-box-shadow: 0 0 0 1px;
+          box-shadow: 0 0 0 1px;
+}
+
+.btn {
+  white-space: nowrap;
 }
 
 .btn-purple {
@@ -13120,4 +13156,325 @@ text-section {
   background: #000;
   color: #fff !important;
   border: 1px solid #000;
+}
+
+.bg-transparent {
+  background: transparent !important;
+}
+
+.whitespace-nowrap {
+  white-space: nowrap;
+}
+
+@media (max-width: 1599px) {
+  .carousel-control-prev {
+    left: -50px;
+  }
+
+  .carousel-control-next {
+    right: -50px;
+  }
+}
+@media (max-width: 1200px) {
+  .slider-text {
+    font-size: 3.5rem;
+  }
+}
+@media (max-width: 992px) {
+  .carousel-control-prev {
+    margin-top: 50px;
+  }
+
+  .carousel-control-next {
+    margin-top: 50px;
+  }
+
+  .slider-text {
+    font-size: 2.25rem;
+  }
+
+  .h1 {
+    font-size: 2.25rem !important;
+  }
+
+  .h2 {
+    font-size: 2rem !important;
+  }
+
+  .h3 {
+    font-size: 1.5rem !important;
+  }
+
+  .text-base {
+    font-size: 1rem !important;
+  }
+
+  .text-small {
+    font-size: 0.875rem !important;
+  }
+
+  .text-title {
+    font-size: 1.125rem !important;
+  }
+
+  .button-text-size {
+    font-size: 1rem;
+  }
+
+  .big-button-text-size {
+    font-size: 1.125rem;
+  }
+
+  .slider-image {
+    max-height: 80%;
+    width: auto;
+    right: -90px !important;
+  }
+}
+@media (max-width: 768px) {
+  .slider-image {
+    max-height: 90%;
+  }
+
+  .carousel-control-prev {
+    display: none;
+  }
+
+  .carousel-control-next {
+    display: none;
+  }
+}
+@media (max-width: 576px) {
+  .slider-text {
+    font-size: 2.25rem;
+  }
+
+  .h1 {
+    font-size: 2.25rem !important;
+  }
+
+  .h2 {
+    font-size: 2rem !important;
+  }
+
+  .h3 {
+    font-size: 1.5rem !important;
+  }
+
+  .text-base {
+    font-size: 1rem !important;
+  }
+
+  .text-small {
+    font-size: 0.875rem !important;
+  }
+
+  .text-title {
+    font-size: 1.125rem !important;
+  }
+
+  .button-text-size {
+    font-size: 1rem;
+  }
+
+  .big-button-text-size {
+    font-size: 1.125rem;
+  }
+}
+.vw-25 {
+  width: 25vw !important;
+}
+
+.vw-50 {
+  width: 50vw !important;
+}
+
+.vw-75 {
+  width: 75vw !important;
+}
+
+.vw-100 {
+  width: 100vw !important;
+}
+
+.vh-25 {
+  height: 25vh !important;
+}
+
+.vh-50 {
+  height: 50vh !important;
+}
+
+.vh-75 {
+  height: 75vh !important;
+}
+
+.vh-100 {
+  height: 100vh !important;
+}
+
+@media (min-width: 576px) {
+  .vw-sm-25 {
+    width: 25vw !important;
+  }
+
+  .vw-sm-50 {
+    width: 50vw !important;
+  }
+
+  .vw-sm-75 {
+    width: 75vw !important;
+  }
+
+  .vw-sm-100 {
+    width: 100vw !important;
+  }
+
+  .vh-sm-25 {
+    height: 25vh !important;
+  }
+
+  .vh-sm-50 {
+    height: 50vh !important;
+  }
+
+  .vh-sm-75 {
+    height: 75vh !important;
+  }
+
+  .vh-sm-100 {
+    height: 100vh !important;
+  }
+}
+@media (min-width: 768px) {
+  .vw-md-25 {
+    width: 25vw !important;
+  }
+
+  .vw-md-50 {
+    width: 50vw !important;
+  }
+
+  .vw-md-75 {
+    width: 75vw !important;
+  }
+
+  .vw-md-100 {
+    width: 100vw !important;
+  }
+
+  .vh-md-25 {
+    height: 25vh !important;
+  }
+
+  .vh-md-50 {
+    height: 50vh !important;
+  }
+
+  .vh-md-75 {
+    height: 75vh !important;
+  }
+
+  .vh-md-100 {
+    height: 100vh !important;
+  }
+}
+@media (min-width: 992px) {
+  .vw-lg-25 {
+    width: 25vw !important;
+  }
+
+  .vw-lg-50 {
+    width: 50vw !important;
+  }
+
+  .vw-lg-75 {
+    width: 75vw !important;
+  }
+
+  .vw-lg-100 {
+    width: 100vw !important;
+  }
+
+  .vh-lg-25 {
+    height: 25vh !important;
+  }
+
+  .vh-lg-50 {
+    height: 50vh !important;
+  }
+
+  .vh-lg-75 {
+    height: 75vh !important;
+  }
+
+  .vh-lg-100 {
+    height: 100vh !important;
+  }
+}
+@media (min-width: 1200px) {
+  .vw-xl-25 {
+    width: 25vw !important;
+  }
+
+  .vw-xl-50 {
+    width: 50vw !important;
+  }
+
+  .vw-xl-75 {
+    width: 75vw !important;
+  }
+
+  .vw-xl-100 {
+    width: 100vw !important;
+  }
+
+  .vh-xl-25 {
+    height: 25vh !important;
+  }
+
+  .vh-xl-50 {
+    height: 50vh !important;
+  }
+
+  .vh-xl-75 {
+    height: 75vh !important;
+  }
+
+  .vh-xl-100 {
+    height: 100vh !important;
+  }
+}
+@media (min-width: 1400px) {
+  .vw-xxl-25 {
+    width: 25vw !important;
+  }
+
+  .vw-xxl-50 {
+    width: 50vw !important;
+  }
+
+  .vw-xxl-75 {
+    width: 75vw !important;
+  }
+
+  .vw-xxl-100 {
+    width: 100vw !important;
+  }
+
+  .vh-xxl-25 {
+    height: 25vh !important;
+  }
+
+  .vh-xxl-50 {
+    height: 50vh !important;
+  }
+
+  .vh-xxl-75 {
+    height: 75vh !important;
+  }
+
+  .vh-xxl-100 {
+    height: 100vh !important;
+  }
 }
